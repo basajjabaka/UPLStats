@@ -1,0 +1,255 @@
+game,player,team,caution,min,added_time,double-caution,md
+LUGAZI-vs-CALVARY,Bashir Asiku,CALVARY,yellow,25,no,No,1
+KITARA-vs-KCCA,Hassan Muhamud,KCCA,yellow,53,no,No,1
+KITARA-vs-KCCA,Frank Tumwesigye,KITARA,yellow,72,no,No,1
+KITARA-vs-KCCA,George Senkaaba,KITARA,yellow,82,no,No,1
+EXPRESS-vs-UPDF,Ashraf Mbazira,EXPRESS,yellow,1,no,No,1
+EXPRESS-vs-UPDF,Kitara Daniel,UPDF,yellow,89,no,No,1
+BUL-vs-URA,Hillary Onek,BUL,yellow,69,no,No,1
+BUL-vs-URA,George Masembe,URA,yellow,84,no,No,1
+ENTEBBE-vs-BUHIMBA,Edson Agondeze,BUHIMBA,yellow,35,no,No,1
+ENTEBBE-vs-BUHIMBA,David Kasaija,BUHIMBA,yellow,88,no,No,1
+ENTEBBE-vs-BUHIMBA,Jamil Kiyimba,BUHIMBA,yellow,89,no,No,1
+POLICE-vs-MBARARA,Innocent Wafula Esimu,MBARARA,yellow,12,no,No,1
+POLICE-vs-MBARARA,Sulaiman Ssesaazi,MBARARA,yellow,67,no,No,1
+BUL-vs-MAROONS,Derick Basoga,MAROONS,yellow,32,no,No,2
+BUL-vs-MAROONS,Hillary Onek,BUL,yellow,36,no,No,2
+BUL-vs-MAROONS,Martin Aprem,BUL,yellow,62,no,No,2
+ENTEBBE-vs-LUGAZI,Abdul Kalanzi,LUGAZI,yellow,53,no,No,2
+ENTEBBE-vs-LUGAZI,Paul Wasswa,LUGAZI,yellow,60,no,No,2
+ENTEBBE-vs-LUGAZI,Noordin Saddic Bunjo,ENTEBBE,yellow,70,no,No,2
+ENTEBBE-vs-LUGAZI,Fazil Tumwine,ENTEBBE,yellow,90(+2),yes,No,2
+URA-vs-NEC,Joseph Seremba,NEC,yellow,31,no,No,2
+URA-vs-NEC,Laban Tibiita,URA,yellow,71,no,No,2
+BUHIMBA-vs-CALVARY,Daniel Opio,CALVARY,yellow,23,no,No,2
+BUHIMBA-vs-CALVARY,Dudu Ramadhan,BUHIMBA,yellow,85,no,No,2
+MBARARA-vs-UPDF,Ronald Kayondo,UPDF,yellow,76,no,No,2
+MBARARA-vs-UPDF,Christopher Kamagu,UPDF,red,79,no,No,2
+MBARARA-vs-UPDF,Henry Kitegenyi,MBARARA,yellow,87,no,No,2
+KCCA-vs-VILLA,Missi Diego Semugera,Villa,yellow,24,no,No,2
+KCCA-vs-VILLA,Geoffrey Lubanga Kene,Villa,yellow,41,no,No,2
+KCCA-vs-VILLA,Fillbert Obenchan,KCCA,yellow,62,no,No,2
+KCCA-vs-VILLA,Simon Kato Ssemayange,Villa,yellow,65,no,No,2
+KCCA-vs-VILLA,David Lukwago,Villa,yellow,87,no,No,2
+KCCA-vs-VILLA,Herbert Achayi,KCCA,yellow,90(+2),yes,No,2
+MBARARA-vs-BUL,Denis Kaka Omony,MBARARA,yellow,52,no,No,3
+MBARARA-vs-BUL,Tah Barni Kelvin,BUL,yellow,74,no,No,3
+MBARARA-vs-BUL,Hamza Mulambuzi,MBARARA,yellow,85,no,No,3
+URA-vs-EXPRESS,Lawrence Muwonge Bukenya,EXPRESS,yellow,46,no,No,3
+URA-vs-EXPRESS,ALLI ISMAEL,EXPRESS,yellow,85,no,No,3
+UPDF-vs-MAROONS,Bernard Muwanga,UPDF,yellow,14,no,No,3
+UPDF-vs-MAROONS,Edward Kabona,MAROONS,yellow,70,no,No,3
+UPDF-vs-MAROONS,Deni Rukundo,MAROONS,yellow,78,no,No,3
+UPDF-vs-MAROONS,Rogers Kiwanuka,MAROONS,yellow,85,no,No,3
+UPDF-vs-MAROONS,Aggrey Kiirya,UPDF,yellow,87,no,No,3
+UPDF-vs-MAROONS,Abel Michael Eturude,MAROONS,yellow,90,no,No,3
+VILLA-vs-ENTEBBE,Ahmed Amayo,ENTEBBE,yellow,18,no,No,3
+VILLA-vs-ENTEBBE,Simon Kato Ssemayange,Villa,yellow,38,no,No,3
+VILLA-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,yellow,58,no,No,3
+BUHIMBA-vs-KITARA,Dudu Ramadhan,BUHIMBA,yellow,29,no,No,3
+BUHIMBA-vs-KITARA,Erick Muber,BUHIMBA,yellow,31,no,No,3
+BUHIMBA-vs-KITARA,Benjamin Nyakoojo,KITARA,yellow,40,no,No,3
+BUHIMBA-vs-KITARA,Baguma Jasper Aheebwa,KITARA,yellow,49,no,No,3
+BUHIMBA-vs-KITARA,Edson Agondeze,BUHIMBA,yellow,64,no,No,3
+KCCA-vs-LUGAZI,Sharif Saaka,LUGAZI,yellow,60,no,No,3
+KCCA-vs-LUGAZI,Juma Mutebi,LUGAZI,yellow,67,no,No,3
+KCCA-vs-LUGAZI,Derick Mwanje,LUGAZI,yellow,70,no,No,3
+KCCA-vs-LUGAZI,Saidi Mayanja,KCCA,yellow,72,no,No,3
+NEC-vs-POLICE,Shamiru Kimwero,NEC,yellow,22,no,No,3
+NEC-vs-POLICE,Brian James Obedi,POLICE,yellow,35,no,No,3
+NEC-vs-POLICE,Dhata Joseph Stephen Lujang,NEC,yellow,47,no,No,3
+NEC-vs-POLICE,Mathias Muwanga,POLICE,yellow,90(+3),yes,No,3
+LUGAZI-vs-URA,Nelson Senkatuka,URA,yellow,63,no,No,4
+LUGAZI-vs-URA,JOHN INNOCENT KISOLO,URA,yellow,89,no,No,4
+BUL-vs-BUHIMBA,Walter Ochora,BUL,yellow,87,no,No,4
+EXPRESS-vs-KCCA,Ashraf Mbazira,EXPRESS,yellow,58,no,No,4
+EXPRESS-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,yellow,58,no,No,4
+EXPRESS-vs-KCCA,Mutwalibi Mugolofa,KCCA,yellow,81,no,No,4
+EXPRESS-vs-KCCA,Humphrey Oyirwoth,KCCA,yellow,81,no,No,4
+KITARA-vs-MBARARA,Emuran Fahad,MBARARA,red,59,no,No,4
+KITARA-vs-MBARARA,Murushid Juuko,KITARA,yellow,78,no,No,4
+KITARA-vs-MBARARA,Sulaiman Ssesaazi,MBARARA,yellow,89,no,No,4
+VILLA-VS-POLICE,Daniel Jakony,POLICE,yellow,44,no,No,4
+ENTEBBE-vs-NEC,Emmanuel Kulanga,NEC,yellow,12,no,No,4
+ENTEBBE-vs-NEC,Issa Bugembe,ENTEBBE,yellow,44,no,No,4
+POLICE-vs-MAROONS,Lawrence Tezikya,POLICE,yellow,30,no,No,5
+POLICE-vs-MAROONS,Norman Borniface Odipio,MAROONS,yellow,36,no,No,5
+POLICE-vs-MAROONS,Norman Borniface Odipio,MAROONS,yellow,58,no,yes,5
+POLICE-vs-MAROONS,Daniel Jakony,POLICE,yellow,70,no,No,5
+POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,yellow,82,no,No,5
+POLICE-vs-MAROONS,Tonny Kiwalazi,POLICE,yellow,90(+2),yes,No,5
+POLICE-vs-MAROONS,Mujahid Ogama,MAROONS,yellow,90(+2),yes,No,5
+URA-vs-UPDF,Rashid Faridi,UPDF,yellow,19,no,No,5
+URA-vs-UPDF,FRANK GLADISON MUGISA,UPDF,yellow,70,no,No,5
+URA-vs-UPDF,Aggrey Kiirya,UPDF,yellow,81,no,No,5
+URA-vs-UPDF,Ibrahim Wamannah,URA,yellow,84,no,No,5
+URA-vs-UPDF,Hudu Mulikyi,URA,yellow,90(+2),yes,No,5
+KITARA-vs-LUGAZI,Sharif Saaka,LUGAZI,yellow,45(+2),yes,No,5
+KITARA-vs-LUGAZI,Amos Etoju,LUGAZI,yellow,59,no,No,5
+KITARA-vs-LUGAZI,David Bagoole,LUGAZI,yellow,63,no,No,5
+BUL-vs-EXPRESS,RWOTNGEYO DOUGLAS HANNCIENT,EXPRESS,yellow,45(+2),yes,No,5
+BUL-vs-EXPRESS,ISA GLORY KISUULE,EXPRESS,yellow,52,no,No,5
+BUL-vs-EXPRESS,Pascal Ngobi,BUL,yellow,68,no,No,5
+BUHIMBA-vs-VILLA,Erick Muber,BUHIMBA,yellow,4,no,No,5
+BUHIMBA-vs-VILLA,Derick Byabacwezi,BUHIMBA,yellow,32,no,No,5
+BUHIMBA-vs-VILLA,David Lukwago,Villa,yellow,87,no,No,5
+KCCA-vs-CALVARY,John Rogers,CALVARY,yellow,56,no,No,5
+KCCA-vs-CALVARY,Marvin Praise Wambuga,CALVARY,yellow,90,no,No,5
+ENTEBBE-vs-VIPERS,Isa Mubiru,ENTEBBE,yellow,35,no,No,5
+ENTEBBE-vs-VIPERS,Junior Yunus Sentamu,VIPERS,yellow,74,no,No,5
+MBARARA-vs-NEC,Henry Kitegenyi,MBARARA,yellow,32,no,No,5
+MBARARA-vs-NEC,Allan Mugalu,MBARARA,yellow,60,no,No,5
+MBARARA-vs-NEC,Shamiru Kimwero,NEC,yellow,77,no,No,5
+MBARARA-vs-NEC,Nasur Almahad Sadik,MBARARA,yellow,81,no,No,5
+MBARARA-vs-NEC,Reagan Matege,MBARARA,yellow,88,no,No,5
+MAROONS-vs-URA,Joseph Ssemujju,URA,yellow,53,no,No,6
+MAROONS-vs-URA,Norman Namanya,URA,yellow,55,no,No,6
+MAROONS-vs-URA,George Masembe,URA,yellow,55,no,No,6
+MAROONS-vs-URA,Ronald Orombi,MAROONS,yellow,59,no,No,6
+EXPRESS-vs-MBARARA,Sulaiman Ssesaazi,MBARARA,yellow,8,no,No,6
+EXPRESS-vs-MBARARA,KHASIM MUSTAPHA,EXPRESS,yellow,59,no,No,6
+UPDF-vs-POLICE,Rashid Faridi,UPDF,yellow,70,no,No,6
+UPDF-vs-POLICE,Deus Bukenya,POLICE,yellow,71,no,No,6
+VILLA-vs-KITARA,Yunusu Sibira,KITARA,yellow,12,no,No,6
+VILLA-vs-KITARA,Patrick Henry Kaddu,KITARA,yellow,56,no,No,6
+VILLA-vs-KITARA,Hassan Mubira,Villa,yellow,70,no,No,6
+CALVARY-vs-ENTEBBE,John Rogers,CALVARY,yellow,72,no,No,6
+VIPERS-vs-KCCA,Joel Sserunjogi,KCCA,yellow,27,no,No,6
+VIPERS-vs-KCCA,Joseph Youngman Marvin,VIPERS,yellow,37,no,No,6
+VIPERS-vs-KCCA,Enock Ssebaggala,VIPERS,yellow,87,no,No,6
+LUGAZI-vs-BUHIMBA,Ayiko Richard,LUGAZI,yellow,15,no,No,6
+LUGAZI-vs-BUHIMBA,Davis Kakaire,BUHIMBA,yellow,68,no,No,6
+LUGAZI-vs-BUHIMBA,Paul Wasswa,LUGAZI,yellow,82,no,No,6
+NEC-vs-BUL,Allan Mugalu,NEC,yellow,43,no,No,6
+NEC-vs-BUL,Walter Ochora,BUL,yellow,88,no,No,6
+ENTEBBE-vs-POLICE,Bedia Djuma Ikamba,POLICE,yellow,40,no,No,7
+ENTEBBE-vs-POLICE,Brian James Obedi,POLICE,yellow,45(+2),yes,No,7
+ENTEBBE-vs-POLICE,Musitafa Mujuzi,ENTEBBE,yellow,55,no,No,7
+ENTEBBE-vs-POLICE,Saidi Kyeyune,POLICE,yellow,64,no,No,7
+ENTEBBE-vs-POLICE,Jonathan Gift Odongo,ENTEBBE,yellow,65,no,No,7
+ENTEBBE-vs-POLICE,Dennis Kalanzi,POLICE,yellow,90(+2),yes,No,7
+CALVARY-vs-UPDF,Allan Kigundu,CALVARY,yellow,76,no,No,7
+KITARA-vs-BUL,Tah Barni Kelvin,BUL,yellow,12,no,No,7
+KITARA-vs-BUL,Tah Barni Kelvin,BUL,yellow,28,no,yes,7
+KITARA-vs-BUL,Murushid Juuko,KITARA,yellow,37,no,No,7
+KITARA-vs-BUL,Jimmy Kalema,KITARA,yellow,88,no,No,7
+LUGAZI-vs-EXPRESS,Ayiko Richard,LUGAZI,yellow,72,no,No,7
+LUGAZI-vs-EXPRESS,Dauson Mafumu,LUGAZI,yellow,76,no,No,7
+LUGAZI-vs-EXPRESS,Peter Onzima,EXPRESS,yellow,85,no,No,7
+BUHIMBA-vs-MBARARA,Wycliffe Ahumuza,MBARARA,yellow,1,no,No,7
+BUHIMBA-vs-MBARARA,Denis Kaka Omony,MBARARA,yellow,28,no,No,7
+BUHIMBA-vs-MBARARA,Anwaru Mustafa Ntege,BUHIMBA,yellow,79,no,No,7
+KCCA-vs-URA,Saidi Mayanja,KCCA,yellow,34,no,No,7
+KCCA-vs-URA,Nicholas Kabonge,URA,yellow,43,no,No,7
+KCCA-vs-URA,Joseph Ssemujju,URA,yellow,66,no,No,7
+KCCA-vs-URA,James Mubezi,KCCA,yellow,80,no,No,7
+KCCA-vs-URA,Charles Lukwago,KCCA,yellow,90(+4),yes,No,7
+VIPERS-vs-MAROONS,Fredrick Nickolas Kigozi,MAROONS,yellow,23,no,No,7
+VIPERS-vs-MAROONS,Brian Nkuubi,MAROONS,yellow,75,no,No,7
+VILLA-vs-NEC,Geoffrey Lubanga Kene,Villa,yellow,44,no,No,7
+VILLA-vs-NEC,CHARLES MOSES WAIBI,NEC,yellow,45(+1),yes,No,7
+VILLA-vs-NEC,Najib Yiga,Villa,yellow,56,no,No,7
+VILLA-vs-NEC,Ibrahim Kasinde,Villa,yellow,80,no,No,7
+VILLA-vs-NEC,Elivis Ngonde,Villa,yellow,90(+3),yes,No,7
+MAROONS-vs-NEC,Derick Basoga,MAROONS,yellow,54,no,No,8
+MAROONS-vs-NEC,Dhata Joseph Stephen Lujang,NEC,yellow,82,no,No,8
+MAROONS-vs-NEC,Borris Onegi,MAROONS,yellow,83,no,No,8
+VIPERS-vs-VILLA,Hassan Mubiru,Villa,yellow,1,no,No,8
+VIPERS-vs-VILLA,Kiza Arafat Usama,VIPERS,yellow,35,no,No,8
+VIPERS-vs-VILLA,Joseph Youngman Marvin,VIPERS,yellow,38,no,No,8
+VIPERS-vs-VILLA,Ibrahim Kasinde,Villa,yellow,45,no,No,8
+VIPERS-vs-VILLA,Sula Matovu,Villa,yellow,45(+2),yes,No,8
+VIPERS-vs-VILLA,David Owori,Villa,yellow,65,no,No,8
+VIPERS-vs-VILLA,Sula Matovu,Villa,yellow,89,no,yes,8
+VIPERS-vs-VILLA,Rogers Ochaki Torach,VIPERS,yellow,90(+2),yes,No,8
+MAROONS-vs-LUGAZI,Raymond Walugembe,MAROONS,yellow,62,no,No,8
+MAROONS-vs-LUGAZI,Freedom Mungudit,LUGAZI,yellow,69,no,No,8
+BUL-vs-ENTEBBE,Abdalla Mubiru,ENTEBBE,yellow,53,no,No,8
+BUL-vs-ENTEBBE,Jonathan Gift Odongo,ENTEBBE,yellow,61,no,No,8
+BUL-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,yellow,88,no,No,8
+POLICE-vs-KITARA,Edward Kasibante,POLICE,yellow,9,no,No,8
+POLICE-vs-KITARA,Saidi Kyeyune,POLICE,yellow,25,no,No,8
+POLICE-vs-KITARA,Jimmy Kalema,KITARA,yellow,29,no,No,8
+POLICE-vs-KITARA,Meddie Kibirige,KITARA,yellow,45(+1),yes,No,8
+UPDF-vs-VILLA,Aslam Ssemakula,Villa,yellow,90(+4),yes,No,8
+MBARARA-vs-KCCA,Charles Lukwago,KCCA,yellow,72,no,No,8
+MBARARA-vs-KCCA,Gadaffi Kacancu,MBARARA,yellow,77,no,No,8
+URA-vs-BUHIMBA,Charles Kyomuhendo,BUHIMBA,yellow,41,no,No,8
+URA-vs-BUHIMBA,George Masembe,URA,yellow,53,no,No,8
+URA-vs-BUHIMBA,Moses Okabo Aliro,URA,yellow,62,no,No,8
+URA-vs-BUHIMBA,Martin Philip Opolot,BUHIMBA,yellow,68,no,No,8
+URA-vs-BUHIMBA,John Bosco Sempijja,BUHIMBA,yellow,71,no,No,8
+URA-vs-BUHIMBA,Faizo Matovu,URA,yellow,85,no,No,8
+NEC-vs-CALVARY,Daniel Opio,CALVARY,yellow,33,no,No,8
+NEC-vs-CALVARY,CHARLES MOSES WAIBI,NEC,yellow,88,no,No,8
+VIPERS-vs-UPDF,Tadeo Lwanga,VIPERS,yellow,62,no,No,9
+POLICE-vs-BUHIMBA,Charles Kyomuhendo,BUHIMBA,yellow,35,no,No,9
+POLICE-vs-BUHIMBA,Emmanuel Mugume,POLICE,yellow,72,no,No,9
+POLICE-vs-BUHIMBA,Brian James Obedi,POLICE,yellow,82,no,No,9
+POLICE-vs-BUHIMBA,Derick Byabacwezi,BUHIMBA,yellow,82,no,No,9
+POLICE-vs-BUHIMBA,Hussein Mwanje,BUHIMBA,yellow,90(+2),yes,No,9
+MBARARA-vs-ENTEBBE,Hassan Ssenyonjo,ENTEBBE,yellow,65,no,No,9
+MBARARA-vs-ENTEBBE,Marvin Mukiibi,ENTEBBE,yellow,90,no,No,9
+UPDF-vs-LUGAZI,Ayiko Richard,LUGAZI,yellow,1,no,No,9
+UPDF-vs-LUGAZI,Alfred Leku,LUGAZI,yellow,13,no,No,9
+UPDF-vs-LUGAZI,Paul Wasswa,LUGAZI,yellow,56,no,No,9
+UPDF-vs-LUGAZI,Paul Wasswa,LUGAZI,yellow,68,no,yes,9
+NEC-vs-VIPERS,Joseph Seremba,NEC,yellow,50,no,No,9
+NEC-vs-VIPERS,Paul Mucureezi,NEC,yellow,63,no,No,9
+NEC-vs-VIPERS,Warren Buule,NEC,yellow,67,no,No,9
+NEC-vs-VIPERS,Hilary Panuel Mukundane,VIPERS,yellow,89,no,No,9
+EXPRESS-vs-CALVARY,Milton Afema,CALVARY,yellow,89,no,No,9
+URA-vs-KITARA,Edward Namaasa,KITARA,yellow,58,no,No,9
+URA-vs-KITARA,Moses Okabo Aliro,URA,yellow,63,no,No,9
+URA-vs-KITARA,Isaac Doka Mweru,KITARA,yellow,67,no,No,9
+URA-vs-KITARA,Justine Opiro,URA,yellow,83,no,No,9
+URA-vs-KITARA,Living Kabon,URA,yellow,90(+2),yes,No,9
+MAROONS-vs-VILLA,JAMAL SSEMWOGERERE,MAROONS,yellow,26,no,No,9
+MAROONS-vs-VILLA,Brian Nkuubi,MAROONS,yellow,31,no,No,9
+MAROONS-vs-VILLA,Simon Tamale,MAROONS,yellow,39,no,No,9
+MAROONS-vs-VILLA,Geoffrey Lubanga Kene,Villa,yellow,39,no,No,9
+MAROONS-vs-VILLA,Simon Kato Ssemayange,Villa,yellow,49,no,No,9
+BUL-vs-KCCA,Herbert Achayi,KCCA,yellow,71,no,No,9
+BUL-vs-KCCA,Martin Aprem,BUL,yellow,82,no,No,9
+CALVARY-vs-VIPERS,John Rogers,CALVARY,yellow,66,no,No,10
+CALVARY-vs-VIPERS,Joseph Youngman Marvin,VIPERS,yellow,72,no,No,10
+LUGAZI-vs-POLICE,Deus Bukenya,POLICE,yellow,57,no,No,10
+LUGAZI-vs-POLICE,Rogers Atube,LUGAZI,yellow,63,no,No,10
+LUGAZI-vs-POLICE,Juma Mutebi,LUGAZI,yellow,87,no,No,10
+ENTEBBE-vs-EXPRESS,ISA GLORY KISUULE,EXPRESS,yellow,85,no,No,10
+VILLA-vs-URA,Hudu Mulikyi,URA,yellow,21,no,No,10
+VILLA-vs-URA,Andrew Otim,Villa,yellow,78,no,No,10
+KITARA-vs-MAROONS,Baguma Jasper Aheebwa,KITARA,yellow,58,no,No,10
+KITARA-vs-MAROONS,Patrick Henry Kaddu,KITARA,yellow,66,no,No,10
+KCCA-vs-NEC,Joseph Seremba,NEC,yellow,37,no,No,10
+KCCA-vs-NEC,Ibrahim Musa,NEC,yellow,45,no,No,10
+KCCA-vs-NEC,Dhata Joseph Stephen Lujang,NEC,yellow,53,no,No,10
+KCCA-vs-NEC,Emmanuel Anyama,KCCA,yellow,55,no,No,10
+KCCA-vs-NEC,Titus Ssematimba,NEC,yellow,67,no,No,10
+KCCA-vs-NEC,Titus Ssematimba,NEC,red,69,no,No,10
+KCCA-vs-NEC,Emmanuel Anyama,KCCA,red,72,no,No,10
+CALVARY-vs-MBARARA,Zaidi Byekwaso,MBARARA,yellow,38,no,No,10
+CALVARY-vs-MBARARA,Muhammed Kanyike,MBARARA,yellow,57,no,No,10
+VIPERS-vs-BUL,Tah Barni Kelvin,BUL,yellow,6,no,No,10
+VIPERS-vs-BUL,Abdul Karim Ndugwa,BUL,yellow,34,no,No,10
+VIPERS-vs-BUL,Enock Ssebaggala,VIPERS,yellow,45(+1),yes,No,10
+VIPERS-vs-BUL,Ashraf Mandela,VIPERS,yellow,82,no,No,10
+BUL-vs-POLICE,Dennis Kalanzi,POLICE,yellow,45(+2),yes,No,11
+BUL-vs-POLICE,Nicholas Mwere,BUL,yellow,74,no,No,11
+BUL-vs-POLICE,Ahmad Olima,POLICE,yellow,85,no,No,11
+UPDF-vs-NEC,Ibrahim Musa,NEC,yellow,45(+1),yes,No,11
+KCCA-vs-BUHIMBA,Fillbert Obenchan,KCCA,yellow,61,no,No,11
+KCCA-vs-BUHIMBA,Arafat Galiwango,BUHIMBA,yellow,65,no,No,11
+KCCA-vs-BUHIMBA,Jamil Kiyimba,BUHIMBA,yellow,82,no,No,11
+KCCA-vs-BUHIMBA,Swadik Moro,BUHIMBA,yellow,85,no,No,11
+MBARARA-vs-URA,Norman Namanya,URA,yellow,20,no,No,11
+MBARARA-vs-URA,Fred Amaku,URA,yellow,38,no,No,11
+MBARARA-vs-URA,Henry Kitegenyi,MBARARA,yellow,76,no,No,11
+MBARARA-vs-URA,Innocent Wafula Esimu,MBARARA,yellow,90,no,No,11
+LUGAZI-vs-VIPERS,Yusuf Mafabi,LUGAZI,yellow,55,no,No,11
+LUGAZI-vs-VIPERS,Frank Katongole,VIPERS,yellow,57,no,No,11
+LUGAZI-vs-VIPERS,David Bagoole,LUGAZI,yellow,67,no,No,11
+LUGAZI-vs-VIPERS,Moses Waiswa Ndhondhi,VIPERS,yellow,72,no,No,11
+VILLA-vs-CALVARY,Geofrey Gagganga,Villa,yellow,61,no,No,11
+VILLA-vs-CALVARY,Saidi Sukuru,CALVARY,yellow,71,no,No,11
+ENTEBBE-vs-KITARA,Benjamin Nyakoojo,KITARA,yellow,40,no,No,11
