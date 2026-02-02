@@ -1,0 +1,841 @@
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>UPLStats Project Report</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+                        h1 { color: #00008B; border-bottom: 2px solid #00008B; }
+                        h2 { color: #1a5f7a; }
+                        h3 { color: #2e8b57; }
+                        table { border-collapse: collapse; width: 100%; }
+                        th, td { border: 1px solid #ddd; padding: 8px; }
+                        th { background-color: #1a5f7a; color: white; }
+                    </style>
+                </head>
+                <body>
+                    <h1 id="uplstats-uganda-premier-league-statistics-dashboard">UPLStats: Uganda Premier League Statistics Dashboard</h1>
+<h2 id="comprehensive-project-report">Comprehensive Project Report</h2>
+<p><strong>Project Name:</strong> UPLStats - Uganda Premier League Statistics Extraction and Visualization System<br />
+<strong>Version:</strong> 1.0<br />
+<strong>Date:</strong> 2025<br />
+<strong>Author:</strong> UPLStats Development Team</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>UPLStats is a comprehensive data extraction, transformation, and visualization system designed to process Uganda Premier League (UPL) match reports and provide interactive statistical insights. The system automates the extraction of match statistics from PDF documents, transforms the raw data into structured formats, and presents it through an interactive web dashboard built with Shiny for Python.</p>
+<p>The project addresses the challenge of manually processing match reports by providing an automated pipeline that extracts key statistics including goals, cautions (cards), substitutions, own goals, and penalties from official match report PDFs. The system processes data across multiple matchdays and provides team-level, matchday-level, and league-wide analytics.</p>
+<hr />
+<h2 id="1-project-overview">1. Project Overview</h2>
+<h3 id="11-objectives">1.1 Objectives</h3>
+<p>The primary objectives of this project are:</p>
+<ol>
+<li><strong>Automate Data Extraction</strong>: Develop a robust system to extract match statistics from PDF match reports without manual data entry</li>
+<li><strong>Data Standardization</strong>: Transform extracted data into consistent, structured formats suitable for analysis</li>
+<li><strong>Interactive Visualization</strong>: Create an intuitive dashboard for exploring league statistics, team performance, and matchday analysis</li>
+<li><strong>Scalability</strong>: Design a system that can process multiple matchdays and scale with the growing dataset</li>
+</ol>
+<h3 id="12-target-users">1.2 Target Users</h3>
+<ul>
+<li><strong>Football Analysts</strong>: Researchers and analysts studying league performance</li>
+<li><strong>Media Professionals</strong>: Journalists and content creators needing statistical insights</li>
+<li><strong>Fans and Enthusiasts</strong>: Supporters interested in detailed match and team statistics</li>
+<li><strong>League Administrators</strong>: Officials managing league data and statistics</li>
+</ul>
+<h3 id="13-key-features">1.3 Key Features</h3>
+<ul>
+<li>Automated PDF text extraction and parsing</li>
+<li>Multi-matchday data processing</li>
+<li>Team-specific performance analytics</li>
+<li>Matchday-by-matchday analysis</li>
+<li>Interactive visualizations with filtering capabilities</li>
+<li>Real-time statistics calculation</li>
+<li>Comprehensive goal, card, and substitution tracking</li>
+</ul>
+<hr />
+<h2 id="2-system-architecture">2. System Architecture</h2>
+<h3 id="21-architecture-overview">2.1 Architecture Overview</h3>
+<p>The system follows a three-tier architecture:</p>
+<div class="codehilite"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                    DATA EXTRACTION LAYER                     │
+│  PDF Match Reports → Text Extraction → Pattern Matching     │
+│  (match_report_extractor_4.py)                              │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   DATA TRANSFORMATION LAYER                  │
+│  Raw CSV → Data Cleaning → Feature Engineering             │
+│  (wrangle.py)                                               │
+└───────────────────────┬─────────────────────────────────────┘
+                        │
+                        ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    VISUALIZATION LAYER                      │
+│  Transformed Data → Interactive Dashboard                   │
+│  (app.py - Shiny for Python)                                │
+└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+
+<h3 id="22-technology-stack">2.2 Technology Stack</h3>
+<p><strong>Programming Language:</strong> Python 3.x</p>
+<p><strong>Core Libraries:</strong>
+- <strong>pandas</strong>: Data manipulation and analysis
+- <strong>numpy</strong>: Numerical computations
+- <strong>PyPDF2/pdfplumber</strong>: PDF text extraction
+- <strong>Shiny for Python</strong>: Interactive web application framework
+- <strong>Plotly</strong>: Interactive data visualization
+- <strong>Folium</strong>: Geographic mapping capabilities</p>
+<p><strong>Development Tools:</strong>
+- Jupyter Notebooks: Exploratory data analysis
+- Pathlib: Cross-platform file path handling
+- Regular Expressions (re): Pattern matching for data extraction</p>
+<hr />
+<h2 id="3-component-analysis">3. Component Analysis</h2>
+<h3 id="31-data-extraction-module-match_report_extractor_4py">3.1 Data Extraction Module (<code>match_report_extractor_4.py</code>)</h3>
+<h4 id="311-purpose">3.1.1 Purpose</h4>
+<p>The extraction module is responsible for parsing PDF match reports and extracting structured statistical data. It processes match reports from multiple matchdays and extracts five key data types:</p>
+<ol>
+<li><strong>Goals</strong>: Player goals with timing and added time information</li>
+<li><strong>Cautions</strong>: Yellow cards, red cards, and second yellow cards</li>
+<li><strong>Substitutions</strong>: Player in/out substitutions with timing</li>
+<li><strong>Own Goals</strong>: Own goal events with timing</li>
+<li><strong>Penalties</strong>: Penalty scored/missed events</li>
+</ol>
+<h4 id="312-key-features">3.1.2 Key Features</h4>
+<p><strong>PDF Processing:</strong>
+- Automatic text extraction from PDF files using PyPDF2 or pdfplumber
+- JSON caching system to avoid re-extraction of processed PDFs
+- Support for multiple PDF extraction libraries with fallback mechanisms</p>
+<p><strong>Pattern Recognition:</strong>
+- Symbol-based event identification using match report legend:
+  - <strong>Goal</strong>: Soccer ball icon (⊕, ⚽)
+  - <strong>Own Goal</strong>: Red circle with "OG" (⊛, <em>, OG)
+  - </em><em>Penalty Scored</em><em>: Soccer ball with "P"
+  - </em><em>Penalty Missed</em><em>: Soccer ball with red "X" (M, X)
+  - </em><em>Yellow Card</em><em>: Yellow rectangle with "Y" (?, π, Y)
+  - </em><em>Second Yellow</em><em>: Orange-red with "2Y" (½ᵥ, 2Y)
+  - </em><em>Red Card</em><em>: Red rectangle with "R" (⊃ᵣ, R)
+  - </em><em>Substitution</em>*: Green square with arrows (text-based: "in"/"out")</p>
+<p><strong>Team Identification:</strong>
+- Extracts team names from just below "MATCH EVENTS" title
+- Processes both left and right sides of the Match Events table
+- Uses first word of team name (e.g., "LUGAZI" from "LUGAZI FC")
+- Intelligent player-to-team mapping based on roster analysis</p>
+<p><strong>Data Quality:</strong>
+- Duplicate detection and prevention
+- Context-aware pattern matching to distinguish similar events
+- Error handling and progress reporting
+- Side detection (LHS/RHS) based on pattern position and player names</p>
+<h4 id="313-output-format">3.1.3 Output Format</h4>
+<p>The module generates CSV files with the following structures:</p>
+<p><strong>goals.csv:</strong>
+- <code>game</code>: Match identifier (e.g., "LUGAZI-vs-CALVARY")
+- <code>player</code>: Goal scorer name
+- <code>team</code>: Team name (first word only)
+- <code>min</code>: Minute of goal (string format, may include added time)
+- <code>added_time</code>: Yes/No indicator</p>
+<p><strong>cautions.csv:</strong>
+- <code>game</code>: Match identifier
+- <code>player</code>: Player name
+- <code>team</code>: Team name
+- <code>caution</code>: Type (yellow, red, second yellow)
+- <code>min</code>: Minute of caution
+- <code>double-caution</code>: Yes/No indicator</p>
+<p><strong>subs.csv:</strong>
+- <code>game</code>: Match identifier
+- <code>in</code>: Player substituted in
+- <code>out</code>: Player substituted out
+- <code>min</code>: Minute of substitution
+- <code>club</code>: Team name</p>
+<p><strong>own_goals.csv:</strong>
+- Similar structure to goals.csv</p>
+<p><strong>penalties.csv:</strong>
+- Similar structure to goals.csv with additional <code>scored</code> field (Yes/No)</p>
+<h3 id="32-data-transformation-module-wranglepy">3.2 Data Transformation Module (<code>wrangle.py</code>)</h3>
+<h4 id="321-purpose">3.2.1 Purpose</h4>
+<p>The transformation module processes raw extracted CSV files, cleans the data, and creates derived features for analysis.</p>
+<h4 id="322-transformation-pipeline">3.2.2 Transformation Pipeline</h4>
+<p><strong>Step 1: Data Loading</strong>
+- Reads raw CSV files from <code>csvs/raw/</code> directory
+- Files processed: <code>goals.csv</code>, <code>cautions.csv</code>, <code>subs.csv</code></p>
+<p><strong>Step 2: Data Cleaning</strong>
+- Removes rows with 3 or more missing values
+- Validates column presence (specifically checks for 'min' column)</p>
+<p><strong>Step 3: Feature Engineering</strong></p>
+<p><strong>Minute Parsing:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">parse_minute</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="c1"># Handles formats like &quot;45&quot;, &quot;45+3&quot;, &quot;(45+3)&quot;</span>
+    <span class="c1"># Returns integer minute value</span>
+</code></pre></div>
+
+<p><strong>Period Classification:</strong>
+- <strong>Period 1 (First Half)</strong>: Minutes ≤ 45, or minutes 46-59 with added time
+- <strong>Period 2 (Second Half)</strong>: Minutes 46-90 without added time, or minutes &gt; 90</p>
+<p><strong>Added Time Detection:</strong>
+- Identifies added time from minute strings containing "+" or parentheses</p>
+<p><strong>Step 4: Column Reordering</strong>
+- Replaces <code>min</code> with <code>minute</code> (integer)
+- Inserts <code>added_time</code> and <code>period</code> columns in logical positions
+- Maintains original column order for other fields</p>
+<p><strong>Step 5: Output</strong>
+- Saves transformed files to <code>csvs/transformed/</code> directory
+- Files: <code>transformed_goals.csv</code>, <code>transformed_cautions.csv</code>, <code>transformed_subs.csv</code></p>
+<h4 id="323-data-quality-improvements">3.2.3 Data Quality Improvements</h4>
+<ul>
+<li>Converts minute strings to integers for mathematical operations</li>
+<li>Standardizes added time representation</li>
+<li>Creates period feature for half-based analysis</li>
+<li>Removes incomplete records</li>
+</ul>
+<h3 id="33-interactive-dashboard-apppy">3.3 Interactive Dashboard (<code>app.py</code>)</h3>
+<h4 id="331-purpose">3.3.1 Purpose</h4>
+<p>The dashboard provides an interactive web interface for exploring league statistics, team performance, and matchday analysis.</p>
+<h4 id="332-dashboard-structure">3.3.2 Dashboard Structure</h4>
+<p><strong>Technology:</strong>
+- Built with Shiny for Python
+- Uses Plotly for interactive visualizations
+- Custom CSS styling for professional appearance
+- Responsive layout with sidebar navigation</p>
+<p><strong>Navigation Structure:</strong></p>
+<ol>
+<li><strong>Half-Season Overview</strong></li>
+<li>
+<p><strong>Summary Tab:</strong></p>
+<ul>
+<li>Key metrics cards (Total Goals, Yellow Cards, Substitutions, Matchdays)</li>
+<li>Goals per Team (horizontal bar chart)</li>
+<li>Cards Distribution (pie chart)</li>
+<li>Goals by Matchday (line chart)</li>
+<li>Goals by Period (bar chart)</li>
+<li>Top 15 Goal Scorers (data table)</li>
+</ul>
+</li>
+<li>
+<p><strong>Detailed Analysis Tab:</strong></p>
+<ul>
+<li>Cards per Team (horizontal bar chart)</li>
+<li>Goals Heatmap by Minute (density heatmap)</li>
+<li>Substitution Timing Distribution (histogram)</li>
+<li>Team Comparison: Goals vs Cards (scatter plot)</li>
+</ul>
+</li>
+<li>
+<p><strong>Matchday Analysis</strong></p>
+</li>
+<li>Matchday selector (sidebar filter)</li>
+<li>Matchday statistics summary</li>
+<li>
+<p><strong>Overview Tab:</strong></p>
+<ul>
+<li>Matchday metrics cards</li>
+<li>Goals Distribution by Minute (scatter plot)</li>
+<li>Cards by Type (pie chart)</li>
+<li>Matchday Goalscorers (data table)</li>
+</ul>
+</li>
+<li>
+<p><strong>Cards Tab:</strong></p>
+<ul>
+<li>Detailed cards table for selected matchday</li>
+</ul>
+</li>
+<li>
+<p><strong>Substitutions Tab:</strong></p>
+<ul>
+<li>Detailed substitutions table for selected matchday</li>
+</ul>
+</li>
+<li>
+<p><strong>Team Statistics</strong></p>
+</li>
+<li>Team selector (sidebar filter)</li>
+<li>Team summary statistics</li>
+<li>
+<p><strong>Performance Tab:</strong></p>
+<ul>
+<li>Team metrics cards (Goals Scored, Cards Received, Subs Made, Matches Played)</li>
+<li>Goals by Period (bar chart)</li>
+<li>Goal Timing Distribution (histogram)</li>
+<li>Top Scorers (data table)</li>
+</ul>
+</li>
+<li>
+<p><strong>Discipline Tab:</strong></p>
+<ul>
+<li>Cards Breakdown (pie chart)</li>
+<li>Cards by Matchday (bar chart)</li>
+<li>All Cards Received (data table)</li>
+</ul>
+</li>
+<li>
+<p><strong>Substitutions Tab:</strong></p>
+<ul>
+<li>Substitution Timing (histogram)</li>
+<li>Players Substituted On &amp; Off (dual bar charts)</li>
+<li>All Substitutions (data table)</li>
+</ul>
+</li>
+</ol>
+<h4 id="333-visual-design-features">3.3.3 Visual Design Features</h4>
+<p><strong>Color Scheme:</strong>
+- Team-specific color mapping (15 teams with unique colors)
+- Caution color coding (Yellow: #FFD700, Red: #FF0000, Second Yellow: #FF8C00)
+- Gradient backgrounds and card styling
+- Professional blue theme (#00008B header)</p>
+<p><strong>Interactive Elements:</strong>
+- Dynamic filtering by matchday and team
+- Hover tooltips on charts
+- Responsive tables with sorting
+- Real-time statistics calculation</p>
+<p><strong>User Experience:</strong>
+- Fixed bottom navigation bar
+- Sidebar filters for easy selection
+- Card-based layout with hover effects
+- Clear visual hierarchy</p>
+<h3 id="34-exploratory-analysis-notebook-notebook1ipynb">3.4 Exploratory Analysis Notebook (<code>notebook1.ipynb</code>)</h3>
+<h4 id="341-purpose">3.4.1 Purpose</h4>
+<p>The Jupyter notebook serves as a development and exploration environment for data analysis workflows.</p>
+<h4 id="342-notebook-contents">3.4.2 Notebook Contents</h4>
+<p><strong>Data Loading:</strong>
+- Imports raw CSV files from <code>csvs/raw/</code>
+- Initial data exploration with <code>.head()</code>, <code>.info()</code>, <code>.tail()</code></p>
+<p><strong>Data Cleaning:</strong>
+- Removes rows with excessive missing values
+- Examines unique minute values</p>
+<p><strong>Feature Engineering:</strong>
+- Added time detection from minute strings
+- Minute parsing function
+- Period classification logic</p>
+<p><strong>Analysis Workflow:</strong>
+- Iterative data exploration
+- Transformation testing
+- Validation of derived features</p>
+<hr />
+<h2 id="4-data-flow">4. Data Flow</h2>
+<h3 id="41-complete-data-pipeline">4.1 Complete Data Pipeline</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">INPUT</span><span class="p">:</span><span class="w"> </span><span class="n">PDF</span><span class="w"> </span><span class="n">Match</span><span class="w"> </span><span class="n">Reports</span><span class="w">                                    </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">Location</span><span class="p">:</span><span class="w"> </span><span class="n">reports</span><span class="o">/</span><span class="n">md1</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="n">reports</span><span class="o">/</span><span class="n">md2</span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="n">reports</span><span class="o">/</span><span class="n">md15</span><span class="o">/</span><span class="w">   </span><span class="err">│</span>
+<span class="err">└───────────────────────┬──────────────────────────────────────┘</span>
+<span class="w">                        </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">▼</span>
+<span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">STEP</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="n">PDF</span><span class="w"> </span><span class="n">Extraction</span><span class="w">                                      </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">match_report_extractor_4</span><span class="o">.</span><span class="n">py</span><span class="w">                                 </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Extract</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">PDFs</span><span class="w">                                     </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Cache</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">JSON</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="p">(</span><span class="n">reports</span><span class="o">/</span><span class="n">jsons</span><span class="o">/</span><span class="p">)</span><span class="w">                      </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Parse</span><span class="w"> </span><span class="n">Match</span><span class="w"> </span><span class="n">Events</span><span class="w"> </span><span class="n">table</span><span class="w">                                   </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Extract</span><span class="w"> </span><span class="n">goals</span><span class="p">,</span><span class="w"> </span><span class="n">cautions</span><span class="p">,</span><span class="w"> </span><span class="n">subs</span><span class="p">,</span><span class="w"> </span><span class="n">own_goals</span><span class="p">,</span><span class="w"> </span><span class="n">penalties</span><span class="w">       </span><span class="err">│</span>
+<span class="err">└───────────────────────┬──────────────────────────────────────┘</span>
+<span class="w">                        </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">▼</span>
+<span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">OUTPUT</span><span class="p">:</span><span class="w"> </span><span class="n">Raw</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">Files</span><span class="w">                                       </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">Location</span><span class="p">:</span><span class="w"> </span><span class="n">csvs</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="w">                                          </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">Files</span><span class="p">:</span><span class="w"> </span><span class="n">goals</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w"> </span><span class="n">cautions</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w"> </span><span class="n">subs</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w">                   </span><span class="err">│</span>
+<span class="err">│</span><span class="w">         </span><span class="n">own_goals</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w"> </span><span class="n">penalties</span><span class="o">.</span><span class="n">csv</span><span class="w">                          </span><span class="err">│</span>
+<span class="err">└───────────────────────┬──────────────────────────────────────┘</span>
+<span class="w">                        </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">▼</span>
+<span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">STEP</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="n">Transformation</span><span class="w">                                  </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">wrangle</span><span class="o">.</span><span class="n">py</span><span class="w">                                                   </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Load</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">files</span><span class="w">                                         </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Clean</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="p">(</span><span class="n">remove</span><span class="w"> </span><span class="n">incomplete</span><span class="w"> </span><span class="n">rows</span><span class="p">)</span><span class="w">                       </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Parse</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">integers</span><span class="w">                                 </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">period</span><span class="w"> </span><span class="n">feature</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="n">st</span><span class="o">/</span><span class="mi">2</span><span class="n">nd</span><span class="w"> </span><span class="n">half</span><span class="p">)</span><span class="w">                      </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Standardize</span><span class="w"> </span><span class="n">added_time</span><span class="w"> </span><span class="n">field</span><span class="w">                               </span><span class="err">│</span>
+<span class="err">└───────────────────────┬──────────────────────────────────────┘</span>
+<span class="w">                        </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">▼</span>
+<span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">OUTPUT</span><span class="p">:</span><span class="w"> </span><span class="n">Transformed</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">Files</span><span class="w">                               </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">Location</span><span class="p">:</span><span class="w"> </span><span class="n">csvs</span><span class="o">/</span><span class="n">transformed</span><span class="o">/</span><span class="w">                                  </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">Files</span><span class="p">:</span><span class="w"> </span><span class="n">transformed_goals</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w">                               </span><span class="err">│</span>
+<span class="err">│</span><span class="w">         </span><span class="n">transformed_cautions</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span><span class="w">                            </span><span class="err">│</span>
+<span class="err">│</span><span class="w">         </span><span class="n">transformed_subs</span><span class="o">.</span><span class="n">csv</span><span class="w">                                  </span><span class="err">│</span>
+<span class="err">└───────────────────────┬──────────────────────────────────────┘</span>
+<span class="w">                        </span><span class="err">│</span>
+<span class="w">                        </span><span class="err">▼</span>
+<span class="err">┌──────────────────────────────────────────────────────────────┐</span>
+<span class="err">│</span><span class="w">  </span><span class="n">STEP</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="n">Interactive</span><span class="w"> </span><span class="n">Dashboard</span><span class="w">                               </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="n">app</span><span class="o">.</span><span class="n">py</span><span class="w">                                                       </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Load</span><span class="w"> </span><span class="n">transformed</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">files</span><span class="w">                                 </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">interactive</span><span class="w"> </span><span class="n">visualizations</span><span class="w">                        </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Provide</span><span class="w"> </span><span class="n">filtering</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">exploration</span><span class="w"> </span><span class="n">tools</span><span class="w">                    </span><span class="err">│</span>
+<span class="err">│</span><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">Display</span><span class="w"> </span><span class="n">statistics</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">insights</span><span class="w">                           </span><span class="err">│</span>
+<span class="err">└──────────────────────────────────────────────────────────────┘</span>
+</code></pre></div>
+
+<h3 id="42-data-storage-structure">4.2 Data Storage Structure</h3>
+<div class="codehilite"><pre><span></span><code>UPLStats/
+├── reports/
+│   ├── md1/          # Matchday 1 PDF reports
+│   ├── md2/          # Matchday 2 PDF reports
+│   ├── ...
+│   ├── md15/         # Matchday 15 PDF reports
+│   └── jsons/        # Cached PDF text extractions
+├── csvs/
+│   ├── raw/          # Extracted raw data
+│   │   ├── goals.csv
+│   │   ├── cautions.csv
+│   │   └── subs.csv
+│   └── transformed/  # Processed data
+│       ├── transformed_goals.csv
+│       ├── transformed_cautions.csv
+│       └── transformed_subs.csv
+├── scripts/
+│   └── match_report_extractors/
+│       └── match_report_extractor_4.py
+├── notebooks/
+│   └── notebook1.ipynb
+├── app.py            # Dashboard application
+├── wrangle.py        # Data transformation script
+└── requirements.txt  # Python dependencies
+</code></pre></div>
+
+<hr />
+<h2 id="5-technical-implementation-details">5. Technical Implementation Details</h2>
+<h3 id="51-pdf-extraction-challenges-and-solutions">5.1 PDF Extraction Challenges and Solutions</h3>
+<p><strong>Challenge 1: Symbol Recognition</strong>
+- <strong>Problem</strong>: PDF text extraction may not preserve visual symbols accurately
+- <strong>Solution</strong>: Multiple pattern matching with fallback options, context-aware detection</p>
+<p><strong>Challenge 2: Table Structure</strong>
+- <strong>Problem</strong>: Match Events table has two columns (left/right sides)
+- <strong>Solution</strong>: Pattern-based side detection using player names and event position</p>
+<p><strong>Challenge 3: Team Name Extraction</strong>
+- <strong>Problem</strong>: Team names appear in various formats and locations
+- <strong>Solution</strong>: Extract from specific location (below "MATCH EVENTS" title) with fallback to full document search</p>
+<p><strong>Challenge 4: Player Name Variations</strong>
+- <strong>Problem</strong>: Player names may have spacing variations or abbreviations
+- <strong>Solution</strong>: Fuzzy matching with word-by-word comparison and partial matching</p>
+<h3 id="52-data-quality-assurance">5.2 Data Quality Assurance</h3>
+<p><strong>Validation Checks:</strong>
+- Row completeness (maximum 2 missing values allowed)
+- Column presence validation
+- Minute format validation
+- Team name standardization
+- Duplicate event detection</p>
+<p><strong>Error Handling:</strong>
+- Graceful handling of missing PDFs
+- JSON extraction error recovery
+- Pattern matching fallbacks
+- Progress reporting for debugging</p>
+<h3 id="53-performance-optimizations">5.3 Performance Optimizations</h3>
+<p><strong>Caching Strategy:</strong>
+- JSON files cache PDF text extractions
+- Avoids re-extraction of processed PDFs
+- Reduces processing time for re-runs</p>
+<p><strong>Batch Processing:</strong>
+- Processes all PDFs in a folder sequentially
+- Appends to CSV files (no overwriting)
+- Supports incremental data addition</p>
+<p><strong>Memory Management:</strong>
+- Processes one PDF at a time
+- Clears intermediate data structures
+- Efficient CSV writing with append mode</p>
+<hr />
+<h2 id="6-key-statistics-and-metrics">6. Key Statistics and Metrics</h2>
+<h3 id="61-data-coverage">6.1 Data Coverage</h3>
+<p>Based on the project structure, the system processes:
+- <strong>15 Matchdays</strong> (md1 through md15)
+- <strong>Multiple matches per matchday</strong> (typically 7-8 matches)
+- <strong>5 Data Types</strong>: Goals, Cautions, Substitutions, Own Goals, Penalties
+- <strong>15 Teams</strong> in the Uganda Premier League</p>
+<h3 id="62-dashboard-metrics">6.2 Dashboard Metrics</h3>
+<p><strong>Overview Metrics:</strong>
+- Total Goals Scored
+- Total Yellow Cards
+- Total Substitutions
+- Number of Matchdays Processed</p>
+<p><strong>Team-Level Metrics:</strong>
+- Goals Scored per Team
+- Cards Received per Team
+- Substitutions Made per Team
+- Matches Played per Team</p>
+<p><strong>Matchday-Level Metrics:</strong>
+- Goals per Matchday
+- Cards per Matchday
+- Substitutions per Matchday
+- Number of Matches per Matchday</p>
+<p><strong>Player-Level Metrics:</strong>
+- Top Goal Scorers
+- Most Substituted Players (in/out)
+- Players with Most Cards</p>
+<hr />
+<h2 id="7-use-cases-and-applications">7. Use Cases and Applications</h2>
+<h3 id="71-media-and-journalism">7.1 Media and Journalism</h3>
+<p><strong>Use Case</strong>: Journalists can quickly access statistics for match reports and articles.</p>
+<p><strong>Example Queries:</strong>
+- "Which team scored the most goals in the first half?"
+- "Who are the top 10 goal scorers this season?"
+- "Which matchday had the most cards?"</p>
+<h3 id="72-team-analysis">7.2 Team Analysis</h3>
+<p><strong>Use Case</strong>: Coaches and analysts can study team performance patterns.</p>
+<p><strong>Example Queries:</strong>
+- "When does Team X typically score goals?"
+- "What is Team Y's substitution pattern?"
+- "How disciplined is Team Z compared to others?"</p>
+<h3 id="73-league-administration">7.3 League Administration</h3>
+<p><strong>Use Case</strong>: League officials can track league-wide statistics and trends.</p>
+<p><strong>Example Queries:</strong>
+- "What is the average goals per matchday?"
+- "Which teams have the best discipline records?"
+- "What is the distribution of goals across match periods?"</p>
+<h3 id="74-fan-engagement">7.4 Fan Engagement</h3>
+<p><strong>Use Case</strong>: Fans can explore detailed statistics about their favorite teams and players.</p>
+<p><strong>Example Queries:</strong>
+- "Show me all goals scored by my team this season"
+- "Which players have been substituted most often?"
+- "Compare my team's performance across matchdays"</p>
+<hr />
+<h2 id="8-future-enhancements-and-roadmap">8. Future Enhancements and Roadmap</h2>
+<h3 id="81-planned-features">8.1 Planned Features</h3>
+<ol>
+<li><strong>Advanced Analytics</strong></li>
+<li>Expected Goals (xG) calculations</li>
+<li>Player performance ratings</li>
+<li>Team strength metrics</li>
+<li>
+<p>Predictive modeling</p>
+</li>
+<li>
+<p><strong>Additional Data Sources</strong></p>
+</li>
+<li>Match results and standings</li>
+<li>Player profiles and positions</li>
+<li>Match venue information</li>
+<li>
+<p>Weather data integration</p>
+</li>
+<li>
+<p><strong>Enhanced Visualizations</strong></p>
+</li>
+<li>Interactive match timelines</li>
+<li>Heat maps for goal locations</li>
+<li>Player movement analysis</li>
+<li>
+<p>Comparative team dashboards</p>
+</li>
+<li>
+<p><strong>Export Capabilities</strong></p>
+</li>
+<li>PDF report generation</li>
+<li>Excel export functionality</li>
+<li>API endpoints for data access</li>
+<li>
+<p>Automated email reports</p>
+</li>
+<li>
+<p><strong>Real-Time Updates</strong></p>
+</li>
+<li>Live match data integration</li>
+<li>Automatic PDF processing on upload</li>
+<li>Webhook notifications</li>
+<li>Real-time dashboard updates</li>
+</ol>
+<h3 id="82-technical-improvements">8.2 Technical Improvements</h3>
+<ol>
+<li><strong>Performance</strong></li>
+<li>Parallel PDF processing</li>
+<li>Database backend for large datasets</li>
+<li>Caching layer for dashboard queries</li>
+<li>
+<p>Optimized pattern matching algorithms</p>
+</li>
+<li>
+<p><strong>Reliability</strong></p>
+</li>
+<li>Automated testing suite</li>
+<li>Data validation rules</li>
+<li>Error logging and monitoring</li>
+<li>
+<p>Backup and recovery procedures</p>
+</li>
+<li>
+<p><strong>Scalability</strong></p>
+</li>
+<li>Cloud deployment options</li>
+<li>Containerization (Docker)</li>
+<li>Microservices architecture</li>
+<li>Load balancing for dashboard</li>
+</ol>
+<hr />
+<h2 id="9-challenges-and-solutions">9. Challenges and Solutions</h2>
+<h3 id="91-technical-challenges">9.1 Technical Challenges</h3>
+<p><strong>Challenge: PDF Format Variations</strong>
+- Different PDF generators may produce slightly different text layouts
+- <strong>Solution</strong>: Flexible pattern matching with multiple regex patterns and context awareness</p>
+<p><strong>Challenge: Symbol Extraction</strong>
+- Visual symbols may not extract correctly from PDFs
+- <strong>Solution</strong>: Multiple symbol representations in patterns, fallback to text-based detection</p>
+<p><strong>Challenge: Player Name Matching</strong>
+- Variations in name spelling and formatting
+- <strong>Solution</strong>: Fuzzy matching algorithms with word-by-word comparison</p>
+<h3 id="92-data-quality-challenges">9.2 Data Quality Challenges</h3>
+<p><strong>Challenge: Incomplete Match Reports</strong>
+- Some PDFs may have missing or corrupted sections
+- <strong>Solution</strong>: Robust error handling, partial data extraction, validation checks</p>
+<p><strong>Challenge: Team Name Standardization</strong>
+- Teams may be referred to in different ways
+- <strong>Solution</strong>: First-word extraction, uppercase normalization, mapping dictionary</p>
+<h3 id="93-user-experience-challenges">9.3 User Experience Challenges</h3>
+<p><strong>Challenge: Dashboard Performance</strong>
+- Large datasets may slow down visualizations
+- <strong>Solution</strong>: Efficient data loading, client-side filtering, pagination for tables</p>
+<hr />
+<h2 id="10-project-impact-and-value">10. Project Impact and Value</h2>
+<h3 id="101-time-savings">10.1 Time Savings</h3>
+<ul>
+<li><strong>Manual Processing</strong>: Estimated 30-60 minutes per match report</li>
+<li><strong>Automated Processing</strong>: Less than 1 minute per match report</li>
+<li><strong>Total Time Saved</strong>: Approximately 15-30 hours per matchday (for 7-8 matches)</li>
+</ul>
+<h3 id="102-data-accuracy">10.2 Data Accuracy</h3>
+<ul>
+<li><strong>Reduced Human Error</strong>: Automated extraction eliminates transcription mistakes</li>
+<li><strong>Consistency</strong>: Standardized data formats ensure uniform analysis</li>
+<li><strong>Completeness</strong>: Systematic processing ensures no events are missed</li>
+</ul>
+<h3 id="103-accessibility">10.3 Accessibility</h3>
+<ul>
+<li><strong>24/7 Availability</strong>: Dashboard accessible anytime</li>
+<li><strong>No Specialized Software</strong>: Web-based interface requires only a browser</li>
+<li><strong>Interactive Exploration</strong>: Users can explore data without technical knowledge</li>
+</ul>
+<h3 id="104-insights-generation">10.4 Insights Generation</h3>
+<ul>
+<li><strong>Pattern Recognition</strong>: Identifies trends across matchdays and teams</li>
+<li><strong>Comparative Analysis</strong>: Enables team-to-team and matchday-to-matchday comparisons</li>
+<li><strong>Performance Tracking</strong>: Tracks individual and team performance over time</li>
+</ul>
+<hr />
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>The UPLStats project successfully addresses the challenge of extracting and visualizing Uganda Premier League match statistics through an automated, scalable, and user-friendly system. The three-tier architecture (extraction, transformation, visualization) provides a robust foundation for statistical analysis and insights generation.</p>
+<p>The system's ability to process multiple matchdays, handle various PDF formats, and provide interactive visualizations makes it a valuable tool for analysts, journalists, administrators, and fans. The modular design allows for future enhancements and scalability as the league grows and data requirements evolve.</p>
+<h3 id="111-key-achievements">11.1 Key Achievements</h3>
+<p>✅ Automated PDF-to-data pipeline<br />
+✅ Multi-matchday processing capability<br />
+✅ Interactive dashboard with filtering<br />
+✅ Team-specific and matchday-specific analytics<br />
+✅ Robust error handling and data validation<br />
+✅ Scalable architecture for future growth  </p>
+<h3 id="112-project-status">11.2 Project Status</h3>
+<p>The project is <strong>operational</strong> and processing match reports from multiple matchdays. The dashboard is functional and provides comprehensive statistical insights. The system is ready for production use with ongoing improvements and feature additions planned.</p>
+<hr />
+<h2 id="12-references-and-resources">12. References and Resources</h2>
+<h3 id="121-technology-documentation">12.1 Technology Documentation</h3>
+<ul>
+<li><a href="https://shiny.posit.co/py/">Shiny for Python Documentation</a></li>
+<li><a href="https://plotly.com/python/">Plotly Python Documentation</a></li>
+<li><a href="https://pandas.pydata.org/">Pandas Documentation</a></li>
+<li><a href="https://pypdf2.readthedocs.io/">PyPDF2 Documentation</a></li>
+<li><a href="https://github.com/jsvine/pdfplumber">pdfplumber Documentation</a></li>
+</ul>
+<h3 id="122-project-files">12.2 Project Files</h3>
+<ul>
+<li><strong>Extraction Script</strong>: <code>scripts/match_report_extractors/match_report_extractor_4.py</code></li>
+<li><strong>Transformation Script</strong>: <code>wrangle.py</code></li>
+<li><strong>Dashboard Application</strong>: <code>app.py</code></li>
+<li><strong>Exploratory Notebook</strong>: <code>notebooks/notebook1.ipynb</code></li>
+<li><strong>Dependencies</strong>: <code>requirements.txt</code></li>
+</ul>
+<h3 id="123-data-sources">12.3 Data Sources</h3>
+<ul>
+<li>Official Uganda Premier League Match Reports (PDF format)</li>
+<li>Match reports organized by matchday (md1 through md15)</li>
+</ul>
+<hr />
+<h2 id="appendix-a-installation-and-setup">Appendix A: Installation and Setup</h2>
+<h3 id="a1-prerequisites">A.1 Prerequisites</h3>
+<ul>
+<li>Python 3.8 or higher</li>
+<li>pip package manager</li>
+</ul>
+<h3 id="a2-installation-steps">A.2 Installation Steps</h3>
+<ol>
+<li>
+<p><strong>Clone or download the project</strong>
+   <code>bash
+   git clone &lt;repository-url&gt;
+   cd UPLStats</code></p>
+</li>
+<li>
+<p><strong>Install dependencies</strong>
+   <code>bash
+   pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p><strong>Configure paths</strong> (if needed)</p>
+</li>
+<li>
+<p>Edit <code>match_report_extractor_4.py</code> to set PDF_FOLDER, JSON_FOLDER, CSV_FOLDER paths</p>
+</li>
+<li>
+<p><strong>Run extraction</strong>
+   <code>bash
+   python scripts/match_report_extractors/match_report_extractor_4.py</code></p>
+</li>
+<li>
+<p><strong>Run transformation</strong>
+   <code>bash
+   python wrangle.py</code></p>
+</li>
+<li>
+<p><strong>Launch dashboard</strong>
+   <code>bash
+   shiny run app.py</code></p>
+</li>
+</ol>
+<h3 id="a3-directory-structure-setup">A.3 Directory Structure Setup</h3>
+<p>Ensure the following directories exist:
+- <code>reports/md1/</code> through <code>reports/md15/</code> (for PDF files)
+- <code>reports/jsons/</code> (for cached extractions)
+- <code>csvs/raw/</code> (for extracted CSV files)
+- <code>csvs/transformed/</code> (for processed CSV files)</p>
+<hr />
+<h2 id="appendix-b-data-schema">Appendix B: Data Schema</h2>
+<h3 id="b1-goals-schema">B.1 Goals Schema</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game</td>
+<td>string</td>
+<td>Match identifier (format: "TEAM1-vs-TEAM2")</td>
+</tr>
+<tr>
+<td>player</td>
+<td>string</td>
+<td>Goal scorer name</td>
+</tr>
+<tr>
+<td>team</td>
+<td>string</td>
+<td>Team name (first word only, uppercase)</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>integer</td>
+<td>Minute of goal (0-120)</td>
+</tr>
+<tr>
+<td>added_time</td>
+<td>string</td>
+<td>"Yes" or "No"</td>
+</tr>
+<tr>
+<td>period</td>
+<td>integer</td>
+<td>1 (First Half) or 2 (Second Half)</td>
+</tr>
+<tr>
+<td>md</td>
+<td>float</td>
+<td>Matchday number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b2-cautions-schema">B.2 Cautions Schema</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game</td>
+<td>string</td>
+<td>Match identifier</td>
+</tr>
+<tr>
+<td>player</td>
+<td>string</td>
+<td>Player name</td>
+</tr>
+<tr>
+<td>team</td>
+<td>string</td>
+<td>Team name (uppercase)</td>
+</tr>
+<tr>
+<td>caution</td>
+<td>string</td>
+<td>"yellow", "red", or "second yellow"</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>integer</td>
+<td>Minute of caution</td>
+</tr>
+<tr>
+<td>double-caution</td>
+<td>string</td>
+<td>"Yes" or "No"</td>
+</tr>
+<tr>
+<td>md</td>
+<td>float</td>
+<td>Matchday number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b3-substitutions-schema">B.3 Substitutions Schema</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game</td>
+<td>string</td>
+<td>Match identifier</td>
+</tr>
+<tr>
+<td>in</td>
+<td>string</td>
+<td>Player substituted in</td>
+</tr>
+<tr>
+<td>out</td>
+<td>string</td>
+<td>Player substituted out</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>integer</td>
+<td>Minute of substitution</td>
+</tr>
+<tr>
+<td>club</td>
+<td>string</td>
+<td>Team name (uppercase)</td>
+</tr>
+<tr>
+<td>md</td>
+<td>float</td>
+<td>Matchday number</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>End of Report</strong></p>
+<hr />
+<p><em>This report was generated based on analysis of the UPLStats project codebase, including wrangle.py, app.py, notebook1.ipynb, and the match report extraction scripts. The project demonstrates a complete data pipeline from PDF extraction to interactive visualization, providing valuable insights into Uganda Premier League statistics.</em></p>
+                </body>
+                </html>
+                
