@@ -208,7 +208,7 @@ subsDF['team'] = subsDF['team'].str.upper()
 
 # Team color mapping
 TEAM_COLORS = {
-    "VIPERS": "#FFD700",      # Yellow
+    "VIPERS": "#DC143C",      # Red
     "KCCA": "#FFD700",        # Yellow
     "VILLA": "#4169E1",       # Royal Blue
     "POLICE": "#00008B",      # Dark Blue
@@ -259,18 +259,18 @@ CAUTION_COLORS = {
 # Helper function to count matches for a team across all dataframes
 def count_team_matches(team):
     """Count unique games involving a team across all dataframes"""
-    games_in_goals = set(goalsDF[goalsDF['team'] == team]['game'].dropna().unique())
-    games_in_cautions = set(cautionsDF[cautionsDF['team'] == team]['game'].dropna().unique())
-    games_in_subs = set(subsDF[subsDF['team'] == team]['game'].dropna().unique())
+    games_in_goals = set(goalsDF[goalsDF['team'] == team]['game'].dropna().str.upper().unique())
+    games_in_cautions = set(cautionsDF[cautionsDF['team'] == team]['game'].dropna().str.upper().unique())
+    games_in_subs = set(subsDF[subsDF['team'] == team]['game'].dropna().str.upper().unique())
     all_games = games_in_goals | games_in_cautions | games_in_subs
     return len(all_games)
 
 # Helper function to count matches in a matchday
 def count_matchday_games(md):
     """Count unique games in a matchday"""
-    games_in_goals = set(goalsDF[goalsDF['md'] == md]['game'].dropna().unique())
-    games_in_cautions = set(cautionsDF[cautionsDF['md'] == md]['game'].dropna().unique())
-    games_in_subs = set(subsDF[subsDF['md'] == md]['game'].dropna().unique())
+    games_in_goals = set(goalsDF[goalsDF['md'] == md]['game'].dropna().str.upper().unique())
+    games_in_cautions = set(cautionsDF[cautionsDF['md'] == md]['game'].dropna().str.upper().unique())
+    games_in_subs = set(subsDF[subsDF['md'] == md]['game'].dropna().str.upper().unique())
     all_games = games_in_goals | games_in_cautions | games_in_subs
     return len(all_games)
 
@@ -647,7 +647,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         
                         @render.table
                         def md_subs_table():
-                            md_subs = subsDF[subsDF['md'] == float(input.selected_matchday())][['game', 'in', 'out', 'club', 'minute']]
+                            md_subs = subsDF[subsDF['md'] == float(input.selected_matchday())][['game', 'in', 'out', 'team', 'minute']]
                             md_subs.columns = ['Match', 'Player In', 'Player Out', 'Team', 'Minute']
                             return md_subs
 
@@ -873,6 +873,11 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                         title='Most Taken Off',
                                         color_discrete_sequence=[team_color]
                                     )
+                                    # remove y-axis label
+                                    fig.update_yaxes(title_text='')
+                                    # update x-axis label
+                                    fig.update_xaxes(title_text='Times')
+                                    #update layout
                                     fig.update_layout(
                                         showlegend=False,
                                         plot_bgcolor='rgba(0,0,0,0)',
@@ -894,6 +899,11 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                         title='Most Taken On',
                                         color_discrete_sequence=[team_color]
                                     )
+                                    # remove y-axis label
+                                    fig.update_yaxes(title_text='')
+                                    # update x-axis label
+                                    fig.update_xaxes(title_text='Substituted')
+                                    # update layout
                                     fig.update_layout(
                                         showlegend=False,
                                         plot_bgcolor='rgba(0,0,0,0)',

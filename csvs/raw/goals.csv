@@ -13,6 +13,9 @@ BUL-vs-MAROONS,Ibrahim Mugulusi,BUL,37,no,2
 ENTEBBE-vs-LUGAZI,Freedom Mungudit,LUGAZI,24,no,2
 ENTEBBE-vs-LUGAZI,Issa Bugembe,ENTEBBE,63,no,2
 ENTEBBE-vs-LUGAZI,Fazil Tumwine,ENTEBBE,83,no,2
+POLICE-vs-EXPRESS,Umaru Kasumba,POLICE,28,no,2
+POLICE-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,45(+1),yes,2
+POLICE-vs-EXPRESS,Bedia Djuma Ikamba,POLICE,77,no,2
 URA-vs-NEC,Ronald Media Innocent,NEC,10,no,2
 URA-vs-NEC,Moses Okabo Aliro,URA,49,no,2
 BUHIMBA-vs-CALVARY,Anwaru Mustafa Ntege,BUHIMBA,26,no,2
@@ -196,63 +199,62 @@ LUGAZI-vs-VIPERS,Junior Yunus Sentamu,VIPERS,74,no,11
 LUGAZI-vs-VIPERS,Ashiraf Mulindi,LUGAZI,89,no,11
 VILLA-vs-CALVARY,Aslam Ssemakula,Villa,5,no,11
 ENTEBBE-vs-KITARA,John Kokas Alou,ENTEBBE,34,no,11
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
-,,,,,
+EXPRESS-vs-VILLA,Frank Ssebufu,Villa,15,no,12
+URA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,49,no,12
+NEC-vs-LUGAZI,Ronald Media Innocent,NEC,64,no,12
+POLICE-vs-KCCA,Brian James Obedi,POLICE,51,no,12
+POLICE-vs-KCCA,Bedia Djuma Ikamba,POLICE,64,no,12
+KITARA-vs-UPDF,Jimmy Kalema,KITARA,35,no,12
+KITARA-vs-UPDF,Crispus Asiki,KITARA,39,no,12
+KITARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,71,no,12
+CALVARY-vs-BUL,Abdul Karim Ndugwa,BUL,9,no,12
+BUHIMBA-vs-MAROONS,Derick Byabacwezi,BUHIMBA,51,no,12
+URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,2,no,13
+URA-vs-VIPERS,Gusto Wa Ilungo Mulongo,VIPERS,80,no,13
+URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,90(+1),yes,13
+EXPRESS-vs-BUHIMBA,Mikidadi Ssenyonga,EXPRESS,21,no,13
+EXPRESS-vs-BUHIMBA,Edson Agondeze,BUHIMBA,25,no,13
+EXPRESS-vs-BUHIMBA,John Asiimwe,EXPRESS,27,no,13
+EXPRESS-vs-BUHIMBA,Henry Wamala,EXPRESS,78,no,13
+NEC-vs-KITARA,Joseph Seremba,NEC,28,no,13
+NEC-vs-KITARA,Dhata Joseph Stephen Lujang,NEC,38,no,13
+NEC-vs-KITARA,George Senkaaba,KITARA,52,no,13
+NEC-vs-KITARA,Wahab Gadafi,KITARA,75,no,13
+NEC-vs-KITARA,Emmanuel Kulanga,NEC,88,no,13
+NEC-vs-KITARA,Emmanuel Alex Wasswa,KITARA,90,no,13
+UPDF-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,45(+2),yes,13
+POLICE-vs-CALVARY,Brian James Obedi,POLICE,74,no,13
+POLICE-vs-CALVARY,Umaru Kasumba,POLICE,89,no,13
+VIPERS-vs-POLICE,Milton Karisa,VIPERS,32,no,14
+VIPERS-vs-POLICE,Abdulkarim Watambala,VIPERS,41,no,14
+VIPERS-vs-POLICE,Chukwuma Odili,VIPERS,45,no,14
+VIPERS-vs-POLICE,Saidi Kyeyune,POLICE,49,no,14
+VIPERS-vs-POLICE,Kiza Arafat Usama,VIPERS,77,no,14
+KITARA-vs-EXPRESS,Patrick Henry Kaddu,KITARA,56,no,14
+VILLA-vs-MBARARA,Frank Ssebufu,Villa,6,no,14
+VILLA-vs-MBARARA,Hassan Mubiru,Villa,11,no,14
+VILLA-vs-MBARARA,Tonny Atukunda,Villa,29,no,14
+VILLA-vs-MBARARA,Aslam Ssemakula,Villa,36,no,14
+VILLA-vs-MBARARA,Najib Yiga,Villa,50,no,14
+VILLA-vs-MBARARA,Hassan Mubiru,Villa,55,no,14
+VILLA-vs-MBARARA,Clinton Davico Kamugisha,MBARARA,88,no,14
+BUHIMBA-vs-NEC,Ronald Media Innocent,NEC,14,no,14
+KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,11,no,14
+KCCA-vs-UPDF,Joel Sserunjogi,KCCA,30,no,14
+KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,51,no,14
+KCCA-vs-UPDF,Alpha Thiery Ssali,KCCA,90(+1),yes,14
+LUGAZI-vs-BUL,Freedom Mungudit,LUGAZI,26,no,14
+LUGAZI-vs-BUL,Abdul Karim Ndugwa,BUL,46,no,14
+LUGAZI-vs-BUL,Paul Busolo,LUGAZI,83,no,14
+KCCA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,45(+1),no,15
+UPDF-vs-BUL,Abdul Karim Ndugwa,BUL,35,no,15
+VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,2,no,15
+VIPERS-vs-BUHIMBA,Abdulkarim Watambala,VIPERS,15,no,15
+VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,38,no,15
+VIPERS-vs-BUHIMBA,Abubakali Walusimbi,VIPERS,61,no,15
+CALVARY-vs-KITARA,Crispus Asiki,KITARA,3,no,15
+MAROONS-vs-MBARARA,Marvin Busuulwa,MBARARA,46,no,15
+MAROONS-vs-MBARARA,Abel Michael Eturude,MAROONS,86,no,15
 ,,,,,
 ,,,,,
 ,,,,,
