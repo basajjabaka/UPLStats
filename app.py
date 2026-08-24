@@ -201,10 +201,25 @@ goalsDF = pd.read_csv(inputDIR / "transformed_goals.csv")
 cautionsDF = pd.read_csv(inputDIR / "transformed_cautions.csv")
 subsDF = pd.read_csv(inputDIR / "transformed_subs.csv")
 
+# match-level tables rebuilt from the goal events by wrangle.py
+matchesDF = pd.read_csv(inputDIR / "transformed_matches.csv")
+teamMatchesDF = pd.read_csv(inputDIR / "transformed_team_matches.csv")
+comebacksDF = pd.read_csv(inputDIR / "transformed_comebacks.csv")
+
 # Convert all team names to UPPERCASE
 goalsDF['team'] = goalsDF['team'].str.upper()
 cautionsDF['team'] = cautionsDF['team'].str.upper()
 subsDF['team'] = subsDF['team'].str.upper()
+
+# Which side of the "HOME-vs-AWAY" key each event belongs to
+def add_venue(df):
+    """Tag every event row as home or away, from the game key."""
+    home = df['game'].astype(str).str.upper().str.split('-VS-').str[0].str.strip()
+    df['venue'] = np.where(df['team'].astype(str).str.upper() == home, 'home', 'away')
+    return df
+
+for _df in (goalsDF, cautionsDF, subsDF):
+    add_venue(_df)
 
 # Team color mapping
 TEAM_COLORS = {
@@ -222,7 +237,8 @@ TEAM_COLORS = {
     "UPDF": "#4B5320",        # Army Green
     "BUHIMBA": "#90EE90",     # Light Green
     "CALVARY": "#000000",     # Black
-    "LUGAZI": "#90EE90"       # Light Green
+    "LUGAZI": "#90EE90",      # Light Green
+    "MBARARA": "#1E90FF"      # Dodger Blue
 }
 
 # get unique teams and matchdays
@@ -243,18 +259,124 @@ def get_team_header_style(team):
 
 # Process caution colors (yellow, red, second yellow)
 def get_caution_color(row):
-    if row['caution'] == 'yellow' and str(row['double-caution']).lower() in ['yes', 'y', 'true']:
-        return 'second_yellow'
-    return row['caution']
+    """Normalise a caution row to one of the three keys in CAUTION_COLORS.
+
+    A second yellow is stored as caution='second yellow' with double-caution
+    ='yes'; the double-caution flag alone is also honoured so a row entered
+    either way lands in the same bucket.  Rows with no card type recorded are
+    labelled rather than left as NaN, which used to show up as a 'nan' slice.
+    """
+    caution = str(row['caution']).strip().lower()
+    double = str(row['double-caution']).strip().lower() in ('yes', 'y', 'true')
+    if caution in ('second yellow', 'second_yellow') or (caution == 'yellow' and double):
+        return 'second yellow'
+    if caution in ('', 'nan', 'none'):
+        return 'not recorded'
+    return caution
 
 cautionsDF['caution_display'] = cautionsDF.apply(get_caution_color, axis=1)
 
 # Caution color mapping
 CAUTION_COLORS = {
-    'yellow': '#FFD700',
+    'yellow': '#E8B400',        # darkened for contrast against white cards
     'red': '#FF0000',
-    'second_yellow': '#FF8C00'  # Orange for second yellow
+    'second yellow': '#FF8C00',  # Orange for second yellow
+    'not recorded': '#BDC3C7'    # Grey for rows with no card type in the source
 }
+
+# Standard football time buckets, with stoppage time kept out of the next bucket
+MINUTE_BUCKETS = ['0-15', '16-30', '31-45', '45+', '46-60', '61-75', '76-90', '90+']
+
+def minute_bucket(base_minute, stoppage):
+    """Place an event in a standard 15-minute bucket.
+
+    Uses the un-inflated minute, so a 45(+2) goal lands in '45+' rather than
+    being counted as a 47th-minute event in the second half.
+    """
+    if stoppage > 0:
+        return '45+' if base_minute <= 45 else '90+'
+    if base_minute <= 15:
+        return '0-15'
+    if base_minute <= 30:
+        return '16-30'
+    if base_minute <= 45:
+        return '31-45'
+    if base_minute <= 60:
+        return '46-60'
+    if base_minute <= 75:
+        return '61-75'
+    if base_minute <= 90:
+        return '76-90'
+    return '90+'
+
+def bucket_counts(df):
+    """Count events per time bucket, keeping empty buckets so the axis is stable."""
+    labels = [minute_bucket(b, s) for b, s in zip(df['base_minute'], df['stoppage'])]
+    counts = pd.Series(labels).value_counts()
+    return pd.DataFrame({
+        'bucket': MINUTE_BUCKETS,
+        'count': [int(counts.get(b, 0)) for b in MINUTE_BUCKETS],
+    })
+
+# -----------------------------------------------------------------------------
+# League tables, built from the match rows wrangle.py reconstructs
+# -----------------------------------------------------------------------------
+
+def league_table(venue=None, upto_md=None, md=None, form_games=5):
+    """Standings from the team-match rows, optionally home-only or away-only.
+
+    `upto_md` gives the cumulative table after that matchday; `md` gives that
+    single matchday only.
+    """
+    data = teamMatchesDF
+    if venue is not None:
+        data = data[data['venue'] == venue]
+    if upto_md is not None:
+        data = data[data['md'] <= upto_md]
+    if md is not None:
+        data = data[data['md'] == md]
+
+    if data.empty:
+        return pd.DataFrame(columns=['Pos', 'Team', 'P', 'W', 'D', 'L',
+                                     'GF', 'GA', 'GD', 'Pts', 'Form'])
+
+    grouped = data.groupby('team')
+    table = pd.DataFrame({
+        'Team': grouped.size().index,
+        'P': grouped.size().values,
+        'W': grouped['result'].apply(lambda s: (s == 'W').sum()).values,
+        'D': grouped['result'].apply(lambda s: (s == 'D').sum()).values,
+        'L': grouped['result'].apply(lambda s: (s == 'L').sum()).values,
+        'GF': grouped['gf'].sum().values,
+        'GA': grouped['ga'].sum().values,
+        'Pts': grouped['points'].sum().values,
+    })
+    table['GD'] = table['GF'] - table['GA']
+
+    form = (data.sort_values('md')
+                .groupby('team')['result']
+                .apply(lambda s: ' '.join(s.tail(form_games))))
+    table['Form'] = table['Team'].map(form)
+
+    table = table.sort_values(['Pts', 'GD', 'GF', 'Team'],
+                              ascending=[False, False, False, True]).reset_index(drop=True)
+    table.insert(0, 'Pos', range(1, len(table) + 1))
+    return table[['Pos', 'Team', 'P', 'W', 'D', 'L', 'GF', 'GA', 'GD', 'Pts', 'Form']]
+
+
+def results_table(md):
+    """Every scoreline played on one matchday."""
+    played = matchesDF[matchesDF['md'] == md].sort_values('game')
+    if played.empty:
+        return pd.DataFrame(columns=['Home', 'Score', 'Away'])
+    return pd.DataFrame({
+        'Home': played['home'].values,
+        'Score': [f"{h} - {a}" for h, a in zip(played['home_goals'], played['away_goals'])],
+        'Away': played['away'].values,
+    })
+
+SOURCE_NOTE = ("Scorelines are reconstructed from the recorded goal events, so a "
+               "match whose goals are missing from the source data shows as 0-0.")
 
 # Helper function to count matches for a team across all dataframes
 def count_team_matches(team):
@@ -447,24 +569,24 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             return fig
                     
                     with ui.card():
-                        ui.tags.div("Goals Heatmap by Minute", class_="overview-card-header")
+                        ui.tags.div("When Goals Are Scored", class_="overview-card-header")
                         @render_plotly
-                        def goals_heatmap():
-                            # Create minute bins
-                            goalsDF['minute_bin'] = pd.cut(
-                                goalsDF['minute'], 
-                                bins=[0, 15, 30, 45, 60, 75, 90, 100],
-                                labels=['0-15', '16-30', '31-45', '46-60', '61-75', '76-90', '90+']
-                            )
-                            minute_period = goalsDF.groupby(['minute_bin', 'period']).size().reset_index(name='count')
-                            minute_period['period'] = minute_period['period'].map({1: 'First Half', 2: 'Second Half'})
-                            fig = px.density_heatmap(
-                                minute_period, 
-                                x='minute_bin', 
-                                y='period', 
-                                z='count',
-                                color_continuous_scale='Viridis',
-                                title='Goal Scoring Intensity by Time Period'
+                        def goals_timing_profile():
+                            # Standard football time buckets. Stoppage time gets its
+                            # own bucket at the end of each half instead of being
+                            # folded into the minutes that follow it.
+                            counts = bucket_counts(goalsDF)
+                            counts['half'] = ['First Half'] * 4 + ['Second Half'] * 4
+                            fig = px.bar(
+                                counts,
+                                x='bucket',
+                                y='count',
+                                color='half',
+                                color_discrete_map={'First Half': '#3498db',
+                                                    'Second Half': '#e74c3c'},
+                                category_orders={'bucket': MINUTE_BUCKETS},
+                                title='Goals by Period of the Match',
+                                labels={'bucket': 'Minute', 'count': 'Goals', 'half': ''}
                             )
                             fig.update_layout(
                                 plot_bgcolor='rgba(0,0,0,0)',
@@ -520,6 +642,125 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                 paper_bgcolor='rgba(0,0,0,0)'
                             )
                             return fig
+
+            with ui.nav_panel("Comebacks & Collapses"):
+                ui.tags.p(
+                    "A team is 'in a losing position' once it goes behind at any point "
+                    "in a match, and 'in a winning position' once it leads. Points from "
+                    "a losing position are the points it still took; points dropped from "
+                    "a winning position are the three it did not. " + SOURCE_NOTE,
+                    style="margin: 20px 10px 0 10px; color: #555;"
+                )
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Points Won From a Losing Position",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def points_from_losing():
+                            data = comebacksDF.sort_values('points_from_losing')
+                            fig = px.bar(
+                                data, x='points_from_losing', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='points_from_losing',
+                                hover_data=['wins_from_losing', 'draws_from_losing',
+                                            'matches_behind'],
+                                title='Points Rescued After Going Behind',
+                                labels={'points_from_losing': 'Points', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Points Dropped From a Winning Position",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def points_dropped_from_winning():
+                            data = comebacksDF.sort_values('points_dropped_from_winning')
+                            fig = px.bar(
+                                data, x='points_dropped_from_winning', y='team',
+                                orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='points_dropped_from_winning',
+                                hover_data=['losses_from_winning', 'draws_from_winning',
+                                            'matches_ahead'],
+                                title='Points Thrown Away After Leading',
+                                labels={'points_dropped_from_winning': 'Points', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Wins From a Losing Position",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def wins_from_losing():
+                            data = comebacksDF.sort_values('wins_from_losing')
+                            fig = px.bar(
+                                data, x='wins_from_losing', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='wins_from_losing',
+                                hover_data=['matches_behind'],
+                                title='Matches Won After Going Behind',
+                                labels={'wins_from_losing': 'Wins', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Games Lost From a Winning Position",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def losses_from_winning():
+                            data = comebacksDF.sort_values('losses_from_winning')
+                            fig = px.bar(
+                                data, x='losses_from_winning', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='losses_from_winning',
+                                hover_data=['matches_ahead'],
+                                title='Matches Lost After Leading',
+                                labels={'losses_from_winning': 'Defeats', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Comeback & Collapse Summary",
+                                    class_="overview-card-header")
+                        @render.table
+                        def comebacks_summary():
+                            table = comebacksDF.copy()
+                            table = table.sort_values(
+                                ['points_from_losing', 'wins_from_losing'],
+                                ascending=False)
+                            table = table[['team', 'matches', 'matches_behind',
+                                           'points_from_losing', 'wins_from_losing',
+                                           'draws_from_losing', 'matches_ahead',
+                                           'points_dropped_from_winning',
+                                           'losses_from_winning', 'draws_from_winning']]
+                            table.columns = ['Team', 'P', 'Times Behind', 'Pts From Behind',
+                                             'Wins From Behind', 'Draws From Behind',
+                                             'Times Ahead', 'Pts Dropped', 'Lost From Ahead',
+                                             'Drew From Ahead']
+                            return table
 
     # =============================================================================
     # PAGE 2: MATCHDAY ANALYSIS
@@ -627,6 +868,47 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                 md_data.columns = ['Match', 'Player', 'Team', 'Minute', 'Half']
                                 return md_data
 
+                with ui.nav_panel("Table & Results"):
+                    with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                        with ui.card():
+                            @render.ui
+                            def md_results_header():
+                                return ui.tags.div(
+                                    f"Results - Matchday {input.selected_matchday()}",
+                                    class_="overview-card-header")
+
+                            @render.table
+                            def md_results_table():
+                                return results_table(int(input.selected_matchday()))
+
+                            ui.tags.p(SOURCE_NOTE,
+                                      style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+                    with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                        with ui.card():
+                            @render.ui
+                            def md_standings_header():
+                                return ui.tags.div(
+                                    f"League Table after Matchday {input.selected_matchday()}",
+                                    class_="overview-card-header")
+
+                            @render.table
+                            def md_standings_table():
+                                return league_table(upto_md=int(input.selected_matchday()))
+
+                    with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                        with ui.card():
+                            @render.ui
+                            def md_only_standings_header():
+                                return ui.tags.div(
+                                    f"Matchday {input.selected_matchday()} Only",
+                                    class_="overview-card-header")
+
+                            @render.table
+                            def md_only_standings_table():
+                                return league_table(md=int(input.selected_matchday()),
+                                                    form_games=1)
+
                 with ui.nav_panel("Cards"):
                     with ui.card():
                         @render.ui
@@ -652,7 +934,173 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             return md_subs
 
     # =============================================================================
-    # PAGE 3: TEAM STATISTICS
+    # PAGE 3: HOME & AWAY FORM
+    # =============================================================================
+    with ui.nav_panel("Home & Away"):
+        with ui.navset_pill(id="venue_tab"):
+
+            with ui.nav_panel("Home Advantage"):
+                with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 20px 0;"):
+                    with ui.div(class_="stat-card goals"):
+                        ui.h3(str(int(teamMatchesDF[teamMatchesDF['venue'] == 'home']['gf'].sum())))
+                        ui.p("Home Goals")
+                    with ui.div(class_="stat-card goals"):
+                        ui.h3(str(int(teamMatchesDF[teamMatchesDF['venue'] == 'away']['gf'].sum())))
+                        ui.p("Away Goals")
+                    with ui.div(class_="stat-card matches"):
+                        ui.h3(str(int((teamMatchesDF[teamMatchesDF['venue'] == 'home']['result'] == 'W').sum())))
+                        ui.p("Home Wins")
+                    with ui.div(class_="stat-card matches"):
+                        ui.h3(str(int((teamMatchesDF[teamMatchesDF['venue'] == 'away']['result'] == 'W').sum())))
+                        ui.p("Away Wins")
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Where the Results Go", class_="overview-card-header")
+                        @render_plotly
+                        def venue_outcomes():
+                            home = teamMatchesDF[teamMatchesDF['venue'] == 'home']
+                            counts = pd.DataFrame({
+                                'outcome': ['Home win', 'Draw', 'Away win'],
+                                'matches': [int((home['result'] == 'W').sum()),
+                                            int((home['result'] == 'D').sum()),
+                                            int((home['result'] == 'L').sum())],
+                            })
+                            fig = px.pie(
+                                counts, values='matches', names='outcome', hole=0.4,
+                                color='outcome',
+                                color_discrete_map={'Home win': '#2e8b57',
+                                                    'Draw': '#95a5a6',
+                                                    'Away win': '#e74c3c'},
+                                title='Share of Matches by Outcome'
+                            )
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Goals & Cards by Venue", class_="overview-card-header")
+                        @render_plotly
+                        def venue_totals():
+                            data = pd.DataFrame({
+                                'measure': ['Goals', 'Goals', 'Cards', 'Cards',
+                                            'Substitutions', 'Substitutions'],
+                                'venue': ['Home', 'Away'] * 3,
+                                'count': [
+                                    int((goalsDF['venue'] == 'home').sum()),
+                                    int((goalsDF['venue'] == 'away').sum()),
+                                    int((cautionsDF['venue'] == 'home').sum()),
+                                    int((cautionsDF['venue'] == 'away').sum()),
+                                    int((subsDF['venue'] == 'home').sum()),
+                                    int((subsDF['venue'] == 'away').sum()),
+                                ],
+                            })
+                            fig = px.bar(
+                                data, x='measure', y='count', color='venue',
+                                barmode='group',
+                                color_discrete_map={'Home': '#2e8b57', 'Away': '#e74c3c'},
+                                title='Home and Away Totals Across the Season',
+                                labels={'measure': '', 'count': 'Events', 'venue': ''}
+                            )
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Points at Home vs Away, by Team",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def venue_points_by_team():
+                            points = (teamMatchesDF.groupby(['team', 'venue'])['points']
+                                      .sum().reset_index())
+                            order = (points[points['venue'] == 'home']
+                                     .sort_values('points')['team'].tolist())
+                            points['venue'] = points['venue'].map({'home': 'Home',
+                                                                   'away': 'Away'})
+                            fig = px.bar(
+                                points, x='points', y='team', color='venue',
+                                orientation='h', barmode='group',
+                                color_discrete_map={'Home': '#2e8b57', 'Away': '#e74c3c'},
+                                category_orders={'team': order},
+                                title='Points Won at Home and Away',
+                                labels={'points': 'Points', 'team': '', 'venue': ''}
+                            )
+                            fig.update_layout(
+                                height=600,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+            with ui.nav_panel("Home Form"):
+                with ui.card():
+                    ui.tags.div("Home Table", class_="overview-card-header")
+                    @render.table
+                    def home_form_table():
+                        return league_table(venue='home')
+
+                    ui.tags.p("Home matches only. Form shows the last five home results, "
+                              "oldest first. " + SOURCE_NOTE,
+                              style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+                with ui.card():
+                    ui.tags.div("Goals Scored at Home", class_="overview-card-header")
+                    @render_plotly
+                    def home_goals_by_team():
+                        data = (teamMatchesDF[teamMatchesDF['venue'] == 'home']
+                                .groupby('team')['gf'].sum().reset_index()
+                                .sort_values('gf'))
+                        fig = px.bar(
+                            data, x='gf', y='team', orientation='h',
+                            color='team', color_discrete_map=TEAM_COLORS, text='gf',
+                            title='Home Goals by Team',
+                            labels={'gf': 'Goals', 'team': ''}
+                        )
+                        fig.update_layout(
+                            showlegend=False,
+                            plot_bgcolor='rgba(0,0,0,0)',
+                            paper_bgcolor='rgba(0,0,0,0)'
+                        )
+                        return fig
+
+            with ui.nav_panel("Away Form"):
+                with ui.card():
+                    ui.tags.div("Away Table", class_="overview-card-header")
+                    @render.table
+                    def away_form_table():
+                        return league_table(venue='away')
+
+                    ui.tags.p("Away matches only. Form shows the last five away results, "
+                              "oldest first. " + SOURCE_NOTE,
+                              style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+                with ui.card():
+                    ui.tags.div("Goals Scored Away", class_="overview-card-header")
+                    @render_plotly
+                    def away_goals_by_team():
+                        data = (teamMatchesDF[teamMatchesDF['venue'] == 'away']
+                                .groupby('team')['gf'].sum().reset_index()
+                                .sort_values('gf'))
+                        fig = px.bar(
+                            data, x='gf', y='team', orientation='h',
+                            color='team', color_discrete_map=TEAM_COLORS, text='gf',
+                            title='Away Goals by Team',
+                            labels={'gf': 'Goals', 'team': ''}
+                        )
+                        fig.update_layout(
+                            showlegend=False,
+                            plot_bgcolor='rgba(0,0,0,0)',
+                            paper_bgcolor='rgba(0,0,0,0)'
+                        )
+                        return fig
+
+    # =============================================================================
+    # PAGE 4: TEAM STATISTICS
     # =============================================================================
     with ui.nav_panel("Team Statistics"):
         with ui.layout_sidebar():

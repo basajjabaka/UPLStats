@@ -1,257 +1,257 @@
-game,player,team,minute,added_time,period,md
-LUGAZI-vs-CALVARY,Simon Peter Odeke,CALVARY,11,no,1,1.0
-LUGAZI-vs-CALVARY,Paul Wasswa,LUGAZI,19,no,1,1.0
-LUGAZI-vs-CALVARY,Sharif Saaka,LUGAZI,29,no,1,1.0
-LUGAZI-vs-CALVARY,Ashiraf Mulindi,LUGAZI,79,no,2,1.0
-KITARA-vs-KCCA,Emmanuel Alex Wasswa,KITARA,4,no,1,1.0
-KITARA-vs-KCCA,Sharifu Ssengendo,KCCA,83,no,2,1.0
-EXPRESS-vs-UPDF,Habert Asiimwe,EXPRESS,14,no,1,1.0
-ENTEBBE-vs-BUHIMBA,John Wesley kisaakye,BUHIMBA,13,no,1,1.0
-POLICE-vs-MBARARA,Abudshakur Ramsey Jemba,POLICE,26,no,1,1.0
-POLICE-vs-MBARARA,Reagan Matege,MBARARA,76,no,2,1.0
-BUL-vs-MAROONS,Ibrahim Mugulusi,BUL,37,no,1,2.0
-ENTEBBE-vs-LUGAZI,Freedom Mungudit,LUGAZI,24,no,1,2.0
-ENTEBBE-vs-LUGAZI,Issa Bugembe,ENTEBBE,63,no,2,2.0
-ENTEBBE-vs-LUGAZI,Fazil Tumwine,ENTEBBE,83,no,2,2.0
-POLICE-vs-EXPRESS,Umaru Kasumba,POLICE,28,no,1,2.0
-POLICE-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,46,yes,1,2.0
-POLICE-vs-EXPRESS,Bedia Djuma Ikamba,POLICE,77,no,2,2.0
-URA-vs-NEC,Ronald Media Innocent,NEC,10,no,1,2.0
-URA-vs-NEC,Moses Okabo Aliro,URA,49,no,2,2.0
-BUHIMBA-vs-CALVARY,Anwaru Mustafa Ntege,BUHIMBA,26,no,1,2.0
-BUHIMBA-vs-CALVARY,Swadik Moro,BUHIMBA,44,no,1,2.0
-MBARARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,68,no,2,2.0
-KCCA-vs-VILLA,Ivan Ahimbisibwe,KCCA,30,no,1,2.0
-KCCA-vs-VILLA,Najib Yiga,Villa,60,no,2,2.0
-KCCA-vs-VILLA,Umar Lutalo,KCCA,88,no,2,2.0
-MBARARA-vs-BUL,Seiri Arigumaho,BUL,35,no,1,3.0
-MBARARA-vs-BUL,Ian Amanya,MBARARA,39,no,1,3.0
-UPDF-vs-MAROONS,Dickson Niwamanya,MAROONS,14,no,1,3.0
-UPDF-vs-MAROONS,Ivan Mayanja,MAROONS,25,no,1,3.0
-UPDF-vs-MAROONS,Rashid Faridi,UPDF,53,no,2,3.0
-VILLA-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,28,no,1,3.0
-VILLA-vs-ENTEBBE,Andrew Otim,Villa,83,no,2,3.0
-BUHIMBA-vs-KITARA,Edson Agondeze,BUHIMBA,82,no,2,3.0
-NEC-vs-POLICE,Mustafa Kizza,NEC,3,no,1,3.0
-NEC-vs-POLICE,Dhata Joseph Stephen Lujang,nec,60,no,2,3.0
-NEC-vs-POLICE,Charles Bbaale,POLICE,85,no,2,3.0
-NEC-vs-POLICE,Umaru Kasumba,POLICE,93,yes,2,3.0
-BUL-vs-BUHIMBA,Ibrahim Mugulusi,BUL,17,no,1,4.0
-BUL-vs-BUHIMBA,Seiri Arigumaho,BUL,32,no,1,4.0
-BUL-vs-BUHIMBA,Jeromy Kirya,BUL,39,no,1,4.0
-EXPRESS-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,71,no,2,4.0
-KITARA-vs-MBARARA,Isaac Amutuhaire,KITARA,13,no,1,4.0
-KITARA-vs-MBARARA,Jimmy Kalema,KITARA,16,no,1,4.0
-KITARA-vs-MBARARA,Innocent Wafula Esimu,MBARARA,23,no,1,4.0
-KITARA-vs-MBARARA,Henry Kitegenyi,MBARARA,76,no,2,4.0
-KITARA-vs-MBARARA,Wahab Gadafi,KITARA,91,yes,2,4.0
-VILLA-VS-POLICE,Bedia Djuma Ikamba,POLICE,22,no,1,4.0
-VILLA-VS-POLICE,Geofrey Gagganga,Villa,70,no,2,4.0
-VILLA-VS-POLICE,Charles Lwanga,Villa,93,yes,2,4.0
-ENTEBBE-vs-NEC,Junior Samuel Kawawa,ENTEBBE,60,no,2,4.0
-POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,18,no,1,5.0
-POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,28,no,1,5.0
-POLICE-vs-MAROONS,Rogers Kiwanuka,MAROONS,42,no,1,5.0
-URA-vs-UPDF,Moses Okabo Aliro,URA,25,no,1,5.0
-URA-vs-UPDF,Samson Andrew Kigozi,UPDF,27,no,1,5.0
-URA-vs-UPDF,George Masembe,URA,45,no,1,5.0
-URA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,54,no,2,5.0
-URA-vs-UPDF,Moses Okabo Aliro,URA,77,no,2,5.0
-KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,10,no,1,5.0
-KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,48,yes,1,5.0
-KITARA-vs-LUGAZI,Yunusu Sibira,KITARA,51,no,2,5.0
-KITARA-vs-LUGAZI,Wahab Gadafi,KITARA,87,no,2,5.0
-BUHIMBA-vs-VILLA,Reagan Mpande,Villa,2,no,1,5.0
-BUHIMBA-vs-VILLA,Aslam Ssemakula,Villa,14,no,1,5.0
-BUHIMBA-vs-VILLA,Reagan Mpande,Villa,65,no,2,5.0
-KCCA-vs-CALVARY,Ivan Ahimbisibwe,KCCA,10,no,1,5.0
-KCCA-vs-CALVARY,Umar Lutalo,KCCA,13,no,1,5.0
-KCCA-vs-CALVARY,Shafik Nana Kwikiriza,KCCA,43,no,1,5.0
-KCCA-vs-CALVARY,Lawrence Olaboro,CALVARY,47,no,2,5.0
-KCCA-vs-CALVARY,Herbert Achayi,KCCA,63,no,2,5.0
-KCCA-vs-CALVARY,Stephen Oriokot,CALVARY,71,no,2,5.0
-ENTEBBE-vs-VIPERS,Abdulkarim Watambala,VIPERS,62,no,2,5.0
-MBARARA-vs-NEC,Allan Mugalu,NEC,54,no,2,5.0
-EXPRESS-vs-MBARARA,Abdulahi Rashid,EXPRESS,12,no,1,6.0
-EXPRESS-vs-MBARARA,Richard Basangwa,EXPRESS,25,no,1,6.0
-EXPRESS-vs-MBARARA,Muhamed Kagawa Ssenoga,EXPRESS,46,no,2,6.0
-EXPRESS-vs-MBARARA,Muhamed Kagawa Ssenoga,EXPRESS,72,no,2,6.0
-EXPRESS-vs-MBARARA,Gabriel Eragu,MBARARA,78,no,2,6.0
-UPDF-vs-POLICE,Deus Bukenya,POLICE,65,no,2,6.0
-UPDF-vs-POLICE,Rashid Faridi,UPDF,88,no,2,6.0
-UPDF-vs-POLICE,Derrick Maviiri,POLICE,89,no,2,6.0
-VILLA-vs-KITARA,Frank Ssebufu,Villa,65,no,2,6.0
-CALVARY-vs-ENTEBBE,Junior Samuel Kawawa,ENTEBBE,36,no,1,6.0
-CALVARY-vs-ENTEBBE,Hassan Ssenyonjo,ENTEBBE,49,no,2,6.0
-CALVARY-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,64,no,2,6.0
-CALVARY-vs-ENTEBBE,Muhammad Kyeyune,ENTEBBE,65,no,2,6.0
-CALVARY-vs-ENTEBBE,John Rogers,CALVARY,68,no,2,6.0
-CALVARY-vs-ENTEBBE,Lawrence Olaboro,CALVARY,71,no,2,6.0
-VIPERS-vs-KCCA,Allan Okello,VIPERS,32,no,1,6.0
-LUGAZI-vs-BUHIMBA,David Bagoole,LUGAZI,32,no,1,6.0
-LUGAZI-vs-BUHIMBA,Abdul Kalanzi,LUGAZI,41,no,1,6.0
-LUGAZI-vs-BUHIMBA,Swadik Moro,BUHIMBA,49,no,2,6.0
-LUGAZI-vs-BUHIMBA,Ayiko Richard (OG),BUHIMBA,51,no,2,6.0
-LUGAZI-vs-BUHIMBA,Freedom Mungudit,LUGAZI,75,no,2,6.0
-LUGAZI-vs-BUHIMBA,Freedom Mungudit,LUGAZI,79,no,2,6.0
-LUGAZI-vs-BUHIMBA,Dauson Mafumu,LUGAZI,85,no,2,6.0
-NEC-vs-BUL,Dhata Joseph Stephen Lujang,NEC,27,no,1,6.0
-NEC-vs-BUL,Jeromy Kirya,BUL,46,yes,1,6.0
-ENTEBBE-vs-POLICE,Lawrence Tezikya,POLICE,32,no,1,6.0
-ENTEBBE-vs-POLICE,Abudshakur Ramsey Jemba,POLICE,83,no,2,6.0
-CALVARY-vs-UPDF,Emmanuel Manu Ochen,UPDF,12,no,1,7.0
-KITARA-vs-BUL,Jimmy Kalema,KITARA,11,no,1,7.0
-KCCA-vs-URA,Ivan Ahimbisibwe,KCCA,16,no,1,7.0
-KCCA-vs-URA,Ivan Ahimbisibwe,KCCA,41,no,1,7.0
-KCCA-vs-URA,Joseph Ssemujju,URA,66,no,2,7.0
-VIPERS-vs-MAROONS,Derick Basoga (OG),VIPERS,1,no,1,7.0
-VIPERS-vs-MAROONS,Kiza Arafat Usama,VIPERS,8,no,1,7.0
-VIPERS-vs-MAROONS,Raymond Walugembe,MAROONS,57,no,2,7.0
-VILLA-vs-NEC,Najib Yiga,Villa,47,no,2,7.0
-VILLA-vs-NEC,Elivis Ngonde,Villa,87,no,2,7.0
-VILLA-vs-NEC,Daniel Shabene,NEC,90,no,2,7.0
-MAROONS-vs-NEC,Ivan Asaba,MAROONS,74,no,2,8.0
-MAROONS-vs-NEC,Marvin Kavuma,NEC,76,no,2,8.0
-VIPERS-vs-VILLA,Frank Ssebufu,Villa,67,no,2,8.0
-VIPERS-vs-VILLA,Kiza Arafat Usama,VIPERS,72,no,2,8.0
-MAROONS-vs-LUGAZI,Raymond Walugembe,MAROONS,1,no,1,8.0
-MAROONS-vs-LUGAZI,Jackson Nunda,MAROONS,34,no,1,8.0
-MAROONS-vs-LUGAZI,Ivan Asaba,MAROONS,87,no,2,8.0
-BUL-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,49,no,2,8.0
-BUL-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,58,no,2,8.0
-POLICE-vs-KITARA,Patrick Henry Kaddu,KITARA,11,no,1,8.0
-POLICE-vs-KITARA,Lawrence Tezikya,POLICE,63,no,2,8.0
-POLICE-vs-KITARA,Isaac Amutuhaire,KITARA,92,yes,2,8.0
-UPDF-vs-VILLA,Ibrahim Kasinde,Villa,65,no,2,8.0
-MBARARA-vs-KCCA,Herbert Achayi,KCCA,16,no,1,8.0
-MBARARA-vs-KCCA,Muhammed Kanyike,MBARARA,26,no,1,8.0
-MBARARA-vs-KCCA,Ivan Ahimbisibwe,KCCA,50,no,2,8.0
-URA-vs-BUHIMBA,Joseph Ssemujju,URA,31,no,1,8.0
-URA-vs-BUHIMBA,Nelson Senkatuka,URA,41,no,1,8.0
-URA-vs-BUHIMBA,Denis Luzige Kisiriko,URA,46,yes,1,8.0
-URA-vs-BUHIMBA,Martin Philip Opolot,BUHIMBA,55,no,2,8.0
-URA-vs-BUHIMBA,Edson Agondeze,BUHIMBA,59,no,2,8.0
-URA-vs-BUHIMBA,Fred Amaku,URA,70,no,2,8.0
-URA-vs-BUHIMBA,Fred Amaku,URA,74,no,2,8.0
-URA-vs-BUHIMBA,Fred Amaku,URA,83,no,2,8.0
-URA-vs-BUHIMBA,Charles Kyomuhendo,BUHIMBA,85,no,2,8.0
-URA-vs-BUHIMBA,Living Kabon,URA,90,no,2,8.0
-NEC-vs-CALVARY,CHARLES MOSES WAIBI,NEC,71,no,2,8.0
-EXPRESS-vs-VIPERS,Enock Ssebaggala,VIPERS,38,no,1,8.0
-EXPRESS-vs-VIPERS,Allan Okello,VIPERS,66,no,2,8.0
-EXPRESS-vs-VIPERS,Isaac Ogwang,VIPERS,68,no,2,8.0
-VIPERS-vs-UPDF,Milton Karisa,VIPERS,33,no,1,9.0
-VIPERS-vs-UPDF,Gusto Wa Ilungo Mulongo,VIPERS,37,no,1,9.0
-VIPERS-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,46,no,2,9.0
-VIPERS-vs-UPDF,Gusto Wa Ilungo Mulongo,VIPERS,47,no,2,9.0
-VIPERS-vs-UPDF,ROBIN KANE HNEY,VIPERS,56,no,2,9.0
-VIPERS-vs-UPDF,Moses Waiswa Ndhondhi,VIPERS,75,no,2,9.0
-POLICE-vs-BUHIMBA,Dennis Kalanzi,POLICE,10,no,1,9.0
-POLICE-vs-BUHIMBA,Umaru Kasumba,POLICE,41,no,1,9.0
-POLICE-vs-BUHIMBA,Saidi Kyeyune,POLICE,59,no,2,9.0
-POLICE-vs-BUHIMBA,Derrick Maviiri,POLICE,81,no,2,9.0
-MBARARA-vs-ENTEBBE,Muhammed Kanyike,MBARARA,72,no,2,9.0
-MBARARA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,79,no,2,9.0
-UPDF-vs-LUGAZI,Emmanuel Manu Ochen,UPDF,14,no,1,9.0
-UPDF-vs-LUGAZI,Joseph Janjali,UPDF,46,no,2,9.0
-NEC-vs-VIPERS,Mustafa Kizza,NEC,22,no,1,9.0
-NEC-vs-VIPERS,Milton Karisa,VIPERS,50,no,2,9.0
-EXPRESS-vs-CALVARY,Richard Basangwa,EXPRESS,26,no,1,9.0
-EXPRESS-vs-CALVARY,Muhamed Kagawa Ssenoga,EXPRESS,49,no,2,9.0
-EXPRESS-vs-CALVARY,Muhamed Kagawa Ssenoga,EXPRESS,55,no,2,9.0
-EXPRESS-vs-CALVARY,Habert Asiimwe,EXPRESS,75,no,2,9.0
-URA-vs-KITARA,Patrick Henry Kaddu,KITARA,2,no,1,9.0
-MAROONS-vs-VILLA,Ivan Mayanja,MAROONS,1,no,1,9.0
-BUL-vs-KCCA,George Kasonko,BUL,37,no,1,9.0
-BUL-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,57,no,2,9.0
-BUL-vs-KCCA,Alex Yiga,KCCA,91,yes,2,9.0
-BUHIMBA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,20,no,1,10.0
-BUHIMBA-vs-UPDF,Edson Agondeze,BUHIMBA,39,no,1,10.0
-BUHIMBA-vs-UPDF,Kitara Daniel,UPDF,60,no,2,10.0
-BUHIMBA-vs-UPDF,Edson Agondeze,BUHIMBA,68,no,2,10.0
-LUGAZI-vs-POLICE,Abdul Kalanzi,LUGAZI,34,no,1,10.0
-LUGAZI-vs-POLICE,Emmanuel Mugume,POLICE,70,no,2,10.0
-ENTEBBE-vs-EXPRESS,Noordin Saddic Bunjo,ENTEBBE,53,no,2,10.0
-ENTEBBE-vs-EXPRESS,Ambrose Kigozi,ENTEBBE,70,no,2,10.0
-VILLA-vs-URA,Missi Diego Semugera,Villa,22,no,1,10.0
-VILLA-vs-URA,Najib Yiga,Villa,47,no,2,10.0
-VILLA-vs-URA,Frank Mulimi,Villa,69,no,2,10.0
-KITARA-vs-MAROONS,Patrick Henry Kaddu,KITARA,1,no,1,10.0
-KITARA-vs-MAROONS,Patrick Henry Kaddu,KITARA,34,no,1,10.0
-KCCA-vs-NEC,Saidi Mayanja,KCCA,45,no,1,10.0
-KCCA-vs-NEC,Titus Ssematimba,NEC,52,no,2,10.0
-KCCA-vs-NEC,Saidi Mayanja,KCCA,87,no,2,10.0
-VIPERS-vs-BUL,Enock Ssebaggala,VIPERS,48,no,2,10.0
-VIPERS-vs-BUL,Jeromy Kirya,BUL,55,no,2,10.0
-VIPERS-vs-BUL,Abdulkarim Watambala,VIPERS,60,no,2,10.0
-BUL-vs-POLICE,Bedia Djuma Ikamba,POLICE,15,no,1,11.0
-BUL-vs-POLICE,Abdul Karim Ndugwa,BUL,30,no,1,11.0
-BUL-vs-POLICE,Daniel Jakony,POLICE,86,no,2,11.0
-BUL-vs-POLICE,Brian James Obedi,POLICE,94,yes,2,11.0
-KCCA-vs-BUHIMBA,Rogers Mugisha,KCCA,27,no,1,11.0
-MAROONS-vs-EXPRESS,Raymond Walugembe,MAROONS,26,no,1,11.0
-MAROONS-vs-EXPRESS,Emmanuel Obua,MAROONS,29,no,1,11.0
-MAROONS-vs-EXPRESS,Emmanuel Obua,MAROONS,39,no,1,11.0
-MAROONS-vs-EXPRESS,Brian Nkuubi,MAROONS,90,no,2,11.0
-MBARARA-vs-URA,Henry Kitegenyi,MBARARA,61,no,2,11.0
-LUGAZI-vs-VIPERS,Kiza Arafat Usama,VIPERS,8,no,1,11.0
-LUGAZI-vs-VIPERS,Junior Yunus Sentamu,VIPERS,74,no,2,11.0
-LUGAZI-vs-VIPERS,Ashiraf Mulindi,LUGAZI,89,no,2,11.0
-VILLA-vs-CALVARY,Aslam Ssemakula,Villa,5,no,1,11.0
-ENTEBBE-vs-KITARA,John Kokas Alou,ENTEBBE,34,no,1,11.0
-EXPRESS-vs-VILLA,Frank Ssebufu,Villa,15,no,1,12.0
-URA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,49,no,2,12.0
-NEC-vs-LUGAZI,Ronald Media Innocent,NEC,64,no,2,12.0
-POLICE-vs-KCCA,Brian James Obedi,POLICE,51,no,2,12.0
-POLICE-vs-KCCA,Bedia Djuma Ikamba,POLICE,64,no,2,12.0
-KITARA-vs-UPDF,Jimmy Kalema,KITARA,35,no,1,12.0
-KITARA-vs-UPDF,Crispus Asiki,KITARA,39,no,1,12.0
-KITARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,71,no,2,12.0
-CALVARY-vs-BUL,Abdul Karim Ndugwa,BUL,9,no,1,12.0
-BUHIMBA-vs-MAROONS,Derick Byabacwezi,BUHIMBA,51,no,2,12.0
-URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,2,no,1,13.0
-URA-vs-VIPERS,Gusto Wa Ilungo Mulongo,VIPERS,80,no,2,13.0
-URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,91,yes,2,13.0
-EXPRESS-vs-BUHIMBA,Mikidadi Ssenyonga,EXPRESS,21,no,1,13.0
-EXPRESS-vs-BUHIMBA,Edson Agondeze,BUHIMBA,25,no,1,13.0
-EXPRESS-vs-BUHIMBA,John Asiimwe,EXPRESS,27,no,1,13.0
-EXPRESS-vs-BUHIMBA,Henry Wamala,EXPRESS,78,no,2,13.0
-NEC-vs-KITARA,Joseph Seremba,NEC,28,no,1,13.0
-NEC-vs-KITARA,Dhata Joseph Stephen Lujang,NEC,38,no,1,13.0
-NEC-vs-KITARA,George Senkaaba,KITARA,52,no,2,13.0
-NEC-vs-KITARA,Wahab Gadafi,KITARA,75,no,2,13.0
-NEC-vs-KITARA,Emmanuel Kulanga,NEC,88,no,2,13.0
-NEC-vs-KITARA,Emmanuel Alex Wasswa,KITARA,90,no,2,13.0
-UPDF-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,47,yes,1,13.0
-POLICE-vs-CALVARY,Brian James Obedi,POLICE,74,no,2,13.0
-POLICE-vs-CALVARY,Umaru Kasumba,POLICE,89,no,2,13.0
-VIPERS-vs-POLICE,Milton Karisa,VIPERS,32,no,1,14.0
-VIPERS-vs-POLICE,Abdulkarim Watambala,VIPERS,41,no,1,14.0
-VIPERS-vs-POLICE,Chukwuma Odili,VIPERS,45,no,1,14.0
-VIPERS-vs-POLICE,Saidi Kyeyune,POLICE,49,no,2,14.0
-VIPERS-vs-POLICE,Kiza Arafat Usama,VIPERS,77,no,2,14.0
-KITARA-vs-EXPRESS,Patrick Henry Kaddu,KITARA,56,no,2,14.0
-VILLA-vs-MBARARA,Frank Ssebufu,Villa,6,no,1,14.0
-VILLA-vs-MBARARA,Hassan Mubiru,Villa,11,no,1,14.0
-VILLA-vs-MBARARA,Tonny Atukunda,Villa,29,no,1,14.0
-VILLA-vs-MBARARA,Aslam Ssemakula,Villa,36,no,1,14.0
-VILLA-vs-MBARARA,Najib Yiga,Villa,50,no,2,14.0
-VILLA-vs-MBARARA,Hassan Mubiru,Villa,55,no,2,14.0
-VILLA-vs-MBARARA,Clinton Davico Kamugisha,MBARARA,88,no,2,14.0
-BUHIMBA-vs-NEC,Ronald Media Innocent,NEC,14,no,1,14.0
-KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,11,no,1,14.0
-KCCA-vs-UPDF,Joel Sserunjogi,KCCA,30,no,1,14.0
-KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,51,no,2,14.0
-KCCA-vs-UPDF,Alpha Thiery Ssali,KCCA,91,yes,2,14.0
-LUGAZI-vs-BUL,Freedom Mungudit,LUGAZI,26,no,1,14.0
-LUGAZI-vs-BUL,Abdul Karim Ndugwa,BUL,46,no,2,14.0
-LUGAZI-vs-BUL,Paul Busolo,LUGAZI,83,no,2,14.0
-KCCA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,46,no,2,15.0
-UPDF-vs-BUL,Abdul Karim Ndugwa,BUL,35,no,1,15.0
-VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,2,no,1,15.0
-VIPERS-vs-BUHIMBA,Abdulkarim Watambala,VIPERS,15,no,1,15.0
-VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,38,no,1,15.0
-VIPERS-vs-BUHIMBA,Abubakali Walusimbi,VIPERS,61,no,2,15.0
-CALVARY-vs-KITARA,Crispus Asiki,KITARA,3,no,1,15.0
-MAROONS-vs-MBARARA,Marvin Busuulwa,MBARARA,46,no,2,15.0
-MAROONS-vs-MBARARA,Abel Michael Eturude,MAROONS,86,no,2,15.0
+game,player,team,minute,added_time,period,base_minute,stoppage,md
+LUGAZI-vs-CALVARY,Simon Peter Odeke,CALVARY,11,no,1,11,0,1.0
+LUGAZI-vs-CALVARY,Paul Wasswa,LUGAZI,19,no,1,19,0,1.0
+LUGAZI-vs-CALVARY,Sharif Saaka,LUGAZI,29,no,1,29,0,1.0
+LUGAZI-vs-CALVARY,Ashiraf Mulindi,LUGAZI,79,no,2,79,0,1.0
+KITARA-vs-KCCA,Emmanuel Alex Wasswa,KITARA,4,no,1,4,0,1.0
+KITARA-vs-KCCA,Sharifu Ssengendo,KCCA,83,no,2,83,0,1.0
+EXPRESS-vs-UPDF,Habert Asiimwe,EXPRESS,14,no,1,14,0,1.0
+ENTEBBE-vs-BUHIMBA,John Wesley kisaakye,BUHIMBA,13,no,1,13,0,1.0
+POLICE-vs-MBARARA,Abudshakur Ramsey Jemba,POLICE,26,no,1,26,0,1.0
+POLICE-vs-MBARARA,Reagan Matege,MBARARA,76,no,2,76,0,1.0
+BUL-vs-MAROONS,Ibrahim Mugulusi,BUL,37,no,1,37,0,2.0
+ENTEBBE-vs-LUGAZI,Freedom Mungudit,LUGAZI,24,no,1,24,0,2.0
+ENTEBBE-vs-LUGAZI,Issa Bugembe,ENTEBBE,63,no,2,63,0,2.0
+ENTEBBE-vs-LUGAZI,Fazil Tumwine,ENTEBBE,83,no,2,83,0,2.0
+POLICE-vs-EXPRESS,Umaru Kasumba,POLICE,28,no,1,28,0,2.0
+POLICE-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,46,yes,1,45,1,2.0
+POLICE-vs-EXPRESS,Bedia Djuma Ikamba,POLICE,77,no,2,77,0,2.0
+URA-vs-NEC,Ronald Media Innocent,NEC,10,no,1,10,0,2.0
+URA-vs-NEC,Moses Okabo Aliro,URA,49,no,2,49,0,2.0
+BUHIMBA-vs-CALVARY,Anwaru Mustafa Ntege,BUHIMBA,26,no,1,26,0,2.0
+BUHIMBA-vs-CALVARY,Swadik Moro,BUHIMBA,44,no,1,44,0,2.0
+MBARARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,68,no,2,68,0,2.0
+KCCA-vs-VILLA,Ivan Ahimbisibwe,KCCA,30,no,1,30,0,2.0
+KCCA-vs-VILLA,Najib Yiga,Villa,60,no,2,60,0,2.0
+KCCA-vs-VILLA,Umar Lutalo,KCCA,88,no,2,88,0,2.0
+MBARARA-vs-BUL,Seiri Arigumaho,BUL,35,no,1,35,0,3.0
+MBARARA-vs-BUL,Ian Amanya,MBARARA,39,no,1,39,0,3.0
+UPDF-vs-MAROONS,Dickson Niwamanya,MAROONS,14,no,1,14,0,3.0
+UPDF-vs-MAROONS,Ivan Mayanja,MAROONS,25,no,1,25,0,3.0
+UPDF-vs-MAROONS,Rashid Faridi,UPDF,53,no,2,53,0,3.0
+VILLA-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,28,no,1,28,0,3.0
+VILLA-vs-ENTEBBE,Andrew Otim,Villa,83,no,2,83,0,3.0
+BUHIMBA-vs-KITARA,Edson Agondeze,BUHIMBA,82,no,2,82,0,3.0
+NEC-vs-POLICE,Mustafa Kizza,NEC,3,no,1,3,0,3.0
+NEC-vs-POLICE,Dhata Joseph Stephen Lujang,nec,60,no,2,60,0,3.0
+NEC-vs-POLICE,Charles Bbaale,POLICE,85,no,2,85,0,3.0
+NEC-vs-POLICE,Umaru Kasumba,POLICE,93,yes,2,90,3,3.0
+BUL-vs-BUHIMBA,Ibrahim Mugulusi,BUL,17,no,1,17,0,4.0
+BUL-vs-BUHIMBA,Seiri Arigumaho,BUL,32,no,1,32,0,4.0
+BUL-vs-BUHIMBA,Jeromy Kirya,BUL,39,no,1,39,0,4.0
+EXPRESS-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,71,no,2,71,0,4.0
+KITARA-vs-MBARARA,Isaac Amutuhaire,KITARA,13,no,1,13,0,4.0
+KITARA-vs-MBARARA,Jimmy Kalema,KITARA,16,no,1,16,0,4.0
+KITARA-vs-MBARARA,Innocent Wafula Esimu,MBARARA,23,no,1,23,0,4.0
+KITARA-vs-MBARARA,Henry Kitegenyi,MBARARA,76,no,2,76,0,4.0
+KITARA-vs-MBARARA,Wahab Gadafi,KITARA,91,yes,2,90,1,4.0
+VILLA-VS-POLICE,Bedia Djuma Ikamba,POLICE,22,no,1,22,0,4.0
+VILLA-VS-POLICE,Geofrey Gagganga,Villa,70,no,2,70,0,4.0
+VILLA-VS-POLICE,Charles Lwanga,Villa,93,yes,2,90,3,4.0
+ENTEBBE-vs-NEC,Junior Samuel Kawawa,ENTEBBE,60,no,2,60,0,4.0
+POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,18,no,1,18,0,5.0
+POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,28,no,1,28,0,5.0
+POLICE-vs-MAROONS,Rogers Kiwanuka,MAROONS,42,no,1,42,0,5.0
+URA-vs-UPDF,Moses Okabo Aliro,URA,25,no,1,25,0,5.0
+URA-vs-UPDF,Samson Andrew Kigozi,UPDF,27,no,1,27,0,5.0
+URA-vs-UPDF,George Masembe,URA,45,no,1,45,0,5.0
+URA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,54,no,2,54,0,5.0
+URA-vs-UPDF,Moses Okabo Aliro,URA,77,no,2,77,0,5.0
+KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,10,no,1,10,0,5.0
+KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,48,yes,1,45,3,5.0
+KITARA-vs-LUGAZI,Yunusu Sibira,KITARA,51,no,2,51,0,5.0
+KITARA-vs-LUGAZI,Wahab Gadafi,KITARA,87,no,2,87,0,5.0
+BUHIMBA-vs-VILLA,Reagan Mpande,Villa,2,no,1,2,0,5.0
+BUHIMBA-vs-VILLA,Aslam Ssemakula,Villa,14,no,1,14,0,5.0
+BUHIMBA-vs-VILLA,Reagan Mpande,Villa,65,no,2,65,0,5.0
+KCCA-vs-CALVARY,Ivan Ahimbisibwe,KCCA,10,no,1,10,0,5.0
+KCCA-vs-CALVARY,Umar Lutalo,KCCA,13,no,1,13,0,5.0
+KCCA-vs-CALVARY,Shafik Nana Kwikiriza,KCCA,43,no,1,43,0,5.0
+KCCA-vs-CALVARY,Lawrence Olaboro,CALVARY,47,no,2,47,0,5.0
+KCCA-vs-CALVARY,Herbert Achayi,KCCA,63,no,2,63,0,5.0
+KCCA-vs-CALVARY,Stephen Oriokot,CALVARY,71,no,2,71,0,5.0
+ENTEBBE-vs-VIPERS,Abdulkarim Watambala,VIPERS,62,no,2,62,0,5.0
+MBARARA-vs-NEC,Allan Mugalu,NEC,54,no,2,54,0,5.0
+EXPRESS-vs-MBARARA,Abdulahi Rashid,EXPRESS,12,no,1,12,0,6.0
+EXPRESS-vs-MBARARA,Richard Basangwa,EXPRESS,25,no,1,25,0,6.0
+EXPRESS-vs-MBARARA,Muhamed Kagawa Ssenoga,EXPRESS,46,no,2,46,0,6.0
+EXPRESS-vs-MBARARA,Muhamed Kagawa Ssenoga,EXPRESS,72,no,2,72,0,6.0
+EXPRESS-vs-MBARARA,Gabriel Eragu,MBARARA,78,no,2,78,0,6.0
+UPDF-vs-POLICE,Deus Bukenya,POLICE,65,no,2,65,0,6.0
+UPDF-vs-POLICE,Rashid Faridi,UPDF,88,no,2,88,0,6.0
+UPDF-vs-POLICE,Derrick Maviiri,POLICE,89,no,2,89,0,6.0
+VILLA-vs-KITARA,Frank Ssebufu,Villa,65,no,2,65,0,6.0
+CALVARY-vs-ENTEBBE,Junior Samuel Kawawa,ENTEBBE,36,no,1,36,0,6.0
+CALVARY-vs-ENTEBBE,Hassan Ssenyonjo,ENTEBBE,49,no,2,49,0,6.0
+CALVARY-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,64,no,2,64,0,6.0
+CALVARY-vs-ENTEBBE,Muhammad Kyeyune,ENTEBBE,65,no,2,65,0,6.0
+CALVARY-vs-ENTEBBE,John Rogers,CALVARY,68,no,2,68,0,6.0
+CALVARY-vs-ENTEBBE,Lawrence Olaboro,CALVARY,71,no,2,71,0,6.0
+VIPERS-vs-KCCA,Allan Okello,VIPERS,32,no,1,32,0,6.0
+LUGAZI-vs-BUHIMBA,David Bagoole,LUGAZI,32,no,1,32,0,6.0
+LUGAZI-vs-BUHIMBA,Abdul Kalanzi,LUGAZI,41,no,1,41,0,6.0
+LUGAZI-vs-BUHIMBA,Swadik Moro,BUHIMBA,49,no,2,49,0,6.0
+LUGAZI-vs-BUHIMBA,Ayiko Richard (OG),BUHIMBA,51,no,2,51,0,6.0
+LUGAZI-vs-BUHIMBA,Freedom Mungudit,LUGAZI,75,no,2,75,0,6.0
+LUGAZI-vs-BUHIMBA,Freedom Mungudit,LUGAZI,79,no,2,79,0,6.0
+LUGAZI-vs-BUHIMBA,Dauson Mafumu,LUGAZI,85,no,2,85,0,6.0
+NEC-vs-BUL,Dhata Joseph Stephen Lujang,NEC,27,no,1,27,0,6.0
+NEC-vs-BUL,Jeromy Kirya,BUL,46,yes,1,45,1,6.0
+ENTEBBE-vs-POLICE,Lawrence Tezikya,POLICE,32,no,1,32,0,6.0
+ENTEBBE-vs-POLICE,Abudshakur Ramsey Jemba,POLICE,83,no,2,83,0,6.0
+CALVARY-vs-UPDF,Emmanuel Manu Ochen,UPDF,12,no,1,12,0,7.0
+KITARA-vs-BUL,Jimmy Kalema,KITARA,11,no,1,11,0,7.0
+KCCA-vs-URA,Ivan Ahimbisibwe,KCCA,16,no,1,16,0,7.0
+KCCA-vs-URA,Ivan Ahimbisibwe,KCCA,41,no,1,41,0,7.0
+KCCA-vs-URA,Joseph Ssemujju,URA,66,no,2,66,0,7.0
+VIPERS-vs-MAROONS,Derick Basoga (OG),VIPERS,1,no,1,1,0,7.0
+VIPERS-vs-MAROONS,Kiza Arafat Usama,VIPERS,8,no,1,8,0,7.0
+VIPERS-vs-MAROONS,Raymond Walugembe,MAROONS,57,no,2,57,0,7.0
+VILLA-vs-NEC,Najib Yiga,Villa,47,no,2,47,0,7.0
+VILLA-vs-NEC,Elivis Ngonde,Villa,87,no,2,87,0,7.0
+VILLA-vs-NEC,Daniel Shabene,NEC,90,no,2,90,0,7.0
+MAROONS-vs-NEC,Ivan Asaba,MAROONS,74,no,2,74,0,8.0
+MAROONS-vs-NEC,Marvin Kavuma,NEC,76,no,2,76,0,8.0
+VIPERS-vs-VILLA,Frank Ssebufu,Villa,67,no,2,67,0,8.0
+VIPERS-vs-VILLA,Kiza Arafat Usama,VIPERS,72,no,2,72,0,8.0
+MAROONS-vs-LUGAZI,Raymond Walugembe,MAROONS,1,no,1,1,0,8.0
+MAROONS-vs-LUGAZI,Jackson Nunda,MAROONS,34,no,1,34,0,8.0
+MAROONS-vs-LUGAZI,Ivan Asaba,MAROONS,87,no,2,87,0,8.0
+BUL-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,49,no,2,49,0,8.0
+BUL-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,58,no,2,58,0,8.0
+POLICE-vs-KITARA,Patrick Henry Kaddu,KITARA,11,no,1,11,0,8.0
+POLICE-vs-KITARA,Lawrence Tezikya,POLICE,63,no,2,63,0,8.0
+POLICE-vs-KITARA,Isaac Amutuhaire,KITARA,92,yes,2,90,2,8.0
+UPDF-vs-VILLA,Ibrahim Kasinde,Villa,65,no,2,65,0,8.0
+MBARARA-vs-KCCA,Herbert Achayi,KCCA,16,no,1,16,0,8.0
+MBARARA-vs-KCCA,Muhammed Kanyike,MBARARA,26,no,1,26,0,8.0
+MBARARA-vs-KCCA,Ivan Ahimbisibwe,KCCA,50,no,2,50,0,8.0
+URA-vs-BUHIMBA,Joseph Ssemujju,URA,31,no,1,31,0,8.0
+URA-vs-BUHIMBA,Nelson Senkatuka,URA,41,no,1,41,0,8.0
+URA-vs-BUHIMBA,Denis Luzige Kisiriko,URA,46,yes,1,45,1,8.0
+URA-vs-BUHIMBA,Martin Philip Opolot,BUHIMBA,55,no,2,55,0,8.0
+URA-vs-BUHIMBA,Edson Agondeze,BUHIMBA,59,no,2,59,0,8.0
+URA-vs-BUHIMBA,Fred Amaku,URA,70,no,2,70,0,8.0
+URA-vs-BUHIMBA,Fred Amaku,URA,74,no,2,74,0,8.0
+URA-vs-BUHIMBA,Fred Amaku,URA,83,no,2,83,0,8.0
+URA-vs-BUHIMBA,Charles Kyomuhendo,BUHIMBA,85,no,2,85,0,8.0
+URA-vs-BUHIMBA,Living Kabon,URA,90,no,2,90,0,8.0
+NEC-vs-CALVARY,CHARLES MOSES WAIBI,NEC,71,no,2,71,0,8.0
+EXPRESS-vs-VIPERS,Enock Ssebaggala,VIPERS,38,no,1,38,0,8.0
+EXPRESS-vs-VIPERS,Allan Okello,VIPERS,66,no,2,66,0,8.0
+EXPRESS-vs-VIPERS,Isaac Ogwang,VIPERS,68,no,2,68,0,8.0
+VIPERS-vs-UPDF,Milton Karisa,VIPERS,33,no,1,33,0,9.0
+VIPERS-vs-UPDF,Gusto Wa Ilungo Mulongo,VIPERS,37,no,1,37,0,9.0
+VIPERS-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,46,no,2,45,1,9.0
+VIPERS-vs-UPDF,Gusto Wa Ilungo Mulongo,VIPERS,47,no,2,45,2,9.0
+VIPERS-vs-UPDF,ROBIN KANE HNEY,VIPERS,56,no,2,56,0,9.0
+VIPERS-vs-UPDF,Moses Waiswa Ndhondhi,VIPERS,75,no,2,75,0,9.0
+POLICE-vs-BUHIMBA,Dennis Kalanzi,POLICE,10,no,1,10,0,9.0
+POLICE-vs-BUHIMBA,Umaru Kasumba,POLICE,41,no,1,41,0,9.0
+POLICE-vs-BUHIMBA,Saidi Kyeyune,POLICE,59,no,2,59,0,9.0
+POLICE-vs-BUHIMBA,Derrick Maviiri,POLICE,81,no,2,81,0,9.0
+MBARARA-vs-ENTEBBE,Muhammed Kanyike,MBARARA,72,no,2,72,0,9.0
+MBARARA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,79,no,2,79,0,9.0
+UPDF-vs-LUGAZI,Emmanuel Manu Ochen,UPDF,14,no,1,14,0,9.0
+UPDF-vs-LUGAZI,Joseph Janjali,UPDF,46,no,2,46,0,9.0
+NEC-vs-VIPERS,Mustafa Kizza,NEC,22,no,1,22,0,9.0
+NEC-vs-VIPERS,Milton Karisa,VIPERS,50,no,2,50,0,9.0
+EXPRESS-vs-CALVARY,Richard Basangwa,EXPRESS,26,no,1,26,0,9.0
+EXPRESS-vs-CALVARY,Muhamed Kagawa Ssenoga,EXPRESS,49,no,2,49,0,9.0
+EXPRESS-vs-CALVARY,Muhamed Kagawa Ssenoga,EXPRESS,55,no,2,55,0,9.0
+EXPRESS-vs-CALVARY,Habert Asiimwe,EXPRESS,75,no,2,75,0,9.0
+URA-vs-KITARA,Patrick Henry Kaddu,KITARA,2,no,1,2,0,9.0
+MAROONS-vs-VILLA,Ivan Mayanja,MAROONS,1,no,1,1,0,9.0
+BUL-vs-KCCA,George Kasonko,BUL,37,no,1,37,0,9.0
+BUL-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,57,no,2,57,0,9.0
+BUL-vs-KCCA,Alex Yiga,KCCA,91,yes,2,90,1,9.0
+BUHIMBA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,20,no,1,20,0,10.0
+BUHIMBA-vs-UPDF,Edson Agondeze,BUHIMBA,39,no,1,39,0,10.0
+BUHIMBA-vs-UPDF,Kitara Daniel,UPDF,60,no,2,60,0,10.0
+BUHIMBA-vs-UPDF,Edson Agondeze,BUHIMBA,68,no,2,68,0,10.0
+LUGAZI-vs-POLICE,Abdul Kalanzi,LUGAZI,34,no,1,34,0,10.0
+LUGAZI-vs-POLICE,Emmanuel Mugume,POLICE,70,no,2,70,0,10.0
+ENTEBBE-vs-EXPRESS,Noordin Saddic Bunjo,ENTEBBE,53,no,2,53,0,10.0
+ENTEBBE-vs-EXPRESS,Ambrose Kigozi,ENTEBBE,70,no,2,70,0,10.0
+VILLA-vs-URA,Missi Diego Semugera,Villa,22,no,1,22,0,10.0
+VILLA-vs-URA,Najib Yiga,Villa,47,no,2,47,0,10.0
+VILLA-vs-URA,Frank Mulimi,Villa,69,no,2,69,0,10.0
+KITARA-vs-MAROONS,Patrick Henry Kaddu,KITARA,1,no,1,1,0,10.0
+KITARA-vs-MAROONS,Patrick Henry Kaddu,KITARA,34,no,1,34,0,10.0
+KCCA-vs-NEC,Saidi Mayanja,KCCA,45,no,1,45,0,10.0
+KCCA-vs-NEC,Titus Ssematimba,NEC,52,no,2,52,0,10.0
+KCCA-vs-NEC,Saidi Mayanja,KCCA,87,no,2,87,0,10.0
+VIPERS-vs-BUL,Enock Ssebaggala,VIPERS,48,no,2,48,0,10.0
+VIPERS-vs-BUL,Jeromy Kirya,BUL,55,no,2,55,0,10.0
+VIPERS-vs-BUL,Abdulkarim Watambala,VIPERS,60,no,2,60,0,10.0
+BUL-vs-POLICE,Bedia Djuma Ikamba,POLICE,15,no,1,15,0,11.0
+BUL-vs-POLICE,Abdul Karim Ndugwa,BUL,30,no,1,30,0,11.0
+BUL-vs-POLICE,Daniel Jakony,POLICE,86,no,2,86,0,11.0
+BUL-vs-POLICE,Brian James Obedi,POLICE,94,yes,2,90,4,11.0
+KCCA-vs-BUHIMBA,Rogers Mugisha,KCCA,27,no,1,27,0,11.0
+MAROONS-vs-EXPRESS,Raymond Walugembe,MAROONS,26,no,1,26,0,11.0
+MAROONS-vs-EXPRESS,Emmanuel Obua,MAROONS,29,no,1,29,0,11.0
+MAROONS-vs-EXPRESS,Emmanuel Obua,MAROONS,39,no,1,39,0,11.0
+MAROONS-vs-EXPRESS,Brian Nkuubi,MAROONS,90,no,2,90,0,11.0
+MBARARA-vs-URA,Henry Kitegenyi,MBARARA,61,no,2,61,0,11.0
+LUGAZI-vs-VIPERS,Kiza Arafat Usama,VIPERS,8,no,1,8,0,11.0
+LUGAZI-vs-VIPERS,Junior Yunus Sentamu,VIPERS,74,no,2,74,0,11.0
+LUGAZI-vs-VIPERS,Ashiraf Mulindi,LUGAZI,89,no,2,89,0,11.0
+VILLA-vs-CALVARY,Aslam Ssemakula,Villa,5,no,1,5,0,11.0
+ENTEBBE-vs-KITARA,John Kokas Alou,ENTEBBE,34,no,1,34,0,11.0
+EXPRESS-vs-VILLA,Frank Ssebufu,Villa,15,no,1,15,0,12.0
+URA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,49,no,2,49,0,12.0
+NEC-vs-LUGAZI,Ronald Media Innocent,NEC,64,no,2,64,0,12.0
+POLICE-vs-KCCA,Brian James Obedi,POLICE,51,no,2,51,0,12.0
+POLICE-vs-KCCA,Bedia Djuma Ikamba,POLICE,64,no,2,64,0,12.0
+KITARA-vs-UPDF,Jimmy Kalema,KITARA,35,no,1,35,0,12.0
+KITARA-vs-UPDF,Crispus Asiki,KITARA,39,no,1,39,0,12.0
+KITARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,71,no,2,71,0,12.0
+CALVARY-vs-BUL,Abdul Karim Ndugwa,BUL,9,no,1,9,0,12.0
+BUHIMBA-vs-MAROONS,Derick Byabacwezi,BUHIMBA,51,no,2,51,0,12.0
+URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,2,no,1,2,0,13.0
+URA-vs-VIPERS,Gusto Wa Ilungo Mulongo,VIPERS,80,no,2,80,0,13.0
+URA-vs-VIPERS,Abdulkarim Watambala,VIPERS,91,yes,2,90,1,13.0
+EXPRESS-vs-BUHIMBA,Mikidadi Ssenyonga,EXPRESS,21,no,1,21,0,13.0
+EXPRESS-vs-BUHIMBA,Edson Agondeze,BUHIMBA,25,no,1,25,0,13.0
+EXPRESS-vs-BUHIMBA,John Asiimwe,EXPRESS,27,no,1,27,0,13.0
+EXPRESS-vs-BUHIMBA,Henry Wamala,EXPRESS,78,no,2,78,0,13.0
+NEC-vs-KITARA,Joseph Seremba,NEC,28,no,1,28,0,13.0
+NEC-vs-KITARA,Dhata Joseph Stephen Lujang,NEC,38,no,1,38,0,13.0
+NEC-vs-KITARA,George Senkaaba,KITARA,52,no,2,52,0,13.0
+NEC-vs-KITARA,Wahab Gadafi,KITARA,75,no,2,75,0,13.0
+NEC-vs-KITARA,Emmanuel Kulanga,NEC,88,no,2,88,0,13.0
+NEC-vs-KITARA,Emmanuel Alex Wasswa,KITARA,90,no,2,90,0,13.0
+UPDF-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,47,yes,1,45,2,13.0
+POLICE-vs-CALVARY,Brian James Obedi,POLICE,74,no,2,74,0,13.0
+POLICE-vs-CALVARY,Umaru Kasumba,POLICE,89,no,2,89,0,13.0
+VIPERS-vs-POLICE,Milton Karisa,VIPERS,32,no,1,32,0,14.0
+VIPERS-vs-POLICE,Abdulkarim Watambala,VIPERS,41,no,1,41,0,14.0
+VIPERS-vs-POLICE,Chukwuma Odili,VIPERS,45,no,1,45,0,14.0
+VIPERS-vs-POLICE,Saidi Kyeyune,POLICE,49,no,2,49,0,14.0
+VIPERS-vs-POLICE,Kiza Arafat Usama,VIPERS,77,no,2,77,0,14.0
+KITARA-vs-EXPRESS,Patrick Henry Kaddu,KITARA,56,no,2,56,0,14.0
+VILLA-vs-MBARARA,Frank Ssebufu,Villa,6,no,1,6,0,14.0
+VILLA-vs-MBARARA,Hassan Mubiru,Villa,11,no,1,11,0,14.0
+VILLA-vs-MBARARA,Tonny Atukunda,Villa,29,no,1,29,0,14.0
+VILLA-vs-MBARARA,Aslam Ssemakula,Villa,36,no,1,36,0,14.0
+VILLA-vs-MBARARA,Najib Yiga,Villa,50,no,2,50,0,14.0
+VILLA-vs-MBARARA,Hassan Mubiru,Villa,55,no,2,55,0,14.0
+VILLA-vs-MBARARA,Clinton Davico Kamugisha,MBARARA,88,no,2,88,0,14.0
+BUHIMBA-vs-NEC,Ronald Media Innocent,NEC,14,no,1,14,0,14.0
+KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,11,no,1,11,0,14.0
+KCCA-vs-UPDF,Joel Sserunjogi,KCCA,30,no,1,30,0,14.0
+KCCA-vs-UPDF,Sammy Raynald Ssebaduka,KCCA,51,no,2,51,0,14.0
+KCCA-vs-UPDF,Alpha Thiery Ssali,KCCA,91,yes,2,90,1,14.0
+LUGAZI-vs-BUL,Freedom Mungudit,LUGAZI,26,no,1,26,0,14.0
+LUGAZI-vs-BUL,Abdul Karim Ndugwa,BUL,46,no,2,46,0,14.0
+LUGAZI-vs-BUL,Paul Busolo,LUGAZI,83,no,2,83,0,14.0
+KCCA-vs-ENTEBBE,Ambrose Kigozi,ENTEBBE,46,no,2,45,1,15.0
+UPDF-vs-BUL,Abdul Karim Ndugwa,BUL,35,no,1,35,0,15.0
+VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,2,no,1,2,0,15.0
+VIPERS-vs-BUHIMBA,Abdulkarim Watambala,VIPERS,15,no,1,15,0,15.0
+VIPERS-vs-BUHIMBA,Milton Karisa,VIPERS,38,no,1,38,0,15.0
+VIPERS-vs-BUHIMBA,Abubakali Walusimbi,VIPERS,61,no,2,61,0,15.0
+CALVARY-vs-KITARA,Crispus Asiki,KITARA,3,no,1,3,0,15.0
+MAROONS-vs-MBARARA,Marvin Busuulwa,MBARARA,46,no,2,46,0,15.0
+MAROONS-vs-MBARARA,Abel Michael Eturude,MAROONS,86,no,2,86,0,15.0
