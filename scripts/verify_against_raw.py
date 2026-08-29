@@ -22,6 +22,10 @@ import re
 from collections import Counter
 from pathlib import Path
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+#: the compared columns deliberately exclude league/season: csvs/raw predates
+#: both, so they are used only to pick which slice of csvs/new to compare.
 FILES = {
     "goals": ("goalsNew.csv", "goals.csv",
               ["game", "player", "team", "min", "added_time", "md"], {"player"}),
@@ -55,13 +59,31 @@ def normalise(row, columns, name_columns):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--new", type=Path, default=Path("csvs/new"))
-    parser.add_argument("--raw", type=Path, default=Path("csvs/raw"))
+    parser.add_argument("--new", type=Path, default=PROJECT_ROOT / "csvs" / "new")
+    parser.add_argument("--raw", type=Path, default=PROJECT_ROOT / "csvs" / "raw")
     parser.add_argument("--md", type=int, nargs="*", default=None,
                         help="matchdays to compare (default: every matchday in csvs/new)")
+    parser.add_argument("--league", default=None,
+                        help="only compare this league, e.g. UPL")
+    parser.add_argument("--season", default=None,
+                        help="only compare this season, e.g. 2025/26")
     args = parser.parse_args(argv)
 
     extracted = {name: read_csv(args.new / files[0]) for name, files in FILES.items()}
+
+    # csvs/raw only ever held one competition, so a comparison is only meaningful
+    # against a single league and season out of the now multi-league extract.
+    def selected(row):
+        if args.league and (row.get("league") or "").upper() != args.league.upper():
+            return False
+        if args.season and (row.get("season") or "") != args.season.replace(".", "/"):
+            return False
+        return True
+
+    extracted = {name: [r for r in rows if selected(r)] for name, rows in extracted.items()}
+    if not any(extracted.values()):
+        raise SystemExit("no extracted rows match that league/season")
+
     matchdays = ({str(m) for m in args.md} if args.md
                  else {r["md"] for rows in extracted.values() for r in rows})
     games = {re.sub(r"\s+", " ", r["game"]).upper()

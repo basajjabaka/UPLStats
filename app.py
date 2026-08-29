@@ -2,6 +2,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 import folium as fl
 from folium.plugins import HeatMap
 from shiny import reactive
@@ -13,40 +14,165 @@ import matplotlib.pyplot as plt
 # css styling
 ui.tags.style(
     """
-    .headercontainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        background: #00008B;
-        border-radius: 0 0 15px 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        margin-bottom: 20px;
-    }
-
-    .logocontainer {
-        margin-right: 15px;
-        height: 100% !important;
-        padding: 10px;
-    }
-
-    .logocontainer img {
-        height: 50px;
-    }
-
-    .titlecontainer h2 {
-        color: white;
-        font-weight: bold;
-        font-size: 28px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        padding: 10px;
-        margin: 0;
-    }
-
     body {
         background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* clear the floating bar hanging over the top of the page */
+        padding-top: 108px !important;
     }
+
+    /* ---------------------------------------------------------------------
+       Floating navbar: hangs inset from every edge, then tucks up on scroll
+       --------------------------------------------------------------------- */
+    .navbar.fixed-top {
+        background: #F5901F !important;
+        border: none;
+        border-radius: 9999px;
+        margin: 20px 28px;
+        width: auto;
+        padding: 6px 14px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+        transition: margin 0.25s ease, box-shadow 0.25s ease, border-radius 0.25s ease;
+    }
+
+    .navbar.fixed-top.navbar-scrolled {
+        margin: 8px 16px;
+        border-radius: 9999px;
+        box-shadow: 0 14px 38px rgba(15, 23, 42, 0.30);
+    }
+
+    .navbar.fixed-top .navbar-brand {
+        color: #ffffff !important;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        font-size: 18px;
+        padding-left: 18px;
+    }
+
+    .navbar.fixed-top .nav-link {
+        color: rgba(255, 255, 255, 0.94) !important;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 9px 16px !important;
+        border-radius: 9999px;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .navbar.fixed-top .nav-link:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .navbar.fixed-top .nav-link.active {
+        background: #ffffff;
+        color: #D97706 !important;
+    }
+
+    /* league + season pickers sitting where the reference bar has its CTA */
+    .navbar-switcher {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #ffffff;
+        border-radius: 9999px;
+        padding: 4px 8px;
+        margin-left: 8px;
+    }
+
+    .navbar-switcher .shiny-input-container {
+        margin-bottom: 0 !important;
+        width: auto;
+    }
+
+    .navbar-switcher select,
+    .navbar-switcher .selectize-input {
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        color: #D97706 !important;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        min-height: 30px !important;
+        padding: 2px 8px !important;
+    }
+
+    @media (max-width: 900px) {
+        body { padding-top: 150px !important; }
+        .navbar.fixed-top { border-radius: 20px; }
+        .navbar-switcher { margin: 8px 0 4px 0; }
+    }
+
+    /* ---------------------------------------------------------------------
+       Landing gate
+       --------------------------------------------------------------------- */
+    .landing-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: linear-gradient(135deg, #0F172A 0%, #1a5f7a 55%, #D97706 100%);
+    }
+
+    .landing-card {
+        width: 100%;
+        max-width: 520px;
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+        text-align: center;
+    }
+
+    .landing-eyebrow {
+        color: #F5901F;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .landing-title {
+        font-size: 30px;
+        font-weight: 800;
+        color: #0F172A;
+        margin: 0 0 10px 0;
+    }
+
+    .landing-sub {
+        color: #64748B;
+        font-size: 15px;
+        margin-bottom: 26px;
+    }
+
+    .landing-fields {
+        display: flex;
+        gap: 16px;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+
+    .landing-fields > * { flex: 1; }
+
+    .landing-button {
+        width: 100%;
+        background: #F5901F !important;
+        border: none !important;
+        color: #ffffff !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border-radius: 9999px !important;
+        padding: 13px 24px !important;
+    }
+
+    .landing-button:hover { background: #D97706 !important; }
 
     .modebar {
         display: none !important;
@@ -197,19 +323,6 @@ ui.tags.style(
 
 #import transformed csvs
 inputDIR = Path(__file__).resolve().parent / "csvs/transformed"
-goalsDF = pd.read_csv(inputDIR / "transformed_goals.csv")
-cautionsDF = pd.read_csv(inputDIR / "transformed_cautions.csv")
-subsDF = pd.read_csv(inputDIR / "transformed_subs.csv")
-
-# match-level tables rebuilt from the goal events by wrangle.py
-matchesDF = pd.read_csv(inputDIR / "transformed_matches.csv")
-teamMatchesDF = pd.read_csv(inputDIR / "transformed_team_matches.csv")
-comebacksDF = pd.read_csv(inputDIR / "transformed_comebacks.csv")
-
-# Convert all team names to UPPERCASE
-goalsDF['team'] = goalsDF['team'].str.upper()
-cautionsDF['team'] = cautionsDF['team'].str.upper()
-subsDF['team'] = subsDF['team'].str.upper()
 
 # Which side of the "HOME-vs-AWAY" key each event belongs to
 def add_venue(df):
@@ -218,8 +331,22 @@ def add_venue(df):
     df['venue'] = np.where(df['team'].astype(str).str.upper() == home, 'home', 'away')
     return df
 
-for _df in (goalsDF, cautionsDF, subsDF):
-    add_venue(_df)
+
+def load_events(name):
+    """Read one transformed event table, upper-casing teams and tagging venue."""
+    df = pd.read_csv(inputDIR / f"transformed_{name}.csv")
+    df['team'] = df['team'].astype(str).str.upper()
+    return add_venue(df)
+
+
+ALL_GOALS = load_events("goals")
+ALL_CAUTIONS = load_events("cautions")
+ALL_SUBS = load_events("subs")
+
+# match-level tables rebuilt from the goal events by wrangle.py
+ALL_MATCHES = pd.read_csv(inputDIR / "transformed_matches.csv")
+ALL_TEAM_MATCHES = pd.read_csv(inputDIR / "transformed_team_matches.csv")
+ALL_COMEBACKS = pd.read_csv(inputDIR / "transformed_comebacks.csv")
 
 # Team color mapping
 TEAM_COLORS = {
@@ -241,15 +368,118 @@ TEAM_COLORS = {
     "MBARARA": "#1E90FF"      # Dodger Blue
 }
 
-# get unique teams and matchdays
-all_teams = set()
-for col, df in [('team', goalsDF), ('team', cautionsDF), ('team', subsDF)]:
-    teams = df[col].dropna().astype(str).unique()
-    all_teams.update(teams)
+# -----------------------------------------------------------------------------
+# Which competitions are on offer
+# -----------------------------------------------------------------------------
+# Only league/season pairs that actually carry rows are listed, so a season
+# folder that has been created but not yet filled never reaches the picker.
 
-all_teams = sorted([t for t in all_teams if t.lower() != 'nan' and t.strip() != ''])
+def _competitions():
+    pairs = set()
+    for df in (ALL_GOALS, ALL_CAUTIONS, ALL_SUBS):
+        pairs.update(zip(df['league'].astype(str), df['season'].astype(str)))
+    return pairs
 
-all_matchdays = sorted([int(md) for md in goalsDF['md'].unique() if pd.notna(md)])
+
+LEAGUE_SEASONS = {}
+for _league, _season in sorted(_competitions()):
+    LEAGUE_SEASONS.setdefault(_league, []).append(_season)
+for _league in LEAGUE_SEASONS:                      # newest season first
+    LEAGUE_SEASONS[_league] = sorted(LEAGUE_SEASONS[_league], reverse=True)
+
+ALL_LEAGUES = sorted(LEAGUE_SEASONS)
+DEFAULT_LEAGUE = ALL_LEAGUES[0] if ALL_LEAGUES else ""
+DEFAULT_SEASON = LEAGUE_SEASONS[DEFAULT_LEAGUE][0] if DEFAULT_LEAGUE else ""
+
+
+def seasons_for(league):
+    return LEAGUE_SEASONS.get(league, [])
+
+
+# -----------------------------------------------------------------------------
+# Reactive slices: everything below reads the selected competition, never the
+# full tables, so switching league or season redraws the whole dashboard.
+# -----------------------------------------------------------------------------
+
+def _chosen(name, fallback):
+    """Read a select that may not exist yet, without silencing the output.
+
+    Reading an unset input raises SilentException, which would blank every
+    dependent output on the very first flush.
+    """
+    value = getattr(input, name)
+    return (value() or fallback) if value.is_set() else fallback
+
+
+def _slice(df):
+    league = _chosen("league", DEFAULT_LEAGUE)
+    season = _chosen("season", DEFAULT_SEASON)
+    return df[(df['league'] == league) & (df['season'] == season)]
+
+
+@reactive.calc
+def goals_df():
+    return _slice(ALL_GOALS)
+
+
+@reactive.calc
+def cautions_df():
+    return _slice(ALL_CAUTIONS)
+
+
+@reactive.calc
+def subs_df():
+    return _slice(ALL_SUBS)
+
+
+@reactive.calc
+def matches_df():
+    return _slice(ALL_MATCHES)
+
+
+@reactive.calc
+def team_matches_df():
+    return _slice(ALL_TEAM_MATCHES)
+
+
+@reactive.calc
+def comebacks_df():
+    return _slice(ALL_COMEBACKS)
+
+
+@reactive.calc
+def teams():
+    found = set()
+    for df in (goals_df(), cautions_df(), subs_df()):
+        found.update(df['team'].dropna().astype(str).unique())
+    return sorted(t for t in found if t.lower() != 'nan' and t.strip() != '')
+
+
+@reactive.calc
+def matchdays():
+    found = set()
+    for df in (goals_df(), cautions_df(), subs_df()):
+        found.update(int(md) for md in df['md'].unique() if pd.notna(md))
+    return sorted(found)
+
+
+def selected_md():
+    """The chosen matchday as an int, or None before the select is populated."""
+    raw = _chosen("selected_matchday", None)
+    available = matchdays()
+    if raw and int(raw) in available:
+        return int(raw)
+    # the select still holds the previous competition's matchday for one tick
+    return available[0] if available else None
+
+
+def selected_team():
+    """The chosen team, or None before the select is populated."""
+    raw = _chosen("selected_team", None)
+    available = teams()
+    if raw in available:
+        return raw
+    return available[0] if available else None
 
 # Helper function for team-colored headers
 def get_team_header_style(team):
@@ -274,7 +504,7 @@ def get_caution_color(row):
         return 'not recorded'
     return caution
 
-cautionsDF['caution_display'] = cautionsDF.apply(get_caution_color, axis=1)
+ALL_CAUTIONS['caution_display'] = ALL_CAUTIONS.apply(get_caution_color, axis=1)
 
 # Caution color mapping
 CAUTION_COLORS = {
@@ -309,6 +539,23 @@ def minute_bucket(base_minute, stoppage):
         return '76-90'
     return '90+'
 
+def empty_figure(message="No data recorded for this season yet"):
+    """A blank plot carrying an explanation.
+
+    A season folder can exist before any match reports land in it, so every
+    chart needs something sensible to show for an empty selection.
+    """
+    fig = go.Figure()
+    fig.add_annotation(text=message, showarrow=False,
+                       xref="paper", yref="paper", x=0.5, y=0.5,
+                       font=dict(size=14, color="#888"))
+    fig.update_layout(
+        xaxis=dict(visible=False), yaxis=dict(visible=False),
+        plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)'
+    )
+    return fig
+
+
 def bucket_counts(df):
     """Count events per time bucket, keeping empty buckets so the axis is stable."""
     labels = [minute_bucket(b, s) for b, s in zip(df['base_minute'], df['stoppage'])]
@@ -328,7 +575,7 @@ def league_table(venue=None, upto_md=None, md=None, form_games=5):
     `upto_md` gives the cumulative table after that matchday; `md` gives that
     single matchday only.
     """
-    data = teamMatchesDF
+    data = team_matches_df()
     if venue is not None:
         data = data[data['venue'] == venue]
     if upto_md is not None:
@@ -366,7 +613,8 @@ def league_table(venue=None, upto_md=None, md=None, form_games=5):
 
 def results_table(md):
     """Every scoreline played on one matchday."""
-    played = matchesDF[matchesDF['md'] == md].sort_values('game')
+    data = matches_df()
+    played = data[data['md'] == md].sort_values('game') if md is not None else data.iloc[0:0]
     if played.empty:
         return pd.DataFrame(columns=['Home', 'Score', 'Away'])
     return pd.DataFrame({
@@ -378,47 +626,158 @@ def results_table(md):
 SOURCE_NOTE = ("Scorelines are reconstructed from the recorded goal events, so a "
                "match whose goals are missing from the source data shows as 0-0.")
 
+# Both counters read the reactive slices, so they are only valid inside a render
+# function or another reactive context.
+def _unique_games(column, value):
+    found = set()
+    for df in (goals_df(), cautions_df(), subs_df()):
+        found.update(df[df[column] == value]['game'].dropna().str.upper().unique())
+    return found
+
 # Helper function to count matches for a team across all dataframes
 def count_team_matches(team):
     """Count unique games involving a team across all dataframes"""
-    games_in_goals = set(goalsDF[goalsDF['team'] == team]['game'].dropna().str.upper().unique())
-    games_in_cautions = set(cautionsDF[cautionsDF['team'] == team]['game'].dropna().str.upper().unique())
-    games_in_subs = set(subsDF[subsDF['team'] == team]['game'].dropna().str.upper().unique())
-    all_games = games_in_goals | games_in_cautions | games_in_subs
-    return len(all_games)
+    return len(_unique_games('team', team))
 
 # Helper function to count matches in a matchday
 def count_matchday_games(md):
     """Count unique games in a matchday"""
-    games_in_goals = set(goalsDF[goalsDF['md'] == md]['game'].dropna().str.upper().unique())
-    games_in_cautions = set(cautionsDF[cautionsDF['md'] == md]['game'].dropna().str.upper().unique())
-    games_in_subs = set(subsDF[subsDF['md'] == md]['game'].dropna().str.upper().unique())
-    all_games = games_in_goals | games_in_cautions | games_in_subs
-    return len(all_games)
+    return 0 if md is None else len(_unique_games('md', md))
 
-# Header
-with ui.div(class_="headercontainer"):
-    # with ui.div(class_="logocontainer"):
-    #     ui.img(src="https://lh3.googleusercontent.com/pw/AP1GczO8jLa3k1wKyHVCS02hp3FRiHo", alt="UPL Logo")
-    with ui.div(class_="titlecontainer"):
-        ui.h2("#UPL Midseason Statistics Dashboard 2025/26")
-
-# Main navigation
-# ui.page_opts(
-#     title="#UPL Midseason Stats",
-#     fillable=True,
-# )
-
-# Add favicon
+# Head assets: favicon, Tailwind, and the scroll listener that tightens the bar.
+#
+# Tailwind's preflight is switched off on purpose. Shiny's cards, pills, tables
+# and form controls are Bootstrap components, and preflight would strip their
+# styling out from under them. Utilities still work; only the global reset is off.
 ui.tags.head(
     ui.tags.link(
         rel="icon",
         type="image/png",
         href="https://lh3.googleusercontent.com/pw/AP1GczO8jLa3k1wKyHVCS02hp3FRiHo"
-    )
+    ),
+    ui.tags.script(src="https://cdn.tailwindcss.com"),
+    ui.tags.script(
+        """
+        if (window.tailwind) {
+            tailwind.config = {
+                corePlugins: { preflight: false },
+                theme: { extend: { colors: {
+                    brand: { DEFAULT: '#F5901F', dark: '#D97706', deep: '#0F172A' }
+                } } }
+            };
+        }
+        """
+    ),
+    ui.tags.script(
+        """
+        // Floating bar: hangs below the top edge, then tucks in on scroll.
+        document.addEventListener('DOMContentLoaded', function () {
+            var onScroll = function () {
+                var bar = document.querySelector('.navbar');
+                if (bar) bar.classList.toggle('navbar-scrolled', window.scrollY > 20);
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        });
+        """
+    ),
 )
 
-with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bottom"):
+
+# -----------------------------------------------------------------------------
+# Landing gate: pick a league, then a season, before the dashboard is usable.
+# -----------------------------------------------------------------------------
+
+entered = reactive.value(False)
+
+
+@render.ui
+def landing_overlay():
+    """Full-screen chooser, shown until a competition has been picked.
+
+    It deliberately does not read its own selects: they do not exist on the
+    first paint, and reading an unset input would suppress the whole output and
+    leave the gate invisible.  _landing_seasons keeps the season list current
+    after that.
+    """
+    if entered():
+        return None
+
+    league = DEFAULT_LEAGUE
+    return ui.tags.div(
+        {"class": "landing-overlay"},
+        ui.tags.div(
+            {"class": "landing-card"},
+            ui.tags.p({"class": "landing-eyebrow"}, "Football Statistics"),
+            ui.tags.h1({"class": "landing-title"}, "Match Report Dashboard"),
+            ui.tags.p(
+                {"class": "landing-sub"},
+                "Choose a competition and a season to explore goals, discipline, "
+                "substitutions and form."
+            ),
+            ui.tags.div(
+                {"class": "landing-fields"},
+                ui.input_select(
+                    "landing_league", "League",
+                    choices={code: code for code in ALL_LEAGUES},
+                    selected=league,
+                ),
+                ui.input_select(
+                    "landing_season", "Season",
+                    choices={s: s for s in seasons_for(league)},
+                    selected=(seasons_for(league)[0] if seasons_for(league) else None),
+                ),
+            ),
+            ui.input_action_button("enter_dashboard", "View dashboard",
+                                   class_="landing-button"),
+        ),
+    )
+
+
+@reactive.effect
+@reactive.event(input.landing_league)
+def _landing_seasons():
+    """Keep the overlay's season list in step with the league picked above it."""
+    options = seasons_for(input.landing_league())
+    ui.update_select("landing_season",
+                     choices={s: s for s in options},
+                     selected=options[0] if options else None)
+
+
+@reactive.effect
+@reactive.event(input.enter_dashboard)
+def _enter_dashboard():
+    """Copy the overlay's choice onto the navbar selects, then step aside.
+
+    The navbar selects are the single source of truth: every reactive slice
+    reads input.league()/input.season(), never the landing inputs.
+    """
+    league = input.landing_league() or DEFAULT_LEAGUE
+    season = input.landing_season() or (seasons_for(league)[0] if seasons_for(league) else "")
+    ui.update_select("league", choices={c: c for c in ALL_LEAGUES}, selected=league)
+    ui.update_select("season", choices={s: s for s in seasons_for(league)}, selected=season)
+    entered.set(True)
+
+
+@reactive.effect
+@reactive.event(input.league)
+def _navbar_seasons():
+    """Switching league in the navbar re-offers that league's seasons."""
+    options = seasons_for(input.league())
+    if not options:
+        return
+    with reactive.isolate():
+        current = _chosen("season", None)
+    ui.update_select("season",
+                     choices={s: s for s in options},
+                     selected=current if current in options else options[0])
+
+
+with ui.navset_bar(
+    title="FOOTBALL STATS",
+    id="page",
+    navbar_options=ui.navbar_options(position="fixed-top", theme="dark", bg="#F5901F"),
+):
     
     # =============================================================================
     # PAGE 1: HALF-SEASON OVERVIEW
@@ -430,17 +789,25 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                 # Key metrics row
                 with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 20px 0;"):
                     with ui.div(class_="stat-card goals"):
-                        ui.h3(str(len(goalsDF)))
+                        @render.text
+                        def total_goals_count():
+                            return str(len(goals_df()))
                         ui.p("Total Goals")
                     with ui.div(class_="stat-card cards"):
-                        ui.h3(str(len(cautionsDF[cautionsDF['caution'] == 'yellow'])))
-                        ui.p("Yellow Cards")
+                        @render.text
+                        def total_cards_count():
+                            return str(len(cautions_df()))
+                        ui.p("Cards")
                     with ui.div(class_="stat-card subs"):
-                        ui.h3(str(len(subsDF)))
+                        @render.text
+                        def total_subs_count():
+                            return str(len(subs_df()))
                         ui.p("Substitutions")
                     with ui.div(class_="stat-card matches"):
-                        ui.h3(str(len(all_matchdays)))
-                        ui.p("Matchdays")
+                        @render.text
+                        def total_matches_count():
+                            return str(len(matches_df()))
+                        ui.p("Matches")
 
                 # Charts row 1
                 with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -448,7 +815,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Goals per Team", class_="overview-card-header")
                         @render_plotly
                         def goals_by_team():
-                            team_goals = goalsDF.groupby('team').size().reset_index(name='goals')
+                            team_goals = goals_df().groupby('team').size().reset_index(name='goals')
                             team_goals = team_goals.sort_values('goals', ascending=True)
                             # Map team colors
                             team_goals['color'] = team_goals['team'].map(TEAM_COLORS)
@@ -473,7 +840,9 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Cards Distribution", class_="overview-card-header")
                         @render_plotly
                         def cards_distribution():
-                            card_counts = cautionsDF.groupby('caution_display').size().reset_index(name='count')
+                            if cautions_df().empty:
+                                return empty_figure()
+                            card_counts = cautions_df().groupby('caution_display').size().reset_index(name='count')
                             fig = px.pie(
                                 card_counts, 
                                 values='count', 
@@ -495,7 +864,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Goals by Matchday", class_="overview-card-header")
                         @render_plotly
                         def goals_by_matchday():
-                            md_goals = goalsDF.groupby('md').size().reset_index(name='goals')
+                            md_goals = goals_df().groupby('md').size().reset_index(name='goals')
                             fig = px.line(
                                 md_goals, 
                                 x='md', 
@@ -515,7 +884,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Goals by Period (Half)", class_="overview-card-header")
                         @render_plotly
                         def goals_by_period():
-                            period_goals = goalsDF.groupby('period').size().reset_index(name='goals')
+                            period_goals = goals_df().groupby('period').size().reset_index(name='goals')
                             period_goals['period'] = period_goals['period'].map({1: 'First Half', 2: 'Second Half'})
                             colors = ['#3498db', '#e74c3c']
                             fig = px.bar(
@@ -539,7 +908,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Top 15 Goal Scorers", class_="overview-card-header")
                         @render.table
                         def top_scorers():
-                            scorer_goals = goalsDF.groupby(['player', 'team']).size().reset_index(name='goals')
+                            scorer_goals = goals_df().groupby(['player', 'team']).size().reset_index(name='goals')
                             scorer_goals = scorer_goals.sort_values('goals', ascending=False).head(15)
                             scorer_goals.columns = ['Player', 'Team', 'Goals']
                             return scorer_goals
@@ -550,7 +919,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Cards per Team", class_="overview-card-header")
                         @render_plotly
                         def cards_by_team():
-                            team_cards = cautionsDF.groupby('team').size().reset_index(name='cards')
+                            team_cards = cautions_df().groupby('team').size().reset_index(name='cards')
                             team_cards = team_cards.sort_values('cards', ascending=True)
                             fig = px.bar(
                                 team_cards, 
@@ -575,7 +944,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             # Standard football time buckets. Stoppage time gets its
                             # own bucket at the end of each half instead of being
                             # folded into the minutes that follow it.
-                            counts = bucket_counts(goalsDF)
+                            counts = bucket_counts(goals_df())
                             counts['half'] = ['First Half'] * 4 + ['Second Half'] * 4
                             fig = px.bar(
                                 counts,
@@ -600,7 +969,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         @render_plotly
                         def subs_timing():
                             fig = px.histogram(
-                                subsDF, 
+                                subs_df(), 
                                 x='minute',
                                 nbins=15,
                                 title='Substitutions by Minute of Match',
@@ -618,10 +987,10 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         @render_plotly
                         def goals_vs_cards():
                             team_stats = pd.DataFrame({
-                                'team': all_teams
+                                'team': teams()
                             })
-                            team_goals = goalsDF.groupby('team').size().reset_index(name='goals')
-                            team_cards = cautionsDF.groupby('team').size().reset_index(name='cards')
+                            team_goals = goals_df().groupby('team').size().reset_index(name='goals')
+                            team_cards = cautions_df().groupby('team').size().reset_index(name='cards')
                             team_stats = team_stats.merge(team_goals, on='team', how='left')
                             team_stats = team_stats.merge(team_cards, on='team', how='left')
                             team_stats = team_stats.fillna(0)
@@ -658,7 +1027,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render_plotly
                         def points_from_losing():
-                            data = comebacksDF.sort_values('points_from_losing')
+                            data = comebacks_df().sort_values('points_from_losing')
                             fig = px.bar(
                                 data, x='points_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -680,7 +1049,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render_plotly
                         def points_dropped_from_winning():
-                            data = comebacksDF.sort_values('points_dropped_from_winning')
+                            data = comebacks_df().sort_values('points_dropped_from_winning')
                             fig = px.bar(
                                 data, x='points_dropped_from_winning', y='team',
                                 orientation='h',
@@ -704,7 +1073,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render_plotly
                         def wins_from_losing():
-                            data = comebacksDF.sort_values('wins_from_losing')
+                            data = comebacks_df().sort_values('wins_from_losing')
                             fig = px.bar(
                                 data, x='wins_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -725,7 +1094,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render_plotly
                         def losses_from_winning():
-                            data = comebacksDF.sort_values('losses_from_winning')
+                            data = comebacks_df().sort_values('losses_from_winning')
                             fig = px.bar(
                                 data, x='losses_from_winning', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -747,7 +1116,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render.table
                         def comebacks_summary():
-                            table = comebacksDF.copy()
+                            table = comebacks_df().copy()
                             table = table.sort_values(
                                 ['points_from_losing', 'wins_from_losing'],
                                 ascending=False)
@@ -769,22 +1138,37 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
         with ui.layout_sidebar():
             with ui.sidebar():
                 ui.h5("Filter by Matchday")
-                ui.input_select(
-                    "selected_matchday", 
-                    "Select Matchday:",
-                    choices={str(md): f"Matchday {md}" for md in all_matchdays},
-                    selected=str(all_matchdays[0]) if all_matchdays else None
-                )
+                ui.input_select("selected_matchday", "Select Matchday:", choices={})
+
+                @reactive.effect
+                def _refresh_matchdays():
+                    """Repopulate the matchday list whenever the competition changes.
+
+                    The current value is read in isolation: depending on the very
+                    input this effect writes would make it retrigger itself.
+                    """
+                    available = matchdays()
+                    with reactive.isolate():
+                        current = _chosen("selected_matchday", None)
+                    ui.update_select(
+                        "selected_matchday",
+                        choices={str(md): f"Matchday {md}" for md in available},
+                        selected=(current if current in {str(m) for m in available}
+                                  else (str(available[0]) if available else None)),
+                    )
+
                 ui.hr()
                 ui.h5("Matchday Statistics")
                 @render.text
                 def matchday_stats():
                     """Display summary statistics for selected matchday"""
-                    md = float(input.selected_matchday())
-                    md_goals = len(goalsDF[goalsDF['md'] == md])
-                    md_cards = len(cautionsDF[cautionsDF['md'] == md])
-                    md_subs = len(subsDF[subsDF['md'] == md])
-                    md_matches = count_matchday_games(int(md))
+                    md = selected_md()
+                    if md is None:
+                        return "No matchdays in this season yet."
+                    md_goals = len(goals_df()[goals_df()['md'] == md])
+                    md_cards = len(cautions_df()[cautions_df()['md'] == md])
+                    md_subs = len(subs_df()[subs_df()['md'] == md])
+                    md_matches = count_matchday_games(md)
                     return f"Goals: {md_goals} | Cards: {md_cards} | Subs: {md_subs} | Matches: {md_matches}"
             
             with ui.navset_pill(id="matchday_tab"):
@@ -794,25 +1178,25 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.div(class_="stat-card goals"):
                             @render.text
                             def md_goals_count():
-                                md_goals = len(goalsDF[goalsDF['md'] == float(input.selected_matchday())])
+                                md_goals = len(goals_df()[goals_df()['md'] == selected_md()])
                                 return str(md_goals)
                             ui.p("Goals")
                         with ui.div(class_="stat-card cards"):
                             @render.text
                             def md_cards_count():
-                                md_cards = len(cautionsDF[cautionsDF['md'] == float(input.selected_matchday())])
+                                md_cards = len(cautions_df()[cautions_df()['md'] == selected_md()])
                                 return str(md_cards)
                             ui.p("Cards")
                         with ui.div(class_="stat-card subs"):
                             @render.text
                             def md_subs_count():
-                                md_subs = len(subsDF[subsDF['md'] == float(input.selected_matchday())])
+                                md_subs = len(subs_df()[subs_df()['md'] == selected_md()])
                                 return str(md_subs)
                             ui.p("Substitutions")
                         with ui.div(class_="stat-card matches"):
                             @render.text
                             def md_matches_count():
-                                return str(count_matchday_games(int(input.selected_matchday())))
+                                return str(count_matchday_games(selected_md()))
                             ui.p("Matches")
 
                     with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -820,17 +1204,25 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             ui.tags.div("Goals Distribution by Minute", class_="overview-card-header")
                             @render_plotly
                             def md_goals_timeline():
-                                md_data = goalsDF[goalsDF['md'] == float(input.selected_matchday())]
+                                md_data = goals_df()[goals_df()['md'] == selected_md()].copy()
+                                if md_data.empty:
+                                    return empty_figure("No goals recorded on this matchday")
+                                # period is 1/2, and a discrete colour map only
+                                # applies to a categorical column
+                                md_data['half'] = md_data['period'].map(
+                                    {1: 'First Half', 2: 'Second Half'})
                                 fig = px.scatter(
                                     md_data,
                                     x='minute',
                                     y='game',
-                                    size='minute',
                                     hover_data=['player', 'team'],
-                                    color='period',
-                                    color_discrete_map={1: '#3498db', 2: '#e74c3c'},
+                                    color='half',
+                                    color_discrete_map={'First Half': '#3498db',
+                                                        'Second Half': '#e74c3c'},
+                                    labels={'minute': 'Minute', 'game': '', 'half': ''},
                                     title=f'Goal Scorers Timeline - Matchday {input.selected_matchday()}'
                                 )
+                                fig.update_traces(marker=dict(size=12))
                                 fig.update_layout(
                                     plot_bgcolor='rgba(0,0,0,0)',
                                     paper_bgcolor='rgba(0,0,0,0)'
@@ -841,7 +1233,9 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             ui.tags.div("Cards by Type", class_="overview-card-header")
                             @render_plotly
                             def md_cards_pie():
-                                md_cards = cautionsDF[cautionsDF['md'] == float(input.selected_matchday())]
+                                md_cards = cautions_df()[cautions_df()['md'] == selected_md()]
+                                if md_cards.empty:
+                                    return empty_figure("No cards on this matchday")
                                 card_type_counts = md_cards['caution_display'].value_counts().reset_index()
                                 card_type_counts.columns = ['type', 'count']
                                 fig = px.pie(
@@ -863,7 +1257,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                             ui.tags.div("Matchday Goalscorers", class_="overview-card-header")
                             @render.table
                             def md_scorers_table():
-                                md_data = goalsDF[goalsDF['md'] == float(input.selected_matchday())][['game', 'player', 'team', 'minute', 'period']]
+                                md_data = goals_df()[goals_df()['md'] == selected_md()][['game', 'player', 'team', 'minute', 'period']]
                                 md_data = md_data.sort_values('minute')
                                 md_data.columns = ['Match', 'Player', 'Team', 'Minute', 'Half']
                                 return md_data
@@ -879,7 +1273,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
 
                             @render.table
                             def md_results_table():
-                                return results_table(int(input.selected_matchday()))
+                                return results_table(selected_md())
 
                             ui.tags.p(SOURCE_NOTE,
                                       style="margin: 10px 15px; color: #777; font-size: 13px;")
@@ -894,7 +1288,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
 
                             @render.table
                             def md_standings_table():
-                                return league_table(upto_md=int(input.selected_matchday()))
+                                return league_table(upto_md=selected_md())
 
                     with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                         with ui.card():
@@ -906,7 +1300,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
 
                             @render.table
                             def md_only_standings_table():
-                                return league_table(md=int(input.selected_matchday()),
+                                return league_table(md=selected_md(),
                                                     form_games=1)
 
                 with ui.nav_panel("Cards"):
@@ -917,7 +1311,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         
                         @render.table
                         def md_cards_table():
-                            md_cards = cautionsDF[cautionsDF['md'] == float(input.selected_matchday())][['game', 'player', 'team', 'caution', 'minute', 'double-caution']]
+                            md_cards = cautions_df()[cautions_df()['md'] == selected_md()][['game', 'player', 'team', 'caution', 'minute', 'double-caution']]
                             md_cards.columns = ['Match', 'Player', 'Team', 'Card Type', 'Minute', 'Double Caution']
                             return md_cards
 
@@ -929,7 +1323,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         
                         @render.table
                         def md_subs_table():
-                            md_subs = subsDF[subsDF['md'] == float(input.selected_matchday())][['game', 'in', 'out', 'team', 'minute']]
+                            md_subs = subs_df()[subs_df()['md'] == selected_md()][['game', 'in', 'out', 'team', 'minute']]
                             md_subs.columns = ['Match', 'Player In', 'Player Out', 'Team', 'Minute']
                             return md_subs
 
@@ -942,16 +1336,28 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
             with ui.nav_panel("Home Advantage"):
                 with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 20px 0;"):
                     with ui.div(class_="stat-card goals"):
-                        ui.h3(str(int(teamMatchesDF[teamMatchesDF['venue'] == 'home']['gf'].sum())))
+                        @render.text
+                        def home_goals_total():
+                            data = team_matches_df()
+                            return str(int(data[data['venue'] == 'home']['gf'].sum()))
                         ui.p("Home Goals")
                     with ui.div(class_="stat-card goals"):
-                        ui.h3(str(int(teamMatchesDF[teamMatchesDF['venue'] == 'away']['gf'].sum())))
+                        @render.text
+                        def away_goals_total():
+                            data = team_matches_df()
+                            return str(int(data[data['venue'] == 'away']['gf'].sum()))
                         ui.p("Away Goals")
                     with ui.div(class_="stat-card matches"):
-                        ui.h3(str(int((teamMatchesDF[teamMatchesDF['venue'] == 'home']['result'] == 'W').sum())))
+                        @render.text
+                        def home_wins_total():
+                            data = team_matches_df()
+                            return str(int((data[data['venue'] == 'home']['result'] == 'W').sum()))
                         ui.p("Home Wins")
                     with ui.div(class_="stat-card matches"):
-                        ui.h3(str(int((teamMatchesDF[teamMatchesDF['venue'] == 'away']['result'] == 'W').sum())))
+                        @render.text
+                        def away_wins_total():
+                            data = team_matches_df()
+                            return str(int((data[data['venue'] == 'away']['result'] == 'W').sum()))
                         ui.p("Away Wins")
 
                 with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -959,7 +1365,9 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         ui.tags.div("Where the Results Go", class_="overview-card-header")
                         @render_plotly
                         def venue_outcomes():
-                            home = teamMatchesDF[teamMatchesDF['venue'] == 'home']
+                            home = team_matches_df()[team_matches_df()['venue'] == 'home']
+                            if home.empty:
+                                return empty_figure()
                             counts = pd.DataFrame({
                                 'outcome': ['Home win', 'Draw', 'Away win'],
                                 'matches': [int((home['result'] == 'W').sum()),
@@ -989,12 +1397,12 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                             'Substitutions', 'Substitutions'],
                                 'venue': ['Home', 'Away'] * 3,
                                 'count': [
-                                    int((goalsDF['venue'] == 'home').sum()),
-                                    int((goalsDF['venue'] == 'away').sum()),
-                                    int((cautionsDF['venue'] == 'home').sum()),
-                                    int((cautionsDF['venue'] == 'away').sum()),
-                                    int((subsDF['venue'] == 'home').sum()),
-                                    int((subsDF['venue'] == 'away').sum()),
+                                    int((goals_df()['venue'] == 'home').sum()),
+                                    int((goals_df()['venue'] == 'away').sum()),
+                                    int((cautions_df()['venue'] == 'home').sum()),
+                                    int((cautions_df()['venue'] == 'away').sum()),
+                                    int((subs_df()['venue'] == 'home').sum()),
+                                    int((subs_df()['venue'] == 'away').sum()),
                                 ],
                             })
                             fig = px.bar(
@@ -1016,7 +1424,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     class_="overview-card-header")
                         @render_plotly
                         def venue_points_by_team():
-                            points = (teamMatchesDF.groupby(['team', 'venue'])['points']
+                            points = (team_matches_df().groupby(['team', 'venue'])['points']
                                       .sum().reset_index())
                             order = (points[points['venue'] == 'home']
                                      .sort_values('points')['team'].tolist())
@@ -1052,7 +1460,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                     ui.tags.div("Goals Scored at Home", class_="overview-card-header")
                     @render_plotly
                     def home_goals_by_team():
-                        data = (teamMatchesDF[teamMatchesDF['venue'] == 'home']
+                        data = (team_matches_df()[team_matches_df()['venue'] == 'home']
                                 .groupby('team')['gf'].sum().reset_index()
                                 .sort_values('gf'))
                         fig = px.bar(
@@ -1083,7 +1491,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                     ui.tags.div("Goals Scored Away", class_="overview-card-header")
                     @render_plotly
                     def away_goals_by_team():
-                        data = (teamMatchesDF[teamMatchesDF['venue'] == 'away']
+                        data = (team_matches_df()[team_matches_df()['venue'] == 'away']
                                 .groupby('team')['gf'].sum().reset_index()
                                 .sort_values('gf'))
                         fig = px.bar(
@@ -1106,21 +1514,33 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
         with ui.layout_sidebar():
             with ui.sidebar():
                 ui.h5("Select Team")
-                ui.input_select(
-                    "selected_team",
-                    "Team:",
-                    choices={team: team for team in sorted(all_teams)},
-                    selected=all_teams[0] if all_teams else None
-                )
+                ui.input_select("selected_team", "Team:", choices={})
+
+                @reactive.effect
+                def _refresh_teams():
+                    """Repopulate the team list whenever the competition changes.
+
+                    Isolated read for the same reason as the matchday select.
+                    """
+                    available = teams()
+                    with reactive.isolate():
+                        current = _chosen("selected_team", None)
+                    ui.update_select(
+                        "selected_team",
+                        choices={team: team for team in available},
+                        selected=(current if current in available
+                                  else (available[0] if available else None)),
+                    )
+
                 ui.hr()
                 ui.h5("Team Summary")
                 @render.text
                 def team_summary():
                     """Display summary statistics for selected team"""
-                    team = input.selected_team()
-                    team_goals = len(goalsDF[goalsDF['team'] == team])
-                    team_cards = len(cautionsDF[cautionsDF['team'] == team])
-                    team_subs = len(subsDF[subsDF['team'] == team])
+                    team = selected_team()
+                    team_goals = len(goals_df()[goals_df()['team'] == team])
+                    team_cards = len(cautions_df()[cautions_df()['team'] == team])
+                    team_subs = len(subs_df()[subs_df()['team'] == team])
                     team_matches = count_team_matches(team)
                     return f"Goals: {team_goals} | Cards: {team_cards} | Subs: {team_subs} | Matches: {team_matches}"
             
@@ -1131,36 +1551,36 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.div(class_="stat-card goals"):
                             @render.text
                             def team_goals_scored():
-                                team_goals = len(goalsDF[goalsDF['team'] == input.selected_team()])
+                                team_goals = len(goals_df()[goals_df()['team'] == selected_team()])
                                 return str(team_goals)
                             ui.p("Goals Scored")
                         with ui.div(class_="stat-card cards"):
                             @render.text
                             def team_cards_received():
-                                team_cards = len(cautionsDF[cautionsDF['team'] == input.selected_team()])
+                                team_cards = len(cautions_df()[cautions_df()['team'] == selected_team()])
                                 return str(team_cards)
                             ui.p("Cards Received")
                         with ui.div(class_="stat-card subs"):
                             @render.text
                             def team_subs_made():
-                                team_subs = len(subsDF[subsDF['team'] == input.selected_team()])
+                                team_subs = len(subs_df()[subs_df()['team'] == selected_team()])
                                 return str(team_subs)
                             ui.p("Subs Made")
                         with ui.div(class_="stat-card matches"):
                             @render.text
                             def team_matches_played():
-                                return str(count_team_matches(input.selected_team()))
+                                return str(count_team_matches(selected_team()))
                             ui.p("Matches Played")
 
                     with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
                         with ui.card():
                             @render.ui
                             def team_goals_period_header():
-                                return ui.tags.div("Goals by Period", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Goals by Period", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
                             def team_goals_by_period():
-                                team_data = goalsDF[goalsDF['team'] == input.selected_team()]
+                                team_data = goals_df()[goals_df()['team'] == selected_team()]
                                 period_goals = team_data.groupby('period').size().reset_index(name='goals')
                                 period_goals['period'] = period_goals['period'].map({1: 'First Half', 2: 'Second Half'})
                                 colors = ['#3498db', '#e74c3c']
@@ -1170,7 +1590,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     y='goals',
                                     color='period',
                                     color_discrete_sequence=colors,
-                                    title=f'Goals by Match Period - {input.selected_team()}'
+                                    title=f'Goals by Match Period - {selected_team()}'
                                 )
                                 fig.update_layout(
                                     showlegend=False,
@@ -1182,16 +1602,16 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_goals_timeline_header():
-                                return ui.tags.div("Goal Timing Distribution", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Goal Timing Distribution", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
                             def team_goals_timeline():
-                                team_data = goalsDF[goalsDF['team'] == input.selected_team()]
+                                team_data = goals_df()[goals_df()['team'] == selected_team()]
                                 fig = px.histogram(
                                     team_data,
                                     x='minute',
                                     nbins=10,
-                                    title=f'Goals by Minute - {input.selected_team()}',
+                                    title=f'Goals by Minute - {selected_team()}',
                                     labels={'minute': 'Minute', 'count': 'Goals'},
                                     color_discrete_sequence=['#2ecc71']
                                 )
@@ -1205,11 +1625,11 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_top_scorers_header():
-                                return ui.tags.div(f"Top Scorers - {input.selected_team()}", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div(f"Top Scorers - {selected_team()}", style=get_team_header_style(selected_team()))
                             
                             @render.table
                             def team_top_scorers():
-                                team_data = goalsDF[goalsDF['team'] == input.selected_team()]
+                                team_data = goals_df()[goals_df()['team'] == selected_team()]
                                 scorers = team_data.groupby('player').size().reset_index(name='goals')
                                 scorers = scorers.sort_values('goals', ascending=False)
                                 scorers.columns = ['Player', 'Goals']
@@ -1220,11 +1640,13 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_cards_breakdown_header():
-                                return ui.tags.div("Cards Breakdown", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Cards Breakdown", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
                             def team_cards_breakdown():
-                                team_cards = cautionsDF[cautionsDF['team'] == input.selected_team()]
+                                team_cards = cautions_df()[cautions_df()['team'] == selected_team()]
+                                if team_cards.empty:
+                                    return empty_figure("No cards for this team")
                                 card_counts = team_cards['caution_display'].value_counts().reset_index()
                                 card_counts.columns = ['type', 'count']
                                 fig = px.pie(
@@ -1233,7 +1655,7 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                     names='type',
                                     color='type',
                                     color_discrete_map=CAUTION_COLORS,
-                                    title=f'Cards Breakdown - {input.selected_team()}',
+                                    title=f'Cards Breakdown - {selected_team()}',
                                     hole=0.4
                                 )
                                 fig.update_layout(
@@ -1245,17 +1667,17 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_cards_matchday_header():
-                                return ui.tags.div("Cards by Matchday", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Cards by Matchday", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
                             def team_cards_by_matchday():
-                                team_cards = cautionsDF[cautionsDF['team'] == input.selected_team()]
+                                team_cards = cautions_df()[cautions_df()['team'] == selected_team()]
                                 md_cards = team_cards.groupby('md').size().reset_index(name='cards')
                                 fig = px.bar(
                                     md_cards,
                                     x='md',
                                     y='cards',
-                                    title=f'Cards per Matchday - {input.selected_team()}',
+                                    title=f'Cards per Matchday - {selected_team()}',
                                     labels={'md': 'Matchday', 'cards': 'Cards'}
                                 )
                                 fig.update_traces(marker_color='#e74c3c')
@@ -1268,11 +1690,11 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                     with ui.card():
                         @render.ui
                         def team_cards_table_header():
-                            return ui.tags.div(f"All Cards Received - {input.selected_team()}", style=get_team_header_style(input.selected_team()))
+                            return ui.tags.div(f"All Cards Received - {selected_team()}", style=get_team_header_style(selected_team()))
                         
                         @render.table
                         def team_cards_table():
-                            team_cards = cautionsDF[cautionsDF['team'] == input.selected_team()][['game', 'player', 'caution', 'minute', 'double-caution']]
+                            team_cards = cautions_df()[cautions_df()['team'] == selected_team()][['game', 'player', 'caution', 'minute', 'double-caution']]
                             team_cards.columns = ['Match', 'Player', 'Card Type', 'Minute', 'Double Caution']
                             return team_cards
 
@@ -1281,17 +1703,17 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_subs_timing_header():
-                                return ui.tags.div("Substitution Timing", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Substitution Timing", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
                             def team_subs_timing():
-                                team_subs = subsDF[subsDF['team'] == input.selected_team()]
-                                team_color = TEAM_COLORS.get(input.selected_team(), '#3498db')
+                                team_subs = subs_df()[subs_df()['team'] == selected_team()]
+                                team_color = TEAM_COLORS.get(selected_team(), '#3498db')
                                 fig = px.histogram(
                                     team_subs,
                                     x='minute',
                                     nbins=10,
-                                    title=f'Substitutions by Minute - {input.selected_team()}',
+                                    title=f'Substitutions by Minute - {selected_team()}',
                                     labels={'minute': 'Minute', 'count': 'Substitutions'},
                                     color_discrete_sequence=[team_color]
                                 )
@@ -1304,15 +1726,15 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                         with ui.card():
                             @render.ui
                             def team_players_substituted_header():
-                                return ui.tags.div("Players Substituted On & Off", style=get_team_header_style(input.selected_team()))
+                                return ui.tags.div("Players Substituted On & Off", style=get_team_header_style(selected_team()))
                             
                             with ui.layout_column_wrap(width=1/2):
                                 @render_plotly
                                 def team_players_subbed_off():
-                                    team_subs = subsDF[subsDF['team'] == input.selected_team()]
+                                    team_subs = subs_df()[subs_df()['team'] == selected_team()]
                                     player_subs = team_subs['out'].value_counts().reset_index()
                                     player_subs.columns = ['Player', 'Substitutions']
-                                    team_color = TEAM_COLORS.get(input.selected_team(), '#3498db')
+                                    team_color = TEAM_COLORS.get(selected_team(), '#3498db')
                                     fig = px.bar(
                                         player_subs.head(10),
                                         x='Substitutions',
@@ -1335,10 +1757,10 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                                 
                                 @render_plotly
                                 def team_players_subbed_on():
-                                    team_subs = subsDF[subsDF['team'] == input.selected_team()]
+                                    team_subs = subs_df()[subs_df()['team'] == selected_team()]
                                     player_subs = team_subs['in'].value_counts().reset_index()
                                     player_subs.columns = ['Player', 'Substitutions']
-                                    team_color = TEAM_COLORS.get(input.selected_team(), '#3498db')
+                                    team_color = TEAM_COLORS.get(selected_team(), '#3498db')
                                     fig = px.bar(
                                         player_subs.head(10),
                                         x='Substitutions',
@@ -1362,11 +1784,30 @@ with ui.navset_bar(title="#UPL Midseason Stats", id="page", position="fixed-bott
                     with ui.card():
                         @render.ui
                         def team_subs_table_header():
-                            return ui.tags.div(f"All Substitutions - {input.selected_team()}", style=get_team_header_style(input.selected_team()))
-                        
+                            return ui.tags.div(f"All Substitutions - {selected_team()}", style=get_team_header_style(selected_team()))
+
                         @render.table
                         def team_subs_table():
-                            team_subs = subsDF[subsDF['team'] == input.selected_team()][['game', 'in', 'out', 'minute']]
+                            team_subs = subs_df()[subs_df()['team'] == selected_team()][['game', 'in', 'out', 'minute']]
                             team_subs.columns = ['Match', 'Player In', 'Player Out', 'Minute']
                             return team_subs
+
+    # =========================================================================
+    # Competition switcher, pinned to the right of the bar
+    # =========================================================================
+    ui.nav_spacer()
+
+    with ui.nav_control():
+        with ui.div(class_="navbar-switcher"):
+            ui.input_select(
+                "league", None,
+                choices={code: code for code in ALL_LEAGUES},
+                selected=DEFAULT_LEAGUE,
+            )
+            ui.input_select(
+                "season", None,
+                choices={s: s for s in seasons_for(DEFAULT_LEAGUE)},
+                selected=DEFAULT_SEASON,
+            )
+
 

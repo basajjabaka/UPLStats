@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 """
-UPL match-report data extractor.
+Match-report data extractor.
 
-Reads every ``MATCH_REPORT-*.pdf`` under ``reports/md<N>/`` and writes three
-tidy CSV files into ``csvs/new``:
+Walks every ``MATCH_REPORT-*.pdf`` under ``reports/<league>/<season>/md<N>/`` and
+writes three tidy CSV files into ``csvs/new``:
 
-    goalsNew.csv     game,player,team,min,added_time,md
-    cautionsNew.csv  game,player,team,caution,min,added_time,double-caution,md
-    subsNew.csv      game,in,out,min,added_time,team,md
+    goalsNew.csv     league,season,game,player,team,min,added_time,md
+    cautionsNew.csv  league,season,game,player,team,caution,min,added_time,double-caution,md
+    subsNew.csv      league,season,game,in,out,min,added_time,team,md
+
+A season folder is named with a dot where the slash goes, so ``upl/2025.26``
+becomes league ``UPL``, season ``2025/26``.  Any folder that holds no ``md<N>``
+subdirectory with PDFs in it is simply skipped, which keeps half-built
+directories out of the output without any special casing.
 
 The reports render the MATCH EVENTS table as
 
@@ -32,9 +37,10 @@ of the events table, so a matchday that passes it has not silently lost a goal.
 
 Usage
 -----
-    python scripts/match_report_extractors/extract_match_data.py
-    python scripts/match_report_extractors/extract_match_data.py --last-matchday 12
-    python scripts/match_report_extractors/extract_match_data.py --reports reports --out csvs/new
+    python scripts/extract_match_data.py
+    python scripts/extract_match_data.py --league UPL --season 2025/26
+    python scripts/extract_match_data.py --last-matchday 12
+    python scripts/extract_match_data.py --reports reports --out csvs/new
 
 Exits non-zero if any report fails the score-line check.
 """
@@ -58,8 +64,10 @@ except ImportError:  # pragma: no cover - dependency guard
 # configuration
 # --------------------------------------------------------------------------
 
-DEFAULT_REPORTS_DIR = Path("reports")
-DEFAULT_OUTPUT_DIR = Path("csvs/new")
+#: repo root, so the script works from any working directory
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
+DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "csvs" / "new"
 
 #: full club name (upper-cased, punctuation stripped) -> short code used in the CSVs.
 TEAM_ABBREVIATIONS = {
@@ -422,8 +430,8 @@ def abbreviate(team_name):
     return (stripped or key).split(" ")[0]
 
 
-def match_metadata(pdf_path, pages):
-    """Match number, matchday and the two team codes (home first)."""
+def match_metadata(pdf_path, pages, league="", season=""):
+    """Competition, match number, matchday and the two team codes (home first)."""
     number = 0
     home = away = ""
 
@@ -455,6 +463,8 @@ def match_metadata(pdf_path, pages):
     return {
         "number": number,
         "md": matchday,
+        "league": league,
+        "season": season,
         "home": home_abbr,
         "away": away_abbr,
         "game": f"{home_abbr.upper()}-vs-{away_abbr.upper()}",
@@ -508,6 +518,8 @@ def extract_match(pages, meta):
                           f"({meta['game']} {min_text}')", file=sys.stderr)
                     continue
                 subs.append({
+                    "league": meta["league"],
+                    "season": meta["season"],
                     "game": meta["game"],
                     "in": sub.group(1).strip(),
                     "out": sub.group(2).strip(),
@@ -520,6 +532,8 @@ def extract_match(pages, meta):
             elif caption in LEGEND_CAUTION_LABELS:
                 kind, double = LEGEND_CAUTION_LABELS[caption]
                 cautions.append({
+                    "league": meta["league"],
+                    "season": meta["season"],
                     "game": meta["game"],
                     "player": text,
                     "team": team,
@@ -538,6 +552,8 @@ def extract_match(pages, meta):
                     print(f"  i own goal by {text} ({meta['game']} {min_text}') "
                           f"credited to {scoring_team}", file=sys.stderr)
                 goals.append({
+                    "league": meta["league"],
+                    "season": meta["season"],
                     "game": meta["game"],
                     "player": text,
                     "team": scoring_team,
@@ -583,12 +599,12 @@ def check_against_score(meta, goals, pages):
     return None
 
 
-def parse_report(pdf_path):
+def parse_report(pdf_path, league="", season=""):
     """Parse one match report PDF -> (metadata, (goals, cautions, subs), pages)."""
     pdf_path = Path(pdf_path)
     with pdfplumber.open(str(pdf_path)) as pdf:
         pages = [page_primitives(page) for page in pdf.pages]
-    meta = match_metadata(pdf_path, pages)
+    meta = match_metadata(pdf_path, pages, league, season)
     return meta, extract_match(pages, meta), pages
 
 
@@ -596,10 +612,10 @@ def parse_report(pdf_path):
 # driver
 # --------------------------------------------------------------------------
 
-GOAL_COLUMNS = ["game", "player", "team", "min", "added_time", "md"]
-CAUTION_COLUMNS = ["game", "player", "team", "caution", "min", "added_time",
-                   "double-caution", "md"]
-SUB_COLUMNS = ["game", "in", "out", "min", "added_time", "team", "md"]
+GOAL_COLUMNS = ["league", "season", "game", "player", "team", "min", "added_time", "md"]
+CAUTION_COLUMNS = ["league", "season", "game", "player", "team", "caution", "min",
+                   "added_time", "double-caution", "md"]
+SUB_COLUMNS = ["league", "season", "game", "in", "out", "min", "added_time", "team", "md"]
 
 
 def _report_sort_key(pdf):
@@ -607,7 +623,7 @@ def _report_sort_key(pdf):
     return (int(match.group(1)) if match else 10 ** 6, pdf.name)
 
 
-def find_reports(reports_dir, last_matchday=None):
+def find_reports(season_dir, last_matchday=None):
     """Every match report in md1..md<last_matchday>, in matchday then match order.
 
     Without ``last_matchday`` every ``md<N>`` folder present is included; pass it
@@ -615,7 +631,7 @@ def find_reports(reports_dir, last_matchday=None):
     """
     matchdays = sorted(
         (int(MATCHDAY_RE.match(d.name).group(1)), d)
-        for d in Path(reports_dir).iterdir()
+        for d in Path(season_dir).iterdir()
         if d.is_dir() and MATCHDAY_RE.match(d.name)
     )
     reports = []
@@ -624,6 +640,34 @@ def find_reports(reports_dir, last_matchday=None):
             continue
         reports += sorted(folder.glob("*.pdf"), key=_report_sort_key)
     return reports
+
+
+def season_label(folder_name):
+    """'2025.26' -> '2025/26'.  The dot stands in for a slash on disk."""
+    return folder_name.replace(".", "/")
+
+
+def discover_seasons(reports_dir):
+    """Every ``<league>/<season>`` under reports_dir that actually holds reports.
+
+    Yields ``(league, season, path)`` with the league upper-cased and the season
+    in its display form.  A directory only counts as a season when at least one
+    of its ``md<N>`` children contains a PDF, so partially created folders and
+    strays sitting at the wrong depth are ignored rather than producing empty
+    league entries.
+    """
+    reports_dir = Path(reports_dir)
+    if not reports_dir.is_dir():
+        return []
+
+    seasons = []
+    for league_dir in sorted(p for p in reports_dir.iterdir() if p.is_dir()):
+        for season_dir in sorted(p for p in league_dir.iterdir() if p.is_dir()):
+            if find_reports(season_dir):
+                seasons.append((league_dir.name.upper(),
+                                season_label(season_dir.name),
+                                season_dir))
+    return seasons
 
 
 def write_csv(path, columns, rows):
@@ -638,9 +682,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Extract goals, cautions and substitutions from UPL match reports.")
     parser.add_argument("--reports", type=Path, default=DEFAULT_REPORTS_DIR,
-                        help="directory holding the md<N> folders (default: reports)")
+                        help="directory holding the <league>/<season> folders (default: reports)")
     parser.add_argument("--out", type=Path, default=DEFAULT_OUTPUT_DIR,
                         help="output directory (default: csvs/new)")
+    parser.add_argument("--league", default=None,
+                        help="only this league, e.g. UPL (default: every league found)")
+    parser.add_argument("--season", default=None,
+                        help="only this season, e.g. 2025/26 (default: every season found)")
     parser.add_argument("--last-matchday", type=int, default=None,
                         help="highest matchday to include (default: every md<N> folder found)")
     parser.add_argument("--no-verify", action="store_true",
@@ -648,37 +696,52 @@ def main(argv=None):
     parser.add_argument("--quiet", action="store_true")
     args = parser.parse_args(argv)
 
-    reports = find_reports(args.reports, args.last_matchday)
-    if not reports:
+    seasons = discover_seasons(args.reports)
+    if args.league:
+        seasons = [s for s in seasons if s[0] == args.league.upper()]
+    if args.season:
+        wanted = season_label(args.season)
+        seasons = [s for s in seasons if s[1] == wanted]
+    if not seasons:
         sys.exit(f"no match reports found under {args.reports}")
 
     all_goals, all_cautions, all_subs = [], [], []
     warnings = []
-    for pdf in reports:
-        meta, (goals, cautions, subs), pages = parse_report(pdf)
-        all_goals += goals
-        all_cautions += cautions
-        all_subs += subs
+    total_reports = 0
 
-        warning = None if args.no_verify else check_against_score(meta, goals, pages)
-        if warning:
-            warnings.append(f"{pdf}: {warning}")
+    for league, season, season_dir in seasons:
+        reports = find_reports(season_dir, args.last_matchday)
+        total_reports += len(reports)
         if not args.quiet:
-            print(f"md{str(meta['md']):<3} {meta['game']:<24} "
-                  f"goals={len(goals):<3} cautions={len(cautions):<3} subs={len(subs)}"
-                  f"{'   !! ' + warning if warning else ''}")
+            print(f"\n=== {league} {season}  ({len(reports)} reports) ===")
+
+        for pdf in reports:
+            meta, (goals, cautions, subs), pages = parse_report(pdf, league, season)
+            all_goals += goals
+            all_cautions += cautions
+            all_subs += subs
+
+            warning = None if args.no_verify else check_against_score(meta, goals, pages)
+            if warning:
+                warnings.append(f"{pdf}: {warning}")
+            if not args.quiet:
+                print(f"md{str(meta['md']):<3} {meta['game']:<24} "
+                      f"goals={len(goals):<3} cautions={len(cautions):<3} subs={len(subs)}"
+                      f"{'   !! ' + warning if warning else ''}")
 
     write_csv(args.out / "goalsNew.csv", GOAL_COLUMNS, all_goals)
     write_csv(args.out / "cautionsNew.csv", CAUTION_COLUMNS, all_cautions)
     write_csv(args.out / "subsNew.csv", SUB_COLUMNS, all_subs)
 
     if not args.quiet:
-        print(f"\n{len(reports)} reports -> {args.out}")
+        print(f"\n{total_reports} reports across {len(seasons)} season(s) -> {args.out}")
+        for league, season, _dir in seasons:
+            print(f"  {league} {season}")
         print(f"  goalsNew.csv     {len(all_goals)} rows")
         print(f"  cautionsNew.csv  {len(all_cautions)} rows")
         print(f"  subsNew.csv      {len(all_subs)} rows")
         if not args.no_verify:
-            print(f"  score-line check: {len(reports) - len(warnings)}/{len(reports)} reports agree")
+            print(f"  score-line check: {total_reports - len(warnings)}/{total_reports} reports agree")
 
     for warning in warnings:
         print(f"WARNING {warning}", file=sys.stderr)

@@ -1,277 +1,277 @@
-game,in,out,min,added_time,team,md
-BUL-vs-URA,Isaac Musiima,George Kasonko,46,no,BUL,1
-BUL-vs-URA,Ibrahim Orit,Isaac Wagoina,69,no,BUL,1
-BUL-vs-URA,Reagan Kalyowa,Martin Aprem,69,no,BUL,1
-BUL-vs-URA,Denis Luzige Kisiriko,Nelson Senkatuka,76,no,URA,1
-BUL-vs-URA,Norman Namanya,Laban Tibiita,76,no,URA,1
-BUL-vs-URA,ALEX KITATA,Abdul Karim Ndugwa,88,no,BUL,1
-BUL-vs-URA,JOHN INNOCENT KISOLO,Ibrahim Wamannah,88,no,URA,1
-BUL-vs-URA,Godfrey Sekibengo,Joseph Ssemujju,88,no,URA,1
-ENTEBBE-vs-BUHIMBA,Junior Samuel Kawawa,Muhammad Kyeyune,32,no,ENTEBBE,1
-ENTEBBE-vs-BUHIMBA,Noordin Saddic Bunjo,Steven Munguchi,46,no,ENTEBBE,1
-ENTEBBE-vs-BUHIMBA,Emmanuel Iisat,Issa Bugembe,46,no,ENTEBBE,1
-ENTEBBE-vs-BUHIMBA,Hussein Mwanje,Edson Agondeze,67,no,BUHIMBA,1
-ENTEBBE-vs-BUHIMBA,Shafic Kiryowa,Swadik Moro,67,no,BUHIMBA,1
-ENTEBBE-vs-BUHIMBA,sheif Batte,John Wesley kisaakye,67,no,BUHIMBA,1
-ENTEBBE-vs-BUHIMBA,John Kokas Alou,Hassan Ssenyonjo,67,no,ENTEBBE,1
-ENTEBBE-vs-BUHIMBA,Fazil Tumwine,Ambrose Kigozi,67,no,ENTEBBE,1
-ENTEBBE-vs-BUHIMBA,Malongo Gedeon Mpia,Anwaru Mustafa Ntege,83,no,BUHIMBA,1
-KITARA-vs-KCCA,STEVEN JAMES OYIRWOTH,Gavin Mugweri Kizito,46,no,KCCA,1
-KITARA-vs-KCCA,John Bosco Byaruhanga,Emmanuel Alex Wasswa,55,no,KITARA,1
-KITARA-vs-KCCA,Peter Magambo,Hassan Muhamud,55,no,KCCA,1
-KITARA-vs-KCCA,Emmanuel Anyama,Shafik Nana Kwikiriza,55,no,KCCA,1
-KITARA-vs-KCCA,Alex Yiga,Ivan Ahimbisibwe,55,no,KCCA,1
-KITARA-vs-KCCA,George Senkaaba,Yunusu Sibira,78,no,KITARA,1
-KITARA-vs-KCCA,Sharifu Ssengendo,Ashraf Mugume,78,no,KCCA,1
-LUGAZI-vs-CALVARY,Freedom Mungudit,Amos Etojo,30,no,LUGAZI,1
-LUGAZI-vs-CALVARY,Ashiraf Mulindi,Juma Ssajjabi,46,no,LUGAZI,1
-LUGAZI-vs-CALVARY,Allan Kiggundu,James Ssemambo,56,no,CALVARY,1
-LUGAZI-vs-CALVARY,Stephen Oriokot,Bashir Asiku,56,no,CALVARY,1
-LUGAZI-vs-CALVARY,Alfred Leku,Moses Ojoaza Buga,65,no,LUGAZI,1
-LUGAZI-vs-CALVARY,Mubaraka Mitala,Steven Nyalimo,80,no,CALVARY,1
-LUGAZI-vs-CALVARY,Saidi Sukuru,Christopher Agotre,80,no,CALVARY,1
-LUGAZI-vs-CALVARY,Edrine Junior Owachgiu,Sharif Saaka,90(+1),yes,LUGAZI,1
-POLICE-vs-MBARARA,Denis Kaka Omony,Abudul Malik Bironse,46,no,MBARARA,1
-POLICE-vs-MBARARA,Nasur Almahad Sadik,Latif Ssenkubuge,46,no,MBARARA,1
-POLICE-vs-MBARARA,Ivan Eyamu,Abudshakur Ramsey Jemba,60,no,POLICE,1
-POLICE-vs-MBARARA,Lawrence Tezikya,Charles Bbaale,60,no,POLICE,1
-POLICE-vs-MBARARA,Reagan Steven Male,Brian James Obedi,60,no,POLICE,1
-POLICE-vs-MBARARA,Gabriel Eragu,Innocent Wafula Esimu,63,no,MBARARA,1
-POLICE-vs-MBARARA,Thomas Kakaire,Gadaffi Kacancu,63,no,MBARARA,1
-POLICE-vs-MBARARA,Clinton Davico Kamugisha,Mike Walaga,79,no,MBARARA,1
-POLICE-vs-MBARARA,Umaru Kasumba,Sizwe Mario Gwebu,83,no,POLICE,1
-EXPRESS-vs-UPDF,Mikidadi Ssenyonga,Muhamed Kagawa Ssenoga,46,no,EXPRESS,1
-EXPRESS-vs-UPDF,OLOYA MOSES,HAKIM WANDERA,46,no,EXPRESS,1
-EXPRESS-vs-UPDF,Rashid Faridi,Samson Andrew Kigozi,52,no,UPDF,1
-EXPRESS-vs-UPDF,Asaph Ssegujja,FRANK GLADISON MUGISA,66,no,UPDF,1
-EXPRESS-vs-UPDF,IBRAHIM MAKUMBI,Emmanuel Manu Ochen,66,no,UPDF,1
-EXPRESS-vs-UPDF,Elvis Ssekajjugo,Abdulahi Rashid,87,no,EXPRESS,1
-EXPRESS-vs-UPDF,ISA GLORY KISUULE,Peter Onzima,87,no,EXPRESS,1
-EXPRESS-vs-UPDF,Kitara Daniel,Samuel Kayongo Ssekamatte,87,no,UPDF,1
-EXPRESS-vs-UPDF,Enrique Lubwama,Christopher Kamagu,87,no,UPDF,1
-BUL-vs-MAROONS,Dickson Niwamanya,Abel Michael Eturude,46,no,MAROONS,2
-BUL-vs-MAROONS,Jackson Nunda,Ivan Mayanja,46,no,MAROONS,2
-BUL-vs-MAROONS,Nicholas Mwere,Isaac Wagoina,65,no,BUL,2
-BUL-vs-MAROONS,Seiri Arigumaho,Abdul Karim Ndugwa,65,no,BUL,2
-BUL-vs-MAROONS,Brian Nkuubi,Norman Borniface Odipio,69,no,MAROONS,2
-BUL-vs-MAROONS,Simon Achidi,Martin Aprem,78,no,BUL,2
-BUL-vs-MAROONS,Ibrahim Orit,Denis Ssewagudde,78,no,BUL,2
-BUL-vs-MAROONS,Emmanuel Obua,Rogers Kiwanuka,78,no,MAROONS,2
-BUL-vs-MAROONS,George Kasonko,Ibrahim Mugulusi,90,no,BUL,2
-POLICE-vs-EXPRESS,Mikidadi Ssenyonga,John Asiimwe,46,no,EXPRESS,2
-POLICE-vs-EXPRESS,Yosia Kisa,HAKIM WANDERA,46,no,EXPRESS,2
-POLICE-vs-EXPRESS,Dennis Kalanzi,Brian James Obedi,56,no,POLICE,2
-POLICE-vs-EXPRESS,Bedia Djuma Ikamba,Umaru Kasumba,56,no,POLICE,2
-POLICE-vs-EXPRESS,Charles Bbaale,Sizwe Mario Gwebu,78,no,POLICE,2
-POLICE-vs-EXPRESS,Rayn Figo Kizito,Abudshakur Ramsey Jemba,78,no,POLICE,2
-POLICE-vs-EXPRESS,Habert Asiimwe,Richard Basangwa,79,no,EXPRESS,2
-POLICE-vs-EXPRESS,Emmanuel Mugume,Saidi Kyeyune,83,no,POLICE,2
-POLICE-vs-EXPRESS,Henry Wamala,Abdulahi Rashid,85,no,EXPRESS,2
-URA-vs-NEC,Joseph Ssemujju,Nelson Senkatuka,75,no,URA,2
-URA-vs-NEC,Paul Mucureezi,Dhata Joseph Stephen Lujang,75,no,NEC,2
-URA-vs-NEC,James Jarieko,CHARLES MOSES WAIBI,75,no,NEC,2
-URA-vs-NEC,Norman Namanya,Godfrey Sekibengo,87,no,URA,2
-URA-vs-NEC,Nicholas Kabonge,Denis Luzige Kisiriko,90(+4),yes,URA,2
-URA-vs-NEC,Hudu Mulikyi,James Penz Begisa,90(+4),yes,URA,2
-BUHIMBA-vs-CALVARY,Allan Kiggundu,Julius Ocen,46,no,CALVARY,2
-BUHIMBA-vs-CALVARY,ANDREW KIWANUKA,Bashir Asiku,46,no,CALVARY,2
-BUHIMBA-vs-CALVARY,James Ssemambo,Simon Peter Odeke,60,no,CALVARY,2
-BUHIMBA-vs-CALVARY,Saidi Sukuru,Christopher Agotre,60,no,CALVARY,2
-BUHIMBA-vs-CALVARY,Derick Byabacwezi,Anwaru Mustafa Ntege,69,no,BUHIMBA,2
-BUHIMBA-vs-CALVARY,Shafic Kiryowa,John Wesley kisaakye,69,no,BUHIMBA,2
-BUHIMBA-vs-CALVARY,Mubaraka Mitala,Junior Emmanuel Ojok,70,no,CALVARY,2
-BUHIMBA-vs-CALVARY,John Bosco Sempijja,Swadik Moro,78,no,BUHIMBA,2
-BUHIMBA-vs-CALVARY,Mpuna Emmanuel Biseki,Edson Agondeze,90(+1),yes,BUHIMBA,2
-MBARARA-vs-UPDF,Thomas Kakaire,Gadaffi Kacancu,60,no,MBARARA,2
-MBARARA-vs-UPDF,Nasur Almahad Sadik,Ambrose Arinda,60,no,MBARARA,2
-MBARARA-vs-UPDF,Ronald Edwok,Mike Walaga,75,no,MBARARA,2
-MBARARA-vs-UPDF,Sadat Nsubuga,Ian Amanya,75,no,MBARARA,2
-MBARARA-vs-UPDF,Clinton Davico Kamugisha,Denis Kaka Omony,80,no,MBARARA,2
-MBARARA-vs-UPDF,Aggrey Kiirya,Samson Andrew Kigozi,85,no,UPDF,2
-MBARARA-vs-UPDF,Emmanuel Manu Ochen,Rashid Faridi,85,no,UPDF,2
-KCCA-vs-VILLA,Frank Ssebufu,Charles Lwanga,60,no,Villa,2
-KCCA-vs-VILLA,Reagan Mpande,Hassan Mubiru,60,no,Villa,2
-KCCA-vs-VILLA,Alex Yiga,Ashraf Mugume,67,no,KCCA,2
-KCCA-vs-VILLA,Sharifu Ssengendo,Enock Walusimbi,67,no,KCCA,2
-KCCA-vs-VILLA,Patrick Jonah Kakande,Ibrahim Kasinde,80,no,Villa,2
-KCCA-vs-VILLA,Elivis Ngonde,Aslam Ssemakula,80,no,Villa,2
-KCCA-vs-VILLA,Umar Lutalo,Shafik Nana Kwikiriza,84,no,KCCA,2
-KCCA-vs-VILLA,Emmanuel Anyama,Ivan Ahimbisibwe,84,no,KCCA,2
-KCCA-vs-VILLA,Andrew Otim,Geoffrey Lubanga Kene,90(+1),yes,Villa,2
-KCCA-vs-VILLA,Peter Magambo,Saidi Mayanja,90(+1),yes,KCCA,2
-MBARARA-vs-BUL,Isaac Wagoina,Jeromy Kirya,43,no,BUL,3
-MBARARA-vs-BUL,Sadat Nsubuga,Nasur Almahad Sadik,57,no,MBARARA,3
-MBARARA-vs-BUL,LWENDA SOWEDI,SWABIR MPASA,62,no,BUL,3
-MBARARA-vs-BUL,Reagan Kalyowa,Martin Aprem,62,no,BUL,3
-MBARARA-vs-BUL,Thomas Kakaire,Ian Amanya,70,no,MBARARA,3
-MBARARA-vs-BUL,Gabriel Eragu,Latif Ssenkubuge,70,no,MBARARA,3
-MBARARA-vs-BUL,ALEX KITATA,Denis Ssewagudde,84,no,BUL,3
-MBARARA-vs-BUL,Clinton Davico Kamugisha,Henry Kitegenyi,90,no,MBARARA,3
-MBARARA-vs-BUL,Mike Walaga,Denis Kaka Omony,90,no,MBARARA,3
-URA-vs-EXPRESS,ISA GLORY KISUULE,Peter Onzima,25,no,EXPRESS,3
-URA-vs-EXPRESS,Muhamed Kagawa Ssenoga,Mikidadi Ssenyonga,46,no,EXPRESS,3
-URA-vs-EXPRESS,Godfrey Sekibengo,Laban Tibiita,50,no,URA,3
-URA-vs-EXPRESS,ALLI ISMAEL,Abdulahi Rashid,60,no,EXPRESS,3
-URA-vs-EXPRESS,Living Kabon,Norman Namanya,75,no,URA,3
-URA-vs-EXPRESS,OLOYA MOSES,Henry Wamala,78,no,EXPRESS,3
-URA-vs-EXPRESS,NYARWA BITANYWAINE OLIMI,Joseph Ssemujju,82,no,URA,3
-UPDF-vs-MAROONS,Emmanuel Manu Ochen,Samson Andrew Kigozi,0,no,UPDF,3
-UPDF-vs-MAROONS,Sulaiman Kibalama,Swaibu Kasujja Kalule,49,no,UPDF,3
-UPDF-vs-MAROONS,Abel Michael Eturude,Ivan Mayanja,59,no,MAROONS,3
-UPDF-vs-MAROONS,Brian Nkuubi,Emmanuel Obua,59,no,MAROONS,3
-UPDF-vs-MAROONS,Mujahid Ogama,Dickson Niwamanya,59,no,MAROONS,3
-UPDF-vs-MAROONS,Derick Basoga,Felix Okot,67,no,MAROONS,3
-UPDF-vs-MAROONS,Apollo Kagogwe,Deni Rukundo,78,no,MAROONS,3
-UPDF-vs-MAROONS,Abbas Luuty Nsubuga,Rashid Faridi,78,no,UPDF,3
-UPDF-vs-MAROONS,Brian Kalumba,Joseph Janjali,78,no,UPDF,3
-UPDF-vs-MAROONS,Shafic kakande,Aggrey Kiirya,88,no,UPDF,3
-VILLA-vs-ENTEBBE,Geofrey Gagganga,Aslam Ssemakula,57,no,Villa,3
-VILLA-vs-ENTEBBE,Julius Poloto,John Kokas Alou,57,no,ENTEBBE,3
-VILLA-vs-ENTEBBE,Charles Lwanga,Ibrahim Kasinde,69,no,Villa,3
-VILLA-vs-ENTEBBE,Issa Bugembe,Junior Samuel Kawawa,71,no,ENTEBBE,3
-VILLA-vs-ENTEBBE,Elivis Ngonde,Simon Kato Ssemayange,77,no,Villa,3
-VILLA-vs-ENTEBBE,Andrew Otim,Frank Ssebufu,77,no,Villa,3
-VILLA-vs-ENTEBBE,Muhammad Kyeyune,Emmanuel Iisat,87,no,ENTEBBE,3
-VILLA-vs-ENTEBBE,Noordin Saddic Bunjo,Fazil Tumwine,87,no,ENTEBBE,3
-NEC-vs-POLICE,Emmanuel Ajo,Ronald Media Innocent,43,no,NEC,3
-NEC-vs-POLICE,Allan Mugalu,Emmanuel Kulanga,54,no,NEC,3
-NEC-vs-POLICE,Charles Bbaale,Lawrence Tezikya,62,no,POLICE,3
-NEC-vs-POLICE,Dennis Kalanzi,Abudshakur Ramsey Jemba,62,no,POLICE,3
-NEC-vs-POLICE,Umaru Kasumba,Sizwe Mario Gwebu,71,no,POLICE,3
-NEC-vs-POLICE,Rayn Figo Kizito,Saidi Kyeyune,71,no,POLICE,3
-NEC-vs-POLICE,Patrick Bayiga,Jacob Okao,77,no,NEC,3
-NEC-vs-POLICE,Emmanuel Mugume,Brian James Obedi,84,no,POLICE,3
-LUGAZI-vs-URA,Nicholas Kabonge,Laban Tibiita,35,no,URA,4
-LUGAZI-vs-URA,Abdul Kalanzi,Adam Muteesasira,46,no,LUGAZI,4
-LUGAZI-vs-URA,JOHN INNOCENT KISOLO,George Masembe,66,no,URA,4
-LUGAZI-vs-URA,Fred Amaku,Amisi Bwangani,66,no,URA,4
-LUGAZI-vs-URA,Abraham Kakensa Tusubira,Joseph Ssemujju,72,no,URA,4
-MAROONS-vs-CALVARY,Mujahid Ogama,Emmanuel Obua,29,no,MAROONS,4
-MAROONS-vs-CALVARY,Brian Nkuubi,Felix Okot,46,no,MAROONS,4
-MAROONS-vs-CALVARY,Eric Otingcwinyu,John Rogers,50,no,CALVARY,4
-MAROONS-vs-CALVARY,Allan Kiggundu,Zachous Ocen,64,no,CALVARY,4
-MAROONS-vs-CALVARY,Steven Nyalimo,Lawrence Olaboro,64,no,CALVARY,4
-MAROONS-vs-CALVARY,Jackson Nunda,Dickson Niwamanya,71,no,MAROONS,4
-MAROONS-vs-CALVARY,Ronald Orombi,Norman Borniface Odipio,81,no,MAROONS,4
-MAROONS-vs-CALVARY,Abel Michael Eturude,Ivan Mayanja,81,no,MAROONS,4
-MAROONS-vs-CALVARY,Mubaraka Mitala,Simon Peter Odeke,81,no,CALVARY,4
-BUL-vs-BUHIMBA,Shafic Kiryowa,John Wesley kisaakye,46,no,BUHIMBA,4
-BUL-vs-BUHIMBA,ALEX KITATA,Seiri Arigumaho,60,no,BUL,4
-BUL-vs-BUHIMBA,Reagan Kalyowa,Martin Aprem,60,no,BUL,4
-BUL-vs-BUHIMBA,Simon Achidi,Denis Ssewagudde,60,no,BUL,4
-BUL-vs-BUHIMBA,John Bosco Sempijja,Edson Agondeze,69,no,BUHIMBA,4
-BUL-vs-BUHIMBA,Hussein Mwanje,Erick Muber,69,no,BUHIMBA,4
-BUL-vs-BUHIMBA,Derick Byabacwezi,Swadik Moro,69,no,BUHIMBA,4
-BUL-vs-BUHIMBA,Isaac Wagoina,Jeromy Kirya,79,no,BUL,4
-BUL-vs-BUHIMBA,ISAAC SSENYUNJA,Ibrahim Mugulusi,79,no,BUL,4
-BUL-vs-BUHIMBA,NICHOLAS WAMANI,Dudu Ramadhan,89,no,BUHIMBA,4
-EXPRESS-vs-KCCA,Ashraf Mugume,Umar Lutalo,53,no,KCCA,4
-EXPRESS-vs-KCCA,Peter Onzima,Muhamed Kagawa Ssenoga,58,no,EXPRESS,4
-EXPRESS-vs-KCCA,Yosia Kisa,KHASIM MUSTAPHA,58,no,EXPRESS,4
-EXPRESS-vs-KCCA,Alex Yiga,Shafik Nana Kwikiriza,68,no,KCCA,4
-EXPRESS-vs-KCCA,Emmanuel Anyama,Ivan Ahimbisibwe,68,no,KCCA,4
-EXPRESS-vs-KCCA,ALLI ISMAEL,Abdulahi Rashid,76,no,EXPRESS,4
-EXPRESS-vs-KCCA,Mikidadi Ssenyonga,Henry Wamala,76,no,EXPRESS,4
-EXPRESS-vs-KCCA,OLOYA MOSES,Lawrence Muwonge Bukenya,81,no,EXPRESS,4
-EXPRESS-vs-KCCA,Peter Magambo,Saidi Mayanja,87,no,KCCA,4
-EXPRESS-vs-KCCA,Sharifu Ssengendo,Ashraf Mugume,87,no,KCCA,4
-KITARA-vs-MBARARA,Mike Walaga,Denis Kaka Omony,27,no,MBARARA,4
-KITARA-vs-MBARARA,Gadaffi Kacancu,Ambrose Arinda,46,no,MBARARA,4
-KITARA-vs-MBARARA,Yunusu Sibira,Hussein Ssenoga,52,no,KITARA,4
-KITARA-vs-MBARARA,Isa Muzeeyi Lumu,Benjamin Nyakoojo,64,no,KITARA,4
-KITARA-vs-MBARARA,Wahab Gadafi,Amir Kakomo,64,no,KITARA,4
-KITARA-vs-MBARARA,Stuart Hussein Kafuluma,Ian Amanya,64,no,MBARARA,4
-KITARA-vs-MBARARA,Thomas Kakaire,Latif Ssenkubuge,64,no,MBARARA,4
-KITARA-vs-MBARARA,Isaac Doka Mweru,Frank Tumwesigye,77,no,KITARA,4
-KITARA-vs-MBARARA,Eddy Ssebandeke,Emmanuel Alex Wasswa,77,no,KITARA,4
-KITARA-vs-MBARARA,Francis Odongo,Henry Kitegenyi,81,no,MBARARA,4
-VILLA-vs-POLICE,Abudshakur Ramsey Jemba,Brian James Obedi,44,no,POLICE,4
-VILLA-vs-POLICE,Geofrey Gagganga,Ibrahim Kasinde,46,no,Villa,4
-VILLA-vs-POLICE,Charles Lwanga,Aslam Ssemakula,46,no,Villa,4
-VILLA-vs-POLICE,Sizwe Mario Gwebu,Dennis Kalanzi,58,no,POLICE,4
-VILLA-vs-POLICE,Charles Bbaale,Lawrence Tezikya,58,no,POLICE,4
-VILLA-vs-POLICE,Elivis Ngonde,Najib Yiga,74,no,Villa,4
-VILLA-vs-POLICE,Raymon Barasa Mangoli,Cyrus Kibande,74,no,Villa,4
-VILLA-vs-POLICE,Andrew Otim,Reagan Mpande,74,no,Villa,4
-VILLA-vs-POLICE,Emmanuel Mugume,Saidi Kyeyune,79,no,POLICE,4
-VILLA-vs-POLICE,Umaru Kasumba,Bedia Djuma Ikamba,79,no,POLICE,4
-ENTEBBE-vs-NEC,Muhammad Kyeyune,Julius Poloto,35,no,ENTEBBE,4
-ENTEBBE-vs-NEC,James Jarieko,CHARLES MOSES WAIBI,54,no,NEC,4
-ENTEBBE-vs-NEC,Siraje Ssentamu,Joseph Seremba,54,no,NEC,4
-ENTEBBE-vs-NEC,Allan Mugalu,Emmanuel Kulanga,54,no,NEC,4
-ENTEBBE-vs-NEC,Emmanuel Iisat,Hassan Ssenyonjo,64,no,ENTEBBE,4
-ENTEBBE-vs-NEC,Hudson Mbalire,Dhata Joseph Stephen Lujang,67,no,NEC,4
-ENTEBBE-vs-NEC,Paul Mucureezi,Shamiru Kimwero,67,no,NEC,4
-ENTEBBE-vs-NEC,Ambrose Kigozi,Fazil Tumwine,81,no,ENTEBBE,4
-POLICE-vs-MAROONS,Jackson Nunda,Dickson Niwamanya,33,no,MAROONS,5
-POLICE-vs-MAROONS,Emmanuel Mugume,Abudshakur Ramsey Jemba,49,no,POLICE,5
-POLICE-vs-MAROONS,Ivan Eyamu,Sizwe Mario Gwebu,49,no,POLICE,5
-POLICE-vs-MAROONS,Emmanuel Obua,Rogers Kiwanuka,67,no,MAROONS,5
-POLICE-vs-MAROONS,Ivan Mayanja,Abel Michael Eturude,69,no,MAROONS,5
-POLICE-vs-MAROONS,Derrick Maviiri,Lawrence Tezikya,71,no,POLICE,5
-POLICE-vs-MAROONS,Samuel Kayongo,Dennis Kalanzi,71,no,POLICE,5
-POLICE-vs-MAROONS,Ivan Asaba,Apollo Kagogwe,80,no,MAROONS,5
-URA-vs-UPDF,Living Kabon,Amisi Bwangani,65,no,URA,5
-URA-vs-UPDF,Norman Namanya,Nicholas Kabonge,65,no,URA,5
-URA-vs-UPDF,JOHN INNOCENT KISOLO,George Masembe,65,no,URA,5
-URA-vs-UPDF,Emmanuel Manu Ochen,Rashid Faridi,71,no,UPDF,5
-URA-vs-UPDF,Asaph Ssegujja,Joseph Janjali,71,no,UPDF,5
-URA-vs-UPDF,Fred Amaku,Nelson Senkatuka,82,no,URA,5
-URA-vs-UPDF,Laban Tibiita,Joseph Ssemujju,82,no,URA,5
-URA-vs-UPDF,Shafic kakande,Samson Andrew Kigozi,87,no,UPDF,5
-URA-vs-UPDF,Enrique Lubwama,IBRAHIM MAKUMBI,87,no,UPDF,5
-URA-vs-UPDF,Brian Kalumba,FRANK GLADISON MUGISA,87,no,UPDF,5
-KITARA-vs-LUGAZI,Frank Tumwesigye,Amir Kakomo,28,no,KITARA,5
-KITARA-vs-LUGAZI,Birungi Alvin Twiine,Dauson Mafumu,39,no,LUGAZI,5
-KITARA-vs-LUGAZI,Yunusu Sibira,Emmanuel Alex Wasswa,46,no,KITARA,5
-KITARA-vs-LUGAZI,Joseph Othieno,Ayiko Richard,49,no,LUGAZI,5
-KITARA-vs-LUGAZI,Wahab Gadafi,Hussein Ssenoga,64,no,KITARA,5
-KITARA-vs-LUGAZI,Eddy Ssebandeke,Patrick Henry Kaddu,64,no,KITARA,5
-KITARA-vs-LUGAZI,Ashiraf Mulindi,Freedom Mungudit,69,no,LUGAZI,5
-KITARA-vs-LUGAZI,Adam Muteesasira,Amos Etojo,69,no,LUGAZI,5
-KITARA-vs-LUGAZI,Juma Ssajjabi,Abdul Kalanzi,69,no,LUGAZI,5
-KITARA-vs-LUGAZI,John Bosco Byaruhanga,Jimmy Kalema,78,no,KITARA,5
-BUL-vs-EXPRESS,Elvis Ssekajjugo,Abdulahi Rashid,34,no,EXPRESS,5
-BUL-vs-EXPRESS,Seiri Arigumaho,Abdul Karim Ndugwa,57,no,BUL,5
-BUL-vs-EXPRESS,ISAAC SSENYUNJA,Martin Aprem,57,no,BUL,5
-BUL-vs-EXPRESS,Habert Asiimwe,Henry Wamala,58,no,EXPRESS,5
-BUL-vs-EXPRESS,ALEX KITATA,Denis Ssewagudde,73,no,BUL,5
-BUL-vs-EXPRESS,Isaac Musiima,Jeromy Kirya,73,no,BUL,5
-BUL-vs-EXPRESS,OLOYA MOSES,Muhamed Kagawa Ssenoga,83,no,EXPRESS,5
-BUL-vs-EXPRESS,ALLI ISMAEL,Yosia Kisa,83,no,EXPRESS,5
-BUHIMBA-vs-VILLA,Ali Arshavin Bayo,Najib Yiga,46,no,Villa,5
-BUHIMBA-vs-VILLA,Geofrey Gagganga,Aslam Ssemakula,65,no,Villa,5
-BUHIMBA-vs-VILLA,Andrew Otim,Reagan Mpande,65,no,Villa,5
-BUHIMBA-vs-VILLA,John Bosco Sempijja,Swadik Moro,70,no,BUHIMBA,5
-BUHIMBA-vs-VILLA,Shafic Kiryowa,Erick Muber,70,no,BUHIMBA,5
-BUHIMBA-vs-VILLA,Mpuna Emmanuel Biseki,Anwaru Mustafa Ntege,70,no,BUHIMBA,5
-BUHIMBA-vs-VILLA,Cyrus Kibande,Hassan Mubiru,78,no,Villa,5
-BUHIMBA-vs-VILLA,Jerome Otim,Ibrahim Kasinde,78,no,Villa,5
-BUHIMBA-vs-VILLA,LUCAS MOLA,Derick Byabacwezi,88,no,BUHIMBA,5
-KCCA-vs-CALVARY,Zachous Ocen,Allan Kiggundu,40,no,CALVARY,5
-KCCA-vs-CALVARY,Haruna Lukwago,Enock Walusimbi,46,no,KCCA,5
-KCCA-vs-CALVARY,Alex Yiga,Sammy Raynald Ssebaduka,46,no,KCCA,5
-KCCA-vs-CALVARY,Tusaba Najib Gwaidho,Christopher Agotre,46,no,CALVARY,5
-KCCA-vs-CALVARY,Sharifu Ssengendo,Ivan Ahimbisibwe,65,no,KCCA,5
-KCCA-vs-CALVARY,Alpha Thierry Ssali,Shafik Nana Kwikiriza,67,no,KCCA,5
-KCCA-vs-CALVARY,Emmanuel Anyama,Umar Lutalo,69,no,KCCA,5
-KCCA-vs-CALVARY,Steven Nyalimo,Lawrence Olaboro,72,no,CALVARY,5
-KCCA-vs-CALVARY,Eric Otingcwinyu,John Rogers,72,no,CALVARY,5
-ENTEBBE-vs-VIPERS,John Kokas Alou,Emmanuel Iisat,32,no,ENTEBBE,5
-ENTEBBE-vs-VIPERS,TADEO LWANGA,Joseph Youngman Marvin,43,no,VIPERS,5
-ENTEBBE-vs-VIPERS,Ambrose Kigozi,Fazil Tumwine,46,no,ENTEBBE,5
-ENTEBBE-vs-VIPERS,Junior Yunus Sentamu,Milton Karisa,46,no,VIPERS,5
-ENTEBBE-vs-VIPERS,Noordin Saddic Bunjo,Steven Munguchi,63,no,ENTEBBE,5
-ENTEBBE-vs-VIPERS,Isaac Ogwang,Gusto Wa Ilungo Mulongo,66,no,VIPERS,5
-ENTEBBE-vs-VIPERS,ROBIN KANE HNEY,Kiza Arafat Usama,66,no,VIPERS,5
-ENTEBBE-vs-VIPERS,Moses Waiswa Ndhondhi,Enock Ssebaggala,83,no,VIPERS,5
-ENTEBBE-vs-VIPERS,Muhammad Kyeyune,John Kokas Alou,84,no,ENTEBBE,5
-MBARARA-vs-NEC,Ibrahim Musa,Patrick Bayiga,46,no,NEC,5
-MBARARA-vs-NEC,Francis Odongo,Hamza Mulambuzi,51,no,MBARARA,5
-MBARARA-vs-NEC,Nasur Almahad Sadik,Ian Amanya,60,no,MBARARA,5
-MBARARA-vs-NEC,Latif Ssenkubuge,Mike Walaga,60,no,MBARARA,5
-MBARARA-vs-NEC,James Jarieko,Marvin Kavuma,65,no,NEC,5
-MBARARA-vs-NEC,Paul Mucureezi,Dhata Joseph Stephen Lujang,65,no,NEC,5
-MBARARA-vs-NEC,Wycliffe Ahumuza,Henry Kitegenyi,75,no,MBARARA,5
-MBARARA-vs-NEC,Gabriel Eragu,Denis Kaka Omony,75,no,MBARARA,5
-MBARARA-vs-NEC,Joseph Seremba,Allan Mugalu,80,no,NEC,5
+league,season,game,in,out,min,added_time,team,md
+UPL,2025/26,BUL-vs-URA,Isaac Musiima,George Kasonko,46,no,BUL,1
+UPL,2025/26,BUL-vs-URA,Ibrahim Orit,Isaac Wagoina,69,no,BUL,1
+UPL,2025/26,BUL-vs-URA,Reagan Kalyowa,Martin Aprem,69,no,BUL,1
+UPL,2025/26,BUL-vs-URA,Denis Luzige Kisiriko,Nelson Senkatuka,76,no,URA,1
+UPL,2025/26,BUL-vs-URA,Norman Namanya,Laban Tibiita,76,no,URA,1
+UPL,2025/26,BUL-vs-URA,ALEX KITATA,Abdul Karim Ndugwa,88,no,BUL,1
+UPL,2025/26,BUL-vs-URA,JOHN INNOCENT KISOLO,Ibrahim Wamannah,88,no,URA,1
+UPL,2025/26,BUL-vs-URA,Godfrey Sekibengo,Joseph Ssemujju,88,no,URA,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Junior Samuel Kawawa,Muhammad Kyeyune,32,no,ENTEBBE,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Noordin Saddic Bunjo,Steven Munguchi,46,no,ENTEBBE,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Emmanuel Iisat,Issa Bugembe,46,no,ENTEBBE,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Hussein Mwanje,Edson Agondeze,67,no,BUHIMBA,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Shafic Kiryowa,Swadik Moro,67,no,BUHIMBA,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,sheif Batte,John Wesley kisaakye,67,no,BUHIMBA,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,John Kokas Alou,Hassan Ssenyonjo,67,no,ENTEBBE,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Fazil Tumwine,Ambrose Kigozi,67,no,ENTEBBE,1
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,Malongo Gedeon Mpia,Anwaru Mustafa Ntege,83,no,BUHIMBA,1
+UPL,2025/26,KITARA-vs-KCCA,STEVEN JAMES OYIRWOTH,Gavin Mugweri Kizito,46,no,KCCA,1
+UPL,2025/26,KITARA-vs-KCCA,John Bosco Byaruhanga,Emmanuel Alex Wasswa,55,no,KITARA,1
+UPL,2025/26,KITARA-vs-KCCA,Peter Magambo,Hassan Muhamud,55,no,KCCA,1
+UPL,2025/26,KITARA-vs-KCCA,Emmanuel Anyama,Shafik Nana Kwikiriza,55,no,KCCA,1
+UPL,2025/26,KITARA-vs-KCCA,Alex Yiga,Ivan Ahimbisibwe,55,no,KCCA,1
+UPL,2025/26,KITARA-vs-KCCA,George Senkaaba,Yunusu Sibira,78,no,KITARA,1
+UPL,2025/26,KITARA-vs-KCCA,Sharifu Ssengendo,Ashraf Mugume,78,no,KCCA,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Freedom Mungudit,Amos Etojo,30,no,LUGAZI,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Ashiraf Mulindi,Juma Ssajjabi,46,no,LUGAZI,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Allan Kiggundu,James Ssemambo,56,no,CALVARY,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Stephen Oriokot,Bashir Asiku,56,no,CALVARY,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Alfred Leku,Moses Ojoaza Buga,65,no,LUGAZI,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Mubaraka Mitala,Steven Nyalimo,80,no,CALVARY,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Saidi Sukuru,Christopher Agotre,80,no,CALVARY,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Edrine Junior Owachgiu,Sharif Saaka,90(+1),yes,LUGAZI,1
+UPL,2025/26,POLICE-vs-MBARARA,Denis Kaka Omony,Abudul Malik Bironse,46,no,MBARARA,1
+UPL,2025/26,POLICE-vs-MBARARA,Nasur Almahad Sadik,Latif Ssenkubuge,46,no,MBARARA,1
+UPL,2025/26,POLICE-vs-MBARARA,Ivan Eyamu,Abudshakur Ramsey Jemba,60,no,POLICE,1
+UPL,2025/26,POLICE-vs-MBARARA,Lawrence Tezikya,Charles Bbaale,60,no,POLICE,1
+UPL,2025/26,POLICE-vs-MBARARA,Reagan Steven Male,Brian James Obedi,60,no,POLICE,1
+UPL,2025/26,POLICE-vs-MBARARA,Gabriel Eragu,Innocent Wafula Esimu,63,no,MBARARA,1
+UPL,2025/26,POLICE-vs-MBARARA,Thomas Kakaire,Gadaffi Kacancu,63,no,MBARARA,1
+UPL,2025/26,POLICE-vs-MBARARA,Clinton Davico Kamugisha,Mike Walaga,79,no,MBARARA,1
+UPL,2025/26,POLICE-vs-MBARARA,Umaru Kasumba,Sizwe Mario Gwebu,83,no,POLICE,1
+UPL,2025/26,EXPRESS-vs-UPDF,Mikidadi Ssenyonga,Muhamed Kagawa Ssenoga,46,no,EXPRESS,1
+UPL,2025/26,EXPRESS-vs-UPDF,OLOYA MOSES,HAKIM WANDERA,46,no,EXPRESS,1
+UPL,2025/26,EXPRESS-vs-UPDF,Rashid Faridi,Samson Andrew Kigozi,52,no,UPDF,1
+UPL,2025/26,EXPRESS-vs-UPDF,Asaph Ssegujja,FRANK GLADISON MUGISA,66,no,UPDF,1
+UPL,2025/26,EXPRESS-vs-UPDF,IBRAHIM MAKUMBI,Emmanuel Manu Ochen,66,no,UPDF,1
+UPL,2025/26,EXPRESS-vs-UPDF,Elvis Ssekajjugo,Abdulahi Rashid,87,no,EXPRESS,1
+UPL,2025/26,EXPRESS-vs-UPDF,ISA GLORY KISUULE,Peter Onzima,87,no,EXPRESS,1
+UPL,2025/26,EXPRESS-vs-UPDF,Kitara Daniel,Samuel Kayongo Ssekamatte,87,no,UPDF,1
+UPL,2025/26,EXPRESS-vs-UPDF,Enrique Lubwama,Christopher Kamagu,87,no,UPDF,1
+UPL,2025/26,BUL-vs-MAROONS,Dickson Niwamanya,Abel Michael Eturude,46,no,MAROONS,2
+UPL,2025/26,BUL-vs-MAROONS,Jackson Nunda,Ivan Mayanja,46,no,MAROONS,2
+UPL,2025/26,BUL-vs-MAROONS,Nicholas Mwere,Isaac Wagoina,65,no,BUL,2
+UPL,2025/26,BUL-vs-MAROONS,Seiri Arigumaho,Abdul Karim Ndugwa,65,no,BUL,2
+UPL,2025/26,BUL-vs-MAROONS,Brian Nkuubi,Norman Borniface Odipio,69,no,MAROONS,2
+UPL,2025/26,BUL-vs-MAROONS,Simon Achidi,Martin Aprem,78,no,BUL,2
+UPL,2025/26,BUL-vs-MAROONS,Ibrahim Orit,Denis Ssewagudde,78,no,BUL,2
+UPL,2025/26,BUL-vs-MAROONS,Emmanuel Obua,Rogers Kiwanuka,78,no,MAROONS,2
+UPL,2025/26,BUL-vs-MAROONS,George Kasonko,Ibrahim Mugulusi,90,no,BUL,2
+UPL,2025/26,POLICE-vs-EXPRESS,Mikidadi Ssenyonga,John Asiimwe,46,no,EXPRESS,2
+UPL,2025/26,POLICE-vs-EXPRESS,Yosia Kisa,HAKIM WANDERA,46,no,EXPRESS,2
+UPL,2025/26,POLICE-vs-EXPRESS,Dennis Kalanzi,Brian James Obedi,56,no,POLICE,2
+UPL,2025/26,POLICE-vs-EXPRESS,Bedia Djuma Ikamba,Umaru Kasumba,56,no,POLICE,2
+UPL,2025/26,POLICE-vs-EXPRESS,Charles Bbaale,Sizwe Mario Gwebu,78,no,POLICE,2
+UPL,2025/26,POLICE-vs-EXPRESS,Rayn Figo Kizito,Abudshakur Ramsey Jemba,78,no,POLICE,2
+UPL,2025/26,POLICE-vs-EXPRESS,Habert Asiimwe,Richard Basangwa,79,no,EXPRESS,2
+UPL,2025/26,POLICE-vs-EXPRESS,Emmanuel Mugume,Saidi Kyeyune,83,no,POLICE,2
+UPL,2025/26,POLICE-vs-EXPRESS,Henry Wamala,Abdulahi Rashid,85,no,EXPRESS,2
+UPL,2025/26,URA-vs-NEC,Joseph Ssemujju,Nelson Senkatuka,75,no,URA,2
+UPL,2025/26,URA-vs-NEC,Paul Mucureezi,Dhata Joseph Stephen Lujang,75,no,NEC,2
+UPL,2025/26,URA-vs-NEC,James Jarieko,CHARLES MOSES WAIBI,75,no,NEC,2
+UPL,2025/26,URA-vs-NEC,Norman Namanya,Godfrey Sekibengo,87,no,URA,2
+UPL,2025/26,URA-vs-NEC,Nicholas Kabonge,Denis Luzige Kisiriko,90(+4),yes,URA,2
+UPL,2025/26,URA-vs-NEC,Hudu Mulikyi,James Penz Begisa,90(+4),yes,URA,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Allan Kiggundu,Julius Ocen,46,no,CALVARY,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,ANDREW KIWANUKA,Bashir Asiku,46,no,CALVARY,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,James Ssemambo,Simon Peter Odeke,60,no,CALVARY,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Saidi Sukuru,Christopher Agotre,60,no,CALVARY,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Derick Byabacwezi,Anwaru Mustafa Ntege,69,no,BUHIMBA,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Shafic Kiryowa,John Wesley kisaakye,69,no,BUHIMBA,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Mubaraka Mitala,Junior Emmanuel Ojok,70,no,CALVARY,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,John Bosco Sempijja,Swadik Moro,78,no,BUHIMBA,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Mpuna Emmanuel Biseki,Edson Agondeze,90(+1),yes,BUHIMBA,2
+UPL,2025/26,MBARARA-vs-UPDF,Thomas Kakaire,Gadaffi Kacancu,60,no,MBARARA,2
+UPL,2025/26,MBARARA-vs-UPDF,Nasur Almahad Sadik,Ambrose Arinda,60,no,MBARARA,2
+UPL,2025/26,MBARARA-vs-UPDF,Ronald Edwok,Mike Walaga,75,no,MBARARA,2
+UPL,2025/26,MBARARA-vs-UPDF,Sadat Nsubuga,Ian Amanya,75,no,MBARARA,2
+UPL,2025/26,MBARARA-vs-UPDF,Clinton Davico Kamugisha,Denis Kaka Omony,80,no,MBARARA,2
+UPL,2025/26,MBARARA-vs-UPDF,Aggrey Kiirya,Samson Andrew Kigozi,85,no,UPDF,2
+UPL,2025/26,MBARARA-vs-UPDF,Emmanuel Manu Ochen,Rashid Faridi,85,no,UPDF,2
+UPL,2025/26,KCCA-vs-VILLA,Frank Ssebufu,Charles Lwanga,60,no,Villa,2
+UPL,2025/26,KCCA-vs-VILLA,Reagan Mpande,Hassan Mubiru,60,no,Villa,2
+UPL,2025/26,KCCA-vs-VILLA,Alex Yiga,Ashraf Mugume,67,no,KCCA,2
+UPL,2025/26,KCCA-vs-VILLA,Sharifu Ssengendo,Enock Walusimbi,67,no,KCCA,2
+UPL,2025/26,KCCA-vs-VILLA,Patrick Jonah Kakande,Ibrahim Kasinde,80,no,Villa,2
+UPL,2025/26,KCCA-vs-VILLA,Elivis Ngonde,Aslam Ssemakula,80,no,Villa,2
+UPL,2025/26,KCCA-vs-VILLA,Umar Lutalo,Shafik Nana Kwikiriza,84,no,KCCA,2
+UPL,2025/26,KCCA-vs-VILLA,Emmanuel Anyama,Ivan Ahimbisibwe,84,no,KCCA,2
+UPL,2025/26,KCCA-vs-VILLA,Andrew Otim,Geoffrey Lubanga Kene,90(+1),yes,Villa,2
+UPL,2025/26,KCCA-vs-VILLA,Peter Magambo,Saidi Mayanja,90(+1),yes,KCCA,2
+UPL,2025/26,MBARARA-vs-BUL,Isaac Wagoina,Jeromy Kirya,43,no,BUL,3
+UPL,2025/26,MBARARA-vs-BUL,Sadat Nsubuga,Nasur Almahad Sadik,57,no,MBARARA,3
+UPL,2025/26,MBARARA-vs-BUL,LWENDA SOWEDI,SWABIR MPASA,62,no,BUL,3
+UPL,2025/26,MBARARA-vs-BUL,Reagan Kalyowa,Martin Aprem,62,no,BUL,3
+UPL,2025/26,MBARARA-vs-BUL,Thomas Kakaire,Ian Amanya,70,no,MBARARA,3
+UPL,2025/26,MBARARA-vs-BUL,Gabriel Eragu,Latif Ssenkubuge,70,no,MBARARA,3
+UPL,2025/26,MBARARA-vs-BUL,ALEX KITATA,Denis Ssewagudde,84,no,BUL,3
+UPL,2025/26,MBARARA-vs-BUL,Clinton Davico Kamugisha,Henry Kitegenyi,90,no,MBARARA,3
+UPL,2025/26,MBARARA-vs-BUL,Mike Walaga,Denis Kaka Omony,90,no,MBARARA,3
+UPL,2025/26,URA-vs-EXPRESS,ISA GLORY KISUULE,Peter Onzima,25,no,EXPRESS,3
+UPL,2025/26,URA-vs-EXPRESS,Muhamed Kagawa Ssenoga,Mikidadi Ssenyonga,46,no,EXPRESS,3
+UPL,2025/26,URA-vs-EXPRESS,Godfrey Sekibengo,Laban Tibiita,50,no,URA,3
+UPL,2025/26,URA-vs-EXPRESS,ALLI ISMAEL,Abdulahi Rashid,60,no,EXPRESS,3
+UPL,2025/26,URA-vs-EXPRESS,Living Kabon,Norman Namanya,75,no,URA,3
+UPL,2025/26,URA-vs-EXPRESS,OLOYA MOSES,Henry Wamala,78,no,EXPRESS,3
+UPL,2025/26,URA-vs-EXPRESS,NYARWA BITANYWAINE OLIMI,Joseph Ssemujju,82,no,URA,3
+UPL,2025/26,UPDF-vs-MAROONS,Emmanuel Manu Ochen,Samson Andrew Kigozi,0,no,UPDF,3
+UPL,2025/26,UPDF-vs-MAROONS,Sulaiman Kibalama,Swaibu Kasujja Kalule,49,no,UPDF,3
+UPL,2025/26,UPDF-vs-MAROONS,Abel Michael Eturude,Ivan Mayanja,59,no,MAROONS,3
+UPL,2025/26,UPDF-vs-MAROONS,Brian Nkuubi,Emmanuel Obua,59,no,MAROONS,3
+UPL,2025/26,UPDF-vs-MAROONS,Mujahid Ogama,Dickson Niwamanya,59,no,MAROONS,3
+UPL,2025/26,UPDF-vs-MAROONS,Derick Basoga,Felix Okot,67,no,MAROONS,3
+UPL,2025/26,UPDF-vs-MAROONS,Apollo Kagogwe,Deni Rukundo,78,no,MAROONS,3
+UPL,2025/26,UPDF-vs-MAROONS,Abbas Luuty Nsubuga,Rashid Faridi,78,no,UPDF,3
+UPL,2025/26,UPDF-vs-MAROONS,Brian Kalumba,Joseph Janjali,78,no,UPDF,3
+UPL,2025/26,UPDF-vs-MAROONS,Shafic kakande,Aggrey Kiirya,88,no,UPDF,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Geofrey Gagganga,Aslam Ssemakula,57,no,Villa,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Julius Poloto,John Kokas Alou,57,no,ENTEBBE,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Charles Lwanga,Ibrahim Kasinde,69,no,Villa,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Issa Bugembe,Junior Samuel Kawawa,71,no,ENTEBBE,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Elivis Ngonde,Simon Kato Ssemayange,77,no,Villa,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Andrew Otim,Frank Ssebufu,77,no,Villa,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Muhammad Kyeyune,Emmanuel Iisat,87,no,ENTEBBE,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Noordin Saddic Bunjo,Fazil Tumwine,87,no,ENTEBBE,3
+UPL,2025/26,NEC-vs-POLICE,Emmanuel Ajo,Ronald Media Innocent,43,no,NEC,3
+UPL,2025/26,NEC-vs-POLICE,Allan Mugalu,Emmanuel Kulanga,54,no,NEC,3
+UPL,2025/26,NEC-vs-POLICE,Charles Bbaale,Lawrence Tezikya,62,no,POLICE,3
+UPL,2025/26,NEC-vs-POLICE,Dennis Kalanzi,Abudshakur Ramsey Jemba,62,no,POLICE,3
+UPL,2025/26,NEC-vs-POLICE,Umaru Kasumba,Sizwe Mario Gwebu,71,no,POLICE,3
+UPL,2025/26,NEC-vs-POLICE,Rayn Figo Kizito,Saidi Kyeyune,71,no,POLICE,3
+UPL,2025/26,NEC-vs-POLICE,Patrick Bayiga,Jacob Okao,77,no,NEC,3
+UPL,2025/26,NEC-vs-POLICE,Emmanuel Mugume,Brian James Obedi,84,no,POLICE,3
+UPL,2025/26,LUGAZI-vs-URA,Nicholas Kabonge,Laban Tibiita,35,no,URA,4
+UPL,2025/26,LUGAZI-vs-URA,Abdul Kalanzi,Adam Muteesasira,46,no,LUGAZI,4
+UPL,2025/26,LUGAZI-vs-URA,JOHN INNOCENT KISOLO,George Masembe,66,no,URA,4
+UPL,2025/26,LUGAZI-vs-URA,Fred Amaku,Amisi Bwangani,66,no,URA,4
+UPL,2025/26,LUGAZI-vs-URA,Abraham Kakensa Tusubira,Joseph Ssemujju,72,no,URA,4
+UPL,2025/26,MAROONS-vs-CALVARY,Mujahid Ogama,Emmanuel Obua,29,no,MAROONS,4
+UPL,2025/26,MAROONS-vs-CALVARY,Brian Nkuubi,Felix Okot,46,no,MAROONS,4
+UPL,2025/26,MAROONS-vs-CALVARY,Eric Otingcwinyu,John Rogers,50,no,CALVARY,4
+UPL,2025/26,MAROONS-vs-CALVARY,Allan Kiggundu,Zachous Ocen,64,no,CALVARY,4
+UPL,2025/26,MAROONS-vs-CALVARY,Steven Nyalimo,Lawrence Olaboro,64,no,CALVARY,4
+UPL,2025/26,MAROONS-vs-CALVARY,Jackson Nunda,Dickson Niwamanya,71,no,MAROONS,4
+UPL,2025/26,MAROONS-vs-CALVARY,Ronald Orombi,Norman Borniface Odipio,81,no,MAROONS,4
+UPL,2025/26,MAROONS-vs-CALVARY,Abel Michael Eturude,Ivan Mayanja,81,no,MAROONS,4
+UPL,2025/26,MAROONS-vs-CALVARY,Mubaraka Mitala,Simon Peter Odeke,81,no,CALVARY,4
+UPL,2025/26,BUL-vs-BUHIMBA,Shafic Kiryowa,John Wesley kisaakye,46,no,BUHIMBA,4
+UPL,2025/26,BUL-vs-BUHIMBA,ALEX KITATA,Seiri Arigumaho,60,no,BUL,4
+UPL,2025/26,BUL-vs-BUHIMBA,Reagan Kalyowa,Martin Aprem,60,no,BUL,4
+UPL,2025/26,BUL-vs-BUHIMBA,Simon Achidi,Denis Ssewagudde,60,no,BUL,4
+UPL,2025/26,BUL-vs-BUHIMBA,John Bosco Sempijja,Edson Agondeze,69,no,BUHIMBA,4
+UPL,2025/26,BUL-vs-BUHIMBA,Hussein Mwanje,Erick Muber,69,no,BUHIMBA,4
+UPL,2025/26,BUL-vs-BUHIMBA,Derick Byabacwezi,Swadik Moro,69,no,BUHIMBA,4
+UPL,2025/26,BUL-vs-BUHIMBA,Isaac Wagoina,Jeromy Kirya,79,no,BUL,4
+UPL,2025/26,BUL-vs-BUHIMBA,ISAAC SSENYUNJA,Ibrahim Mugulusi,79,no,BUL,4
+UPL,2025/26,BUL-vs-BUHIMBA,NICHOLAS WAMANI,Dudu Ramadhan,89,no,BUHIMBA,4
+UPL,2025/26,EXPRESS-vs-KCCA,Ashraf Mugume,Umar Lutalo,53,no,KCCA,4
+UPL,2025/26,EXPRESS-vs-KCCA,Peter Onzima,Muhamed Kagawa Ssenoga,58,no,EXPRESS,4
+UPL,2025/26,EXPRESS-vs-KCCA,Yosia Kisa,KHASIM MUSTAPHA,58,no,EXPRESS,4
+UPL,2025/26,EXPRESS-vs-KCCA,Alex Yiga,Shafik Nana Kwikiriza,68,no,KCCA,4
+UPL,2025/26,EXPRESS-vs-KCCA,Emmanuel Anyama,Ivan Ahimbisibwe,68,no,KCCA,4
+UPL,2025/26,EXPRESS-vs-KCCA,ALLI ISMAEL,Abdulahi Rashid,76,no,EXPRESS,4
+UPL,2025/26,EXPRESS-vs-KCCA,Mikidadi Ssenyonga,Henry Wamala,76,no,EXPRESS,4
+UPL,2025/26,EXPRESS-vs-KCCA,OLOYA MOSES,Lawrence Muwonge Bukenya,81,no,EXPRESS,4
+UPL,2025/26,EXPRESS-vs-KCCA,Peter Magambo,Saidi Mayanja,87,no,KCCA,4
+UPL,2025/26,EXPRESS-vs-KCCA,Sharifu Ssengendo,Ashraf Mugume,87,no,KCCA,4
+UPL,2025/26,KITARA-vs-MBARARA,Mike Walaga,Denis Kaka Omony,27,no,MBARARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Gadaffi Kacancu,Ambrose Arinda,46,no,MBARARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Yunusu Sibira,Hussein Ssenoga,52,no,KITARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Isa Muzeeyi Lumu,Benjamin Nyakoojo,64,no,KITARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Wahab Gadafi,Amir Kakomo,64,no,KITARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Stuart Hussein Kafuluma,Ian Amanya,64,no,MBARARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Thomas Kakaire,Latif Ssenkubuge,64,no,MBARARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Isaac Doka Mweru,Frank Tumwesigye,77,no,KITARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Eddy Ssebandeke,Emmanuel Alex Wasswa,77,no,KITARA,4
+UPL,2025/26,KITARA-vs-MBARARA,Francis Odongo,Henry Kitegenyi,81,no,MBARARA,4
+UPL,2025/26,VILLA-vs-POLICE,Abudshakur Ramsey Jemba,Brian James Obedi,44,no,POLICE,4
+UPL,2025/26,VILLA-vs-POLICE,Geofrey Gagganga,Ibrahim Kasinde,46,no,Villa,4
+UPL,2025/26,VILLA-vs-POLICE,Charles Lwanga,Aslam Ssemakula,46,no,Villa,4
+UPL,2025/26,VILLA-vs-POLICE,Sizwe Mario Gwebu,Dennis Kalanzi,58,no,POLICE,4
+UPL,2025/26,VILLA-vs-POLICE,Charles Bbaale,Lawrence Tezikya,58,no,POLICE,4
+UPL,2025/26,VILLA-vs-POLICE,Elivis Ngonde,Najib Yiga,74,no,Villa,4
+UPL,2025/26,VILLA-vs-POLICE,Raymon Barasa Mangoli,Cyrus Kibande,74,no,Villa,4
+UPL,2025/26,VILLA-vs-POLICE,Andrew Otim,Reagan Mpande,74,no,Villa,4
+UPL,2025/26,VILLA-vs-POLICE,Emmanuel Mugume,Saidi Kyeyune,79,no,POLICE,4
+UPL,2025/26,VILLA-vs-POLICE,Umaru Kasumba,Bedia Djuma Ikamba,79,no,POLICE,4
+UPL,2025/26,ENTEBBE-vs-NEC,Muhammad Kyeyune,Julius Poloto,35,no,ENTEBBE,4
+UPL,2025/26,ENTEBBE-vs-NEC,James Jarieko,CHARLES MOSES WAIBI,54,no,NEC,4
+UPL,2025/26,ENTEBBE-vs-NEC,Siraje Ssentamu,Joseph Seremba,54,no,NEC,4
+UPL,2025/26,ENTEBBE-vs-NEC,Allan Mugalu,Emmanuel Kulanga,54,no,NEC,4
+UPL,2025/26,ENTEBBE-vs-NEC,Emmanuel Iisat,Hassan Ssenyonjo,64,no,ENTEBBE,4
+UPL,2025/26,ENTEBBE-vs-NEC,Hudson Mbalire,Dhata Joseph Stephen Lujang,67,no,NEC,4
+UPL,2025/26,ENTEBBE-vs-NEC,Paul Mucureezi,Shamiru Kimwero,67,no,NEC,4
+UPL,2025/26,ENTEBBE-vs-NEC,Ambrose Kigozi,Fazil Tumwine,81,no,ENTEBBE,4
+UPL,2025/26,POLICE-vs-MAROONS,Jackson Nunda,Dickson Niwamanya,33,no,MAROONS,5
+UPL,2025/26,POLICE-vs-MAROONS,Emmanuel Mugume,Abudshakur Ramsey Jemba,49,no,POLICE,5
+UPL,2025/26,POLICE-vs-MAROONS,Ivan Eyamu,Sizwe Mario Gwebu,49,no,POLICE,5
+UPL,2025/26,POLICE-vs-MAROONS,Emmanuel Obua,Rogers Kiwanuka,67,no,MAROONS,5
+UPL,2025/26,POLICE-vs-MAROONS,Ivan Mayanja,Abel Michael Eturude,69,no,MAROONS,5
+UPL,2025/26,POLICE-vs-MAROONS,Derrick Maviiri,Lawrence Tezikya,71,no,POLICE,5
+UPL,2025/26,POLICE-vs-MAROONS,Samuel Kayongo,Dennis Kalanzi,71,no,POLICE,5
+UPL,2025/26,POLICE-vs-MAROONS,Ivan Asaba,Apollo Kagogwe,80,no,MAROONS,5
+UPL,2025/26,URA-vs-UPDF,Living Kabon,Amisi Bwangani,65,no,URA,5
+UPL,2025/26,URA-vs-UPDF,Norman Namanya,Nicholas Kabonge,65,no,URA,5
+UPL,2025/26,URA-vs-UPDF,JOHN INNOCENT KISOLO,George Masembe,65,no,URA,5
+UPL,2025/26,URA-vs-UPDF,Emmanuel Manu Ochen,Rashid Faridi,71,no,UPDF,5
+UPL,2025/26,URA-vs-UPDF,Asaph Ssegujja,Joseph Janjali,71,no,UPDF,5
+UPL,2025/26,URA-vs-UPDF,Fred Amaku,Nelson Senkatuka,82,no,URA,5
+UPL,2025/26,URA-vs-UPDF,Laban Tibiita,Joseph Ssemujju,82,no,URA,5
+UPL,2025/26,URA-vs-UPDF,Shafic kakande,Samson Andrew Kigozi,87,no,UPDF,5
+UPL,2025/26,URA-vs-UPDF,Enrique Lubwama,IBRAHIM MAKUMBI,87,no,UPDF,5
+UPL,2025/26,URA-vs-UPDF,Brian Kalumba,FRANK GLADISON MUGISA,87,no,UPDF,5
+UPL,2025/26,KITARA-vs-LUGAZI,Frank Tumwesigye,Amir Kakomo,28,no,KITARA,5
+UPL,2025/26,KITARA-vs-LUGAZI,Birungi Alvin Twiine,Dauson Mafumu,39,no,LUGAZI,5
+UPL,2025/26,KITARA-vs-LUGAZI,Yunusu Sibira,Emmanuel Alex Wasswa,46,no,KITARA,5
+UPL,2025/26,KITARA-vs-LUGAZI,Joseph Othieno,Ayiko Richard,49,no,LUGAZI,5
+UPL,2025/26,KITARA-vs-LUGAZI,Wahab Gadafi,Hussein Ssenoga,64,no,KITARA,5
+UPL,2025/26,KITARA-vs-LUGAZI,Eddy Ssebandeke,Patrick Henry Kaddu,64,no,KITARA,5
+UPL,2025/26,KITARA-vs-LUGAZI,Ashiraf Mulindi,Freedom Mungudit,69,no,LUGAZI,5
+UPL,2025/26,KITARA-vs-LUGAZI,Adam Muteesasira,Amos Etojo,69,no,LUGAZI,5
+UPL,2025/26,KITARA-vs-LUGAZI,Juma Ssajjabi,Abdul Kalanzi,69,no,LUGAZI,5
+UPL,2025/26,KITARA-vs-LUGAZI,John Bosco Byaruhanga,Jimmy Kalema,78,no,KITARA,5
+UPL,2025/26,BUL-vs-EXPRESS,Elvis Ssekajjugo,Abdulahi Rashid,34,no,EXPRESS,5
+UPL,2025/26,BUL-vs-EXPRESS,Seiri Arigumaho,Abdul Karim Ndugwa,57,no,BUL,5
+UPL,2025/26,BUL-vs-EXPRESS,ISAAC SSENYUNJA,Martin Aprem,57,no,BUL,5
+UPL,2025/26,BUL-vs-EXPRESS,Habert Asiimwe,Henry Wamala,58,no,EXPRESS,5
+UPL,2025/26,BUL-vs-EXPRESS,ALEX KITATA,Denis Ssewagudde,73,no,BUL,5
+UPL,2025/26,BUL-vs-EXPRESS,Isaac Musiima,Jeromy Kirya,73,no,BUL,5
+UPL,2025/26,BUL-vs-EXPRESS,OLOYA MOSES,Muhamed Kagawa Ssenoga,83,no,EXPRESS,5
+UPL,2025/26,BUL-vs-EXPRESS,ALLI ISMAEL,Yosia Kisa,83,no,EXPRESS,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Ali Arshavin Bayo,Najib Yiga,46,no,Villa,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Geofrey Gagganga,Aslam Ssemakula,65,no,Villa,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Andrew Otim,Reagan Mpande,65,no,Villa,5
+UPL,2025/26,BUHIMBA-vs-VILLA,John Bosco Sempijja,Swadik Moro,70,no,BUHIMBA,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Shafic Kiryowa,Erick Muber,70,no,BUHIMBA,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Mpuna Emmanuel Biseki,Anwaru Mustafa Ntege,70,no,BUHIMBA,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Cyrus Kibande,Hassan Mubiru,78,no,Villa,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Jerome Otim,Ibrahim Kasinde,78,no,Villa,5
+UPL,2025/26,BUHIMBA-vs-VILLA,LUCAS MOLA,Derick Byabacwezi,88,no,BUHIMBA,5
+UPL,2025/26,KCCA-vs-CALVARY,Zachous Ocen,Allan Kiggundu,40,no,CALVARY,5
+UPL,2025/26,KCCA-vs-CALVARY,Haruna Lukwago,Enock Walusimbi,46,no,KCCA,5
+UPL,2025/26,KCCA-vs-CALVARY,Alex Yiga,Sammy Raynald Ssebaduka,46,no,KCCA,5
+UPL,2025/26,KCCA-vs-CALVARY,Tusaba Najib Gwaidho,Christopher Agotre,46,no,CALVARY,5
+UPL,2025/26,KCCA-vs-CALVARY,Sharifu Ssengendo,Ivan Ahimbisibwe,65,no,KCCA,5
+UPL,2025/26,KCCA-vs-CALVARY,Alpha Thierry Ssali,Shafik Nana Kwikiriza,67,no,KCCA,5
+UPL,2025/26,KCCA-vs-CALVARY,Emmanuel Anyama,Umar Lutalo,69,no,KCCA,5
+UPL,2025/26,KCCA-vs-CALVARY,Steven Nyalimo,Lawrence Olaboro,72,no,CALVARY,5
+UPL,2025/26,KCCA-vs-CALVARY,Eric Otingcwinyu,John Rogers,72,no,CALVARY,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,John Kokas Alou,Emmanuel Iisat,32,no,ENTEBBE,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,TADEO LWANGA,Joseph Youngman Marvin,43,no,VIPERS,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Ambrose Kigozi,Fazil Tumwine,46,no,ENTEBBE,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Junior Yunus Sentamu,Milton Karisa,46,no,VIPERS,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Noordin Saddic Bunjo,Steven Munguchi,63,no,ENTEBBE,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Isaac Ogwang,Gusto Wa Ilungo Mulongo,66,no,VIPERS,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,ROBIN KANE HNEY,Kiza Arafat Usama,66,no,VIPERS,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Moses Waiswa Ndhondhi,Enock Ssebaggala,83,no,VIPERS,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Muhammad Kyeyune,John Kokas Alou,84,no,ENTEBBE,5
+UPL,2025/26,MBARARA-vs-NEC,Ibrahim Musa,Patrick Bayiga,46,no,NEC,5
+UPL,2025/26,MBARARA-vs-NEC,Francis Odongo,Hamza Mulambuzi,51,no,MBARARA,5
+UPL,2025/26,MBARARA-vs-NEC,Nasur Almahad Sadik,Ian Amanya,60,no,MBARARA,5
+UPL,2025/26,MBARARA-vs-NEC,Latif Ssenkubuge,Mike Walaga,60,no,MBARARA,5
+UPL,2025/26,MBARARA-vs-NEC,James Jarieko,Marvin Kavuma,65,no,NEC,5
+UPL,2025/26,MBARARA-vs-NEC,Paul Mucureezi,Dhata Joseph Stephen Lujang,65,no,NEC,5
+UPL,2025/26,MBARARA-vs-NEC,Wycliffe Ahumuza,Henry Kitegenyi,75,no,MBARARA,5
+UPL,2025/26,MBARARA-vs-NEC,Gabriel Eragu,Denis Kaka Omony,75,no,MBARARA,5
+UPL,2025/26,MBARARA-vs-NEC,Joseph Seremba,Allan Mugalu,80,no,NEC,5

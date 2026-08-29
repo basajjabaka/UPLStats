@@ -2,13 +2,41 @@ import pandas as pd
 import numpy as np
 import os
 import re
+import shutil
 from pathlib import Path
 
-dataDIR = Path(__file__).resolve().parent / "csvs/raw"
-outputDIR = Path(__file__).resolve().parent / "csvs/transformed"
-outputDIR.mkdir(parents=True, exist_ok=True)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+dataDIR = PROJECT_ROOT / "csvs/new"
+outputDIR = PROJECT_ROOT / "csvs/transformed"
+archiveDIR = PROJECT_ROOT / "csvs/transformed_archive"
 
 GAME_SPLIT = re.compile(r"-VS-")
+
+# every event table now carries the competition it belongs to
+KEY_COLUMNS = ['league', 'season']
+
+
+def archive_previous_output():
+    """Move the pre-existing transformed CSVs aside, once.
+
+    The old files were built from csvs/raw (UPL 2025/26, hand-typed) and predate
+    the league/season columns, so they are kept for reference rather than
+    overwritten.  Guarding on the archive's absence means re-running wrangle
+    never buries the output of the run before it.
+    """
+    if archiveDIR.exists():
+        return
+    existing = sorted(p for p in outputDIR.glob("*.csv")) if outputDIR.exists() else []
+    if not existing:
+        return
+    archiveDIR.mkdir(parents=True, exist_ok=True)
+    for path in existing:
+        shutil.move(str(path), str(archiveDIR / path.name))
+    print(f"Archived {len(existing)} previous file(s) to {archiveDIR}")
+
+
+archive_previous_output()
+outputDIR.mkdir(parents=True, exist_ok=True)
 
 
 def parse_minute_parts(v):
@@ -98,16 +126,18 @@ def df_transform(df, df_name):
 
     return df
 
-# List of csv files to process
-csv_files = ['goals.csv', 'cautions.csv', 'subs.csv']
+# extractor output -> transformed name
+csv_files = {'goalsNew.csv': 'goals.csv',
+             'cautionsNew.csv': 'cautions.csv',
+             'subsNew.csv': 'subs.csv'}
 
 frames = {}
 
-for csv_file in csv_files:
-    input_path = dataDIR / csv_file
+for source_file, csv_file in csv_files.items():
+    input_path = dataDIR / source_file
 
     if not input_path.exists():
-        print(f"\nWarning: {csv_file} not found in {dataDIR}")
+        print(f"\nWarning: {source_file} not found in {dataDIR}")
         continue
 
     # read csv
@@ -152,7 +182,7 @@ def normalise(df, columns=('game', 'team')):
     return out
 
 
-def matchday_by_game(frames):
+def matchday_by_game(frames, league, season):
     """One matchday per game, taking the most common label when they disagree."""
     stacked = []
     for df in frames.values():
@@ -166,15 +196,16 @@ def matchday_by_game(frames):
     disagreements = disagreements[disagreements > 1]
     for game in disagreements.index:
         labels = sorted(stacked[stacked['game'] == game]['md'].unique())
-        print(f"  ! {game} is tagged with matchdays {labels}; using {labels[0]}")
+        print(f"  ! {league} {season}: {game} is tagged with matchdays {labels}; "
+              f"using {labels[0]}")
 
     return stacked.groupby('game')['md'].agg(lambda s: sorted(s.mode())[0])
 
 
-def build_matches(frames):
-    """One row per match, plus one row per team per match with form flags."""
+def build_season_matches(frames, league, season):
+    """One row per match, plus one row per team per match, for one competition."""
     goals = normalise(frames['goals'])
-    md_lookup = matchday_by_game(frames)
+    md_lookup = matchday_by_game(frames, league, season)
 
     matches, team_matches = [], []
     unmatched = []
@@ -205,6 +236,7 @@ def build_matches(frames):
                 away_led = True
 
         matches.append({
+            'league': league, 'season': season,
             'game': game, 'md': md, 'home': home, 'away': away,
             'home_goals': home_goals, 'away_goals': away_goals,
             'total_goals': home_goals + away_goals,
@@ -217,6 +249,7 @@ def build_matches(frames):
             result = 'W' if gf > ga else ('D' if gf == ga else 'L')
             points = {'W': 3, 'D': 1, 'L': 0}[result]
             team_matches.append({
+                'league': league, 'season': season,
                 'game': game, 'md': md, 'team': team, 'opponent': opponent,
                 'venue': venue, 'gf': gf, 'ga': ga, 'gd': gf - ga,
                 'result': result, 'points': points,
@@ -238,13 +271,39 @@ def build_matches(frames):
     return pd.DataFrame(matches), pd.DataFrame(team_matches)
 
 
+def build_matches(frames):
+    """Reconstruct matches one competition at a time.
+
+    Every league and season is rebuilt independently so that a game key which
+    happens to recur across competitions -- the same two clubs meeting in a
+    different season, say -- never has its goals pooled into one scoreline.
+    """
+    competitions = sorted({
+        (str(row['league']), str(row['season']))
+        for df in frames.values()
+        for row in df[KEY_COLUMNS].to_dict('records')
+    })
+
+    matches, team_matches = [], []
+    for league, season in competitions:
+        slice_ = {name: df[(df['league'] == league) & (df['season'] == season)]
+                  for name, df in frames.items()}
+        season_matches, season_team_matches = build_season_matches(slice_, league, season)
+        matches.append(season_matches)
+        team_matches.append(season_team_matches)
+        print(f"  {league} {season}: {len(season_matches)} matches")
+
+    return pd.concat(matches, ignore_index=True), pd.concat(team_matches, ignore_index=True)
+
+
 print(f"\n{'='*60}")
 print("Reconstructing matches from goal events")
 print(f"{'='*60}")
 
+SORT_KEYS = KEY_COLUMNS + ['md', 'game']
 matchesDF, teamMatchesDF = build_matches(frames)
-matchesDF = matchesDF.sort_values(['md', 'game']).reset_index(drop=True)
-teamMatchesDF = teamMatchesDF.sort_values(['md', 'game', 'venue']).reset_index(drop=True)
+matchesDF = matchesDF.sort_values(SORT_KEYS).reset_index(drop=True)
+teamMatchesDF = teamMatchesDF.sort_values(SORT_KEYS + ['venue']).reset_index(drop=True)
 
 matchesDF.to_csv(outputDIR / "transformed_matches.csv", index=False)
 teamMatchesDF.to_csv(outputDIR / "transformed_team_matches.csv", index=False)
@@ -262,7 +321,7 @@ print(f"✓ Saved to: {outputDIR / 'transformed_team_matches.csv'}  ({len(teamMa
 # costs 3.
 
 def comeback_table(team_matches):
-    grouped = team_matches.groupby('team')
+    grouped = team_matches.groupby(KEY_COLUMNS + ['team'])
     table = pd.DataFrame({
         'matches': grouped.size(),
         'matches_behind': grouped['was_behind'].sum(),
@@ -299,21 +358,25 @@ def announce(question, table, column, ascending=False, subset=None, unit=""):
               f"of {int(row['matches'])})")
 
 
-print(f"\n{'='*60}")
-print("COMEBACKS & COLLAPSES")
-print(f"{'='*60}")
+# One set of answers per competition; pooling leagues would compare teams that
+# never played each other.
+for (league, season), table in comebacksDF.groupby(KEY_COLUMNS):
+    table = table.reset_index(drop=True)
+    print(f"\n{'='*60}")
+    print(f"COMEBACKS & COLLAPSES - {league} {season}")
+    print(f"{'='*60}")
 
-announce("Most points earned from a losing position:",
-         comebacksDF, 'points_from_losing', unit=" pts")
-announce("Most wins from a losing position:",
-         comebacksDF, 'wins_from_losing')
-announce("Most points lost from a winning position:",
-         comebacksDF, 'points_dropped_from_winning', unit=" pts")
-announce("Most games lost from a winning position:",
-         comebacksDF, 'losses_from_winning')
-announce("Fewest wins from a losing position (of teams that went behind at all):",
-         comebacksDF, 'wins_from_losing', ascending=True,
-         subset=comebacksDF['matches_behind'] > 0)
+    announce("Most points earned from a losing position:",
+             table, 'points_from_losing', unit=" pts")
+    announce("Most wins from a losing position:",
+             table, 'wins_from_losing')
+    announce("Most points lost from a winning position:",
+             table, 'points_dropped_from_winning', unit=" pts")
+    announce("Most games lost from a winning position:",
+             table, 'losses_from_winning')
+    announce("Fewest wins from a losing position (of teams that went behind at all):",
+             table, 'wins_from_losing', ascending=True,
+             subset=table['matches_behind'] > 0)
 
 print(f"\n{'='*60}")
 print("All transformations complete!")
