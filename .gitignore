@@ -208,3 +208,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# refresh automation: per-report extraction cache, lock, and run log
+csvs/.refresh/
+logs/
