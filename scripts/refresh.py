@@ -51,10 +51,19 @@ SETTLE_SECONDS = 45
 #: a lock older than this is treated as abandoned (a crashed or killed run)
 STALE_LOCK_HOURS = 6
 
+#: Bump whenever the extractor starts producing something new. Cache entries
+#: from an older version are re-parsed even though the PDF itself has not
+#: changed -- without this, adding an output would leave every report "up to
+#: date" and the new file permanently empty.
+CACHE_VERSION = 2
+
 OUTPUT_FILES = (
     ("goalsNew.csv", extractor.GOAL_COLUMNS, "goals"),
     ("cautionsNew.csv", extractor.CAUTION_COLUMNS, "cautions"),
     ("subsNew.csv", extractor.SUB_COLUMNS, "subs"),
+    ("lineupsNew.csv", extractor.LINEUP_COLUMNS, "lineups"),
+    ("staffNew.csv", extractor.STAFF_COLUMNS, "staff"),
+    ("matchInfoNew.csv", extractor.MATCH_INFO_COLUMNS, "info"),
 )
 
 
@@ -128,6 +137,8 @@ def read_cache(relative_path, expected):
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return None
+    if payload.get("cache_version") != CACHE_VERSION:
+        return None
     return payload if payload.get("fingerprint") == expected else None
 
 
@@ -164,7 +175,7 @@ def extract_all(force=False, quiet=False):
 
     Returns (changed, parsed, skipped, deferred, warnings).
     """
-    rows = {"goals": [], "cautions": [], "subs": []}
+    rows = {key: [] for _name, _columns, key in OUTPUT_FILES}
     parsed = cached = deferred = 0
     warnings = []
     live_paths = []
@@ -193,8 +204,12 @@ def extract_all(force=False, quiet=False):
                     deferred += 1
                     continue
 
-                warning = extractor.check_against_score(meta, goals, pages)
+                lineups, staff, info = extractor.extract_squads(pages, meta)
+                notes = [extractor.check_against_score(meta, goals, pages),
+                         extractor.check_squad_counts(meta, lineups)]
+                warning = "; ".join(n for n in notes if n) or None
                 payload = {
+                    "cache_version": CACHE_VERSION,
                     "fingerprint": mark,
                     "game": meta["game"],
                     "md": meta["md"],
@@ -204,12 +219,16 @@ def extract_all(force=False, quiet=False):
                     "goals": [{k: v for k, v in r.items() if k != "_sort"} for r in goals],
                     "cautions": [{k: v for k, v in r.items() if k != "_sort"} for r in cautions],
                     "subs": [{k: v for k, v in r.items() if k != "_sort"} for r in subs],
+                    "lineups": lineups,
+                    "staff": staff,
+                    "info": [info],
                 }
                 write_cache(relative, payload)
                 parsed += 1
                 changed = True
                 log(f"    parsed {meta['game']} (md{meta['md']}) "
-                    f"goals={len(goals)} cautions={len(cautions)} subs={len(subs)}"
+                    f"goals={len(goals)} cautions={len(cautions)} subs={len(subs)} "
+                    f"squad={len(lineups)}"
                     f"{'  !! ' + warning if warning else ''}", quiet)
             else:
                 cached += 1
@@ -227,8 +246,8 @@ def extract_all(force=False, quiet=False):
     if changed:
         for filename, columns, key in OUTPUT_FILES:
             extractor.write_csv(extractor.DEFAULT_OUTPUT_DIR / filename, columns, rows[key])
-        log(f"  wrote csvs/new: goals={len(rows['goals'])} "
-            f"cautions={len(rows['cautions'])} subs={len(rows['subs'])}", quiet)
+        log("  wrote csvs/new: " + ", ".join(
+            f"{key}={len(rows[key])}" for _name, _columns, key in OUTPUT_FILES), quiet)
 
     return changed, parsed, cached, deferred, warnings
 

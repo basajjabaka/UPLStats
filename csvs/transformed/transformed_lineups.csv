@@ -1,0 +1,1357 @@
+league,season,game,md,team,venue,shirt,player,player_id,role,is_captain,is_goalkeeper,on_minute,off_minute,minutes_played
+UPL,2025/26,BUL-vs-URA,1,BUL,home,23.0,TOM IKARA,065955M97,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,6.0,George Kasonko,000241M96,starting,yes,no,0.0,46.0,46
+UPL,2025/26,BUL-vs-URA,1,BUL,home,2.0,Hillary Onek,001574M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,5.0,Bakali Magumda,008892M96,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,11.0,Isaac Wagoina,005568M00,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-URA,1,BUL,home,14.0,Jeromy Kirya,002167M97,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,16.0,Pascal Ngobi,002654M94,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,17.0,Tah Barni Kelvin,024730M99,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,BUL,home,20.0,Abdul Karim Ndugwa,062821M97,starting,no,no,0.0,88.0,88
+UPL,2025/26,BUL-vs-URA,1,BUL,home,24.0,Martin Aprem,006304M00,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-URA,1,BUL,home,25.0,Denis Ssewagudde,048868M06,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,16.0,Chrispas Kusiima,002270M98,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,7.0,Moses Okabo Aliro,008911M96,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,2.0,James Penz Begisa,006994M02,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,5.0,Ronald Otti,003798M94,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,9.0,Joseph Ssemujju,001464M97,starting,no,no,0.0,88.0,88
+UPL,2025/26,BUL-vs-URA,1,URA,away,10.0,Laban Tibiita,001470M02,starting,no,no,0.0,76.0,76
+UPL,2025/26,BUL-vs-URA,1,URA,away,12.0,Nelson Senkatuka,000614M97,starting,no,no,0.0,76.0,76
+UPL,2025/26,BUL-vs-URA,1,URA,away,13.0,Faizo Matovu,006969M97,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,14.0,George Masembe,045544M05,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,17.0,Arthur Kiggundu,000942M95,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-URA,1,URA,away,20.0,Ibrahim Wamannah,001134M97,starting,no,no,0.0,88.0,88
+UPL,2025/26,BUL-vs-URA,1,BUL,home,1.0,Yawe Farouk Sebanjja,002513M99,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,8.0,Ibrahim Orit,000632M98,substitute,no,no,69.0,,21
+UPL,2025/26,BUL-vs-URA,1,BUL,home,9.0,Seiri Arigumaho,024705M01,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,10.0,Ibrahim Mugulusi,000773M99,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,12.0,ISAAC SSENYUNJA,027464M98,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,18.0,ALEX KITATA,065956M92,substitute,no,no,88.0,,2
+UPL,2025/26,BUL-vs-URA,1,BUL,home,19.0,Isaac Musiima,008053M93,substitute,no,no,46.0,,44
+UPL,2025/26,BUL-vs-URA,1,BUL,home,21.0,Fredrick Ngalo,000957M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,22.0,Reagan Kalyowa,006303M01,substitute,no,no,69.0,,21
+UPL,2025/26,BUL-vs-URA,1,BUL,home,28.0,LWENDA SOWEDI,038683M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,BUL,home,30.0,Simon Achidi,045395M05,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,3.0,Hudu Mulikyi,000397M95,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,4.0,Norman Namanya,001766M00,substitute,no,no,76.0,,14
+UPL,2025/26,BUL-vs-URA,1,URA,away,6.0,Abraham Kakensa Tusubira,006815M94,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,8.0,Nicholas Kabonge,002860M98,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,24.0,Muhamad Ssekkeba,000658M95,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,26.0,JOHN INNOCENT KISOLO,043298M06,substitute,no,no,88.0,,2
+UPL,2025/26,BUL-vs-URA,1,URA,away,27.0,Justine Opiro,008877M03,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-URA,1,URA,away,28.0,Denis Luzige Kisiriko,032842M06,substitute,no,no,76.0,,14
+UPL,2025/26,BUL-vs-URA,1,URA,away,30.0,Godfrey Sekibengo,043871M06,substitute,no,no,88.0,,2
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,24.0,Rogers Omedwa,006042M92,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,15.0,Musitafa Mujuzi,000489M99,starting,yes,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,5.0,Ahmed Amayo,009911M99,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,7.0,Julius Poloto,000570M99,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,8.0,Steven Munguchi,002584M95,starting,no,no,0.0,46.0,46
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,12.0,Hassan Ssenyonjo,009233M00,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,13.0,Jonathan Gift Odongo,002867M98,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,17.0,Issa Bugembe,024771M04,starting,no,no,0.0,46.0,46
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,19.0,Ambrose Kigozi,024680M96,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,21.0,Muhammad Kyeyune,006276M00,starting,no,no,0.0,32.0,32
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,22.0,Marvin Mukiibi,031945M03,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,1.0,Jamil Kiyimba,001057M98,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,18.0,Maxwell Owachgiu,001052M97,starting,yes,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,2.0,David Kasaija,008615M02,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,3.0,NKATA FRED,065708M93,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,5.0,Dudu Ramadhan,001615M93,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,8.0,Erick Muber,032079M02,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,11.0,John Wesley kisaakye,006087M96,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,14.0,Solomon Akodi,003594M01,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,21.0,Edson Agondeze,008499M00,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,25.0,Anwaru Mustafa Ntege,002236M94,starting,no,no,0.0,83.0,83
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,26.0,Swadik Moro,044784M03,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,3.0,Bright Joseph Vuni,002554M98,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,6.0,Sam Kintu,000495M95,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,9.0,Fazil Tumwine,051245M05,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,10.0,Junior Samuel Kawawa,026859M97,substitute,no,no,32.0,,58
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,11.0,Noordin Saddic Bunjo,000445M99,substitute,no,no,46.0,,44
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,14.0,Denis Otim,002882M99,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,16.0,Emmanuel Iisat,044680M03,substitute,no,no,46.0,,44
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,18.0,John Kokas Alou,001667M02,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,23.0,Isa Mubiru,000276M96,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,25.0,George Kiryowa,001427M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,ENTEBBE,home,27.0,Charles Okello Batiibwe,027001M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,7.0,Hussein Mwanje,024625M97,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,9.0,sheif Batte,000580M92,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,10.0,Shafic Kiryowa,007345M99,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,12.0,Charles Kyomuhendo,009379M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,13.0,Eric Washington Nyonyintono,024653M00,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,16.0,Malongo Gedeon Mpia,065949M03,substitute,no,no,83.0,,7
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,19.0,Derick Byabacwezi,026897M01,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,23.0,Mpuna Emmanuel Biseki,065950M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,1,BUHIMBA,away,28.0,Moses Ayebale,033075M05,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,18.0,Meddie Kibirige,000417M96,starting,no,yes,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,6.0,Baguma Jasper Aheebwa,000997M01,starting,yes,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,4.0,Frank Tumwesigye,000536M99,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,7.0,Yunusu Sibira,024588M95,starting,no,no,0.0,78.0,78
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,8.0,Hussein Ssenoga,005997M98,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,13.0,Emmanuel Alex Wasswa,005641M93,starting,no,no,0.0,55.0,55
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,15.0,Jimmy Kalema,031277M05,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,17.0,Benjamin Nyakoojo,000626M97,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,23.0,Isa Muzeeyi Lumu,004443M95,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,26.0,Edward Namaasa,044748M05,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,12.0,Charles Lukwago,000622M94,starting,yes,yes,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,2.0,Herbert Achayi,006277M99,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,3.0,Hassan Muhamud,003074M96,starting,no,no,0.0,55.0,55
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,4.0,Saidi Mayanja,001033M99,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,6.0,Sammy Raynald Ssebaduka,028682M02,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,11.0,Ivan Ahimbisibwe,002011M95,starting,no,no,0.0,55.0,55
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,16.0,Fillbert Obenchan,000649M96,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,17.0,Ashraf Mugume,001580M98,starting,no,no,0.0,78.0,78
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,19.0,Shafik Nana Kwikiriza,040861M04,starting,no,no,0.0,55.0,55
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,21.0,Gavin Mugweri Kizito,006315M02,starting,no,no,0.0,46.0,46
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,22.0,Joel Sserunjogi,005883M04,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,1.0,James Alitho,000362M95,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,2.0,Nemeyimana Samuel Kato,009931M98,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,3.0,Muyomba Henry Musisi,002519M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,5.0,Murushid Juuko,021283M94,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,9.0,George Senkaaba,000493M93,substitute,no,no,78.0,,12
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,10.0,John Bosco Byaruhanga,063740M02,substitute,no,no,55.0,,35
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,11.0,Wahab Gadafi,000370M99,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,14.0,Denis Monday,001396M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,20.0,Crispus Asiki,058415M02,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,22.0,Isaac Doka Mweru,008319M96,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KITARA,home,27.0,Isaac Amutuhaire,044871M03,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,1.0,Mutwalibi Mugolofa,001733M00,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,5.0,Sharifu Ssengendo,055880M05,substitute,no,no,78.0,,12
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,8.0,Alpha Thierry Ssali,006081M03,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,13.0,Peter Magambo,001755M99,substitute,no,no,55.0,,35
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,15.0,Enock Walusimbi,001697M98,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,20.0,Emmanuel Anyama,012569M98,substitute,no,no,55.0,,35
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,26.0,James Mubezi,025433M04,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,28.0,Humphrey Oyirwoth,044066M04,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,29.0,Haruna Lukwago,021673M04,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,30.0,Alex Yiga,033201M06,substitute,no,no,55.0,,35
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,45.0,STEVEN JAMES OYIRWOTH,033211M07,substitute,no,no,46.0,,44
+UPL,2025/26,KITARA-vs-KCCA,1,KCCA,away,56.0,Brian Jjara,036912M08,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,,Juma Mutebi,042164M02,starting,no,yes,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,24.0,Ayiko Richard,000452M93,starting,yes,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,3.0,Dauson Mafumu,044021M03,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,10.0,Moses Ojoaza Buga,002606M95,starting,no,no,0.0,65.0,65
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,12.0,Sharif Saaka,009834M91,starting,no,no,0.0,90.0,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,13.0,David Bagoole,006295M96,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,16.0,Abdul Kalanzi,007342M03,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,17.0,Paul Wasswa,002518M99,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,20.0,Amos Etojo,002129M94,starting,no,no,0.0,30.0,30
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,21.0,Rogers Atube,007798M94,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,26.0,Juma Ssajjabi,051304M06,starting,no,no,0.0,46.0,46
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,22.0,Hadji Shukuru,032060M02,starting,no,yes,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,8.0,Christopher Agotre,005690M98,starting,yes,no,0.0,80.0,80
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,3.0,Julius Ocen,002798M95,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,4.0,Bashir Asiku,005705M00,starting,no,no,0.0,56.0,56
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,10.0,Simon Peter Odeke,000823M96,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,11.0,James Ssemambo,000846M98,starting,no,no,0.0,56.0,56
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,17.0,Haron Odongo,000740M00,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,20.0,Steven Nyalimo,027792M95,starting,no,no,0.0,80.0,80
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,21.0,Daniel Opio,006881M97,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,29.0,ANDREW KIWANUKA,064234M05,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,30.0,Junior Emmanuel Ojok,033958M06,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,1.0,Allan Batali Igama,065884M07,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,4.0,Joseph Othieno,062824M96,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,5.0,Edrine Junior Owachgiu,044172M05,substitute,no,no,90.0,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,6.0,Yusuf Mafabi,026758M03,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,7.0,Ashiraf Mulindi,008496M01,substitute,no,no,46.0,,44
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,8.0,Derrick Mwanje,008014M98,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,19.0,Alfred Leku,017845M97,substitute,no,no,65.0,,25
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,22.0,Lumumba Norman Eluzai Brown,062826M05,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,LUGAZI,home,27.0,Freedom Mungudit,057827M06,substitute,no,no,30.0,,60
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,12.0,Tusaba Najib Gwaidho,003727M95,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,15.0,Stephen Oriokot,000835M97,substitute,no,no,56.0,,34
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,19.0,Saidi Sukuru,025621M00,substitute,no,no,80.0,,10
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,23.0,Marvin Praise Wambuga,024641M01,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,24.0,Emmanuel Derrick Were,000315M96,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,25.0,Mubaraka Mitala,058076M06,substitute,no,no,80.0,,10
+UPL,2025/26,LUGAZI-vs-CALVARY,1,CALVARY,away,28.0,Allan Kiggundu,001111M04,substitute,no,no,56.0,,34
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,25.0,Mathias Muwanga,000391M97,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,16.0,Saidi Kyeyune,000664M93,starting,yes,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,3.0,Richard Matovu,001863M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,4.0,Benon Tahomera,004483M96,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,6.0,Daniel Jakony,022744M00,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,10.0,Dennis Kalanzi,055884M06,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,17.0,Charles Bbaale,008955M94,starting,no,no,0.0,60.0,60
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,19.0,Brian James Obedi,023009M00,starting,no,no,0.0,60.0,60
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,21.0,Sizwe Mario Gwebu,065939M03,starting,no,no,0.0,83.0,83
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,28.0,Abudshakur Ramsey Jemba,010972M05,starting,no,no,0.0,60.0,60
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,30.0,Stephen Namaisi,022529M05,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,18.0,Emuran Fahad,020210M01,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,5.0,Ibrahim Thembo,002051M99,starting,yes,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,3.0,Innocent Wafula Esimu,008629M96,starting,no,no,0.0,63.0,63
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,8.0,Ian Amanya,003379M96,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,9.0,Henry Kitegenyi,055878M04,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,11.0,Mike Walaga,006072M93,starting,no,no,0.0,79.0,79
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,14.0,Latif Ssenkubuge,027525M00,starting,no,no,0.0,46.0,46
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,15.0,Reagan Matege,027324M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,20.0,Gadaffi Kacancu,001771M92,starting,no,no,0.0,63.0,63
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,24.0,Sulaiman Ssesaazi,002522M96,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,28.0,Abudul Malik Bironse,025236M04,starting,no,no,0.0,46.0,46
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,7.0,Reagan Steven Male,002310M99,substitute,no,no,60.0,,30
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,8.0,Ivan Eyamu,001898M01,substitute,no,no,60.0,,30
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,9.0,Umaru Kasumba,063887M94,substitute,no,no,83.0,,7
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,11.0,Lawrence Tezikya,017848M98,substitute,no,no,60.0,,30
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,15.0,Bedia Djuma Ikamba,065938M04,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,20.0,Deus Bukenya,024723M95,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,22.0,Tonny Kiwalazi,006255M00,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,24.0,Edward Kasibante,001902M98,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,POLICE,home,26.0,Rayn Figo Kizito,032556M05,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,1.0,Aaron Icumar,025112M99,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,6.0,Francis Odongo,009525M97,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,7.0,Ronald Edwok,000827M97,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,10.0,Clinton Davico Kamugisha,001602M99,substitute,no,no,79.0,,11
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,13.0,Hamza Mulambuzi,017847M01,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,17.0,Nasur Almahad Sadik,015036M01,substitute,no,no,46.0,,44
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,19.0,Gabriel Eragu,002769M93,substitute,no,no,63.0,,27
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,22.0,Denis Kaka Omony,001160M00,substitute,no,no,46.0,,44
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,23.0,Wycliffe Ahumuza,044786M02,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,26.0,Muhammed Kanyike,042577M03,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MBARARA,1,MBARARA,away,30.0,Thomas Kakaire,001734M03,substitute,no,no,63.0,,27
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,12.0,Ramadhan Ali Mwirusi,006444M99,starting,no,yes,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,13.0,Ashraf Mbazira,002676M98,starting,yes,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,2.0,Peter Onzima,000956M94,starting,no,no,0.0,87.0,87
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,3.0,HAKIM WANDERA,033032M07,starting,no,no,0.0,46.0,46
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,8.0,Muhamed Kagawa Ssenoga,021073M01,starting,no,no,0.0,46.0,46
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,9.0,Habert Asiimwe,015651M97,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,11.0,Abdulahi Rashid,001920M00,starting,no,no,0.0,87.0,87
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,19.0,RWOTNGEYO DOUGLAS HANNCIENT,065936M03,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,22.0,Yosia Kisa,033521M01,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,25.0,John Asiimwe,042882M08,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,26.0,KHASIM MUSTAPHA,035993M06,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,1.0,Abdul Kimera,001836M95,starting,no,yes,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,4.0,Bernard Muwanga,000569M93,starting,yes,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,6.0,Edward Satulo,002359M00,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,8.0,Joseph Janjali,001385M96,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,11.0,Samson Andrew Kigozi,000319M95,starting,no,no,0.0,52.0,52
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,12.0,Ronald Kayondo,007049M98,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,15.0,Swaibu Kasujja Kalule,010608M96,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,17.0,Christopher Kamagu,002162M98,starting,no,no,0.0,87.0,87
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,21.0,Emmanuel Manu Ochen,004763M97,starting,no,no,0.0,66.0,66
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,22.0,FRANK GLADISON MUGISA,019194M98,starting,no,no,0.0,66.0,66
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,23.0,Samuel Kayongo Ssekamatte,001757M93,starting,no,no,0.0,87.0,87
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,,OLOYA MOSES,063678M92,substitute,no,no,46.0,,44
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,14.0,RAMZ KAWOOYA,044846M99,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,17.0,Mikidadi Ssenyonga,009184M97,substitute,no,no,46.0,,44
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,27.0,Khassim Hafizi,010898M04,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,29.0,ISA GLORY KISUULE,058018M05,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-UPDF,1,EXPRESS,home,30.0,Elvis Ssekajjugo,063477M06,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,5.0,Denis Sekitoleko,000763M87,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,7.0,Rashid Faridi,009798M96,substitute,no,no,52.0,,38
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,9.0,Kitara Daniel,006220M97,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,16.0,Aggrey Kiirya,000260M97,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,18.0,IBRAHIM MAKUMBI,009788M97,substitute,no,no,66.0,,24
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,26.0,Enrique Lubwama,036011M06,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,27.0,Shamulan Kamya,026590M04,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,28.0,Abbas Luuty Nsubuga,057832M03,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-UPDF,1,UPDF,away,30.0,Asaph Ssegujja,006418M01,substitute,no,no,66.0,,24
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,23.0,TOM IKARA,065955M97,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,16.0,Pascal Ngobi,002654M94,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,2.0,Hillary Onek,001574M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,5.0,Bakali Magumda,008892M96,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,10.0,Ibrahim Mugulusi,000773M99,starting,no,no,0.0,90.0,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,11.0,Isaac Wagoina,005568M00,starting,no,no,0.0,65.0,65
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,14.0,Jeromy Kirya,002167M97,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,17.0,Tah Barni Kelvin,024730M99,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,20.0,Abdul Karim Ndugwa,062821M97,starting,no,no,0.0,65.0,65
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,24.0,Martin Aprem,006304M00,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,25.0,Denis Ssewagudde,048868M06,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,18.0,Matovu Hassan Muyomba,008708M98,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,2.0,Edward Kabona,002232M94,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,5.0,Norman Borniface Odipio,001091M01,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,7.0,Mujahid Ogama,000627M98,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,10.0,Ivan Mayanja,052610M04,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,15.0,Borris Onegi,018419M97,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,16.0,Rogers Kiwanuka,003306M01,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,20.0,Abel Michael Eturude,000572M97,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,22.0,Deni Rukundo,009318M96,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,23.0,Derick Basoga,002160M96,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,29.0,JAMAL SSEMWOGERERE,043270M06,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,1.0,Yawe Farouk Sebanjja,002513M99,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,3.0,Nicholas Mwere,020667M01,substitute,no,no,65.0,,25
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,6.0,George Kasonko,000241M96,substitute,no,no,90.0,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,8.0,Ibrahim Orit,000632M98,substitute,no,no,78.0,,12
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,9.0,Seiri Arigumaho,024705M01,substitute,no,no,65.0,,25
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,12.0,ISAAC SSENYUNJA,027464M98,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,18.0,ALEX KITATA,065956M92,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,21.0,Fredrick Ngalo,000957M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,22.0,Reagan Kalyowa,006303M01,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,28.0,LWENDA SOWEDI,038683M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,BUL,home,30.0,Simon Achidi,045395M05,substitute,no,no,78.0,,12
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,3.0,Fredrick Nickolas Kigozi,002204M95,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,4.0,Apollo Kagogwe,006244M03,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,6.0,Felix Okot,000455M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,8.0,Ronald Orombi,000636M93,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,9.0,Dickson Niwamanya,002028M94,substitute,no,no,46.0,,44
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,12.0,Jackson Nunda,001358M91,substitute,no,no,46.0,,44
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,13.0,Emmanuel Obua,004874M00,substitute,no,no,78.0,,12
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,19.0,Brian Nkuubi,000463M93,substitute,no,no,69.0,,21
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,21.0,Godwin Daniel Kitagenda,000648M93,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,24.0,Simon Tamale,000517M94,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-MAROONS,2,MAROONS,away,25.0,Ivan Asaba,001723M03,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,25.0,Mathias Muwanga,000391M97,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,16.0,Saidi Kyeyune,000664M93,starting,yes,no,0.0,83.0,83
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,3.0,Richard Matovu,001863M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,4.0,Benon Tahomera,004483M96,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,6.0,Daniel Jakony,022744M00,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,9.0,Umaru Kasumba,063887M94,starting,no,no,0.0,56.0,56
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,11.0,Lawrence Tezikya,017848M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,19.0,Brian James Obedi,023009M00,starting,no,no,0.0,56.0,56
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,21.0,Sizwe Mario Gwebu,065939M03,starting,no,no,0.0,78.0,78
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,28.0,Abudshakur Ramsey Jemba,010972M05,starting,no,no,0.0,78.0,78
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,30.0,Stephen Namaisi,022529M05,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,12.0,Ramadhan Ali Mwirusi,006444M99,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,13.0,Ashraf Mbazira,002676M98,starting,yes,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,2.0,Peter Onzima,000956M94,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,3.0,HAKIM WANDERA,033032M07,starting,no,no,0.0,46.0,46
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,5.0,Richard Basangwa,021294M01,starting,no,no,0.0,79.0,79
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,8.0,Muhamed Kagawa Ssenoga,021073M01,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,11.0,Abdulahi Rashid,001920M00,starting,no,no,0.0,85.0,85
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,19.0,RWOTNGEYO DOUGLAS HANNCIENT,065936M03,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,25.0,John Asiimwe,042882M08,starting,no,no,0.0,46.0,46
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,26.0,KHASIM MUSTAPHA,035993M06,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,28.0,Lawrence Muwonge Bukenya,056374M04,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,8.0,Ivan Eyamu,001898M01,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,10.0,Dennis Kalanzi,055884M06,substitute,no,no,56.0,,34
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,15.0,Bedia Djuma Ikamba,065938M04,substitute,no,no,56.0,,34
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,17.0,Charles Bbaale,008955M94,substitute,no,no,78.0,,12
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,20.0,Deus Bukenya,024723M95,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,22.0,Tonny Kiwalazi,006255M00,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,24.0,Edward Kasibante,001902M98,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,26.0,Rayn Figo Kizito,032556M05,substitute,no,no,78.0,,12
+UPL,2025/26,POLICE-vs-EXPRESS,2,POLICE,home,27.0,Emmanuel Mugume,015168M03,substitute,no,no,83.0,,7
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,,OLOYA MOSES,063678M92,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,4.0,ALLI ISMAEL,065960M08,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,6.0,Faizo Kyazze,012661M03,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,9.0,Habert Asiimwe,015651M97,substitute,no,no,79.0,,11
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,17.0,Mikidadi Ssenyonga,009184M97,substitute,no,no,46.0,,44
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,21.0,Henry Wamala,006082M96,substitute,no,no,85.0,,5
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,22.0,Yosia Kisa,033521M01,substitute,no,no,46.0,,44
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,27.0,Khassim Hafizi,010898M04,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-EXPRESS,2,EXPRESS,away,29.0,ISA GLORY KISUULE,058018M05,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,16.0,Chrispas Kusiima,002270M98,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,7.0,Moses Okabo Aliro,008911M96,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,2.0,James Penz Begisa,006994M02,starting,no,no,0.0,90.0,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,5.0,Ronald Otti,003798M94,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,10.0,Laban Tibiita,001470M02,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,12.0,Nelson Senkatuka,000614M97,starting,no,no,0.0,75.0,75
+UPL,2025/26,URA-vs-NEC,2,URA,home,13.0,Faizo Matovu,006969M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,14.0,George Masembe,045544M05,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,20.0,Ibrahim Wamannah,001134M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,28.0,Denis Luzige Kisiriko,032842M06,starting,no,no,0.0,90.0,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,30.0,Godfrey Sekibengo,043871M06,starting,no,no,0.0,87.0,87
+UPL,2025/26,URA-vs-NEC,2,NEC,away,19.0,Hannington Sebwalunyo,000335M89,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,6.0,Ibrahim Kiyemba,000537M95,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,,Mustafa Kizza,001756M99,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,,Geriga Atendele,005528M95,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,,CHARLES MOSES WAIBI,032004M02,starting,no,no,0.0,75.0,75
+UPL,2025/26,URA-vs-NEC,2,NEC,away,2.0,Jacob Okao,001901M01,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,13.0,Shamiru Kimwero,055885M06,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,15.0,Joseph Seremba,025443M04,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,16.0,Ibrahim Musa,041109M03,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,NEC,away,20.0,Dhata Joseph Stephen Lujang,021295M02,starting,no,no,0.0,75.0,75
+UPL,2025/26,URA-vs-NEC,2,NEC,away,29.0,Ronald Media Innocent,009322M01,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-NEC,2,URA,home,3.0,Hudu Mulikyi,000397M95,substitute,no,no,90.0,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,4.0,Norman Namanya,001766M00,substitute,no,no,87.0,,3
+UPL,2025/26,URA-vs-NEC,2,URA,home,8.0,Nicholas Kabonge,002860M98,substitute,no,no,90.0,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,9.0,Joseph Ssemujju,001464M97,substitute,no,no,75.0,,15
+UPL,2025/26,URA-vs-NEC,2,URA,home,11.0,Living Kabon,000206M97,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,15.0,Joshua Letti Lubwama,001360M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,24.0,Muhamad Ssekkeba,000658M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,26.0,JOHN INNOCENT KISOLO,043298M06,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,URA,home,27.0,Justine Opiro,008877M03,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,,Benjamin Ochan,024667M89,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,1.0,Samson Kiirya,000563M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,7.0,Emmanuel Ajo,033093M00,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,8.0,Marvin Kavuma,019159M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,14.0,Paul Mucureezi,000375M93,substitute,no,no,75.0,,15
+UPL,2025/26,URA-vs-NEC,2,NEC,away,17.0,Gideon Odongo,013429M99,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,18.0,Muzamiru Mutyaba,000542M93,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,23.0,Patrick Bayiga,003236M93,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,26.0,Jackson Ssembatya,065371M05,substitute,no,no,,,0
+UPL,2025/26,URA-vs-NEC,2,NEC,away,27.0,James Jarieko,008348M03,substitute,no,no,75.0,,15
+UPL,2025/26,URA-vs-NEC,2,NEC,away,30.0,Hudson Mbalire,057901M05,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,1.0,Jamil Kiyimba,001057M98,starting,no,yes,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,18.0,Maxwell Owachgiu,001052M97,starting,yes,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,2.0,David Kasaija,008615M02,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,3.0,NKATA FRED,065708M93,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,5.0,Dudu Ramadhan,001615M93,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,8.0,Erick Muber,032079M02,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,11.0,John Wesley kisaakye,006087M96,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,14.0,Solomon Akodi,003594M01,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,21.0,Edson Agondeze,008499M00,starting,no,no,0.0,90.0,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,25.0,Anwaru Mustafa Ntege,002236M94,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,26.0,Swadik Moro,044784M03,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,24.0,Emmanuel Derrick Were,000315M96,starting,no,yes,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,8.0,Christopher Agotre,005690M98,starting,yes,no,0.0,60.0,60
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,3.0,Julius Ocen,002798M95,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,4.0,Bashir Asiku,005705M00,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,10.0,Simon Peter Odeke,000823M96,starting,no,no,0.0,60.0,60
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,15.0,Stephen Oriokot,000835M97,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,17.0,Haron Odongo,000740M00,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,20.0,Steven Nyalimo,027792M95,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,21.0,Daniel Opio,006881M97,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,23.0,Marvin Praise Wambuga,024641M01,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,30.0,Junior Emmanuel Ojok,033958M06,starting,no,no,0.0,70.0,70
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,7.0,Hussein Mwanje,024625M97,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,9.0,sheif Batte,000580M92,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,10.0,Shafic Kiryowa,007345M99,substitute,no,no,69.0,,21
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,12.0,Charles Kyomuhendo,009379M97,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,13.0,Eric Washington Nyonyintono,024653M00,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,19.0,Derick Byabacwezi,026897M01,substitute,no,no,69.0,,21
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,23.0,Mpuna Emmanuel Biseki,065950M97,substitute,no,no,90.0,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,28.0,Moses Ayebale,033075M05,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,29.0,LUCAS MOLA,056450M05,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,BUHIMBA,home,30.0,John Bosco Sempijja,025115M04,substitute,no,no,78.0,,12
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,1.0,Fauzu Tatiga,008167M00,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,11.0,James Ssemambo,000846M98,substitute,no,no,60.0,,30
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,12.0,Tusaba Najib Gwaidho,003727M95,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,16.0,Eric Otingcwinyu,003659M97,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,19.0,Saidi Sukuru,025621M00,substitute,no,no,60.0,,30
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,22.0,Hadji Shukuru,032060M02,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,25.0,Mubaraka Mitala,058076M06,substitute,no,no,70.0,,20
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,28.0,Allan Kiggundu,001111M04,substitute,no,no,46.0,,44
+UPL,2025/26,BUHIMBA-vs-CALVARY,2,CALVARY,away,29.0,ANDREW KIWANUKA,064234M05,substitute,no,no,46.0,,44
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,18.0,Emuran Fahad,020210M01,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,5.0,Ibrahim Thembo,002051M99,starting,yes,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,3.0,Innocent Wafula Esimu,008629M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,8.0,Ian Amanya,003379M96,starting,no,no,0.0,75.0,75
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,9.0,Henry Kitegenyi,055878M04,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,11.0,Mike Walaga,006072M93,starting,no,no,0.0,75.0,75
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,15.0,Reagan Matege,027324M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,16.0,Ambrose Arinda,057902M06,starting,no,no,0.0,60.0,60
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,20.0,Gadaffi Kacancu,001771M92,starting,no,no,0.0,60.0,60
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,22.0,Denis Kaka Omony,001160M00,starting,no,no,0.0,80.0,80
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,24.0,Sulaiman Ssesaazi,002522M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,1.0,Abdul Kimera,001836M95,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,4.0,Bernard Muwanga,000569M93,starting,yes,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,6.0,Edward Satulo,002359M00,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,7.0,Rashid Faridi,009798M96,starting,no,no,0.0,85.0,85
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,8.0,Joseph Janjali,001385M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,11.0,Samson Andrew Kigozi,000319M95,starting,no,no,0.0,85.0,85
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,12.0,Ronald Kayondo,007049M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,15.0,Swaibu Kasujja Kalule,010608M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,17.0,Christopher Kamagu,002162M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,22.0,FRANK GLADISON MUGISA,019194M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,23.0,Samuel Kayongo Ssekamatte,001757M93,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,1.0,Aaron Icumar,025112M99,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,6.0,Francis Odongo,009525M97,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,7.0,Ronald Edwok,000827M97,substitute,no,no,75.0,,15
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,10.0,Clinton Davico Kamugisha,001602M99,substitute,no,no,80.0,,10
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,12.0,Sadat Nsubuga,002895M97,substitute,no,no,75.0,,15
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,13.0,Hamza Mulambuzi,017847M01,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,14.0,Latif Ssenkubuge,027525M00,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,17.0,Nasur Almahad Sadik,015036M01,substitute,no,no,60.0,,30
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,19.0,Gabriel Eragu,002769M93,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,23.0,Wycliffe Ahumuza,044786M02,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,26.0,Muhammed Kanyike,042577M03,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,MBARARA,home,30.0,Thomas Kakaire,001734M03,substitute,no,no,60.0,,30
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,5.0,Denis Sekitoleko,000763M87,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,9.0,Kitara Daniel,006220M97,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,16.0,Aggrey Kiirya,000260M97,substitute,no,no,85.0,,5
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,18.0,IBRAHIM MAKUMBI,009788M97,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,21.0,Emmanuel Manu Ochen,004763M97,substitute,no,no,85.0,,5
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,26.0,Enrique Lubwama,036011M06,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,27.0,Shamulan Kamya,026590M04,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,28.0,Abbas Luuty Nsubuga,057832M03,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-UPDF,2,UPDF,away,30.0,Asaph Ssegujja,006418M01,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,12.0,Charles Lukwago,000622M94,starting,yes,yes,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,2.0,Herbert Achayi,006277M99,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,3.0,Hassan Muhamud,003074M96,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,4.0,Saidi Mayanja,001033M99,starting,no,no,0.0,90.0,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,6.0,Sammy Raynald Ssebaduka,028682M02,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,11.0,Ivan Ahimbisibwe,002011M95,starting,no,no,0.0,84.0,84
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,15.0,Enock Walusimbi,001697M98,starting,no,no,0.0,67.0,67
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,16.0,Fillbert Obenchan,000649M96,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,17.0,Ashraf Mugume,001580M98,starting,no,no,0.0,67.0,67
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,19.0,Shafik Nana Kwikiriza,040861M04,starting,no,no,0.0,84.0,84
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,22.0,Joel Sserunjogi,005883M04,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,23.0,David Lukwago,031565M02,starting,no,yes,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,15.0,David Owori,000506M98,starting,yes,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,4.0,Geoffrey Lubanga Kene,000824M96,starting,no,no,0.0,90.0,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,6.0,Simon Kato Ssemayange,010603M97,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,12.0,Ibrahim Kasinde,062054M03,starting,no,no,0.0,80.0,80
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,14.0,Charles Lwanga,008672M00,starting,no,no,0.0,60.0,60
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,17.0,Najib Yiga,006318M02,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,19.0,Missi Diego Semugera,002791M95,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,22.0,Aslam Ssemakula,031580M99,starting,no,no,0.0,80.0,80
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,26.0,Hassan Mubiru,031869M04,starting,no,no,0.0,60.0,60
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,27.0,Raymon Barasa Mangoli,039141M07,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,1.0,Mutwalibi Mugolofa,001733M00,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,5.0,Sharifu Ssengendo,055880M05,substitute,no,no,67.0,,23
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,8.0,Alpha Thierry Ssali,006081M03,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,13.0,Peter Magambo,001755M99,substitute,no,no,90.0,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,18.0,Umar Lutalo,024772M03,substitute,no,no,84.0,,6
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,20.0,Emmanuel Anyama,012569M98,substitute,no,no,84.0,,6
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,21.0,Gavin Mugweri Kizito,006315M02,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,24.0,Emojong Anthony Okimaru,001193M01,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,26.0,James Mubezi,025433M04,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,29.0,Haruna Lukwago,021673M04,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,30.0,Alex Yiga,033201M06,substitute,no,no,67.0,,23
+UPL,2025/26,KCCA-vs-VILLA,2,KCCA,home,45.0,STEVEN JAMES OYIRWOTH,033211M07,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,1.0,Norman Angufindru,008015M94,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,3.0,Frank Mulimi,021650M00,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,5.0,Reagan Mpande,001189M00,substitute,no,no,60.0,,30
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,7.0,Sula Matovu,001611M92,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,8.0,Elivis Ngonde,005096M02,substitute,no,no,80.0,,10
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,9.0,Frank Ssebufu,000408M02,substitute,no,no,60.0,,30
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,10.0,Patrick Jonah Kakande,031591M03,substitute,no,no,80.0,,10
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,13.0,Ali Arshavin Bayo,001599M97,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,16.0,Cyrus Kibande,000999M96,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,21.0,Andrew Otim,052048M99,substitute,no,no,90.0,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,24.0,Jeans Braddy Wokorach,002173M96,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-VILLA,2,Villa,away,30.0,Merickzedek Mangeni,064911M06,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,18.0,Emuran Fahad,020210M01,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,5.0,Ibrahim Thembo,002051M99,starting,yes,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,3.0,Innocent Wafula Esimu,008629M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,8.0,Ian Amanya,003379M96,starting,no,no,0.0,70.0,70
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,9.0,Henry Kitegenyi,055878M04,starting,no,no,0.0,90.0,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,13.0,Hamza Mulambuzi,017847M01,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,14.0,Latif Ssenkubuge,027525M00,starting,no,no,0.0,70.0,70
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,15.0,Reagan Matege,027324M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,17.0,Nasur Almahad Sadik,015036M01,starting,no,no,0.0,57.0,57
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,22.0,Denis Kaka Omony,001160M00,starting,no,no,0.0,90.0,90
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,24.0,Sulaiman Ssesaazi,002522M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,23.0,TOM IKARA,065955M97,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,16.0,Pascal Ngobi,002654M94,starting,yes,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,2.0,Hillary Onek,001574M01,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,3.0,Nicholas Mwere,020667M01,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,4.0,Walter Ochora,002426M97,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,9.0,Seiri Arigumaho,024705M01,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,14.0,Jeromy Kirya,002167M97,starting,no,no,0.0,43.0,43
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,17.0,Tah Barni Kelvin,024730M99,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,24.0,Martin Aprem,006304M00,starting,no,no,0.0,62.0,62
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,25.0,Denis Ssewagudde,048868M06,starting,no,no,0.0,84.0,84
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,26.0,SWABIR MPASA,039081M06,starting,no,no,0.0,62.0,62
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,1.0,Aaron Icumar,025112M99,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,6.0,Francis Odongo,009525M97,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,10.0,Clinton Davico Kamugisha,001602M99,substitute,no,no,90.0,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,11.0,Mike Walaga,006072M93,substitute,no,no,90.0,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,12.0,Sadat Nsubuga,002895M97,substitute,no,no,57.0,,33
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,16.0,Ambrose Arinda,057902M06,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,19.0,Gabriel Eragu,002769M93,substitute,no,no,70.0,,20
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,20.0,Gadaffi Kacancu,001771M92,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,23.0,Wycliffe Ahumuza,044786M02,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,26.0,Muhammed Kanyike,042577M03,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,28.0,Abudul Malik Bironse,025236M04,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,MBARARA,home,30.0,Thomas Kakaire,001734M03,substitute,no,no,70.0,,20
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,1.0,Yawe Farouk Sebanjja,002513M99,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,5.0,Bakali Magumda,008892M96,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,6.0,George Kasonko,000241M96,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,10.0,Ibrahim Mugulusi,000773M99,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,11.0,Isaac Wagoina,005568M00,substitute,no,no,43.0,,47
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,12.0,ISAAC SSENYUNJA,027464M98,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,18.0,ALEX KITATA,065956M92,substitute,no,no,84.0,,6
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,21.0,Fredrick Ngalo,000957M96,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,22.0,Reagan Kalyowa,006303M01,substitute,no,no,62.0,,28
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,28.0,LWENDA SOWEDI,038683M06,substitute,no,no,62.0,,28
+UPL,2025/26,MBARARA-vs-BUL,3,BUL,away,30.0,Simon Achidi,045395M05,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,16.0,Chrispas Kusiima,002270M98,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,7.0,Moses Okabo Aliro,008911M96,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,3.0,Hudu Mulikyi,000397M95,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,4.0,Norman Namanya,001766M00,starting,no,no,0.0,75.0,75
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,9.0,Joseph Ssemujju,001464M97,starting,no,no,0.0,82.0,82
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,10.0,Laban Tibiita,001470M02,starting,no,no,0.0,50.0,50
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,12.0,Nelson Senkatuka,000614M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,13.0,Faizo Matovu,006969M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,15.0,Joshua Letti Lubwama,001360M95,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,20.0,Ibrahim Wamannah,001134M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,27.0,Justine Opiro,008877M03,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,12.0,Ramadhan Ali Mwirusi,006444M99,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,13.0,Ashraf Mbazira,002676M98,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,2.0,Peter Onzima,000956M94,starting,no,no,0.0,25.0,25
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,3.0,HAKIM WANDERA,033032M07,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,5.0,Richard Basangwa,021294M01,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,11.0,Abdulahi Rashid,001920M00,starting,no,no,0.0,60.0,60
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,17.0,Mikidadi Ssenyonga,009184M97,starting,no,no,0.0,46.0,46
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,19.0,RWOTNGEYO DOUGLAS HANNCIENT,065936M03,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,21.0,Henry Wamala,006082M96,starting,no,no,0.0,78.0,78
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,26.0,KHASIM MUSTAPHA,035993M06,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,28.0,Lawrence Muwonge Bukenya,056374M04,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,6.0,Abraham Kakensa Tusubira,006815M94,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,8.0,Nicholas Kabonge,002860M98,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,11.0,Living Kabon,000206M97,substitute,no,no,75.0,,15
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,14.0,George Masembe,045544M05,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,21.0,Fred Amaku,001609M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,22.0,NYARWA BITANYWAINE OLIMI,063673M06,substitute,no,no,82.0,,8
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,23.0,Amisi Bwangani,019947M03,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,24.0,Muhamad Ssekkeba,000658M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,26.0,JOHN INNOCENT KISOLO,043298M06,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,URA,home,30.0,Godfrey Sekibengo,043871M06,substitute,no,no,50.0,,40
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,,OLOYA MOSES,063678M92,substitute,no,no,78.0,,12
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,4.0,ALLI ISMAEL,065960M08,substitute,no,no,60.0,,30
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,8.0,Muhamed Kagawa Ssenoga,021073M01,substitute,no,no,46.0,,44
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,9.0,Habert Asiimwe,015651M97,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,15.0,VICTOR KANANURA KAHINDI,065959M09,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,22.0,Yosia Kisa,033521M01,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,27.0,Khassim Hafizi,010898M04,substitute,no,no,,,0
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,29.0,ISA GLORY KISUULE,058018M05,substitute,no,no,25.0,,65
+UPL,2025/26,URA-vs-EXPRESS,3,EXPRESS,away,30.0,Elvis Ssekajjugo,063477M06,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,27.0,Shamulan Kamya,026590M04,starting,no,yes,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,4.0,Bernard Muwanga,000569M93,starting,yes,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,6.0,Edward Satulo,002359M00,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,7.0,Rashid Faridi,009798M96,starting,no,no,0.0,78.0,78
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,8.0,Joseph Janjali,001385M96,starting,no,no,0.0,78.0,78
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,11.0,Samson Andrew Kigozi,000319M95,starting,no,no,0.0,0.0,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,12.0,Ronald Kayondo,007049M98,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,15.0,Swaibu Kasujja Kalule,010608M96,starting,no,no,0.0,49.0,49
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,16.0,Aggrey Kiirya,000260M97,starting,no,no,0.0,88.0,88
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,22.0,FRANK GLADISON MUGISA,019194M98,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,23.0,Samuel Kayongo Ssekamatte,001757M93,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,18.0,Matovu Hassan Muyomba,008708M98,starting,no,yes,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,2.0,Edward Kabona,002232M94,starting,yes,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,3.0,Fredrick Nickolas Kigozi,002204M95,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,5.0,Norman Borniface Odipio,001091M01,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,6.0,Felix Okot,000455M96,starting,no,no,0.0,67.0,67
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,9.0,Dickson Niwamanya,002028M94,starting,no,no,0.0,59.0,59
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,10.0,Ivan Mayanja,052610M04,starting,no,no,0.0,59.0,59
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,13.0,Emmanuel Obua,004874M00,starting,no,no,0.0,59.0,59
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,15.0,Borris Onegi,018419M97,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,16.0,Rogers Kiwanuka,003306M01,starting,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,22.0,Deni Rukundo,009318M96,starting,no,no,0.0,78.0,78
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,2.0,Derrick Jim Ssekulima,021248M91,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,5.0,Denis Sekitoleko,000763M87,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,9.0,Kitara Daniel,006220M97,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,14.0,Shafic kakande,001710M03,substitute,no,no,88.0,,2
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,18.0,IBRAHIM MAKUMBI,009788M97,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,19.0,Sulaiman Kibalama,002323M98,substitute,no,no,49.0,,41
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,20.0,Brian Kalumba,005725M98,substitute,no,no,78.0,,12
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,21.0,Emmanuel Manu Ochen,004763M97,substitute,no,no,0.0,,90
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,26.0,Enrique Lubwama,036011M06,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,28.0,Abbas Luuty Nsubuga,057832M03,substitute,no,no,78.0,,12
+UPL,2025/26,UPDF-vs-MAROONS,3,UPDF,home,30.0,Asaph Ssegujja,006418M01,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,4.0,Apollo Kagogwe,006244M03,substitute,no,no,78.0,,12
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,7.0,Mujahid Ogama,000627M98,substitute,no,no,59.0,,31
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,8.0,Ronald Orombi,000636M93,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,19.0,Brian Nkuubi,000463M93,substitute,no,no,59.0,,31
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,20.0,Abel Michael Eturude,000572M97,substitute,no,no,59.0,,31
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,21.0,Godwin Daniel Kitagenda,000648M93,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,23.0,Derick Basoga,002160M96,substitute,no,no,67.0,,23
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,24.0,Simon Tamale,000517M94,substitute,no,no,,,0
+UPL,2025/26,UPDF-vs-MAROONS,3,MAROONS,away,29.0,JAMAL SSEMWOGERERE,043270M06,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,23.0,David Lukwago,031565M02,starting,no,yes,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,15.0,David Owori,000506M98,starting,yes,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,4.0,Geoffrey Lubanga Kene,000824M96,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,6.0,Simon Kato Ssemayange,010603M97,starting,no,no,0.0,77.0,77
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,9.0,Frank Ssebufu,000408M02,starting,no,no,0.0,77.0,77
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,12.0,Ibrahim Kasinde,062054M03,starting,no,no,0.0,69.0,69
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,17.0,Najib Yiga,006318M02,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,19.0,Missi Diego Semugera,002791M95,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,22.0,Aslam Ssemakula,031580M99,starting,no,no,0.0,57.0,57
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,26.0,Hassan Mubiru,031869M04,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,27.0,Raymon Barasa Mangoli,039141M07,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,24.0,Rogers Omedwa,006042M92,starting,no,yes,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,15.0,Musitafa Mujuzi,000489M99,starting,yes,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,5.0,Ahmed Amayo,009911M99,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,8.0,Steven Munguchi,002584M95,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,9.0,Fazil Tumwine,051245M05,starting,no,no,0.0,87.0,87
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,10.0,Junior Samuel Kawawa,026859M97,starting,no,no,0.0,71.0,71
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,12.0,Hassan Ssenyonjo,009233M00,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,13.0,Jonathan Gift Odongo,002867M98,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,16.0,Emmanuel Iisat,044680M03,starting,no,no,0.0,87.0,87
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,18.0,John Kokas Alou,001667M02,starting,no,no,0.0,57.0,57
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,23.0,Isa Mubiru,000276M96,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,1.0,Norman Angufindru,008015M94,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,3.0,Frank Mulimi,021650M00,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,8.0,Elivis Ngonde,005096M02,substitute,no,no,77.0,,13
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,11.0,Jerome Otim,033445M02,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,13.0,Ali Arshavin Bayo,001599M97,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,14.0,Charles Lwanga,008672M00,substitute,no,no,69.0,,21
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,16.0,Cyrus Kibande,000999M96,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,18.0,Tonny Atukunda,002944M01,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,20.0,Geofrey Gagganga,001322M99,substitute,no,no,57.0,,33
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,21.0,Andrew Otim,052048M99,substitute,no,no,77.0,,13
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,24.0,Jeans Braddy Wokorach,002173M96,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,Villa,home,30.0,Merickzedek Mangeni,064911M06,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,3.0,Bright Joseph Vuni,002554M98,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,6.0,Sam Kintu,000495M95,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,7.0,Julius Poloto,000570M99,substitute,no,no,57.0,,33
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,11.0,Noordin Saddic Bunjo,000445M99,substitute,no,no,87.0,,3
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,14.0,Denis Otim,002882M99,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,17.0,Issa Bugembe,024771M04,substitute,no,no,71.0,,19
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,19.0,Ambrose Kigozi,024680M96,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,21.0,Muhammad Kyeyune,006276M00,substitute,no,no,87.0,,3
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,22.0,Marvin Mukiibi,031945M03,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,25.0,George Kiryowa,001427M97,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,26.0,Yusuf Bogere,040860M05,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-ENTEBBE,3,ENTEBBE,away,27.0,Charles Okello Batiibwe,027001M05,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,19.0,Hannington Sebwalunyo,000335M89,starting,no,yes,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,6.0,Ibrahim Kiyemba,000537M95,starting,yes,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,,Mustafa Kizza,001756M99,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,,Geriga Atendele,005528M95,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,,CHARLES MOSES WAIBI,032004M02,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,2.0,Jacob Okao,001901M01,starting,no,no,0.0,77.0,77
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,13.0,Shamiru Kimwero,055885M06,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,15.0,Joseph Seremba,025443M04,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,20.0,Dhata Joseph Stephen Lujang,021295M02,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,28.0,Emmanuel Kulanga,036009M06,starting,no,no,0.0,54.0,54
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,29.0,Ronald Media Innocent,009322M01,starting,no,no,0.0,43.0,43
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,25.0,Mathias Muwanga,000391M97,starting,no,yes,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,16.0,Saidi Kyeyune,000664M93,starting,yes,no,0.0,71.0,71
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,3.0,Richard Matovu,001863M98,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,6.0,Daniel Jakony,022744M00,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,11.0,Lawrence Tezikya,017848M98,starting,no,no,0.0,62.0,62
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,15.0,Bedia Djuma Ikamba,065938M04,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,19.0,Brian James Obedi,023009M00,starting,no,no,0.0,84.0,84
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,20.0,Deus Bukenya,024723M95,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,21.0,Sizwe Mario Gwebu,065939M03,starting,no,no,0.0,71.0,71
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,28.0,Abudshakur Ramsey Jemba,010972M05,starting,no,no,0.0,62.0,62
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,30.0,Stephen Namaisi,022529M05,starting,no,no,0.0,,90
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,1.0,Samson Kiirya,000563M95,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,7.0,Emmanuel Ajo,033093M00,substitute,no,no,43.0,,47
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,8.0,Marvin Kavuma,019159M95,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,10.0,Allan Mugalu,006920M96,substitute,no,no,54.0,,36
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,14.0,Paul Mucureezi,000375M93,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,16.0,Ibrahim Musa,041109M03,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,17.0,Gideon Odongo,013429M99,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,18.0,Muzamiru Mutyaba,000542M93,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,23.0,Patrick Bayiga,003236M93,substitute,no,no,77.0,,13
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,26.0,Jackson Ssembatya,065371M05,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,27.0,James Jarieko,008348M03,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,NEC,home,30.0,Hudson Mbalire,057901M05,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,4.0,Benon Tahomera,004483M96,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,8.0,Ivan Eyamu,001898M01,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,9.0,Umaru Kasumba,063887M94,substitute,no,no,71.0,,19
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,10.0,Dennis Kalanzi,055884M06,substitute,no,no,62.0,,28
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,13.0,Samuel Kayongo,000365M92,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,14.0,Allan Bukenya,003705M96,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,17.0,Charles Bbaale,008955M94,substitute,no,no,62.0,,28
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,22.0,Tonny Kiwalazi,006255M00,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,24.0,Edward Kasibante,001902M98,substitute,no,no,,,0
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,26.0,Rayn Figo Kizito,032556M05,substitute,no,no,71.0,,19
+UPL,2025/26,NEC-vs-POLICE,3,POLICE,away,27.0,Emmanuel Mugume,015168M03,substitute,no,no,84.0,,6
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,,Juma Mutebi,042164M02,starting,no,yes,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,24.0,Ayiko Richard,000452M93,starting,yes,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,8.0,Derrick Mwanje,008014M98,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,12.0,Sharif Saaka,009834M91,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,13.0,David Bagoole,006295M96,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,14.0,Adam Muteesasira,031602M02,starting,no,no,0.0,46.0,46
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,17.0,Paul Wasswa,002518M99,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,19.0,Alfred Leku,017845M97,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,20.0,Amos Etojo,002129M94,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,21.0,Rogers Atube,007798M94,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,27.0,Freedom Mungudit,057827M06,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,16.0,Chrispas Kusiima,002270M98,starting,no,yes,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,7.0,Moses Okabo Aliro,008911M96,starting,yes,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,3.0,Hudu Mulikyi,000397M95,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,9.0,Joseph Ssemujju,001464M97,starting,no,no,0.0,72.0,72
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,10.0,Laban Tibiita,001470M02,starting,no,no,0.0,35.0,35
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,12.0,Nelson Senkatuka,000614M97,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,13.0,Faizo Matovu,006969M97,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,14.0,George Masembe,045544M05,starting,no,no,0.0,66.0,66
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,20.0,Ibrahim Wamannah,001134M97,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,23.0,Amisi Bwangani,019947M03,starting,no,no,0.0,66.0,66
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,27.0,Justine Opiro,008877M03,starting,no,no,0.0,,90
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,1.0,Allan Batali Igama,065884M07,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,3.0,Dauson Mafumu,044021M03,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,4.0,Joseph Othieno,062824M96,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,7.0,Ashiraf Mulindi,008496M01,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,10.0,Moses Ojoaza Buga,002606M95,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,11.0,Paul Busolo,045165M02,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,15.0,Solomon Ali Okwalinga,000480M96,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,16.0,Abdul Kalanzi,007342M03,substitute,no,no,46.0,,44
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,25.0,Birungi Alvin Twiine,050305M06,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,LUGAZI,home,26.0,Juma Ssajjabi,051304M06,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,4.0,Norman Namanya,001766M00,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,6.0,Abraham Kakensa Tusubira,006815M94,substitute,no,no,72.0,,18
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,8.0,Nicholas Kabonge,002860M98,substitute,no,no,35.0,,55
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,11.0,Living Kabon,000206M97,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,21.0,Fred Amaku,001609M95,substitute,no,no,66.0,,24
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,24.0,Muhamad Ssekkeba,000658M95,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,25.0,Shafik Lugoloobi,012665M01,substitute,no,no,,,0
+UPL,2025/26,LUGAZI-vs-URA,4,URA,away,26.0,JOHN INNOCENT KISOLO,043298M06,substitute,no,no,66.0,,24
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,18.0,Matovu Hassan Muyomba,008708M98,starting,no,yes,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,2.0,Edward Kabona,002232M94,starting,yes,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,3.0,Fredrick Nickolas Kigozi,002204M95,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,5.0,Norman Borniface Odipio,001091M01,starting,no,no,0.0,81.0,81
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,6.0,Felix Okot,000455M96,starting,no,no,0.0,46.0,46
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,9.0,Dickson Niwamanya,002028M94,starting,no,no,0.0,71.0,71
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,10.0,Ivan Mayanja,052610M04,starting,no,no,0.0,81.0,81
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,13.0,Emmanuel Obua,004874M00,starting,no,no,0.0,29.0,29
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,15.0,Borris Onegi,018419M97,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,16.0,Rogers Kiwanuka,003306M01,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,22.0,Deni Rukundo,009318M96,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,24.0,Emmanuel Derrick Were,000315M96,starting,yes,yes,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,2.0,John Rogers,006294M03,starting,no,no,0.0,50.0,50
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,10.0,Simon Peter Odeke,000823M96,starting,no,no,0.0,81.0,81
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,12.0,Tusaba Najib Gwaidho,003727M95,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,14.0,Lawrence Olaboro,006809M96,starting,no,no,0.0,64.0,64
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,15.0,Stephen Oriokot,000835M97,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,21.0,Daniel Opio,006881M97,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,23.0,Marvin Praise Wambuga,024641M01,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,27.0,Zachous Ocen,031614M03,starting,no,no,0.0,64.0,64
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,29.0,ANDREW KIWANUKA,064234M05,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,30.0,Junior Emmanuel Ojok,033958M06,starting,no,no,0.0,,90
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,1.0,Amir Nalugoda,009973M99,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,4.0,Apollo Kagogwe,006244M03,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,7.0,Mujahid Ogama,000627M98,substitute,no,no,29.0,,61
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,8.0,Ronald Orombi,000636M93,substitute,no,no,81.0,,9
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,12.0,Jackson Nunda,001358M91,substitute,no,no,71.0,,19
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,19.0,Brian Nkuubi,000463M93,substitute,no,no,46.0,,44
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,20.0,Abel Michael Eturude,000572M97,substitute,no,no,81.0,,9
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,21.0,Godwin Daniel Kitagenda,000648M93,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,23.0,Derick Basoga,002160M96,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,24.0,Simon Tamale,000517M94,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,MAROONS,home,29.0,JAMAL SSEMWOGERERE,043270M06,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,3.0,Julius Ocen,002798M95,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,4.0,Bashir Asiku,005705M00,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,11.0,James Ssemambo,000846M98,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,16.0,Eric Otingcwinyu,003659M97,substitute,no,no,50.0,,40
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,17.0,Haron Odongo,000740M00,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,20.0,Steven Nyalimo,027792M95,substitute,no,no,64.0,,26
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,22.0,Hadji Shukuru,032060M02,substitute,no,no,,,0
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,25.0,Mubaraka Mitala,058076M06,substitute,no,no,81.0,,9
+UPL,2025/26,MAROONS-vs-CALVARY,4,CALVARY,away,28.0,Allan Kiggundu,001111M04,substitute,no,no,64.0,,26
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,23.0,TOM IKARA,065955M97,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,4.0,Walter Ochora,002426M97,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,2.0,Hillary Onek,001574M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,3.0,Nicholas Mwere,020667M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,9.0,Seiri Arigumaho,024705M01,starting,no,no,0.0,60.0,60
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,10.0,Ibrahim Mugulusi,000773M99,starting,no,no,0.0,79.0,79
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,14.0,Jeromy Kirya,002167M97,starting,no,no,0.0,79.0,79
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,16.0,Pascal Ngobi,002654M94,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,17.0,Tah Barni Kelvin,024730M99,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,24.0,Martin Aprem,006304M00,starting,no,no,0.0,60.0,60
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,25.0,Denis Ssewagudde,048868M06,starting,no,no,0.0,60.0,60
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,1.0,Jamil Kiyimba,001057M98,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,18.0,Maxwell Owachgiu,001052M97,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,2.0,David Kasaija,008615M02,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,5.0,Dudu Ramadhan,001615M93,starting,no,no,0.0,89.0,89
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,6.0,Davis Kakaire,031960M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,8.0,Erick Muber,032079M02,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,11.0,John Wesley kisaakye,006087M96,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,13.0,Eric Washington Nyonyintono,024653M00,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,21.0,Edson Agondeze,008499M00,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,25.0,Anwaru Mustafa Ntege,002236M94,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,26.0,Swadik Moro,044784M03,starting,no,no,0.0,69.0,69
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,1.0,Yawe Farouk Sebanjja,002513M99,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,5.0,Bakali Magumda,008892M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,6.0,George Kasonko,000241M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,11.0,Isaac Wagoina,005568M00,substitute,no,no,79.0,,11
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,12.0,ISAAC SSENYUNJA,027464M98,substitute,no,no,79.0,,11
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,18.0,ALEX KITATA,065956M92,substitute,no,no,60.0,,30
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,21.0,Fredrick Ngalo,000957M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,22.0,Reagan Kalyowa,006303M01,substitute,no,no,60.0,,30
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,28.0,LWENDA SOWEDI,038683M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUL,home,30.0,Simon Achidi,045395M05,substitute,no,no,60.0,,30
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,7.0,Hussein Mwanje,024625M97,substitute,no,no,69.0,,21
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,10.0,Shafic Kiryowa,007345M99,substitute,no,no,46.0,,44
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,15.0,NICHOLAS WAMANI,021729M98,substitute,no,no,89.0,,1
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,19.0,Derick Byabacwezi,026897M01,substitute,no,no,69.0,,21
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,23.0,Mpuna Emmanuel Biseki,065950M97,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,24.0,ELIUDE AMANYIRE,032700M02,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,29.0,LUCAS MOLA,056450M05,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-BUHIMBA,4,BUHIMBA,away,30.0,John Bosco Sempijja,025115M04,substitute,no,no,69.0,,21
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,12.0,Ramadhan Ali Mwirusi,006444M99,starting,no,yes,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,13.0,Ashraf Mbazira,002676M98,starting,yes,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,3.0,HAKIM WANDERA,033032M07,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,5.0,Richard Basangwa,021294M01,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,8.0,Muhamed Kagawa Ssenoga,021073M01,starting,no,no,0.0,58.0,58
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,11.0,Abdulahi Rashid,001920M00,starting,no,no,0.0,76.0,76
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,19.0,RWOTNGEYO DOUGLAS HANNCIENT,065936M03,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,21.0,Henry Wamala,006082M96,starting,no,no,0.0,76.0,76
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,26.0,KHASIM MUSTAPHA,035993M06,starting,no,no,0.0,58.0,58
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,28.0,Lawrence Muwonge Bukenya,056374M04,starting,no,no,0.0,81.0,81
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,29.0,ISA GLORY KISUULE,058018M05,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,12.0,Charles Lukwago,000622M94,starting,yes,yes,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,2.0,Herbert Achayi,006277M99,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,3.0,Hassan Muhamud,003074M96,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,4.0,Saidi Mayanja,001033M99,starting,no,no,0.0,87.0,87
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,6.0,Sammy Raynald Ssebaduka,028682M02,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,11.0,Ivan Ahimbisibwe,002011M95,starting,no,no,0.0,68.0,68
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,15.0,Enock Walusimbi,001697M98,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,16.0,Fillbert Obenchan,000649M96,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,18.0,Umar Lutalo,024772M03,starting,no,no,0.0,53.0,53
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,19.0,Shafik Nana Kwikiriza,040861M04,starting,no,no,0.0,68.0,68
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,22.0,Joel Sserunjogi,005883M04,starting,no,no,0.0,,90
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,,OLOYA MOSES,063678M92,substitute,no,no,81.0,,9
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,2.0,Peter Onzima,000956M94,substitute,no,no,58.0,,32
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,4.0,ALLI ISMAEL,065960M08,substitute,no,no,76.0,,14
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,9.0,Habert Asiimwe,015651M97,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,15.0,VICTOR KANANURA KAHINDI,065959M09,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,17.0,Mikidadi Ssenyonga,009184M97,substitute,no,no,76.0,,14
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,22.0,Yosia Kisa,033521M01,substitute,no,no,58.0,,32
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,27.0,Khassim Hafizi,010898M04,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,EXPRESS,home,30.0,Elvis Ssekajjugo,063477M06,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,1.0,Mutwalibi Mugolofa,001733M00,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,5.0,Sharifu Ssengendo,055880M05,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,8.0,Alpha Thierry Ssali,006081M03,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,13.0,Peter Magambo,001755M99,substitute,no,no,87.0,,3
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,14.0,Rogers Mugisha,058292M03,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,17.0,Ashraf Mugume,001580M98,substitute,no,no,53.0,,37
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,20.0,Emmanuel Anyama,012569M98,substitute,no,no,68.0,,22
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,21.0,Gavin Mugweri Kizito,006315M02,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,27.0,Lazaro Muhindo,058232M07,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,28.0,Humphrey Oyirwoth,044066M04,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,29.0,Haruna Lukwago,021673M04,substitute,no,no,,,0
+UPL,2025/26,EXPRESS-vs-KCCA,4,KCCA,away,30.0,Alex Yiga,033201M06,substitute,no,no,68.0,,22
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,1.0,James Alitho,000362M95,starting,no,yes,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,6.0,Baguma Jasper Aheebwa,000997M01,starting,yes,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,4.0,Frank Tumwesigye,000536M99,starting,no,no,0.0,77.0,77
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,5.0,Murushid Juuko,021283M94,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,8.0,Hussein Ssenoga,005997M98,starting,no,no,0.0,52.0,52
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,13.0,Emmanuel Alex Wasswa,005641M93,starting,no,no,0.0,77.0,77
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,15.0,Jimmy Kalema,031277M05,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,17.0,Benjamin Nyakoojo,000626M97,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,26.0,Edward Namaasa,044748M05,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,27.0,Isaac Amutuhaire,044871M03,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,29.0,Amir Kakomo,056081M04,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,18.0,Emuran Fahad,020210M01,starting,no,yes,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,5.0,Ibrahim Thembo,002051M99,starting,yes,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,3.0,Innocent Wafula Esimu,008629M96,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,8.0,Ian Amanya,003379M96,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,9.0,Henry Kitegenyi,055878M04,starting,no,no,0.0,81.0,81
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,14.0,Latif Ssenkubuge,027525M00,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,15.0,Reagan Matege,027324M98,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,16.0,Ambrose Arinda,057902M06,starting,no,no,0.0,46.0,46
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,19.0,Gabriel Eragu,002769M93,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,22.0,Denis Kaka Omony,001160M00,starting,no,no,0.0,27.0,27
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,24.0,Sulaiman Ssesaazi,002522M96,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,2.0,Nemeyimana Samuel Kato,009931M98,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,3.0,Muyomba Henry Musisi,002519M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,7.0,Yunusu Sibira,024588M95,substitute,no,no,52.0,,38
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,10.0,John Bosco Byaruhanga,063740M02,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,11.0,Wahab Gadafi,000370M99,substitute,no,no,64.0,,26
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,14.0,Denis Monday,001396M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,16.0,Eddy Ssebandeke,002928M01,substitute,no,no,77.0,,13
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,18.0,Meddie Kibirige,000417M96,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,19.0,John Byamukama,002193M95,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,20.0,Crispus Asiki,058415M02,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,22.0,Isaac Doka Mweru,008319M96,substitute,no,no,77.0,,13
+UPL,2025/26,KITARA-vs-MBARARA,4,KITARA,home,23.0,Isa Muzeeyi Lumu,004443M95,substitute,no,no,64.0,,26
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,6.0,Francis Odongo,009525M97,substitute,no,no,81.0,,9
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,10.0,Clinton Davico Kamugisha,001602M99,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,11.0,Mike Walaga,006072M93,substitute,no,no,27.0,,63
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,17.0,Nasur Almahad Sadik,015036M01,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,20.0,Gadaffi Kacancu,001771M92,substitute,no,no,46.0,,44
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,26.0,Muhammed Kanyike,042577M03,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,28.0,Abudul Malik Bironse,025236M04,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,30.0,Thomas Kakaire,001734M03,substitute,no,no,64.0,,26
+UPL,2025/26,KITARA-vs-MBARARA,4,MBARARA,away,40.0,Stuart Hussein Kafuluma,065958M09,substitute,no,no,64.0,,26
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,23.0,David Lukwago,031565M02,starting,no,yes,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,15.0,David Owori,000506M98,starting,yes,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,4.0,Geoffrey Lubanga Kene,000824M96,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,5.0,Reagan Mpande,001189M00,starting,no,no,0.0,74.0,74
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,6.0,Simon Kato Ssemayange,010603M97,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,12.0,Ibrahim Kasinde,062054M03,starting,no,no,0.0,46.0,46
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,16.0,Cyrus Kibande,000999M96,starting,no,no,0.0,74.0,74
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,17.0,Najib Yiga,006318M02,starting,no,no,0.0,74.0,74
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,19.0,Missi Diego Semugera,002791M95,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,22.0,Aslam Ssemakula,031580M99,starting,no,no,0.0,46.0,46
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,26.0,Hassan Mubiru,031869M04,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,25.0,Mathias Muwanga,000391M97,starting,no,yes,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,16.0,Saidi Kyeyune,000664M93,starting,yes,no,0.0,79.0,79
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,3.0,Richard Matovu,001863M98,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,4.0,Benon Tahomera,004483M96,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,6.0,Daniel Jakony,022744M00,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,10.0,Dennis Kalanzi,055884M06,starting,no,no,0.0,58.0,58
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,11.0,Lawrence Tezikya,017848M98,starting,no,no,0.0,58.0,58
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,15.0,Bedia Djuma Ikamba,065938M04,starting,no,no,0.0,79.0,79
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,19.0,Brian James Obedi,023009M00,starting,no,no,0.0,44.0,44
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,26.0,Rayn Figo Kizito,032556M05,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,30.0,Stephen Namaisi,022529M05,starting,no,no,0.0,,90
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,1.0,Norman Angufindru,008015M94,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,3.0,Frank Mulimi,021650M00,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,8.0,Elivis Ngonde,005096M02,substitute,no,no,74.0,,16
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,9.0,Frank Ssebufu,000408M02,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,11.0,Jerome Otim,033445M02,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,13.0,Ali Arshavin Bayo,001599M97,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,14.0,Charles Lwanga,008672M00,substitute,no,no,46.0,,44
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,20.0,Geofrey Gagganga,001322M99,substitute,no,no,46.0,,44
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,21.0,Andrew Otim,052048M99,substitute,no,no,74.0,,16
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,24.0,Jeans Braddy Wokorach,002173M96,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,27.0,Raymon Barasa Mangoli,039141M07,substitute,no,no,74.0,,16
+UPL,2025/26,VILLA-vs-POLICE,4,Villa,home,30.0,Merickzedek Mangeni,064911M06,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,8.0,Ivan Eyamu,001898M01,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,9.0,Umaru Kasumba,063887M94,substitute,no,no,79.0,,11
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,14.0,Allan Bukenya,003705M96,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,17.0,Charles Bbaale,008955M94,substitute,no,no,58.0,,32
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,20.0,Deus Bukenya,024723M95,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,21.0,Sizwe Mario Gwebu,065939M03,substitute,no,no,58.0,,32
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,22.0,Tonny Kiwalazi,006255M00,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,24.0,Edward Kasibante,001902M98,substitute,no,no,,,0
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,27.0,Emmanuel Mugume,015168M03,substitute,no,no,79.0,,11
+UPL,2025/26,VILLA-vs-POLICE,4,POLICE,away,28.0,Abudshakur Ramsey Jemba,010972M05,substitute,no,no,44.0,,46
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,24.0,Rogers Omedwa,006042M92,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,15.0,Musitafa Mujuzi,000489M99,starting,yes,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,5.0,Ahmed Amayo,009911M99,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,7.0,Julius Poloto,000570M99,starting,no,no,0.0,35.0,35
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,8.0,Steven Munguchi,002584M95,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,9.0,Fazil Tumwine,051245M05,starting,no,no,0.0,81.0,81
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,10.0,Junior Samuel Kawawa,026859M97,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,12.0,Hassan Ssenyonjo,009233M00,starting,no,no,0.0,64.0,64
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,13.0,Jonathan Gift Odongo,002867M98,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,17.0,Issa Bugembe,024771M04,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,23.0,Isa Mubiru,000276M96,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,19.0,Hannington Sebwalunyo,000335M89,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,8.0,Marvin Kavuma,019159M95,starting,yes,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,,Geriga Atendele,005528M95,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,,CHARLES MOSES WAIBI,032004M02,starting,no,no,0.0,54.0,54
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,6.0,Ibrahim Kiyemba,000537M95,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,13.0,Shamiru Kimwero,055885M06,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,15.0,Joseph Seremba,025443M04,starting,no,no,0.0,54.0,54
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,17.0,Gideon Odongo,013429M99,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,20.0,Dhata Joseph Stephen Lujang,021295M02,starting,no,no,0.0,67.0,67
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,23.0,Patrick Bayiga,003236M93,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,28.0,Emmanuel Kulanga,036009M06,starting,no,no,0.0,54.0,54
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,6.0,Sam Kintu,000495M95,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,11.0,Noordin Saddic Bunjo,000445M99,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,14.0,Denis Otim,002882M99,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,16.0,Emmanuel Iisat,044680M03,substitute,no,no,64.0,,26
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,18.0,John Kokas Alou,001667M02,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,19.0,Ambrose Kigozi,024680M96,substitute,no,no,81.0,,9
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,21.0,Muhammad Kyeyune,006276M00,substitute,no,no,35.0,,55
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,22.0,Marvin Mukiibi,031945M03,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,25.0,George Kiryowa,001427M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,26.0,Yusuf Bogere,040860M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,ENTEBBE,home,27.0,Charles Okello Batiibwe,027001M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,,Mustafa Kizza,001756M99,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,1.0,Samson Kiirya,000563M95,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,7.0,Emmanuel Ajo,033093M00,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,10.0,Allan Mugalu,006920M96,substitute,no,no,54.0,,36
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,14.0,Paul Mucureezi,000375M93,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,16.0,Ibrahim Musa,041109M03,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,18.0,Muzamiru Mutyaba,000542M93,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,26.0,Jackson Ssembatya,065371M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,27.0,James Jarieko,008348M03,substitute,no,no,54.0,,36
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,30.0,Hudson Mbalire,057901M05,substitute,no,no,67.0,,23
+UPL,2025/26,ENTEBBE-vs-NEC,4,NEC,away,31.0,Siraje Ssentamu,000398M95,substitute,no,no,54.0,,36
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,25.0,Mathias Muwanga,000391M97,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,22.0,Tonny Kiwalazi,006255M00,starting,yes,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,3.0,Richard Matovu,001863M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,4.0,Benon Tahomera,004483M96,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,6.0,Daniel Jakony,022744M00,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,10.0,Dennis Kalanzi,055884M06,starting,no,no,0.0,71.0,71
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,11.0,Lawrence Tezikya,017848M98,starting,no,no,0.0,71.0,71
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,15.0,Bedia Djuma Ikamba,065938M04,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,21.0,Sizwe Mario Gwebu,065939M03,starting,no,no,0.0,49.0,49
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,26.0,Rayn Figo Kizito,032556M05,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,28.0,Abudshakur Ramsey Jemba,010972M05,starting,no,no,0.0,49.0,49
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,18.0,Matovu Hassan Muyomba,008708M98,starting,no,yes,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,2.0,Edward Kabona,002232M94,starting,yes,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,3.0,Fredrick Nickolas Kigozi,002204M95,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,4.0,Apollo Kagogwe,006244M03,starting,no,no,0.0,80.0,80
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,5.0,Norman Borniface Odipio,001091M01,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,7.0,Mujahid Ogama,000627M98,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,9.0,Dickson Niwamanya,002028M94,starting,no,no,0.0,33.0,33
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,15.0,Borris Onegi,018419M97,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,16.0,Rogers Kiwanuka,003306M01,starting,no,no,0.0,67.0,67
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,19.0,Brian Nkuubi,000463M93,starting,no,no,0.0,,90
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,20.0,Abel Michael Eturude,000572M97,starting,no,no,0.0,69.0,69
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,7.0,Reagan Steven Male,002310M99,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,8.0,Ivan Eyamu,001898M01,substitute,no,no,49.0,,41
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,9.0,Umaru Kasumba,063887M94,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,12.0,Derrick Maviiri,036031M07,substitute,no,no,71.0,,19
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,13.0,Samuel Kayongo,000365M92,substitute,no,no,71.0,,19
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,14.0,Allan Bukenya,003705M96,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,20.0,Deus Bukenya,024723M95,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,24.0,Edward Kasibante,001902M98,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,POLICE,home,27.0,Emmanuel Mugume,015168M03,substitute,no,no,49.0,,41
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,1.0,Amir Nalugoda,009973M99,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,6.0,Felix Okot,000455M96,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,8.0,Ronald Orombi,000636M93,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,10.0,Ivan Mayanja,052610M04,substitute,no,no,69.0,,21
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,12.0,Jackson Nunda,001358M91,substitute,no,no,33.0,,57
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,13.0,Emmanuel Obua,004874M00,substitute,no,no,67.0,,23
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,22.0,Deni Rukundo,009318M96,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,23.0,Derick Basoga,002160M96,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,24.0,Simon Tamale,000517M94,substitute,no,no,,,0
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,25.0,Ivan Asaba,001723M03,substitute,no,no,80.0,,10
+UPL,2025/26,POLICE-vs-MAROONS,5,MAROONS,away,29.0,JAMAL SSEMWOGERERE,043270M06,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,URA,home,16.0,Chrispas Kusiima,002270M98,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,7.0,Moses Okabo Aliro,008911M96,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,3.0,Hudu Mulikyi,000397M95,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,8.0,Nicholas Kabonge,002860M98,starting,no,no,0.0,65.0,65
+UPL,2025/26,URA-vs-UPDF,5,URA,home,9.0,Joseph Ssemujju,001464M97,starting,no,no,0.0,82.0,82
+UPL,2025/26,URA-vs-UPDF,5,URA,home,12.0,Nelson Senkatuka,000614M97,starting,no,no,0.0,82.0,82
+UPL,2025/26,URA-vs-UPDF,5,URA,home,13.0,Faizo Matovu,006969M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,14.0,George Masembe,045544M05,starting,no,no,0.0,65.0,65
+UPL,2025/26,URA-vs-UPDF,5,URA,home,20.0,Ibrahim Wamannah,001134M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,23.0,Amisi Bwangani,019947M03,starting,no,no,0.0,65.0,65
+UPL,2025/26,URA-vs-UPDF,5,URA,home,27.0,Justine Opiro,008877M03,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,1.0,Abdul Kimera,001836M95,starting,no,yes,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,4.0,Bernard Muwanga,000569M93,starting,yes,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,7.0,Rashid Faridi,009798M96,starting,no,no,0.0,71.0,71
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,8.0,Joseph Janjali,001385M96,starting,no,no,0.0,71.0,71
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,11.0,Samson Andrew Kigozi,000319M95,starting,no,no,0.0,87.0,87
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,12.0,Ronald Kayondo,007049M98,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,15.0,Swaibu Kasujja Kalule,010608M96,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,16.0,Aggrey Kiirya,000260M97,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,18.0,IBRAHIM MAKUMBI,009788M97,starting,no,no,0.0,87.0,87
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,22.0,FRANK GLADISON MUGISA,019194M98,starting,no,no,0.0,87.0,87
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,23.0,Samuel Kayongo Ssekamatte,001757M93,starting,no,no,0.0,,90
+UPL,2025/26,URA-vs-UPDF,5,URA,home,4.0,Norman Namanya,001766M00,substitute,no,no,65.0,,25
+UPL,2025/26,URA-vs-UPDF,5,URA,home,6.0,Abraham Kakensa Tusubira,006815M94,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,URA,home,10.0,Laban Tibiita,001470M02,substitute,no,no,82.0,,8
+UPL,2025/26,URA-vs-UPDF,5,URA,home,11.0,Living Kabon,000206M97,substitute,no,no,65.0,,25
+UPL,2025/26,URA-vs-UPDF,5,URA,home,15.0,Joshua Letti Lubwama,001360M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,URA,home,21.0,Fred Amaku,001609M95,substitute,no,no,82.0,,8
+UPL,2025/26,URA-vs-UPDF,5,URA,home,24.0,Muhamad Ssekkeba,000658M95,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,URA,home,25.0,Shafik Lugoloobi,012665M01,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,URA,home,26.0,JOHN INNOCENT KISOLO,043298M06,substitute,no,no,65.0,,25
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,2.0,Derrick Jim Ssekulima,021248M91,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,5.0,Denis Sekitoleko,000763M87,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,9.0,Kitara Daniel,006220M97,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,14.0,Shafic kakande,001710M03,substitute,no,no,87.0,,3
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,20.0,Brian Kalumba,005725M98,substitute,no,no,87.0,,3
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,21.0,Emmanuel Manu Ochen,004763M97,substitute,no,no,71.0,,19
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,26.0,Enrique Lubwama,036011M06,substitute,no,no,87.0,,3
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,27.0,Shamulan Kamya,026590M04,substitute,no,no,,,0
+UPL,2025/26,URA-vs-UPDF,5,UPDF,away,30.0,Asaph Ssegujja,006418M01,substitute,no,no,71.0,,19
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,1.0,James Alitho,000362M95,starting,no,yes,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,6.0,Baguma Jasper Aheebwa,000997M01,starting,yes,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,5.0,Murushid Juuko,021283M94,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,8.0,Hussein Ssenoga,005997M98,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,12.0,Patrick Henry Kaddu,058296M95,starting,no,no,0.0,64.0,64
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,13.0,Emmanuel Alex Wasswa,005641M93,starting,no,no,0.0,46.0,46
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,15.0,Jimmy Kalema,031277M05,starting,no,no,0.0,78.0,78
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,23.0,Isa Muzeeyi Lumu,004443M95,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,26.0,Edward Namaasa,044748M05,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,27.0,Isaac Amutuhaire,044871M03,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,29.0,Amir Kakomo,056081M04,starting,no,no,0.0,28.0,28
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,,Juma Mutebi,042164M02,starting,no,yes,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,24.0,Ayiko Richard,000452M93,starting,yes,no,0.0,49.0,49
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,3.0,Dauson Mafumu,044021M03,starting,no,no,0.0,39.0,39
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,12.0,Sharif Saaka,009834M91,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,13.0,David Bagoole,006295M96,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,16.0,Abdul Kalanzi,007342M03,starting,no,no,0.0,69.0,69
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,17.0,Paul Wasswa,002518M99,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,19.0,Alfred Leku,017845M97,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,20.0,Amos Etojo,002129M94,starting,no,no,0.0,69.0,69
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,21.0,Rogers Atube,007798M94,starting,no,no,0.0,,90
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,27.0,Freedom Mungudit,057827M06,starting,no,no,0.0,69.0,69
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,2.0,Nemeyimana Samuel Kato,009931M98,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,3.0,Muyomba Henry Musisi,002519M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,4.0,Frank Tumwesigye,000536M99,substitute,no,no,28.0,,62
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,7.0,Yunusu Sibira,024588M95,substitute,no,no,46.0,,44
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,10.0,John Bosco Byaruhanga,063740M02,substitute,no,no,78.0,,12
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,11.0,Wahab Gadafi,000370M99,substitute,no,no,64.0,,26
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,14.0,Denis Monday,001396M92,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,16.0,Eddy Ssebandeke,002928M01,substitute,no,no,64.0,,26
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,18.0,Meddie Kibirige,000417M96,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,19.0,John Byamukama,002193M95,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,20.0,Crispus Asiki,058415M02,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,KITARA,home,22.0,Isaac Doka Mweru,008319M96,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,1.0,Allan Batali Igama,065884M07,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,4.0,Joseph Othieno,062824M96,substitute,no,no,49.0,,41
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,6.0,Yusuf Mafabi,026758M03,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,7.0,Ashiraf Mulindi,008496M01,substitute,no,no,69.0,,21
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,10.0,Moses Ojoaza Buga,002606M95,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,11.0,Paul Busolo,045165M02,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,14.0,Adam Muteesasira,031602M02,substitute,no,no,69.0,,21
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,18.0,Muhammad Kakooza,058484M09,substitute,no,no,,,0
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,25.0,Birungi Alvin Twiine,050305M06,substitute,no,no,39.0,,51
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,26.0,Juma Ssajjabi,051304M06,substitute,no,no,69.0,,21
+UPL,2025/26,KITARA-vs-LUGAZI,5,LUGAZI,away,29.0,Akiram Massa,057830M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,23.0,TOM IKARA,065955M97,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,4.0,Walter Ochora,002426M97,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,2.0,Hillary Onek,001574M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,3.0,Nicholas Mwere,020667M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,10.0,Ibrahim Mugulusi,000773M99,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,14.0,Jeromy Kirya,002167M97,starting,no,no,0.0,73.0,73
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,16.0,Pascal Ngobi,002654M94,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,17.0,Tah Barni Kelvin,024730M99,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,20.0,Abdul Karim Ndugwa,062821M97,starting,no,no,0.0,57.0,57
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,24.0,Martin Aprem,006304M00,starting,no,no,0.0,57.0,57
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,25.0,Denis Ssewagudde,048868M06,starting,no,no,0.0,73.0,73
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,12.0,Ramadhan Ali Mwirusi,006444M99,starting,no,yes,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,13.0,Ashraf Mbazira,002676M98,starting,yes,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,3.0,HAKIM WANDERA,033032M07,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,5.0,Richard Basangwa,021294M01,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,8.0,Muhamed Kagawa Ssenoga,021073M01,starting,no,no,0.0,83.0,83
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,11.0,Abdulahi Rashid,001920M00,starting,no,no,0.0,34.0,34
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,19.0,RWOTNGEYO DOUGLAS HANNCIENT,065936M03,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,21.0,Henry Wamala,006082M96,starting,no,no,0.0,58.0,58
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,22.0,Yosia Kisa,033521M01,starting,no,no,0.0,83.0,83
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,28.0,Lawrence Muwonge Bukenya,056374M04,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,29.0,ISA GLORY KISUULE,058018M05,starting,no,no,0.0,,90
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,1.0,Yawe Farouk Sebanjja,002513M99,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,5.0,Bakali Magumda,008892M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,9.0,Seiri Arigumaho,024705M01,substitute,no,no,57.0,,33
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,12.0,ISAAC SSENYUNJA,027464M98,substitute,no,no,57.0,,33
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,18.0,ALEX KITATA,065956M92,substitute,no,no,73.0,,17
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,19.0,Isaac Musiima,008053M93,substitute,no,no,73.0,,17
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,21.0,Fredrick Ngalo,000957M96,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,22.0,Reagan Kalyowa,006303M01,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,26.0,SWABIR MPASA,039081M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,28.0,LWENDA SOWEDI,038683M06,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,BUL,home,30.0,Simon Achidi,045395M05,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,,OLOYA MOSES,063678M92,substitute,no,no,83.0,,7
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,2.0,Peter Onzima,000956M94,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,4.0,ALLI ISMAEL,065960M08,substitute,no,no,83.0,,7
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,9.0,Habert Asiimwe,015651M97,substitute,no,no,58.0,,32
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,17.0,Mikidadi Ssenyonga,009184M97,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,24.0,Deogratious Ojok,005962M95,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,27.0,Khassim Hafizi,010898M04,substitute,no,no,,,0
+UPL,2025/26,BUL-vs-EXPRESS,5,EXPRESS,away,30.0,Elvis Ssekajjugo,063477M06,substitute,no,no,34.0,,56
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,28.0,Moses Ayebale,033075M05,starting,no,yes,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,18.0,Maxwell Owachgiu,001052M97,starting,yes,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,2.0,David Kasaija,008615M02,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,3.0,NKATA FRED,065708M93,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,6.0,Davis Kakaire,031960M01,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,8.0,Erick Muber,032079M02,starting,no,no,0.0,70.0,70
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,14.0,Solomon Akodi,003594M01,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,19.0,Derick Byabacwezi,026897M01,starting,no,no,0.0,88.0,88
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,21.0,Edson Agondeze,008499M00,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,25.0,Anwaru Mustafa Ntege,002236M94,starting,no,no,0.0,70.0,70
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,26.0,Swadik Moro,044784M03,starting,no,no,0.0,70.0,70
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,23.0,David Lukwago,031565M02,starting,no,yes,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,15.0,David Owori,000506M98,starting,yes,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,4.0,Geoffrey Lubanga Kene,000824M96,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,5.0,Reagan Mpande,001189M00,starting,no,no,0.0,65.0,65
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,6.0,Simon Kato Ssemayange,010603M97,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,12.0,Ibrahim Kasinde,062054M03,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,17.0,Najib Yiga,006318M02,starting,no,no,0.0,46.0,46
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,19.0,Missi Diego Semugera,002791M95,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,22.0,Aslam Ssemakula,031580M99,starting,no,no,0.0,65.0,65
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,26.0,Hassan Mubiru,031869M04,starting,no,no,0.0,78.0,78
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,27.0,Raymon Barasa Mangoli,039141M07,starting,no,no,0.0,,90
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,5.0,Dudu Ramadhan,001615M93,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,7.0,Hussein Mwanje,024625M97,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,10.0,Shafic Kiryowa,007345M99,substitute,no,no,70.0,,20
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,11.0,John Wesley kisaakye,006087M96,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,12.0,Charles Kyomuhendo,009379M97,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,15.0,NICHOLAS WAMANI,021729M98,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,23.0,Mpuna Emmanuel Biseki,065950M97,substitute,no,no,70.0,,20
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,24.0,ELIUDE AMANYIRE,032700M02,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,29.0,LUCAS MOLA,056450M05,substitute,no,no,88.0,,2
+UPL,2025/26,BUHIMBA-vs-VILLA,5,BUHIMBA,home,30.0,John Bosco Sempijja,025115M04,substitute,no,no,70.0,,20
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,7.0,Sula Matovu,001611M92,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,8.0,Elivis Ngonde,005096M02,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,9.0,Frank Ssebufu,000408M02,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,11.0,Jerome Otim,033445M02,substitute,no,no,78.0,,12
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,13.0,Ali Arshavin Bayo,001599M97,substitute,no,no,46.0,,44
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,16.0,Cyrus Kibande,000999M96,substitute,no,no,78.0,,12
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,18.0,Tonny Atukunda,002944M01,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,20.0,Geofrey Gagganga,001322M99,substitute,no,no,65.0,,25
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,21.0,Andrew Otim,052048M99,substitute,no,no,65.0,,25
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,24.0,Jeans Braddy Wokorach,002173M96,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,25.0,Hamidu Nsubuga,058012M04,substitute,no,no,,,0
+UPL,2025/26,BUHIMBA-vs-VILLA,5,Villa,away,30.0,Merickzedek Mangeni,064911M06,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,12.0,Charles Lukwago,000622M94,starting,yes,yes,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,2.0,Herbert Achayi,006277M99,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,3.0,Hassan Muhamud,003074M96,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,4.0,Saidi Mayanja,001033M99,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,6.0,Sammy Raynald Ssebaduka,028682M02,starting,no,no,0.0,46.0,46
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,11.0,Ivan Ahimbisibwe,002011M95,starting,no,no,0.0,65.0,65
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,15.0,Enock Walusimbi,001697M98,starting,no,no,0.0,46.0,46
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,16.0,Fillbert Obenchan,000649M96,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,18.0,Umar Lutalo,024772M03,starting,no,no,0.0,69.0,69
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,19.0,Shafik Nana Kwikiriza,040861M04,starting,no,no,0.0,67.0,67
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,22.0,Joel Sserunjogi,005883M04,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,24.0,Emmanuel Derrick Were,000315M96,starting,no,yes,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,8.0,Christopher Agotre,005690M98,starting,yes,no,0.0,46.0,46
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,2.0,John Rogers,006294M03,starting,no,no,0.0,72.0,72
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,10.0,Simon Peter Odeke,000823M96,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,14.0,Lawrence Olaboro,006809M96,starting,no,no,0.0,72.0,72
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,15.0,Stephen Oriokot,000835M97,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,21.0,Daniel Opio,006881M97,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,23.0,Marvin Praise Wambuga,024641M01,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,28.0,Allan Kiggundu,001111M04,starting,no,no,0.0,40.0,40
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,29.0,ANDREW KIWANUKA,064234M05,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,30.0,Junior Emmanuel Ojok,033958M06,starting,no,no,0.0,,90
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,1.0,Mutwalibi Mugolofa,001733M00,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,5.0,Sharifu Ssengendo,055880M05,substitute,no,no,65.0,,25
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,8.0,Alpha Thierry Ssali,006081M03,substitute,no,no,67.0,,23
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,20.0,Emmanuel Anyama,012569M98,substitute,no,no,69.0,,21
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,21.0,Gavin Mugweri Kizito,006315M02,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,24.0,Emojong Anthony Okimaru,001193M01,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,26.0,James Mubezi,025433M04,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,27.0,Lazaro Muhindo,058232M07,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,28.0,Humphrey Oyirwoth,044066M04,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,29.0,Haruna Lukwago,021673M04,substitute,no,no,46.0,,44
+UPL,2025/26,KCCA-vs-CALVARY,5,KCCA,home,30.0,Alex Yiga,033201M06,substitute,no,no,46.0,,44
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,3.0,Julius Ocen,002798M95,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,11.0,James Ssemambo,000846M98,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,12.0,Tusaba Najib Gwaidho,003727M95,substitute,no,no,46.0,,44
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,16.0,Eric Otingcwinyu,003659M97,substitute,no,no,72.0,,18
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,17.0,Haron Odongo,000740M00,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,20.0,Steven Nyalimo,027792M95,substitute,no,no,72.0,,18
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,22.0,Hadji Shukuru,032060M02,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,25.0,Mubaraka Mitala,058076M06,substitute,no,no,,,0
+UPL,2025/26,KCCA-vs-CALVARY,5,CALVARY,away,27.0,Zachous Ocen,031614M03,substitute,no,no,40.0,,50
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,24.0,Rogers Omedwa,006042M92,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,15.0,Musitafa Mujuzi,000489M99,starting,yes,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,5.0,Ahmed Amayo,009911M99,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,8.0,Steven Munguchi,002584M95,starting,no,no,0.0,63.0,63
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,9.0,Fazil Tumwine,051245M05,starting,no,no,0.0,46.0,46
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,10.0,Junior Samuel Kawawa,026859M97,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,12.0,Hassan Ssenyonjo,009233M00,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,13.0,Jonathan Gift Odongo,002867M98,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,16.0,Emmanuel Iisat,044680M03,starting,no,no,0.0,32.0,32
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,17.0,Issa Bugembe,024771M04,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,23.0,Isa Mubiru,000276M96,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,1.0,Alfred Macumu Mudekereza,031573M92,starting,no,yes,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,11.0,Milton Karisa,020491M95,starting,yes,no,0.0,46.0,46
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,5.0,KEVIN DASYLVA BADY,065429M04,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,8.0,Enock Ssebaggala,008720M00,starting,no,no,0.0,83.0,83
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,15.0,Enock Luyima,028614M03,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,16.0,Hilary Panuel Mukundane,000617M93,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,21.0,Gusto Wa Ilungo Mulongo,057746M04,starting,no,no,0.0,66.0,66
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,22.0,Joseph Youngman Marvin,004090M98,starting,no,no,0.0,43.0,43
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,25.0,Abdulkarim Watambala,005628M98,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,27.0,Kiza Arafat Usama,065380M04,starting,no,no,0.0,66.0,66
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,30.0,Rogers Ochaki Torach,007612M02,starting,no,no,0.0,,90
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,3.0,Bright Joseph Vuni,002554M98,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,6.0,Sam Kintu,000495M95,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,11.0,Noordin Saddic Bunjo,000445M99,substitute,no,no,63.0,,27
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,14.0,Denis Otim,002882M99,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,18.0,John Kokas Alou,001667M02,substitute,no,no,32.0,,58
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,19.0,Ambrose Kigozi,024680M96,substitute,no,no,46.0,,44
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,21.0,Muhammad Kyeyune,006276M00,substitute,no,no,84.0,,6
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,22.0,Marvin Mukiibi,031945M03,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,25.0,George Kiryowa,001427M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,26.0,Yusuf Bogere,040860M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,27.0,Charles Okello Batiibwe,027001M05,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,ENTEBBE,home,28.0,Dan daris Kazibwe,065410M07,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,3.0,Derrick Ndahiro,006289M00,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,4.0,Livingstone Mulondo,000256M96,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,6.0,TADEO LWANGA,065425M94,substitute,no,no,43.0,,47
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,7.0,CHUKWUMA ODILI,065428M01,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,12.0,Junior Yunus Sentamu,021745M94,substitute,no,no,46.0,,44
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,14.0,Nico Wadada Wakiro,000473M94,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,17.0,Isaac Ogwang,002906M97,substitute,no,no,66.0,,24
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,18.0,Paul Patrick Mbowa,000399M97,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,19.0,Jack Komakech,024708M02,substitute,no,no,,,0
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,23.0,Moses Waiswa Ndhondhi,000514M97,substitute,no,no,83.0,,7
+UPL,2025/26,ENTEBBE-vs-VIPERS,5,VIPERS,away,33.0,ROBIN KANE HNEY,065589M05,substitute,no,no,66.0,,24
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,1.0,Aaron Icumar,025112M99,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,5.0,Ibrahim Thembo,002051M99,starting,yes,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,3.0,Innocent Wafula Esimu,008629M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,8.0,Ian Amanya,003379M96,starting,no,no,0.0,60.0,60
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,9.0,Henry Kitegenyi,055878M04,starting,no,no,0.0,75.0,75
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,11.0,Mike Walaga,006072M93,starting,no,no,0.0,60.0,60
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,13.0,Hamza Mulambuzi,017847M01,starting,no,no,0.0,51.0,51
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,15.0,Reagan Matege,027324M98,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,22.0,Denis Kaka Omony,001160M00,starting,no,no,0.0,75.0,75
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,24.0,Sulaiman Ssesaazi,002522M96,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,30.0,Thomas Kakaire,001734M03,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,1.0,Samson Kiirya,000563M95,starting,no,yes,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,8.0,Marvin Kavuma,019159M95,starting,yes,no,0.0,65.0,65
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,,Geriga Atendele,005528M95,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,6.0,Ibrahim Kiyemba,000537M95,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,10.0,Allan Mugalu,006920M96,starting,no,no,0.0,80.0,80
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,13.0,Shamiru Kimwero,055885M06,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,17.0,Gideon Odongo,013429M99,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,20.0,Dhata Joseph Stephen Lujang,021295M02,starting,no,no,0.0,65.0,65
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,23.0,Patrick Bayiga,003236M93,starting,no,no,0.0,46.0,46
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,30.0,Hudson Mbalire,057901M05,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,31.0,Siraje Ssentamu,000398M95,starting,no,no,0.0,,90
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,6.0,Francis Odongo,009525M97,substitute,no,no,51.0,,39
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,14.0,Latif Ssenkubuge,027525M00,substitute,no,no,60.0,,30
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,16.0,Ambrose Arinda,057902M06,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,17.0,Nasur Almahad Sadik,015036M01,substitute,no,no,60.0,,30
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,19.0,Gabriel Eragu,002769M93,substitute,no,no,75.0,,15
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,23.0,Wycliffe Ahumuza,044786M02,substitute,no,no,75.0,,15
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,26.0,Muhammed Kanyike,042577M03,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,28.0,Abudul Malik Bironse,025236M04,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,MBARARA,home,40.0,Stuart Hussein Kafuluma,065958M09,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,,Mustafa Kizza,001756M99,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,5.0,Daniel Shabene,000340M98,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,7.0,Emmanuel Ajo,033093M00,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,14.0,Paul Mucureezi,000375M93,substitute,no,no,65.0,,25
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,15.0,Joseph Seremba,025443M04,substitute,no,no,80.0,,10
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,16.0,Ibrahim Musa,041109M03,substitute,no,no,46.0,,44
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,18.0,Muzamiru Mutyaba,000542M93,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,19.0,Hannington Sebwalunyo,000335M89,substitute,no,no,,,0
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,27.0,James Jarieko,008348M03,substitute,no,no,65.0,,25
+UPL,2025/26,MBARARA-vs-NEC,5,NEC,away,28.0,Emmanuel Kulanga,036009M06,substitute,no,no,,,0

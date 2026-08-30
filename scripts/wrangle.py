@@ -126,10 +126,17 @@ def df_transform(df, df_name):
 
     return df
 
-# extractor output -> transformed name
+# extractor output -> transformed name. These carry a `min` column that needs
+# parsing into minute / period / base_minute / stoppage.
 csv_files = {'goalsNew.csv': 'goals.csv',
              'cautionsNew.csv': 'cautions.csv',
              'subsNew.csv': 'subs.csv'}
+
+# Team sheets, staff and match headers need no minute parsing -- their minutes
+# are already plain integers -- so they are copied through as they are.
+passthrough_files = {'lineupsNew.csv': 'lineups.csv',
+                     'staffNew.csv': 'staff.csv',
+                     'matchInfoNew.csv': 'match_info.csv'}
 
 frames = {}
 
@@ -164,6 +171,18 @@ for source_file, csv_file in csv_files.items():
     frames[csv_file.replace('.csv', '')] = transformedDF
 
     print(f"\n✓ Saved to: {output_path}")
+
+
+for source_file, csv_file in passthrough_files.items():
+    input_path = dataDIR / source_file
+    if not input_path.exists():
+        print(f"\nWarning: {source_file} not found in {dataDIR}")
+        continue
+
+    df = pd.read_csv(input_path)
+    output_path = outputDIR / f"transformed_{csv_file}"
+    df.to_csv(output_path, index=False)
+    print(f"✓ Saved to: {output_path}  ({len(df)} rows)")
 
 
 # =============================================================================

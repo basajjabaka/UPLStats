@@ -52,12 +52,25 @@ ui.tags.style(
     .navbar.fixed-top .nav-link {
         color: rgba(255, 255, 255, 0.94) !important;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        font-size: 13px;
+        letter-spacing: 0.04em;
+        font-size: 12.5px;
         font-weight: 600;
-        padding: 9px 16px !important;
+        padding: 9px 13px !important;
         border-radius: 9999px;
+        white-space: nowrap;
         transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* Six sections plus the competition switcher is a lot of bar. Tighten the
+       spacing before the browser is forced to wrap it. */
+    @media (max-width: 1400px) {
+        .navbar.fixed-top { margin: 14px 16px; }
+        .navbar.fixed-top .navbar-brand { font-size: 15px; padding-left: 10px; }
+        .navbar.fixed-top .nav-link {
+            font-size: 11.5px;
+            padding: 8px 9px !important;
+            letter-spacing: 0.02em;
+        }
     }
 
     .navbar.fixed-top .nav-link:hover {
@@ -348,6 +361,16 @@ ALL_MATCHES = pd.read_csv(inputDIR / "transformed_matches.csv")
 ALL_TEAM_MATCHES = pd.read_csv(inputDIR / "transformed_team_matches.csv")
 ALL_COMEBACKS = pd.read_csv(inputDIR / "transformed_comebacks.csv")
 
+# team sheets, staff and match headers read straight off the reports
+ALL_LINEUPS = pd.read_csv(inputDIR / "transformed_lineups.csv")
+ALL_LINEUPS['team'] = ALL_LINEUPS['team'].astype(str).str.upper()
+ALL_STAFF = pd.read_csv(inputDIR / "transformed_staff.csv")
+ALL_STAFF['team'] = ALL_STAFF['team'].astype(str).str.upper()
+ALL_MATCH_INFO = pd.read_csv(inputDIR / "transformed_match_info.csv")
+
+#: a player needs this many minutes before a per-90 rate says anything
+MIN_MINUTES_FOR_RATE = 270
+
 # Team color mapping
 TEAM_COLORS = {
     "VIPERS": "#DC143C",      # Red
@@ -445,6 +468,66 @@ def team_matches_df():
 @reactive.calc
 def comebacks_df():
     return _slice(ALL_COMEBACKS)
+
+
+@reactive.calc
+def lineups_df():
+    return _slice(ALL_LINEUPS)
+
+
+@reactive.calc
+def staff_df():
+    return _slice(ALL_STAFF)
+
+
+@reactive.calc
+def match_info_df():
+    return _slice(ALL_MATCH_INFO)
+
+
+@reactive.calc
+def player_minutes():
+    """Minutes, appearances and goals per player for the selected competition.
+
+    Minutes come from the team sheets, so this is the denominator that makes
+    per-90 rates possible; goals are joined on the printed name because that is
+    all the events table carries.
+    """
+    squad = lineups_df()
+    if squad.empty:
+        return pd.DataFrame(columns=['player', 'player_id', 'team', 'minutes',
+                                     'starts', 'sub_apps', 'goals', 'goals_per_90'])
+
+    played = squad[squad['minutes_played'] > 0]
+    summary = played.groupby(['player', 'player_id', 'team']).agg(
+        minutes=('minutes_played', 'sum'),
+        starts=('role', lambda s: (s == 'starting').sum()),
+        sub_apps=('role', lambda s: (s == 'substitute').sum()),
+    ).reset_index()
+
+    scored = goals_df().groupby('player').size()
+    summary['goals'] = summary['player'].map(scored).fillna(0).astype(int)
+    summary['goals_per_90'] = (summary['goals'] / summary['minutes'] * 90).round(2)
+    return summary.sort_values('minutes', ascending=False)
+
+
+@reactive.calc
+def referee_record():
+    """Matches and cards per referee, from the match headers."""
+    info = match_info_df()
+    if info.empty or 'referee' not in info.columns:
+        return pd.DataFrame(columns=['referee', 'matches', 'cards', 'cards_per_match'])
+
+    named = info[info['referee'].notna() & (info['referee'].astype(str) != '')]
+    if named.empty:
+        return pd.DataFrame(columns=['referee', 'matches', 'cards', 'cards_per_match'])
+
+    cards_by_game = cautions_df().groupby('game').size()
+    named = named.assign(cards=named['game'].map(cards_by_game).fillna(0).astype(int))
+    table = named.groupby('referee').agg(
+        matches=('game', 'nunique'), cards=('cards', 'sum')).reset_index()
+    table['cards_per_match'] = (table['cards'] / table['matches']).round(2)
+    return table.sort_values(['cards_per_match', 'matches'], ascending=False)
 
 
 @reactive.calc
@@ -1303,6 +1386,55 @@ with ui.navset_bar(
                                 return league_table(md=selected_md(),
                                                     form_games=1)
 
+                with ui.nav_panel("Match Details"):
+                    with ui.card():
+                        @render.ui
+                        def md_details_header():
+                            return ui.tags.div(
+                                f"Venue & Officials - Matchday {input.selected_matchday()}",
+                                class_="overview-card-header")
+
+                        @render.table
+                        def md_details_table():
+                            info = match_info_df()
+                            md = selected_md()
+                            if info.empty or md is None:
+                                return pd.DataFrame(columns=['Match'])
+                            data = info[info['md'] == md].sort_values('game')
+                            columns = ['game', 'date', 'kickoff', 'venue',
+                                       'attendance', 'referee']
+                            available = [c for c in columns if c in data.columns]
+                            data = data[available]
+                            data.columns = ['Match', 'Date', 'Kick-off', 'Venue',
+                                            'Attendance', 'Referee'][:len(available)]
+                            return data
+
+                        ui.tags.p(
+                            "Attendance is only printed on some reports, so blanks "
+                            "here mean it was not recorded rather than nobody attended.",
+                            style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+                    with ui.card():
+                        @render.ui
+                        def md_teamsheet_header():
+                            return ui.tags.div(
+                                f"Team Sheets - Matchday {input.selected_matchday()}",
+                                class_="overview-card-header")
+
+                        @render.table
+                        def md_teamsheet_table():
+                            squad = lineups_df()
+                            md = selected_md()
+                            if squad.empty or md is None:
+                                return pd.DataFrame(columns=['Match'])
+                            data = squad[(squad['md'] == md)
+                                         & (squad['role'] == 'starting')]
+                            data = data.sort_values(['game', 'team', 'shirt'])
+                            data = data[['game', 'team', 'shirt', 'player',
+                                         'minutes_played']]
+                            data.columns = ['Match', 'Team', '#', 'Player', 'Minutes']
+                            return data
+
                 with ui.nav_panel("Cards"):
                     with ui.card():
                         @render.ui
@@ -1635,6 +1767,26 @@ with ui.navset_bar(
                                 scorers.columns = ['Player', 'Goals']
                                 return scorers
 
+                with ui.nav_panel("Staff"):
+                    with ui.card():
+                        @render.ui
+                        def team_staff_header():
+                            return ui.tags.div(f"Coaching Staff - {selected_team()}",
+                                               style=get_team_header_style(selected_team()))
+
+                        @render.table
+                        def team_staff_table():
+                            staff = staff_df()
+                            staff = staff[staff['team'] == selected_team()]
+                            if staff.empty:
+                                return pd.DataFrame(columns=['Role', 'Name', 'Matches'])
+                            table = (staff.groupby(['role', 'name']).size()
+                                          .reset_index(name='matches')
+                                          .sort_values(['role', 'matches'],
+                                                       ascending=[True, False]))
+                            table.columns = ['Role', 'Name', 'Matches']
+                            return table
+
                 with ui.nav_panel("Discipline"):
                     with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
                         with ui.card():
@@ -1791,6 +1943,276 @@ with ui.navset_bar(
                             team_subs = subs_df()[subs_df()['team'] == selected_team()][['game', 'in', 'out', 'minute']]
                             team_subs.columns = ['Match', 'Player In', 'Player Out', 'Minute']
                             return team_subs
+
+    # =============================================================================
+    # PAGE 5: PLAYERS
+    # =============================================================================
+    # Everything here rests on minutes played, which only became available once
+    # the team sheets were extracted.
+    with ui.nav_panel("Players"):
+        with ui.navset_pill(id="player_tab"):
+
+            with ui.nav_panel("Minutes & Usage"):
+                with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 20px 0;"):
+                    with ui.div(class_="stat-card matches"):
+                        @render.text
+                        def players_used_count():
+                            return str(lineups_df()['player_id'].nunique())
+                        ui.p("Players Registered")
+                    with ui.div(class_="stat-card goals"):
+                        @render.text
+                        def players_appeared_count():
+                            return str(len(player_minutes()))
+                        ui.p("Players Used")
+                    with ui.div(class_="stat-card subs"):
+                        @render.text
+                        def unused_subs_count():
+                            squad = lineups_df()
+                            return str(int((squad['minutes_played'] == 0).sum()))
+                        ui.p("Unused Sub Slots")
+                    with ui.div(class_="stat-card cards"):
+                        @render.text
+                        def minutes_total():
+                            return f"{int(lineups_df()['minutes_played'].sum()):,}"
+                        ui.p("Minutes Played")
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Most Minutes Played", class_="overview-card-header")
+                        @render_plotly
+                        def minutes_leaders():
+                            data = player_minutes().head(15).sort_values('minutes')
+                            if data.empty:
+                                return empty_figure()
+                            fig = px.bar(
+                                data, x='minutes', y='player', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='minutes',
+                                title='Minutes on the Pitch',
+                                labels={'minutes': 'Minutes', 'player': '', 'team': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Squad Rotation", class_="overview-card-header")
+                        @render_plotly
+                        def squad_rotation():
+                            used = player_minutes()
+                            if used.empty:
+                                return empty_figure()
+                            data = (used.groupby('team').size()
+                                        .reset_index(name='players').sort_values('players'))
+                            fig = px.bar(
+                                data, x='players', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='players',
+                                title='Different Players Given Minutes',
+                                labels={'players': 'Players used', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False, height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Appearances", class_="overview-card-header")
+                        @render.table
+                        def appearances_table():
+                            data = player_minutes().copy()
+                            if data.empty:
+                                return data
+                            data = data[['player', 'team', 'starts', 'sub_apps',
+                                         'minutes', 'goals']]
+                            data.columns = ['Player', 'Team', 'Starts', 'As Sub',
+                                            'Minutes', 'Goals']
+                            return data.head(30)
+
+            with ui.nav_panel("Scoring Rates"):
+                ui.tags.p(
+                    f"Goals per 90 minutes. Only players with at least "
+                    f"{MIN_MINUTES_FOR_RATE} minutes are ranked — below that a "
+                    f"single goal distorts the rate beyond any meaning.",
+                    style="margin: 20px 10px 0 10px; color: #555;"
+                )
+                with ui.layout_columns(col_widths=[7, 5], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Goals per 90", class_="overview-card-header")
+                        @render_plotly
+                        def goals_per_90_chart():
+                            data = player_minutes()
+                            data = data[(data['minutes'] >= MIN_MINUTES_FOR_RATE)
+                                        & (data['goals'] > 0)]
+                            if data.empty:
+                                return empty_figure(
+                                    "No player has enough minutes yet")
+                            data = data.sort_values('goals_per_90').tail(15)
+                            fig = px.bar(
+                                data, x='goals_per_90', y='player', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                text='goals_per_90',
+                                hover_data=['goals', 'minutes'],
+                                title='Scoring Rate',
+                                labels={'goals_per_90': 'Goals per 90',
+                                        'player': '', 'team': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Minutes per Goal", class_="overview-card-header")
+                        @render.table
+                        def minutes_per_goal_table():
+                            data = player_minutes()
+                            data = data[(data['goals'] > 0)].copy()
+                            if data.empty:
+                                return pd.DataFrame(
+                                    columns=['Player', 'Team', 'Goals', 'Minutes',
+                                             'Mins/Goal'])
+                            data['mins_per_goal'] = (
+                                data['minutes'] / data['goals']).round(0).astype(int)
+                            data = data.sort_values('mins_per_goal')
+                            data = data[['player', 'team', 'goals', 'minutes',
+                                         'mins_per_goal']]
+                            data.columns = ['Player', 'Team', 'Goals', 'Minutes',
+                                            'Mins/Goal']
+                            return data.head(20)
+
+            with ui.nav_panel("Squads"):
+                with ui.card():
+                    @render.ui
+                    def squad_header():
+                        return ui.tags.div(f"Squad - {selected_team()}",
+                                           style=get_team_header_style(selected_team()))
+
+                    @render.table
+                    def squad_table():
+                        squad = lineups_df()
+                        squad = squad[squad['team'] == selected_team()]
+                        if squad.empty:
+                            return pd.DataFrame(
+                                columns=['Player', 'ID', 'Starts', 'As Sub',
+                                         'Minutes', 'Captain', 'Keeper'])
+                        grouped = squad.groupby(['player', 'player_id']).agg(
+                            starts=('role', lambda s: (s == 'starting').sum()),
+                            sub_apps=('role', lambda s: (s == 'substitute').sum()),
+                            minutes=('minutes_played', 'sum'),
+                            captain=('is_captain', lambda s: (s == 'yes').sum()),
+                            keeper=('is_goalkeeper', lambda s: (s == 'yes').sum()),
+                        ).reset_index().sort_values('minutes', ascending=False)
+                        grouped['captain'] = grouped['captain'].map(
+                            lambda n: "yes" if n else "")
+                        grouped['keeper'] = grouped['keeper'].map(
+                            lambda n: "yes" if n else "")
+                        grouped.columns = ['Player', 'ID', 'Starts', 'As Sub',
+                                           'Minutes', 'Captain', 'Keeper']
+                        return grouped
+
+                    ui.tags.p(
+                        "Team chosen on the Team Statistics page. The ID column is the "
+                        "player's registration number, which stays constant even when "
+                        "the reports spell a name differently.",
+                        style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+    # =============================================================================
+    # PAGE 6: OFFICIALS
+    # =============================================================================
+    with ui.nav_panel("Officials"):
+        with ui.navset_pill(id="official_tab"):
+
+            with ui.nav_panel("Referees"):
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Appointments", class_="overview-card-header")
+                        @render_plotly
+                        def referee_appointments():
+                            data = referee_record()
+                            if data.empty:
+                                return empty_figure("No officials recorded")
+                            data = data.sort_values('matches')
+                            fig = px.bar(
+                                data, x='matches', y='referee', orientation='h',
+                                text='matches', color_discrete_sequence=['#1a5f7a'],
+                                title='Matches Refereed',
+                                labels={'matches': 'Matches', 'referee': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Cards per Match", class_="overview-card-header")
+                        @render_plotly
+                        def referee_cards():
+                            data = referee_record()
+                            if data.empty:
+                                return empty_figure("No officials recorded")
+                            data = data.sort_values('cards_per_match')
+                            fig = px.bar(
+                                data, x='cards_per_match', y='referee',
+                                orientation='h', text='cards_per_match',
+                                hover_data=['matches', 'cards'],
+                                color_discrete_sequence=['#e74c3c'],
+                                title='Cards Shown per Match',
+                                labels={'cards_per_match': 'Cards per match',
+                                        'referee': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Referee Record", class_="overview-card-header")
+                        @render.table
+                        def referee_table():
+                            data = referee_record().copy()
+                            if data.empty:
+                                return data
+                            data.columns = ['Referee', 'Matches', 'Cards',
+                                            'Cards/Match']
+                            return data
+
+                        ui.tags.p(
+                            "Card counts are every caution and dismissal recorded in "
+                            "the match. With only a handful of appointments each so "
+                            "far, treat the rates as a running tally rather than a "
+                            "judgement.",
+                            style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+            with ui.nav_panel("Appointments"):
+                with ui.card():
+                    ui.tags.div("Match Officials", class_="overview-card-header")
+                    @render.table
+                    def officials_table():
+                        info = match_info_df()
+                        if info.empty:
+                            return pd.DataFrame(columns=['Match'])
+                        columns = ['game', 'md', 'referee', 'assistant_1',
+                                   'assistant_2', 'fourth_official', 'commissioner']
+                        available = [c for c in columns if c in info.columns]
+                        data = info[available].sort_values(['md', 'game'])
+                        data.columns = ['Match', 'MD', 'Referee', '1st Assistant',
+                                        '2nd Assistant', 'Fourth Official',
+                                        'Commissioner'][:len(available)]
+                        return data
 
     # =========================================================================
     # Competition switcher, pinned to the right of the bar

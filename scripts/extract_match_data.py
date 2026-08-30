@@ -155,6 +155,30 @@ MATCHDAY_RE = re.compile(r"^md(\d+)$", re.IGNORECASE)
 EVENTS_HEADING = "MATCH EVENTS"
 EVENTS_TERMINATORS = ("PENALTY", "SIGNATURES")
 
+#: every player and official carries a registration id like (002606M95).  It is
+#: the only identifier in the report that is stable across spellings, so it is
+#: what player-level joins should key on rather than the printed name.
+#:
+#: The letter is a gender marker, not a constant: female players and officials
+#: are registered with an F, e.g. (026430F95).  Matching only M silently drops
+#: them -- and would drop every player in the women's league.
+REGISTRATION_ID = r"\d{6}[A-Z]\d{2}"
+REGISTRATION_RE = re.compile(rf"\(({REGISTRATION_ID})\)")
+
+#: minutes a full match is normalised to for per-90 work, stoppage aside
+FULL_MATCH_MINUTES = 90
+
+#: printed label (lower-cased, no colon) -> column name
+OFFICIAL_ROLES = {
+    "referee": "referee",
+    "1st assistant referee": "assistant_1",
+    "2nd assistant referee": "assistant_2",
+    "fourth official": "fourth_official",
+    "match commissioner": "commissioner",
+    "referee assessor": "assessor",
+}
+OFFICIAL_FIELDS = list(OFFICIAL_ROLES.values())
+
 
 # --------------------------------------------------------------------------
 # small geometry helpers
@@ -327,8 +351,13 @@ def _heading_word(page, first, second):
     return None
 
 
-def _row_bands(page, top, bottom):
-    """Group the table's cell rectangles into (top, bottom) -> [cells] bands."""
+def _row_bands(page, top, bottom, x_min=40.0, x_max=None):
+    """Group a table's cell rectangles into (top, bottom) -> [cells] bands.
+
+    ``x_min``/``x_max`` narrow the search to one block. The team sheets print the
+    home and away squads side by side, so each has to be read on its own or a
+    wrapped name from one side lands in the other's rows.
+    """
     bands = {}
     for rect in page["rects"]:
         if _colour(rect.get("non_stroking_color")) not in CELL_BACKGROUND_COLOURS:
@@ -337,7 +366,9 @@ def _row_bands(page, top, bottom):
             continue
         if rect["top"] < top - 0.5 or rect["bottom"] > bottom + 0.5:
             continue
-        if rect["x0"] < 40:
+        if rect["x0"] < x_min - 0.5:
+            continue
+        if x_max is not None and rect["x1"] > x_max + 0.5:
             continue
         bands.setdefault((round(rect["top"], 1), round(rect["bottom"], 1)), []).append(rect)
     return sorted(bands.items())
@@ -413,6 +444,364 @@ def read_events_table(pages):
                               if c["x0"] >= m_x1 - 0.5 and c["x1"] <= right + 1],
             })
     return rows
+
+
+# --------------------------------------------------------------------------
+# team sheets, officials, staff and the header block
+# --------------------------------------------------------------------------
+
+#: squad tables never reach the officials column on the right of the page
+SQUAD_RIGHT_LIMIT = 0.72
+
+
+def _squad_blocks(page, top, bottom):
+    """The two side-by-side squad blocks on a page, home first.
+
+    The divider is found by merging the x-ranges the cells actually cover: the
+    home and away sheets form two separate runs with a gutter between them.
+    Taking the widest gap between column edges would not work, because the
+    widest such gap is the away name column, not the gutter.
+    """
+    limit = page["width"] * SQUAD_RIGHT_LIMIT
+    bands = _row_bands(page, top, bottom, x_max=limit)
+    if not bands:
+        return []
+
+    spans = sorted((cell["x0"], cell["x1"]) for _band, cells in bands for cell in cells)
+    merged = []
+    for low, high in spans:
+        if merged and low <= merged[-1][1] + 0.5:
+            merged[-1][1] = max(merged[-1][1], high)
+        else:
+            merged.append([low, high])
+
+    if len(merged) < 2:
+        return []
+    return [("home", merged[0][0], merged[0][1]),
+            ("away", merged[1][0], merged[1][1])]
+
+
+def _squad_columns(bands):
+    """Shirt / name / minute column ranges, chosen by how often each appears.
+
+    A squad table has one merged full-width cell for its header row. Picking the
+    widest column would select that merge and swallow the minute alongside the
+    name, so only columns present in most rows are considered.
+    """
+    tally = Counter((round(c["x0"], 1), round(c["x1"], 1))
+                    for _band, cells in bands for c in cells)
+    if not tally:
+        return None, None, None
+    common = sorted(column for column, seen in tally.items() if seen >= len(bands) / 2)
+    if not common:
+        common = sorted(tally)
+
+    name_col = max(common, key=lambda c: c[1] - c[0])
+    shirt_col = next((c for c in common if c[1] <= name_col[0] + 0.5), None)
+    right = [c for c in common if c[0] >= name_col[1] - 0.5]
+    minute_col = right[-1] if right else None
+    return shirt_col, name_col, minute_col
+
+
+def _text_lines(words, tolerance=4.0):
+    """Group words into visual lines, tolerating small baseline drift.
+
+    Rounding tops into fixed buckets splits a line whenever it straddles a
+    bucket edge, which silently loses rows; clustering on the gap does not.
+    """
+    lines = []
+    for word in sorted(words, key=lambda w: (w["top"], w["x0"])):
+        if lines and abs(word["top"] - lines[-1][0]) <= tolerance:
+            lines[-1][1].append(word)
+        else:
+            lines.append((word["top"], [word]))
+    return [sorted(group, key=lambda w: w["x0"]) for _top, group in lines]
+
+
+def _badges(page, top, bottom, x_min, x_max, legend):
+    """Legend captions for the badges drawn on one squad row.
+
+    A badge is several overlapping curves, and the legend is keyed on the whole
+    group, so the curves have to be gathered per outer circle before being
+    classified -- passing them in one at a time never matches anything.
+    """
+    captions = set()
+    for outer in page["curves"]:
+        if not (ICON_SIZE_RANGE[0] < outer["width"] < ICON_SIZE_RANGE[1]
+                and ICON_SIZE_RANGE[0] < outer["height"] < ICON_SIZE_RANGE[1]):
+            continue
+        if not (top < _mid_y(outer) < bottom):
+            continue
+        if outer["x0"] < x_min - 1 or outer["x1"] > x_max + 1:
+            continue
+        parts = [c for c in page["curves"]
+                 if c["x0"] >= outer["x0"] - 0.6 and c["x1"] <= outer["x1"] + 0.6
+                 and c["top"] >= outer["top"] - 0.6 and c["bottom"] <= outer["bottom"] + 0.6]
+        caption = legend.get(_signature(parts))
+        if caption:
+            captions.add(caption)
+    return captions
+
+
+def _read_squad_block(page, top, bottom, x_min, x_max, legend):
+    """Every player row in one team's block of a squad table."""
+    bands = _row_bands(page, top, bottom, x_min=x_min, x_max=x_max)
+    if not bands:
+        return []
+
+    shirt_col, name_col, minute_col = _squad_columns(bands)
+    if name_col is None:
+        return []
+
+    players = []
+    for (band_top, band_bottom), _cells in bands:
+        words = [w for w in page["words"]
+                 if band_top < _mid_y(w) < band_bottom
+                 and w["x0"] >= x_min - 1 and w["x1"] <= x_max + 1]
+        if not words:
+            continue
+
+        name_cell = _cell_text(words, *name_col)
+        identity = REGISTRATION_RE.search(name_cell)
+        if not identity:
+            continue                      # header row, or a blank slot
+
+        name = REGISTRATION_RE.sub("", name_cell).strip()
+        name = " ".join(name.split())
+        if not name:
+            continue
+
+        shirt = _cell_text(words, *shirt_col) if shirt_col else ""
+        minute = parse_minute(_cell_text(words, *minute_col)) if minute_col else None
+
+        badges = _badges(page, band_top, band_bottom, x_min, x_max, legend)
+
+        players.append({
+            "shirt": shirt.strip(),
+            "player": name,
+            "player_id": identity.group(1),
+            "is_captain": "yes" if "Captain" in badges else "no",
+            "is_goalkeeper": "yes" if "Goalkeeper" in badges else "no",
+            "minute": minute[2] if minute else None,
+        })
+    return players
+
+
+def _block_bounds(page, heading):
+    """Vertical extent of a titled block such as STARTING or SUBSTITUTES.
+
+    SUBSTITUTES shares its page with MATCH EVENTS, whose table spans both squad
+    columns; without stopping at that heading the two tables merge into one run
+    and the block splitter finds no gutter.
+    """
+    tops = [w["top"] for w in page["words"] if w["text"] == heading]
+    if not tops:
+        return None
+    top = min(tops)
+    bottom = page["height"]
+    events = _heading_word(page, "MATCH", "EVENTS")
+    if events is not None and events["top"] > top:
+        bottom = events["top"]
+    return top, bottom
+
+
+def read_squads(pages, meta):
+    """Starting XI and substitutes for both teams, with minutes played."""
+    legend = read_legend(pages)
+    rows = []
+
+    for page in pages:
+        for heading, role in (("STARTING", "starting"), ("SUBSTITUTES", "substitute")):
+            if heading not in page["text"]:
+                continue
+            bounds = _block_bounds(page, heading)
+            if bounds is None:
+                continue
+            top, bottom = bounds
+
+            for side, x_min, x_max in _squad_blocks(page, top, bottom):
+                team = meta["home"] if side == "home" else meta["away"]
+                declared = _declared_count(page, heading, side)
+                players = _read_squad_block(page, top, bottom, x_min, x_max, legend)
+
+                for player in players:
+                    minute = player.pop("minute")
+                    on_minute = minute if role == "substitute" else 0
+                    off_minute = minute if role == "starting" else None
+                    if role == "substitute" and minute is None:
+                        played = 0                       # unused substitute
+                    else:
+                        start = on_minute or 0
+                        played = max(0, (off_minute if off_minute is not None
+                                         else FULL_MATCH_MINUTES) - start)
+                    rows.append({
+                        "league": meta["league"], "season": meta["season"],
+                        "game": meta["game"], "md": meta["md"],
+                        "team": team, "venue": side,
+                        "role": role,
+                        "on_minute": on_minute if role == "substitute" else 0,
+                        "off_minute": off_minute,
+                        "minutes_played": played,
+                        "declared": declared,
+                        **player,
+                    })
+    return rows
+
+
+def _declared_count(page, heading, side):
+    """The count the report prints for itself, e.g. STARTING (11).
+
+    Squads are not always eleven -- at least one report reads STARTING (10) --
+    so this is what the extracted rows get validated against.
+    """
+    split = page["width"] / 2.0
+    for word in page["words"]:
+        if word["text"] != heading:
+            continue
+        on_left = word["x0"] < split
+        if (side == "home") != on_left:
+            continue
+        following = [w for w in page["words"]
+                     if abs(w["top"] - word["top"]) < 2 and 0 < w["x0"] - word["x1"] < 20]
+        for candidate in sorted(following, key=lambda w: w["x0"]):
+            found = re.match(r"^\((\d+)\)$", candidate["text"])
+            if found:
+                return int(found.group(1))
+    return None
+
+
+#: a person's name is the run of capitalised words immediately before their id.
+#: Anchoring on the id rather than the start of the line keeps stray text out --
+#: the squad table's shirt numbers bleed into this column on some reports, so a
+#: line can read "(11) Kaweesa Andrew (000190M78)".
+#: Names are not reliably capitalised either -- reports carry both
+#: "Oloya William" and "nassolo elizabeth" -- so case is not used as a signal.
+PERSON_RE = re.compile(rf"([A-Za-z][A-Za-z'\-]*(?:\s+[A-Za-z][A-Za-z'\-]*){{0,3}})"
+                       rf"\s*\(({REGISTRATION_ID})\)")
+
+
+def _officials_column(page):
+    """Left edge of the officials column, found from the role labels themselves.
+
+    The column's x position moves between reports as the squad tables resize, so
+    a fixed fraction of the page width silently drops the whole block on some of
+    them.
+    """
+    labels = []
+    for group in _text_lines(page["words"]):
+        text = " ".join(w["text"] for w in group).strip().rstrip(":").strip()
+        if text.lower() in OFFICIAL_ROLES:
+            labels.append(min(w["x0"] for w in group))
+    return min(labels) - 5 if labels else None
+
+
+def read_officials(pages):
+    """Match officials from the right-hand column of the first page.
+
+    The block alternates a role label and a "Name (id)" line beneath it.
+    """
+    officials = {}
+    for page in pages:
+        origin = _officials_column(page)
+        if origin is None:
+            continue
+        words = [w for w in page["words"] if w["x0"] >= origin]
+        ordered = [" ".join(w["text"] for w in group) for group in _text_lines(words)]
+
+        for index, line in enumerate(ordered):
+            label = line.strip().rstrip(":").strip()
+            field = OFFICIAL_ROLES.get(label.lower())
+            if not field:
+                continue
+            for following in ordered[index + 1:index + 3]:
+                found = PERSON_RE.search(following)
+                if found:
+                    officials[field] = " ".join(found.group(1).split())
+                    officials[f"{field}_id"] = found.group(2)
+                    break
+        if officials:
+            break
+    return officials
+
+
+def _staff_divider(page):
+    """x that separates the home and away staff columns.
+
+    Both teams' staff share one visual line, and the away column starts well
+    left of the page midpoint, so the squad table's gutter is used instead.
+    """
+    bounds = _block_bounds(page, "SUBSTITUTES")
+    if bounds:
+        blocks = _squad_blocks(page, *bounds)
+        if len(blocks) == 2:
+            return (blocks[0][2] + blocks[1][1]) / 2.0
+    return page["width"] / 2.0
+
+
+def read_staff(pages, meta):
+    """Coaching and medical staff, one row each, split home/away by position."""
+    rows = []
+    for page in pages:
+        if "Head Coach" not in page["text"]:
+            continue
+        split = _staff_divider(page)
+        for group in _text_lines(page["words"]):
+            for side, team in (("home", meta["home"]), ("away", meta["away"])):
+                picked = [w for w in group
+                          if (w["x0"] < split) == (side == "home")]
+                if not picked:
+                    continue
+                text = " ".join(w["text"] for w in sorted(picked, key=lambda w: w["x0"]))
+                found = re.match(rf"\s*([A-Za-z ]+?):\s*(.+?)\s*\(({REGISTRATION_ID})\)",
+                                 text)
+                if not found:
+                    continue
+                rows.append({
+                    "league": meta["league"], "season": meta["season"],
+                    "game": meta["game"], "md": meta["md"],
+                    "team": team, "venue": side,
+                    "role": " ".join(found.group(1).split()),
+                    "name": " ".join(found.group(2).split()),
+                    "staff_id": found.group(3),
+                })
+        if rows:
+            break
+    return rows
+
+
+def read_match_info(pages, meta):
+    """The header block: when, where, how many watched, and who officiated."""
+    text = pages[0]["text"] if pages else ""
+    info = {
+        "league": meta["league"], "season": meta["season"],
+        "game": meta["game"], "md": meta["md"],
+        "match_no": meta["number"],
+        "home": meta["home"], "away": meta["away"],
+    }
+
+    kickoff = re.search(r"(\d{2}/\d{2}/\d{4})\s+(\d{2}:\d{2})", text)
+    info["date"] = kickoff.group(1) if kickoff else ""
+    info["kickoff"] = kickoff.group(2) if kickoff else ""
+
+    venue = re.search(r"Africa/Kampala\s*[^\w\n]*\s*(.+?)\s*Match No:", text, re.S)
+    info["venue"] = " ".join(venue.group(1).split()) if venue else ""
+
+    # Attendance is printed in only about half the reports, so it stays blank
+    # rather than being defaulted to a number nobody counted.
+    attendance = re.search(r"Attendance:\s*(\d+)", text)
+    info["attendance"] = int(attendance.group(1)) if attendance else ""
+
+    duration = re.search(r"Duration:\s*(.+?)\s*(?:\n|Report Date)", text)
+    info["duration"] = " ".join(duration.group(1).split()) if duration else ""
+
+    score = report_score(pages)
+    info["home_goals"], info["away_goals"] = score if score else ("", "")
+
+    for field in OFFICIAL_FIELDS:
+        info[field] = ""
+        info[f"{field}_id"] = ""
+    info.update(read_officials(pages))
+    return info
 
 
 # --------------------------------------------------------------------------
@@ -599,6 +988,34 @@ def check_against_score(meta, goals, pages):
     return None
 
 
+def extract_squads(pages, meta):
+    """Team sheets, staff and header for one report."""
+    return read_squads(pages, meta), read_staff(pages, meta), read_match_info(pages, meta)
+
+
+def check_squad_counts(meta, lineups):
+    """Return a warning when a squad block does not match its printed count.
+
+    Each block is headed STARTING (11) / SUBSTITUTES (9), so the report states
+    how many rows it contains.  Comparing against that -- never against a hard
+    eleven, since at least one report legitimately reads STARTING (10) -- is what
+    catches a dropped or duplicated player.
+    """
+    seen, declared = {}, {}
+    for row in lineups:
+        key = (row["team"], row["role"])
+        seen[key] = seen.get(key, 0) + 1
+        if row.get("declared") is not None:
+            declared[key] = row["declared"]
+
+    problems = [f"{team} {role} {seen[(team, role)]} of {count}"
+                for (team, role), count in declared.items()
+                if seen.get((team, role), 0) != count]
+    if not lineups:
+        return "no team sheet found"
+    return "squad size mismatch: " + ", ".join(problems) if problems else None
+
+
 def parse_report(pdf_path, league="", season=""):
     """Parse one match report PDF -> (metadata, (goals, cautions, subs), pages)."""
     pdf_path = Path(pdf_path)
@@ -616,6 +1033,17 @@ GOAL_COLUMNS = ["league", "season", "game", "player", "team", "min", "added_time
 CAUTION_COLUMNS = ["league", "season", "game", "player", "team", "caution", "min",
                    "added_time", "double-caution", "md"]
 SUB_COLUMNS = ["league", "season", "game", "in", "out", "min", "added_time", "team", "md"]
+
+LINEUP_COLUMNS = ["league", "season", "game", "md", "team", "venue", "shirt",
+                  "player", "player_id", "role", "is_captain", "is_goalkeeper",
+                  "on_minute", "off_minute", "minutes_played"]
+STAFF_COLUMNS = ["league", "season", "game", "md", "team", "venue", "role",
+                 "name", "staff_id"]
+MATCH_INFO_COLUMNS = (["league", "season", "game", "md", "match_no", "home", "away",
+                       "date", "kickoff", "venue", "attendance", "duration",
+                       "home_goals", "away_goals"]
+                      + [c for field in OFFICIAL_FIELDS
+                         for c in (field, f"{field}_id")])
 
 
 def _report_sort_key(pdf):
@@ -706,6 +1134,7 @@ def main(argv=None):
         sys.exit(f"no match reports found under {args.reports}")
 
     all_goals, all_cautions, all_subs = [], [], []
+    all_lineups, all_staff, all_info = [], [], []
     warnings = []
     total_reports = 0
 
@@ -721,27 +1150,43 @@ def main(argv=None):
             all_cautions += cautions
             all_subs += subs
 
+            lineups, staff, info = extract_squads(pages, meta)
+            all_lineups += lineups
+            all_staff += staff
+            all_info.append(info)
+
             warning = None if args.no_verify else check_against_score(meta, goals, pages)
-            if warning:
-                warnings.append(f"{pdf}: {warning}")
+            squad_warning = None if args.no_verify else check_squad_counts(meta, lineups)
+            for note in (warning, squad_warning):
+                if note:
+                    warnings.append(f"{pdf}: {note}")
             if not args.quiet:
+                notes = "   !! " + "; ".join(n for n in (warning, squad_warning) if n) \
+                    if (warning or squad_warning) else ""
                 print(f"md{str(meta['md']):<3} {meta['game']:<24} "
-                      f"goals={len(goals):<3} cautions={len(cautions):<3} subs={len(subs)}"
-                      f"{'   !! ' + warning if warning else ''}")
+                      f"goals={len(goals):<3} cautions={len(cautions):<3} "
+                      f"subs={len(subs):<3} squad={len(lineups)}{notes}")
 
     write_csv(args.out / "goalsNew.csv", GOAL_COLUMNS, all_goals)
     write_csv(args.out / "cautionsNew.csv", CAUTION_COLUMNS, all_cautions)
     write_csv(args.out / "subsNew.csv", SUB_COLUMNS, all_subs)
+    write_csv(args.out / "lineupsNew.csv", LINEUP_COLUMNS, all_lineups)
+    write_csv(args.out / "staffNew.csv", STAFF_COLUMNS, all_staff)
+    write_csv(args.out / "matchInfoNew.csv", MATCH_INFO_COLUMNS, all_info)
 
     if not args.quiet:
         print(f"\n{total_reports} reports across {len(seasons)} season(s) -> {args.out}")
         for league, season, _dir in seasons:
             print(f"  {league} {season}")
-        print(f"  goalsNew.csv     {len(all_goals)} rows")
-        print(f"  cautionsNew.csv  {len(all_cautions)} rows")
-        print(f"  subsNew.csv      {len(all_subs)} rows")
+        print(f"  goalsNew.csv      {len(all_goals)} rows")
+        print(f"  cautionsNew.csv   {len(all_cautions)} rows")
+        print(f"  subsNew.csv       {len(all_subs)} rows")
+        print(f"  lineupsNew.csv    {len(all_lineups)} rows")
+        print(f"  staffNew.csv      {len(all_staff)} rows")
+        print(f"  matchInfoNew.csv  {len(all_info)} rows")
         if not args.no_verify:
-            print(f"  score-line check: {total_reports - len(warnings)}/{total_reports} reports agree")
+            print(f"  checks: {total_reports - len(warnings)}/{total_reports} "
+                  f"reports agree on score line and squad size")
 
     for warning in warnings:
         print(f"WARNING {warning}", file=sys.stderr)
