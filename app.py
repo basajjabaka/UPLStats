@@ -41,6 +41,26 @@ ui.tags.style(
         box-shadow: 0 14px 38px rgba(15, 23, 42, 0.30);
     }
 
+    /* Belt and braces after the Tailwind `collapse` collision: from the
+       navbar's expand breakpoint upward the item container must stay visible,
+       whatever else claims the class name. Below it, Bootstrap's toggler
+       controls the dropdown as usual. */
+    @media (min-width: 768px) {
+        .navbar.fixed-top .navbar-collapse {
+            display: flex !important;
+            visibility: visible !important;
+            flex-basis: auto;
+        }
+    }
+
+    .navbar.fixed-top .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        visibility: visible !important;
+    }
+
     .navbar.fixed-top .navbar-brand {
         color: #ffffff !important;
         font-weight: 800;
@@ -743,6 +763,14 @@ ui.tags.head(
         """
         if (window.tailwind) {
             tailwind.config = {
+                // Utilities are prefixed because Tailwind and Bootstrap share
+                // several class names, and Tailwind's win by load order. The
+                // damaging one is `collapse`: Bootstrap uses it on the navbar's
+                // item container, Tailwind defines it as `visibility: collapse`,
+                // and the whole nav disappears. `container`, `hidden`, `shadow`
+                // and `rounded` collide the same way. Write utilities as
+                // `tw-flex`, `tw-gap-2`, and Bootstrap keeps its own classes.
+                prefix: 'tw-',
                 corePlugins: { preflight: false },
                 theme: { extend: { colors: {
                     brand: { DEFAULT: '#F5901F', dark: '#D97706', deep: '#0F172A' }
