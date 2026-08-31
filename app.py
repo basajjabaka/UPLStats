@@ -505,30 +505,70 @@ def match_info_df():
     return _slice(ALL_MATCH_INFO)
 
 
-@reactive.calc
-def player_minutes():
-    """Minutes, appearances and goals per player for the selected competition.
+PROFILE_COLUMNS = ['player_id', 'player', 'team', 'matches', 'starts', 'sub_apps',
+                   'minutes', 'goals', 'goals_per_90', 'yellows', 'reds', 'cards',
+                   'cards_per_90']
 
-    Minutes come from the team sheets, so this is the denominator that makes
-    per-90 rates possible; goals are joined on the printed name because that is
-    all the events table carries.
+
+def _norm_name(value):
+    return " ".join(str(value).upper().split())
+
+
+@reactive.calc
+def player_profiles():
+    """One row per player: minutes, appearances, goals and cards.
+
+    Minutes come from the team sheets, which is the denominator that makes any
+    per-90 rate possible.  Goals and cautions carry only a printed name, so each
+    is matched back to that match's team sheet to pick up the player's
+    registration id -- and the rows are keyed on the id, not the name, because
+    the same player is spelled inconsistently between reports.
     """
     squad = lineups_df()
     if squad.empty:
-        return pd.DataFrame(columns=['player', 'player_id', 'team', 'minutes',
-                                     'starts', 'sub_apps', 'goals', 'goals_per_90'])
+        return pd.DataFrame(columns=PROFILE_COLUMNS)
+
+    lookup = {(row.game, _norm_name(row.player)): row.player_id
+              for row in squad.itertuples()}
 
     played = squad[squad['minutes_played'] > 0]
-    summary = played.groupby(['player', 'player_id', 'team']).agg(
+    profile = played.groupby('player_id').agg(
+        player=('player', 'first'),
+        team=('team', 'first'),
+        matches=('game', 'nunique'),
         minutes=('minutes_played', 'sum'),
         starts=('role', lambda s: (s == 'starting').sum()),
         sub_apps=('role', lambda s: (s == 'substitute').sum()),
     ).reset_index()
 
-    scored = goals_df().groupby('player').size()
-    summary['goals'] = summary['player'].map(scored).fillna(0).astype(int)
-    summary['goals_per_90'] = (summary['goals'] / summary['minutes'] * 90).round(2)
-    return summary.sort_values('minutes', ascending=False)
+    def tally(frame):
+        """Count events per registration id."""
+        if frame.empty:
+            return {}
+        found = [lookup.get((row.game, _norm_name(row.player)))
+                 for row in frame.itertuples()]
+        return pd.Series([i for i in found if i]).value_counts().to_dict()
+
+    cautions = cautions_df()
+    dismissals = cautions[cautions['caution'].isin(['red', 'second yellow'])] \
+        if not cautions.empty else cautions
+    bookings = cautions[cautions['caution'] == 'yellow'] \
+        if not cautions.empty else cautions
+
+    for column, counts in (('goals', tally(goals_df())),
+                           ('yellows', tally(bookings)),
+                           ('reds', tally(dismissals))):
+        profile[column] = profile['player_id'].map(counts).fillna(0).astype(int)
+
+    profile['cards'] = profile['yellows'] + profile['reds']
+    profile['goals_per_90'] = (profile['goals'] / profile['minutes'] * 90).round(2)
+    profile['cards_per_90'] = (profile['cards'] / profile['minutes'] * 90).round(2)
+    return profile.sort_values('minutes', ascending=False)[PROFILE_COLUMNS]
+
+
+def player_label(row):
+    """'Name (TEAM)' -- team included because names repeat across squads."""
+    return f"{row['player']} ({row['team']})"
 
 
 @reactive.calc
@@ -1990,7 +2030,7 @@ with ui.navset_bar(
                     with ui.div(class_="stat-card goals"):
                         @render.text
                         def players_appeared_count():
-                            return str(len(player_minutes()))
+                            return str(len(player_profiles()))
                         ui.p("Players Used")
                     with ui.div(class_="stat-card subs"):
                         @render.text
@@ -2009,7 +2049,7 @@ with ui.navset_bar(
                         ui.tags.div("Most Minutes Played", class_="overview-card-header")
                         @render_plotly
                         def minutes_leaders():
-                            data = player_minutes().head(15).sort_values('minutes')
+                            data = player_profiles().head(15).sort_values('minutes')
                             if data.empty:
                                 return empty_figure()
                             fig = px.bar(
@@ -2030,7 +2070,7 @@ with ui.navset_bar(
                         ui.tags.div("Squad Rotation", class_="overview-card-header")
                         @render_plotly
                         def squad_rotation():
-                            used = player_minutes()
+                            used = player_profiles()
                             if used.empty:
                                 return empty_figure()
                             data = (used.groupby('team').size()
@@ -2054,7 +2094,7 @@ with ui.navset_bar(
                         ui.tags.div("Appearances", class_="overview-card-header")
                         @render.table
                         def appearances_table():
-                            data = player_minutes().copy()
+                            data = player_profiles().copy()
                             if data.empty:
                                 return data
                             data = data[['player', 'team', 'starts', 'sub_apps',
@@ -2075,7 +2115,7 @@ with ui.navset_bar(
                         ui.tags.div("Goals per 90", class_="overview-card-header")
                         @render_plotly
                         def goals_per_90_chart():
-                            data = player_minutes()
+                            data = player_profiles()
                             data = data[(data['minutes'] >= MIN_MINUTES_FOR_RATE)
                                         & (data['goals'] > 0)]
                             if data.empty:
@@ -2102,7 +2142,7 @@ with ui.navset_bar(
                         ui.tags.div("Minutes per Goal", class_="overview-card-header")
                         @render.table
                         def minutes_per_goal_table():
-                            data = player_minutes()
+                            data = player_profiles()
                             data = data[(data['goals'] > 0)].copy()
                             if data.empty:
                                 return pd.DataFrame(
@@ -2116,6 +2156,172 @@ with ui.navset_bar(
                             data.columns = ['Player', 'Team', 'Goals', 'Minutes',
                                             'Mins/Goal']
                             return data.head(20)
+
+            with ui.nav_panel("Compare"):
+                ui.tags.p(
+                    "Pick two to four players. Rates are per 90 minutes, so a "
+                    "substitute is measured on the same scale as an ever-present "
+                    "— but check the minutes row before reading much into a rate "
+                    "built on a short sample.",
+                    style="margin: 20px 10px 0 10px; color: #555;"
+                )
+
+                with ui.div(style="margin: 16px 10px;"):
+                    ui.input_selectize(
+                        "compare_players", "Players",
+                        choices={}, multiple=True,
+                        options={"maxItems": 4, "placeholder": "Choose players…"},
+                    )
+
+                @reactive.effect
+                def _refresh_compare_players():
+                    """Offer the players of the selected competition, busiest first."""
+                    profiles = player_profiles()
+                    choices = {row["player_id"]: player_label(row)
+                               for _index, row in profiles.iterrows()}
+                    with reactive.isolate():
+                        current = [p for p in (input.compare_players() or [])
+                                   if p in choices]
+                    if not current:
+                        current = list(choices)[:2]
+                    ui.update_selectize("compare_players", choices=choices,
+                                        selected=current)
+
+                @reactive.calc
+                def compared():
+                    """The chosen players' profile rows, in the order picked."""
+                    chosen = list(input.compare_players() or [])
+                    profiles = player_profiles()
+                    if not chosen or profiles.empty:
+                        return profiles.iloc[0:0]
+                    picked = profiles[profiles["player_id"].isin(chosen)]
+                    order = {pid: i for i, pid in enumerate(chosen)}
+                    return picked.assign(
+                        _order=picked["player_id"].map(order)
+                    ).sort_values("_order").drop(columns="_order")
+
+                with ui.layout_columns(col_widths=[12], style="margin: 12px 0;"):
+                    with ui.card():
+                        ui.tags.div("Side by Side", class_="overview-card-header")
+                        @render.table
+                        def compare_table():
+                            data = compared()
+                            if data.empty:
+                                return pd.DataFrame({"": ["Choose at least one player"]})
+                            rows = [
+                                ("Team", "team", None),
+                                ("Matches", "matches", None),
+                                ("Starts", "starts", None),
+                                ("As substitute", "sub_apps", None),
+                                ("Minutes", "minutes", None),
+                                ("Goals", "goals", None),
+                                ("Goals per 90", "goals_per_90", None),
+                                ("Minutes per goal", None, "mins_per_goal"),
+                                ("Yellow cards", "yellows", None),
+                                ("Reds & second yellows", "reds", None),
+                                ("Cards per 90", "cards_per_90", None),
+                            ]
+                            table = {"Metric": [label for label, _c, _d in rows]}
+                            for _index, player in data.iterrows():
+                                values = []
+                                for _label, column, derived in rows:
+                                    if derived == "mins_per_goal":
+                                        values.append(
+                                            int(player["minutes"] / player["goals"])
+                                            if player["goals"] else "—")
+                                    else:
+                                        values.append(player[column])
+                                table[player_label(player)] = values
+                            return pd.DataFrame(table)
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Per 90 Comparison", class_="overview-card-header")
+                        @render_plotly
+                        def compare_rates():
+                            data = compared()
+                            if data.empty:
+                                return empty_figure("Choose players to compare")
+                            tidy = pd.DataFrame({
+                                "player": list(data.apply(player_label, axis=1)) * 2,
+                                "measure": (["Goals per 90"] * len(data)
+                                            + ["Cards per 90"] * len(data)),
+                                "value": (list(data["goals_per_90"])
+                                          + list(data["cards_per_90"])),
+                            })
+                            fig = px.bar(
+                                tidy, x="measure", y="value", color="player",
+                                barmode="group", text="value",
+                                title="Output and Discipline per 90 Minutes",
+                                labels={"measure": "", "value": "Per 90", "player": ""}
+                            )
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Workload", class_="overview-card-header")
+                        @render_plotly
+                        def compare_workload():
+                            data = compared()
+                            if data.empty:
+                                return empty_figure("Choose players to compare")
+                            tidy = pd.DataFrame({
+                                "player": list(data.apply(player_label, axis=1)) * 2,
+                                "kind": (["Starts"] * len(data)
+                                         + ["As substitute"] * len(data)),
+                                "count": list(data["starts"]) + list(data["sub_apps"]),
+                            })
+                            fig = px.bar(
+                                tidy, x="player", y="count", color="kind",
+                                barmode="stack", text="count",
+                                color_discrete_map={"Starts": "#1a5f7a",
+                                                    "As substitute": "#F5901F"},
+                                title="Appearances by Type",
+                                labels={"player": "", "count": "Appearances", "kind": ""}
+                            )
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("When They Score", class_="overview-card-header")
+                        @render_plotly
+                        def compare_goal_timing():
+                            data = compared()
+                            if data.empty:
+                                return empty_figure("Choose players to compare")
+                            frames = []
+                            for _index, player in data.iterrows():
+                                wanted = _norm_name(player["player"])
+                                scored = goals_df()
+                                scored = scored[
+                                    scored["player"].map(_norm_name) == wanted]
+                                counts = bucket_counts(scored)
+                                counts["player"] = player_label(player)
+                                frames.append(counts)
+                            tidy = pd.concat(frames, ignore_index=True)
+                            if tidy["count"].sum() == 0:
+                                return empty_figure(
+                                    "Neither player has scored in this season yet")
+                            fig = px.bar(
+                                tidy, x="bucket", y="count", color="player",
+                                barmode="group",
+                                category_orders={"bucket": MINUTE_BUCKETS},
+                                title="Goals by Period of the Match",
+                                labels={"bucket": "Minute", "count": "Goals",
+                                        "player": ""}
+                            )
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
 
             with ui.nav_panel("Squads"):
                 with ui.card():
