@@ -1,3 +1,4 @@
+import functools
 import html
 import json
 import re
@@ -983,6 +984,53 @@ def empty_figure(message="No data recorded for this season yet"):
     return fig
 
 
+def _axis_top(trace, axis):
+    """The largest value one trace puts on an axis.
+
+    A histogram carries raw values, not counts, so the tallest bar on its count
+    axis is estimated by binning those values the same number of ways.
+    """
+    values = getattr(trace, axis)
+    if trace.type == 'histogram' and values is None:
+        other = 'x' if axis == 'y' else 'y'
+        raw = getattr(trace, other)          # an array: never test it for truth
+        raw = pd.to_numeric(pd.Series(list(raw) if raw is not None else []),
+                            errors='coerce').dropna()
+        if raw.empty:
+            return 0
+        bins = getattr(trace, f'nbins{other}') or 10
+        return int(np.histogram(raw, bins=bins)[0].max())
+    numbers = pd.to_numeric(pd.Series(list(values if values is not None else [])),
+                            errors='coerce').dropna()
+    return numbers.max() if not numbers.empty else 0
+
+
+def whole_numbers(fig, *axes):
+    """Whole-number ticks on count axes -- nobody scores 1.5 goals.
+
+    Plotly steps its ticks in halves once a range gets small, so up to ten a tick
+    is pinned to every unit; above that its own steps are whole already and only
+    the formatting is fixed.  Averages and percentages are left alone.
+    """
+    for axis in axes:
+        top = max((_axis_top(trace, axis) for trace in fig.data), default=0)
+        settings = {'tickformat': ',d'}
+        if top <= 10:
+            settings.update(tick0=0, dtick=1)
+        (fig.update_xaxes if axis == 'x' else fig.update_yaxes)(**settings)
+    return fig
+
+
+def count_axes(*axes):
+    """Chart decorator: the named axes ('x', 'y') hold counts, so tick them in whole numbers."""
+    def decorate(chart):
+        @functools.wraps(chart)
+        def wrapped():
+            return whole_numbers(chart(), *axes)
+        return wrapped
+    return decorate
+
+
 def bucket_counts(df):
     """Count events per time bucket, keeping empty buckets so the axis is stable."""
     labels = [minute_bucket(b, s) for b, s in zip(df['base_minute'], df['stoppage'])]
@@ -1249,6 +1297,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Goals per Team", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def goals_by_team():
                             team_goals = goals_df().groupby('team').size().reset_index(name='goals')
                             team_goals = team_goals.sort_values('goals', ascending=True)
@@ -1298,6 +1347,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Goals by Matchday", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x', 'y')
                         def goals_by_matchday():
                             md_goals = goals_df().groupby('md').size().reset_index(name='goals')
                             fig = px.line(
@@ -1318,6 +1368,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Goals by Period (Half)", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def goals_by_period():
                             period_goals = goals_df().groupby('period').size().reset_index(name='goals')
                             period_goals['period'] = period_goals['period'].map({1: 'First Half', 2: 'Second Half'})
@@ -1353,6 +1404,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Cards per Team", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def cards_by_team():
                             team_cards = cautions_df().groupby('team').size().reset_index(name='cards')
                             team_cards = team_cards.sort_values('cards', ascending=True)
@@ -1375,6 +1427,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("When Goals Are Scored", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def goals_timing_profile():
                             # Standard football time buckets. Stoppage time gets its
                             # own bucket at the end of each half instead of being
@@ -1402,6 +1455,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Substitution Timing Distribution", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def subs_timing():
                             fig = px.histogram(
                                 subs_df(), 
@@ -1420,6 +1474,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Team Comparison: Goals vs Cards", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x', 'y')
                         def goals_vs_cards():
                             team_stats = pd.DataFrame({
                                 'team': teams()
@@ -1452,17 +1507,33 @@ with ui.navset_bar(
                     "A team is 'in a losing position' once it goes behind at any point "
                     "in a match, and 'in a winning position' once it leads. Points from "
                     "a losing position are the points it still took; points dropped from "
-                    "a winning position are the three it did not. " + SOURCE_NOTE,
+                    "a winning position are the three it did not. Only teams with something "
+                    "to show are listed: at least a point, a win or a defeat from the "
+                    "position in question, and at least 2 points dropped after leading. "
+                    + SOURCE_NOTE,
                     style="margin: 20px 10px 0 10px; color: #555;"
                 )
+
+                #: the least a team needs to appear: one point rescued from behind, or
+                #: two dropped from ahead -- which is a single draw after leading
+                MIN_COMEBACK_POINTS = 1
+                MIN_COLLAPSE_POINTS = 2
+
+                def at_least(column, minimum):
+                    """Teams with at least `minimum` in one column, lowest first for a barh."""
+                    data = comebacks_df()
+                    return data[data[column] >= minimum].sort_values(column)
 
                 with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
                     with ui.card():
                         ui.tags.div("Points Won From a Losing Position",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def points_from_losing():
-                            data = comebacks_df().sort_values('points_from_losing')
+                            data = at_least('points_from_losing', MIN_COMEBACK_POINTS)
+                            if data.empty:
+                                return empty_figure("No team has taken a point after going behind yet")
                             fig = px.bar(
                                 data, x='points_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -1482,8 +1553,11 @@ with ui.navset_bar(
                         ui.tags.div("Points Dropped From a Winning Position",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def points_dropped_from_winning():
-                            data = comebacks_df().sort_values('points_dropped_from_winning')
+                            data = at_least('points_dropped_from_winning', MIN_COLLAPSE_POINTS)
+                            if data.empty:
+                                return empty_figure("No team has dropped points after leading yet")
                             fig = px.bar(
                                 data, x='points_dropped_from_winning', y='team',
                                 orientation='h',
@@ -1505,8 +1579,11 @@ with ui.navset_bar(
                         ui.tags.div("Wins From a Losing Position",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def wins_from_losing():
-                            data = comebacks_df().sort_values('wins_from_losing')
+                            data = at_least('wins_from_losing', 1)
+                            if data.empty:
+                                return empty_figure("No team has won after going behind yet")
                             fig = px.bar(
                                 data, x='wins_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -1525,8 +1602,11 @@ with ui.navset_bar(
                         ui.tags.div("Games Lost From a Winning Position",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def losses_from_winning():
-                            data = comebacks_df().sort_values('losses_from_winning')
+                            data = at_least('losses_from_winning', 1)
+                            if data.empty:
+                                return empty_figure("No team has lost after leading yet")
                             fig = px.bar(
                                 data, x='losses_from_winning', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
@@ -1547,7 +1627,13 @@ with ui.navset_bar(
                                     class_="overview-card-header")
                         @render.table(escape=False)
                         def comebacks_summary():
-                            table = comebacks_df().copy()
+                            table = comebacks_df()
+                            table = table[
+                                (table['points_from_losing'] >= MIN_COMEBACK_POINTS)
+                                | (table['points_dropped_from_winning'] >= MIN_COLLAPSE_POINTS)]
+                            if table.empty:
+                                return pd.DataFrame(
+                                    {"": ["No comebacks or collapses recorded yet"]})
                             table = table.sort_values(
                                 ['points_from_losing', 'wins_from_losing'],
                                 ascending=False)
@@ -1873,6 +1959,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Goals & Cards by Venue", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def venue_totals():
                             data = pd.DataFrame({
                                 'measure': ['Goals', 'Goals', 'Cards', 'Cards',
@@ -1905,6 +1992,7 @@ with ui.navset_bar(
                         ui.tags.div("Points at Home vs Away, by Team",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def venue_points_by_team():
                             points = (team_matches_df().groupby(['team', 'venue'])['points']
                                       .sum().reset_index())
@@ -1941,6 +2029,7 @@ with ui.navset_bar(
                 with ui.card():
                     ui.tags.div("Goals Scored at Home", class_="overview-card-header")
                     @render_plotly
+                    @count_axes('x')
                     def home_goals_by_team():
                         data = (team_matches_df()[team_matches_df()['venue'] == 'home']
                                 .groupby('team')['gf'].sum().reset_index()
@@ -1972,6 +2061,7 @@ with ui.navset_bar(
                 with ui.card():
                     ui.tags.div("Goals Scored Away", class_="overview-card-header")
                     @render_plotly
+                    @count_axes('x')
                     def away_goals_by_team():
                         data = (team_matches_df()[team_matches_df()['venue'] == 'away']
                                 .groupby('team')['gf'].sum().reset_index()
@@ -2072,6 +2162,7 @@ with ui.navset_bar(
                                 return ui.tags.div("Goals by Period", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
+                            @count_axes('y')
                             def team_goals_by_period():
                                 team_data = goals_df()[goals_df()['team'] == selected_team()]
                                 period_goals = team_data.groupby('period').size().reset_index(name='goals')
@@ -2098,6 +2189,7 @@ with ui.navset_bar(
                                 return ui.tags.div("Goal Timing Distribution", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
+                            @count_axes('y')
                             def team_goals_timeline():
                                 team_data = goals_df()[goals_df()['team'] == selected_team()]
                                 fig = px.histogram(
@@ -2183,6 +2275,7 @@ with ui.navset_bar(
                                 return ui.tags.div("Cards by Matchday", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
+                            @count_axes('x', 'y')
                             def team_cards_by_matchday():
                                 team_cards = cautions_df()[cautions_df()['team'] == selected_team()]
                                 md_cards = team_cards.groupby('md').size().reset_index(name='cards')
@@ -2219,6 +2312,7 @@ with ui.navset_bar(
                                 return ui.tags.div("Substitution Timing", style=get_team_header_style(selected_team()))
                             
                             @render_plotly
+                            @count_axes('y')
                             def team_subs_timing():
                                 team_subs = subs_df()[subs_df()['team'] == selected_team()]
                                 team_color = TEAM_COLORS.get(selected_team(), '#3498db')
@@ -2243,6 +2337,7 @@ with ui.navset_bar(
                             
                             with ui.layout_column_wrap(width=1/2):
                                 @render_plotly
+                                @count_axes('x')
                                 def team_players_subbed_off():
                                     team_subs = subs_df()[subs_df()['team'] == selected_team()]
                                     player_subs = team_subs['out'].value_counts().reset_index()
@@ -2269,6 +2364,7 @@ with ui.navset_bar(
                                     return fig
                                 
                                 @render_plotly
+                                @count_axes('x')
                                 def team_players_subbed_on():
                                     team_subs = subs_df()[subs_df()['team'] == selected_team()]
                                     player_subs = team_subs['in'].value_counts().reset_index()
@@ -2341,6 +2437,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Most Minutes Played", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def minutes_leaders():
                             data = player_profiles().head(15).sort_values('minutes')
                             if data.empty:
@@ -2361,6 +2458,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Squad Rotation", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def squad_rotation():
                             used = player_profiles()
                             if used.empty:
@@ -2557,6 +2655,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Workload", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def compare_workload():
                             data = compared()
                             if data.empty:
@@ -2585,6 +2684,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("When They Score", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def compare_goal_timing():
                             data = compared()
                             if data.empty:
@@ -2720,6 +2820,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Most U21 Minutes", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def u21_minutes_leaders():
                             data = u21_season()
                             data = data[data['minutes'] > 0].head(15).sort_values('minutes')
@@ -2742,6 +2843,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Goal Contributions", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def u21_contributions_chart():
                             data = u21_season()
                             data = data[data['ga'] > 0]
@@ -2886,6 +2988,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("U21 Minutes by Club", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def u21_md_clubs():
                             data = u21_md_rows().groupby('team')['minutes'].sum().reset_index()
                             data = data[data['minutes'] > 0].sort_values('minutes')
@@ -2909,6 +3012,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("U21 Minutes by Club", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def u21_club_minutes():
                             data = (u21_season().groupby('team')['minutes'].sum()
                                     .reset_index().sort_values('minutes'))
@@ -2930,6 +3034,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("U21 Pool vs Players Used", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def u21_club_usage():
                             season = u21_season()
                             if season.empty:
@@ -3069,6 +3174,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Running Minutes", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def u21_trend_minutes():
                             data = u21_trend()
                             if data.empty:
@@ -3090,6 +3196,7 @@ with ui.navset_bar(
                         ui.tags.div("Running Goal Contributions",
                                     class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def u21_trend_contributions():
                             data = u21_trend()
                             if data.empty:
@@ -3110,6 +3217,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Minutes per Matchday", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('y')
                         def u21_trend_per_md():
                             data = u21_trend()
                             if data.empty:
@@ -3137,6 +3245,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Appointments", class_="overview-card-header")
                         @render_plotly
+                        @count_axes('x')
                         def referee_appointments():
                             data = referee_record()
                             if data.empty:
