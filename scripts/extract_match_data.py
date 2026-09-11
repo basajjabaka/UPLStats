@@ -59,6 +59,10 @@ try:
 except ImportError:  # pragma: no cover - dependency guard
     sys.exit("pdfplumber is required:  pip install pdfplumber")
 
+# club names live in their own module so the dashboard can use them without pdfplumber
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from clubs import TEAM_ABBREVIATIONS, abbreviate  # noqa: E402,F401  (re-exported)
+
 
 # --------------------------------------------------------------------------
 # configuration
@@ -68,28 +72,6 @@ except ImportError:  # pragma: no cover - dependency guard
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORTS_DIR = PROJECT_ROOT / "reports"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "csvs" / "new"
-
-#: full club name (upper-cased, punctuation stripped) -> short code used in the CSVs.
-TEAM_ABBREVIATIONS = {
-    "BUL FC": "BUL",
-    "URA FC": "URA",
-    "ENTEBBE UPPC FC": "ENTEBBE",
-    "BUHIMBA UNITED SAINTS FC": "BUHIMBA",
-    "KITARA FC": "KITARA",
-    "KCCA FC": "KCCA",
-    "LUGAZI FC": "LUGAZI",
-    "CALVARY FC": "CALVARY",
-    "POLICE FOOTBALL CLUB": "POLICE",
-    "MBARARA CITY FC": "MBARARA",
-    "EXPRESS FC": "EXPRESS",
-    "UPDF FC": "UPDF",
-    "MAROONS FC": "MAROONS",
-    "MAROON FC": "MAROONS",
-    "NEC FC": "NEC",
-    "SC VILLA": "Villa",
-    "VIPERS SC": "VIPERS",
-    "SC VIPERS": "VIPERS",
-}
 
 #: fill colours pdfplumber reports for MATCH EVENTS table cell backgrounds.
 CELL_BACKGROUND_COLOURS = {
@@ -807,17 +789,6 @@ def read_match_info(pages, meta):
 # --------------------------------------------------------------------------
 # match metadata
 # --------------------------------------------------------------------------
-
-def abbreviate(team_name):
-    """Full club name -> the short code the CSVs use."""
-    key = re.sub(r"[^A-Z0-9 ]", "", (team_name or "").upper())
-    key = re.sub(r"\s+", " ", key).strip()
-    if key in TEAM_ABBREVIATIONS:
-        return TEAM_ABBREVIATIONS[key]
-    stripped = re.sub(r"\b(FC|SC|CITY|UNITED|SAINTS|FOOTBALL|CLUB)\b", " ", key)
-    stripped = re.sub(r"\s+", " ", stripped).strip()
-    return (stripped or key).split(" ")[0]
-
 
 def match_metadata(pdf_path, pages, league="", season=""):
     """Competition, match number, matchday and the two team codes (home first)."""

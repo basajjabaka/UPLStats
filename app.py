@@ -1,12 +1,18 @@
+import html
+import json
+import re
+import sys
 from pathlib import Path
+from urllib.parse import quote
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
 import folium as fl
 from folium.plugins import HeatMap
 from shiny import reactive
-from shiny.express import render, input, ui
+from shiny.express import app_opts, render, input, ui
 from shinywidgets import render_plotly, render_altair, render_widget
 import matplotlib.pyplot as plt
 
@@ -16,7 +22,7 @@ ui.tags.style(
     """
     body {
         background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Nexover', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         /* clear the floating bar hanging over the top of the page */
         padding-top: 108px !important;
     }
@@ -149,7 +155,9 @@ ui.tags.style(
         align-items: center;
         justify-content: center;
         padding: 24px;
-        background: linear-gradient(135deg, #0F172A 0%, #1a5f7a 55%, #D97706 100%);
+        /* Nnalubaale at night, darkened just enough for the card to stand out */
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.60) 0%, rgba(15, 23, 42, 0.25) 100%),
+                    url('landing-bg.jpg') center / cover no-repeat, #0F172A;
     }
 
     .landing-card {
@@ -475,6 +483,149 @@ DEFAULT_SEASON = (default_season(DEFAULT_LEAGUE) or "") if DEFAULT_LEAGUE else "
 
 
 # -----------------------------------------------------------------------------
+# Static assets: club logos, the landing photo and the app font
+# -----------------------------------------------------------------------------
+# Logos sit with the reports, one folder per season
+# (reports/<league>/<season>/club_logos), each file named after its club.  Only
+# those folders -- never the reports beside them -- are served, at
+# logos/<league>/<season>/.
+
+APP_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(APP_DIR / "scripts"))
+from clubs import abbreviate  # noqa: E402  (the same club codes as the CSVs)
+
+STATIC_ASSETS = {}
+LOGO_SUFFIXES = {'.png', '.svg', '.jpg', '.jpeg', '.webp'}
+SEASON_LOGOS = {}          # (league, season) -> {team: url}, as filed
+
+for _folder in sorted((APP_DIR / "reports").glob("*/*/club_logos")):
+    _league, _season_dir = _folder.parent.parent.name.upper(), _folder.parent.name
+    _mount = f"logos/{_league}/{_season_dir}"
+    STATIC_ASSETS["/" + _mount] = _folder
+    SEASON_LOGOS[(_league, _season_dir.replace('.', '/'))] = {
+        abbreviate(re.sub(r"[-_]+", " ", _file.stem)).upper(): f"{_mount}/{quote(_file.name)}"
+        for _file in sorted(_folder.iterdir()) if _file.suffix.lower() in LOGO_SUFFIXES
+    }
+
+
+def logos_for(league, season):
+    """Team -> logo URL for one competition.
+
+    The season's own folder wins.  A club without a logo that season borrows
+    one from the nearest season that has it, so earlier seasons still show
+    logos for clubs that are still around.
+    """
+    if not str(season)[:4].isdigit():
+        return {}
+    start = int(str(season)[:4])
+    others = [s for (lg, s) in SEASON_LOGOS if lg == league and str(s)[:4].isdigit()]
+    found = {}
+    for other in sorted(others, key=lambda s: abs(int(s[:4]) - start), reverse=True):
+        found.update(SEASON_LOGOS[(league, other)])       # nearest season applied last
+    return found
+
+
+#: every competition's logos, for the dropdown renderers in the browser
+CLUB_LOGOS = {league: {season: logos_for(league, season) for season in seasons}
+              for league, seasons in LEAGUE_SEASONS.items()}
+
+LANDING_IMAGE = APP_DIR / "visuals" / "nnalubaale_night_effects.jpg"
+if LANDING_IMAGE.exists():
+    STATIC_ASSETS["/landing-bg.jpg"] = LANDING_IMAGE
+
+# Nexover is a licensed font, so it is not bundled with the code: put the
+# licensed files (.woff2 / .woff / .ttf / .otf) in visuals/fonts and every
+# weight found there is loaded.  Until then the fallbacks below are used.
+APP_FONT = "'Nexover', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+FONT_DIR = APP_DIR / "visuals" / "fonts"
+FONT_FORMATS = {'.woff2': 'woff2', '.woff': 'woff', '.ttf': 'truetype', '.otf': 'opentype'}
+FONT_WEIGHTS = (('thin', 100), ('extralight', 200), ('light', 300), ('medium', 500),
+                ('semibold', 600), ('extrabold', 800), ('bold', 700), ('black', 900))
+
+
+def _font_face_key(name):
+    """(weight, style) read off a font file name, e.g. 'Nexover-BoldItalic.otf'."""
+    squashed = re.sub(r"[-_ ]", "", name.lower())
+    weight = next((w for word, w in FONT_WEIGHTS if word in squashed), 400)
+    return weight, ("italic" if "italic" in squashed else "normal")
+
+
+_font_files = (sorted(p for p in FONT_DIR.iterdir() if p.suffix.lower() in FONT_FORMATS)
+               if FONT_DIR.is_dir() else [])
+if _font_files:
+    STATIC_ASSETS["/fonts"] = FONT_DIR
+_faces = []
+for _weight, _style in sorted({_font_face_key(p.name) for p in _font_files}):
+    _sources = sorted((p for p in _font_files if _font_face_key(p.name) == (_weight, _style)),
+                      key=lambda p: list(FONT_FORMATS).index(p.suffix.lower()))
+    _src = ", ".join(f"url('fonts/{quote(p.name)}') format('{FONT_FORMATS[p.suffix.lower()]}')"
+                     for p in _sources)
+    _faces.append(f"@font-face {{ font-family: 'Nexover'; font-weight: {_weight}; "
+                  f"font-style: {_style}; font-display: swap; src: {_src}; }}")
+FONT_FACES = "\n".join(_faces)
+
+app_opts(static_assets=STATIC_ASSETS)
+
+# charts pick the font up from the default template
+pio.templates["uplstats"] = go.layout.Template(layout={"font": {"family": APP_FONT}})
+pio.templates.default = "plotly+uplstats"
+
+ui.tags.style(FONT_FACES + f"""
+    :root {{ --bs-body-font-family: {APP_FONT}; --bs-font-sans-serif: {APP_FONT}; }}
+    body, button, input, select, textarea, table,
+    .selectize-input, .selectize-dropdown {{ font-family: {APP_FONT}; }}
+
+    /* the bar carries no title; the page names speak for themselves */
+    .navbar.fixed-top .navbar-brand {{ display: none; }}
+
+    /* club logos in tables, dropdowns and on the team page */
+    .club-cell {{ display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }}
+    .club-logo {{ height: 22px; width: 22px; object-fit: contain; flex: none; }}
+    .match-cell {{ display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }}
+    .match-cell .vs {{ color: #94A3B8; font-size: 12px; }}
+    .club-option {{ display: flex; align-items: center; gap: 8px; }}
+    .club-option .club-logo {{ height: 20px; width: 20px; }}
+    .team-crest {{ display: flex; justify-content: center; margin: 14px 0 6px 0; }}
+    .team-crest img {{ height: 110px; max-width: 100%; object-fit: contain; }}
+""")
+
+ui.tags.head(ui.tags.script(
+    "window.CLUB_LOGOS = " + json.dumps(CLUB_LOGOS) + ";\n" + """
+    // a club's logo for the league and season picked in the bar
+    window.clubLogo = function (team) {
+        var league = $('#league').val(), season = $('#season').val();
+        var logos = (window.CLUB_LOGOS[league] || {})[season] || {};
+        var url = logos[String(team || '').toUpperCase()];
+        return url ? '<img class="club-logo" src="' + url + '" alt="">' : '';
+    };
+    // 'option' / 'item' are the classes selectize's own templates carry, and
+    // its styling and item handling expect them
+    function clubRow(kind, team, label, escape) {
+        return '<div class="' + kind + ' club-option">' + window.clubLogo(team)
+            + escape(label) + '</div>';
+    }
+    // selectize renderers: a club dropdown's values are the clubs themselves ...
+    window.clubRender = {
+        option: function (d, escape) { return clubRow('option', d.value, d.label, escape); },
+        item: function (d, escape) { return clubRow('item', d.value, d.label, escape); }
+    };
+    // ... while players are labelled 'Name (TEAM)', so the club comes from the label
+    function playerClub(label) {
+        var m = /\\(([^()]+)\\)\\s*$/.exec(label || '');
+        return m ? m[1] : '';
+    }
+    window.playerRender = {
+        option: function (d, escape) {
+            return clubRow('option', playerClub(d.label), d.label, escape);
+        },
+        item: function (d, escape) {
+            return clubRow('item', playerClub(d.label), d.label, escape);
+        }
+    };
+    """))
+
+
+# -----------------------------------------------------------------------------
 # Reactive slices: everything below reads the selected competition, never the
 # full tables, so switching league or season redraws the whole dashboard.
 # -----------------------------------------------------------------------------
@@ -711,11 +862,57 @@ def selected_team():
         return raw
     return available[0] if available else None
 
+@reactive.calc
+def club_logos():
+    """Team -> logo URL for the league and season picked in the bar."""
+    return logos_for(_chosen("league", DEFAULT_LEAGUE), _chosen("season", DEFAULT_SEASON))
+
+
+def club_html(team):
+    """A club name led by its logo, as escaped table-cell HTML."""
+    name = html.escape(str(team))
+    url = club_logos().get(str(team).upper())
+    if not url:
+        return name
+    return (f'<span class="club-cell"><img class="club-logo" src="{url}" alt="" '
+            f'loading="lazy">{name}</span>')
+
+
+def match_html(game):
+    """A 'HOME-vs-AWAY' game key with both clubs' logos."""
+    sides = re.split(r"-vs-", str(game), flags=re.IGNORECASE)
+    if len(sides) != 2:
+        return html.escape(str(game))
+    home, away = (side.strip() for side in sides)
+    return (f'<span class="match-cell">{club_html(home)}<span class="vs">vs</span>'
+            f'{club_html(away)}</span>')
+
+
+def logo_table(data, clubs=(), matches=()):
+    """A table ready for @render.table(escape=False).
+
+    Club and match columns get their logos; every other text cell is escaped
+    here instead, since the renderer no longer does it.
+    """
+    data = data.copy()
+    for column in data.columns:
+        if column in clubs:
+            data[column] = data[column].map(club_html)
+        elif column in matches:
+            data[column] = data[column].map(match_html)
+        else:
+            data[column] = data[column].map(
+                lambda value: html.escape(value) if isinstance(value, str) else value)
+    return data
+
+
 # Helper function for team-colored headers
 def get_team_header_style(team):
-    """Generate header style based on team color"""
+    """Generate header style based on team color, with the club's logo at the right"""
     color = TEAM_COLORS.get(team, "#1a5f7a")
-    return f"background: {color} !important; color: white; border-radius: 15px 15px 0 0 !important; font-weight: bold; font-size: 16px; padding: 15px;"
+    logo = club_logos().get(str(team).upper())
+    layers = f"url('{logo}') no-repeat right 14px center / auto 70%, " if logo else ""
+    return f"background: {layers}{color} !important; color: white; border-radius: 15px 15px 0 0 !important; font-weight: bold; font-size: 16px; padding: 15px;"
 
 # Process caution colors (yellow, red, second yellow)
 def get_caution_color(row):
@@ -1012,15 +1209,15 @@ def _navbar_seasons():
 
 
 with ui.navset_bar(
-    title="FOOTBALL STATS",
+    title="",
     id="page",
     navbar_options=ui.navbar_options(position="fixed-top", theme="dark", bg="#F5901F"),
 ):
     
     # =============================================================================
-    # PAGE 1: HALF-SEASON OVERVIEW
+    # PAGE 1: GENERAL OVERVIEW
     # =============================================================================
-    with ui.nav_panel("Half-season Overview"):
+    with ui.nav_panel("General Overview"):
         with ui.navset_pill(id="overview_tab"):
             
             with ui.nav_panel("Summary"):
@@ -1144,12 +1341,12 @@ with ui.navset_bar(
                 with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                     with ui.card():
                         ui.tags.div("Top 15 Goal Scorers", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def top_scorers():
                             scorer_goals = goals_df().groupby(['player', 'team']).size().reset_index(name='goals')
                             scorer_goals = scorer_goals.sort_values('goals', ascending=False).head(15)
                             scorer_goals.columns = ['Player', 'Team', 'Goals']
-                            return scorer_goals
+                            return logo_table(scorer_goals, clubs=['Team'])
 
             with ui.nav_panel("Detailed Analysis"):
                 with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -1348,7 +1545,7 @@ with ui.navset_bar(
                     with ui.card():
                         ui.tags.div("Comeback & Collapse Summary",
                                     class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def comebacks_summary():
                             table = comebacks_df().copy()
                             table = table.sort_values(
@@ -1363,7 +1560,7 @@ with ui.navset_bar(
                                              'Wins From Behind', 'Draws From Behind',
                                              'Times Ahead', 'Pts Dropped', 'Lost From Ahead',
                                              'Drew From Ahead']
-                            return table
+                            return logo_table(table, clubs=['Team'])
 
     # =============================================================================
     # PAGE 2: MATCHDAY ANALYSIS
@@ -1489,12 +1686,12 @@ with ui.navset_bar(
                     with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                         with ui.card():
                             ui.tags.div("Matchday Goalscorers", class_="overview-card-header")
-                            @render.table
+                            @render.table(escape=False)
                             def md_scorers_table():
                                 md_data = goals_df()[goals_df()['md'] == selected_md()][['game', 'player', 'team', 'minute', 'period']]
                                 md_data = md_data.sort_values('minute')
                                 md_data.columns = ['Match', 'Player', 'Team', 'Minute', 'Half']
-                                return md_data
+                                return logo_table(md_data, clubs=['Team'], matches=['Match'])
 
                 with ui.nav_panel("Table & Results"):
                     with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
@@ -1505,9 +1702,10 @@ with ui.navset_bar(
                                     f"Results - Matchday {input.selected_matchday()}",
                                     class_="overview-card-header")
 
-                            @render.table
+                            @render.table(escape=False)
                             def md_results_table():
-                                return results_table(selected_md())
+                                return logo_table(results_table(selected_md()),
+                                                  clubs=['Home', 'Away'])
 
                             ui.tags.p(SOURCE_NOTE,
                                       style="margin: 10px 15px; color: #777; font-size: 13px;")
@@ -1520,9 +1718,10 @@ with ui.navset_bar(
                                     f"League Table after Matchday {input.selected_matchday()}",
                                     class_="overview-card-header")
 
-                            @render.table
+                            @render.table(escape=False)
                             def md_standings_table():
-                                return league_table(upto_md=selected_md())
+                                return logo_table(league_table(upto_md=selected_md()),
+                                                  clubs=['Team'])
 
                     with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                         with ui.card():
@@ -1532,10 +1731,10 @@ with ui.navset_bar(
                                     f"Matchday {input.selected_matchday()} Only",
                                     class_="overview-card-header")
 
-                            @render.table
+                            @render.table(escape=False)
                             def md_only_standings_table():
-                                return league_table(md=selected_md(),
-                                                    form_games=1)
+                                return logo_table(league_table(md=selected_md(), form_games=1),
+                                                  clubs=['Team'])
 
                 with ui.nav_panel("Match Details"):
                     with ui.card():
@@ -1545,7 +1744,7 @@ with ui.navset_bar(
                                 f"Venue & Officials - Matchday {input.selected_matchday()}",
                                 class_="overview-card-header")
 
-                        @render.table
+                        @render.table(escape=False)
                         def md_details_table():
                             info = match_info_df()
                             md = selected_md()
@@ -1558,7 +1757,7 @@ with ui.navset_bar(
                             data = data[available]
                             data.columns = ['Match', 'Date', 'Kick-off', 'Venue',
                                             'Attendance', 'Referee'][:len(available)]
-                            return data
+                            return logo_table(data, matches=['Match'])
 
                         ui.tags.p(
                             "Attendance is only printed on some reports, so blanks "
@@ -1572,7 +1771,7 @@ with ui.navset_bar(
                                 f"Team Sheets - Matchday {input.selected_matchday()}",
                                 class_="overview-card-header")
 
-                        @render.table
+                        @render.table(escape=False)
                         def md_teamsheet_table():
                             squad = lineups_df()
                             md = selected_md()
@@ -1584,7 +1783,7 @@ with ui.navset_bar(
                             data = data[['game', 'team', 'shirt', 'player',
                                          'minutes_played']]
                             data.columns = ['Match', 'Team', '#', 'Player', 'Minutes']
-                            return data
+                            return logo_table(data, clubs=['Team'], matches=['Match'])
 
                 with ui.nav_panel("Cards"):
                     with ui.card():
@@ -1592,11 +1791,11 @@ with ui.navset_bar(
                         def md_cards_header():
                             return ui.tags.div(f"Cards Detail - Matchday {input.selected_matchday()}", class_="overview-card-header")
                         
-                        @render.table
+                        @render.table(escape=False)
                         def md_cards_table():
                             md_cards = cautions_df()[cautions_df()['md'] == selected_md()][['game', 'player', 'team', 'caution', 'minute', 'double-caution']]
                             md_cards.columns = ['Match', 'Player', 'Team', 'Card Type', 'Minute', 'Double Caution']
-                            return md_cards
+                            return logo_table(md_cards, clubs=['Team'], matches=['Match'])
 
                 with ui.nav_panel("Substitutions"):
                     with ui.card():
@@ -1604,11 +1803,11 @@ with ui.navset_bar(
                         def md_subs_header():
                             return ui.tags.div(f"Substitutions Detail - Matchday {input.selected_matchday()}", class_="overview-card-header")
                         
-                        @render.table
+                        @render.table(escape=False)
                         def md_subs_table():
                             md_subs = subs_df()[subs_df()['md'] == selected_md()][['game', 'in', 'out', 'team', 'minute']]
                             md_subs.columns = ['Match', 'Player In', 'Player Out', 'Team', 'Minute']
-                            return md_subs
+                            return logo_table(md_subs, clubs=['Team'], matches=['Match'])
 
     # =============================================================================
     # PAGE 3: HOME & AWAY FORM
@@ -1731,9 +1930,9 @@ with ui.navset_bar(
             with ui.nav_panel("Home Form"):
                 with ui.card():
                     ui.tags.div("Home Table", class_="overview-card-header")
-                    @render.table
+                    @render.table(escape=False)
                     def home_form_table():
-                        return league_table(venue='home')
+                        return logo_table(league_table(venue='home'), clubs=['Team'])
 
                     ui.tags.p("Home matches only. Form shows the last five home results, "
                               "oldest first. " + SOURCE_NOTE,
@@ -1762,9 +1961,9 @@ with ui.navset_bar(
             with ui.nav_panel("Away Form"):
                 with ui.card():
                     ui.tags.div("Away Table", class_="overview-card-header")
-                    @render.table
+                    @render.table(escape=False)
                     def away_form_table():
-                        return league_table(venue='away')
+                        return logo_table(league_table(venue='away'), clubs=['Team'])
 
                     ui.tags.p("Away matches only. Form shows the last five away results, "
                               "oldest first. " + SOURCE_NOTE,
@@ -1797,7 +1996,18 @@ with ui.navset_bar(
         with ui.layout_sidebar():
             with ui.sidebar():
                 ui.h5("Select Team")
-                ui.input_select("selected_team", "Team:", choices={})
+                ui.input_selectize("selected_team", "Team:", choices={},
+                                   options={"render": ui.js_eval("window.clubRender")})
+
+                @render.ui
+                def team_crest():
+                    """The chosen club's logo, when there is one for this season."""
+                    team = selected_team()
+                    url = club_logos().get(str(team).upper()) if team else None
+                    if not url:
+                        return None
+                    return ui.div(ui.tags.img(src=url, alt=f"{team} logo"),
+                                  class_="team-crest")
 
                 @reactive.effect
                 def _refresh_teams():
@@ -1808,7 +2018,7 @@ with ui.navset_bar(
                     available = teams()
                     with reactive.isolate():
                         current = _chosen("selected_team", None)
-                    ui.update_select(
+                    ui.update_selectize(
                         "selected_team",
                         choices={team: team for team in available},
                         selected=(current if current in available
@@ -1995,11 +2205,11 @@ with ui.navset_bar(
                         def team_cards_table_header():
                             return ui.tags.div(f"All Cards Received - {selected_team()}", style=get_team_header_style(selected_team()))
                         
-                        @render.table
+                        @render.table(escape=False)
                         def team_cards_table():
                             team_cards = cautions_df()[cautions_df()['team'] == selected_team()][['game', 'player', 'caution', 'minute', 'double-caution']]
                             team_cards.columns = ['Match', 'Player', 'Card Type', 'Minute', 'Double Caution']
-                            return team_cards
+                            return logo_table(team_cards, matches=['Match'])
 
                 with ui.nav_panel("Substitutions"):
                     with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -2089,11 +2299,11 @@ with ui.navset_bar(
                         def team_subs_table_header():
                             return ui.tags.div(f"All Substitutions - {selected_team()}", style=get_team_header_style(selected_team()))
 
-                        @render.table
+                        @render.table(escape=False)
                         def team_subs_table():
                             team_subs = subs_df()[subs_df()['team'] == selected_team()][['game', 'in', 'out', 'minute']]
                             team_subs.columns = ['Match', 'Player In', 'Player Out', 'Minute']
-                            return team_subs
+                            return logo_table(team_subs, matches=['Match'])
 
     # =============================================================================
     # PAGE 5: PLAYERS
@@ -2173,7 +2383,7 @@ with ui.navset_bar(
                 with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                     with ui.card():
                         ui.tags.div("Appearances", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def appearances_table():
                             data = player_profiles().copy()
                             if data.empty:
@@ -2182,7 +2392,7 @@ with ui.navset_bar(
                                          'minutes', 'goals']]
                             data.columns = ['Player', 'Team', 'Starts', 'As Sub',
                                             'Minutes', 'Goals']
-                            return data.head(30)
+                            return logo_table(data.head(30), clubs=['Team'])
 
             with ui.nav_panel("Scoring Rates"):
                 ui.tags.p(
@@ -2220,7 +2430,7 @@ with ui.navset_bar(
 
                     with ui.card():
                         ui.tags.div("Minutes per Goal", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def minutes_per_goal_table():
                             data = player_profiles()
                             data = data[(data['goals'] > 0)].copy()
@@ -2235,7 +2445,7 @@ with ui.navset_bar(
                                          'mins_per_goal']]
                             data.columns = ['Player', 'Team', 'Goals', 'Minutes',
                                             'Mins/Goal']
-                            return data.head(20)
+                            return logo_table(data.head(20), clubs=['Team'])
 
             with ui.nav_panel("Compare"):
                 ui.tags.p(
@@ -2250,7 +2460,8 @@ with ui.navset_bar(
                     ui.input_selectize(
                         "compare_players", "Players",
                         choices={}, multiple=True,
-                        options={"maxItems": 4, "placeholder": "Choose players…"},
+                        options={"maxItems": 4, "placeholder": "Choose players…",
+                                 "render": ui.js_eval("window.playerRender")},
                     )
 
                 @reactive.effect
@@ -2283,7 +2494,7 @@ with ui.navset_bar(
                 with ui.layout_columns(col_widths=[12], style="margin: 12px 0;"):
                     with ui.card():
                         ui.tags.div("Side by Side", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def compare_table():
                             data = compared()
                             if data.empty:
@@ -2309,9 +2520,11 @@ with ui.navset_bar(
                                         values.append(
                                             int(player["minutes"] / player["goals"])
                                             if player["goals"] else "—")
+                                    elif column == "team":
+                                        values.append(club_html(player[column]))
                                     else:
                                         values.append(player[column])
-                                table[player_label(player)] = values
+                                table[html.escape(player_label(player))] = values
                             return pd.DataFrame(table)
 
                 with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
@@ -2444,7 +2657,7 @@ with ui.navset_bar(
     # =============================================================================
     # One row per U21 player per matchday (built by wrangle.py): the weekly U21
     # export where one exists, the team sheets otherwise.
-    with ui.nav_panel("U21"):
+    with ui.nav_panel("U21 Impact"):
 
         U21_SOURCE_NOTE = (
             "A matchday with a U21 export uses it — the export is the only source of "
@@ -2558,7 +2771,7 @@ with ui.navset_bar(
                 with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                     with ui.card():
                         ui.tags.div("U21 Leaderboard", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def u21_leaderboard():
                             data = u21_season()
                             if data.empty:
@@ -2572,7 +2785,7 @@ with ui.navset_bar(
                             data.columns = ['Player', 'Club', 'Pos', 'Born', 'Apps', 'Starts',
                                             'As Sub', 'Minutes', 'G', 'A', 'G+A per 90',
                                             'Cards', 'Team PPG', 'Debut MD']
-                            return data
+                            return logo_table(data, clubs=['Club'])
 
                         ui.tags.p(U21_SOURCE_NOTE,
                                   style="margin: 10px 15px; color: #777; font-size: 13px;")
@@ -2651,7 +2864,7 @@ with ui.navset_bar(
                                           else "  ·  from the match reports")
                             return ui.tags.div(title, class_="overview-card-header")
 
-                        @render.table
+                        @render.table(escape=False)
                         def u21_md_table():
                             rows = u21_md_rows()
                             played = rows[rows['apps'] > 0].sort_values(
@@ -2660,8 +2873,8 @@ with ui.navset_bar(
                                 return pd.DataFrame(
                                     {"": ["No U21 player appeared on this matchday"]})
                             return pd.DataFrame({
-                                'Player': played['player'],
-                                'Club': played['team'],
+                                'Player': played['player'].map(html.escape),
+                                'Club': played['team'].map(club_html),
                                 'Role': np.where(played['starts'] > 0, 'Started', 'Sub'),
                                 'Minutes': played['minutes'].astype(int),
                                 'G': played['goals'].astype(int),
@@ -2785,7 +2998,7 @@ with ui.navset_bar(
                 with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
                     with ui.card():
                         ui.tags.div("Club Summary", class_="overview-card-header")
-                        @render.table
+                        @render.table(escape=False)
                         def u21_club_table():
                             season = u21_season()
                             if season.empty:
@@ -2801,7 +3014,7 @@ with ui.navset_bar(
                             table['assists'] = table['assists'].map(u21_number)
                             table.columns = ['Club', 'U21 Pool', 'Appeared', 'Minutes',
                                              'Starts', 'Goals', 'Assists']
-                            return table
+                            return logo_table(table, clubs=['Club'])
 
             with ui.nav_panel("Trends"):
                 ui.tags.p(
@@ -2813,7 +3026,8 @@ with ui.navset_bar(
                     ui.input_selectize(
                         "u21_compare", "Players",
                         choices={}, multiple=True,
-                        options={"maxItems": 4, "placeholder": "Choose players…"},
+                        options={"maxItems": 4, "placeholder": "Choose players…",
+                                 "render": ui.js_eval("window.playerRender")},
                     )
 
                 @reactive.effect
@@ -2987,7 +3201,7 @@ with ui.navset_bar(
             with ui.nav_panel("Appointments"):
                 with ui.card():
                     ui.tags.div("Match Officials", class_="overview-card-header")
-                    @render.table
+                    @render.table(escape=False)
                     def officials_table():
                         info = match_info_df()
                         if info.empty:
@@ -2999,7 +3213,7 @@ with ui.navset_bar(
                         data.columns = ['Match', 'MD', 'Referee', '1st Assistant',
                                         '2nd Assistant', 'Fourth Official',
                                         'Commissioner'][:len(available)]
-                        return data
+                        return logo_table(data, matches=['Match'])
 
     # =========================================================================
     # Competition switcher, pinned to the right of the bar
