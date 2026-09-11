@@ -3,7 +3,13 @@ import numpy as np
 import os
 import re
 import shutil
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from extract_u21 import (COUNT_COLUMNS as U21_COUNT_COLUMNS,  # noqa: E402
+                         U21_COLUMNS as U21_EXPORT_COLUMNS, name_key, tidy_name,
+                         u21_born_from)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 dataDIR = PROJECT_ROOT / "csvs/new"
@@ -396,6 +402,259 @@ for (league, season), table in comebacksDF.groupby(KEY_COLUMNS):
     announce("Fewest wins from a losing position (of teams that went behind at all):",
              table, 'wins_from_losing', ascending=True,
              subset=table['matches_behind'] > 0)
+
+
+# =============================================================================
+# U21 TRACKER
+# =============================================================================
+# One row per U21 player per matchday, from two sources:
+#   * the U21 export (csvs/new/u21New.csv) -- the official list, and the only
+#     source of assists, penalties and own goals;
+#   * the match reports' team sheets, for any matchday without an export, with
+#     the birth year read from the last two digits of the registration id
+#     (036912M08 -> 2008).
+# Both are held to one age rule, u21_born_from() in extract_u21.py: born on or
+# after 1 January, 21 years before the season starts.  An export row whose
+# birth year is known and falls before that is left out and reported.  Where
+# both sources exist for a matchday the export wins, and the minutes the
+# reports give the same player are kept alongside it as a cross-check.
+
+U21_KEYS = KEY_COLUMNS + ['md']
+U21_EXPORT_ONLY = ['own_goals', 'assists', 'penalties']
+U21_OUTPUT_COLUMNS = (U21_KEYS + ['source', 'player_key', 'player_id', 'player', 'team',
+                                  'position', 'jersey', 'birth_year', 'u21_born_from']
+                      + U21_COUNT_COLUMNS + ['report_minutes', 'team_points',
+                                             'team_matches'])
+LINEUP_FIELDS = ['league', 'season', 'game', 'md', 'team', 'shirt', 'player',
+                 'player_id', 'role', 'is_goalkeeper', 'on_minute', 'off_minute',
+                 'minutes_played']
+
+
+def birth_year(player_id):
+    """'036912M08' -> 2008: a registration id ends in the two-digit birth year.
+
+    Years above 30 are read as 19xx, which holds until the class of 2031 turns
+    professional.
+    """
+    text = str(player_id).strip()
+    if len(text) < 2 or not text[-2:].isdigit():
+        return np.nan
+    yy = int(text[-2:])
+    return 2000 + yy if yy <= 30 else 1900 + yy
+
+
+def u21_cutoff(season):
+    """'2026/27' -> 2005, the earliest birth year still U21 that season.
+
+    The cutoff date is always 1 January, so comparing years is exact.
+    """
+    return u21_born_from(season).year
+
+
+def read_optional(path, columns, **kwargs):
+    """A CSV that may not exist yet, as an empty frame with the expected columns."""
+    return pd.read_csv(path, **kwargs) if path.exists() else pd.DataFrame(columns=columns)
+
+
+def report_totals(lineups, goals, cautions):
+    """Per player per matchday for everyone on a team sheet, keyed on the id.
+
+    Goals and cautions carry only a printed name, so each is matched back to
+    that match's team sheet for the registration id.
+    """
+    group = U21_KEYS + ['player_id']
+    if lineups.empty:
+        return pd.DataFrame(columns=group + ['player', 'team', 'jersey', 'position']
+                            + U21_COUNT_COLUMNS)
+
+    squad = lineups.copy()
+    squad['game'] = squad['game'].astype(str).str.upper()
+    squad['team'] = squad['team'].astype(str).str.upper()
+    # a starter, or a substitute who came on -- even one sent on in stoppage
+    # time, who is credited with 0 minutes but still made an appearance
+    squad['started'] = squad['role'] == 'starting'
+    squad['came_on'] = (squad['role'] == 'substitute') & squad['on_minute'].notna()
+    squad['appeared'] = squad['started'] | squad['came_on']
+    # only starters carry an off minute: the extractor does not record a
+    # substitute being taken off again, so his minutes run on to 90
+    squad['went_off'] = squad['started'] & squad['off_minute'].notna()
+    squad['keeper'] = squad['is_goalkeeper'] == 'yes'
+
+    lookup = dict(zip(zip(squad['game'], squad['player'].map(name_key)),
+                      squad['player_id']))
+    totals = squad.groupby(group).agg(
+        player=('player', 'last'), team=('team', 'last'), jersey=('shirt', 'last'),
+        keeper=('keeper', 'any'), apps=('appeared', 'sum'),
+        minutes=('minutes_played', 'sum'), starts=('started', 'sum'),
+        sub_in=('came_on', 'sum'), sub_out=('went_off', 'sum'))
+
+    caution = cautions['caution'].astype(str).str.lower()
+    for label, events in (('goals', goals),
+                          ('yellows', cautions[caution == 'yellow']),
+                          ('reds_direct', cautions[caution == 'red']),
+                          ('reds_second_yellow', cautions[caution == 'second yellow'])):
+        ids = [lookup.get((str(game).upper(), name_key(player)))
+               for game, player in zip(events['game'], events['player'])]
+        keyed = events.assign(player_id=ids).dropna(subset=['player_id'])
+        totals[label] = keyed.groupby(group).size()
+
+    totals = totals.reset_index()
+    counts = [c for c in U21_COUNT_COLUMNS if c not in U21_EXPORT_ONLY]
+    totals[counts] = totals[counts].fillna(0).astype(int)
+    for column in U21_EXPORT_ONLY:
+        totals[column] = np.nan                  # the reports do not record these
+    totals['player'] = totals['player'].map(tidy_name)
+    totals['position'] = np.where(totals['keeper'], 'Goalkeeper', '')
+    totals['jersey'] = pd.to_numeric(totals['jersey'], errors='coerce').map(
+        lambda n: '' if pd.isna(n) else str(int(n)))
+    return totals.drop(columns='keeper')
+
+
+def link_export_ids(export, lineups, aliases):
+    """Registration id for each export row, found on the team sheets.
+
+    Tried in order: an id the export itself carries; csvs/u21_aliases.csv; the
+    same name at the same club that season; the same name anywhere that
+    season; and last the same name anywhere in the league's history -- taken
+    only when that id's birth year makes the player U21, which is what stops a
+    senior namesake from being picked up.  Unmatched rows get ''.
+    """
+    if export.empty:
+        return pd.Series(dtype=str)
+    sheet = lineups[['league', 'season', 'team', 'player', 'player_id']].copy()
+    sheet['team'] = sheet['team'].astype(str).str.upper()
+    sheet['name_key'] = sheet['player'].map(name_key)
+
+    def unique_id(keys):
+        if sheet.empty:
+            return {}
+        found = sheet.groupby(keys)['player_id'].agg(
+            lambda ids: ids.iloc[0] if ids.nunique() == 1 else None)
+        return found.dropna().to_dict()
+
+    by_team = unique_id(['league', 'season', 'team', 'name_key'])
+    by_season = unique_id(['league', 'season', 'name_key'])
+    by_league = unique_id(['league', 'name_key'])
+    alias = {(r.league, r.season, str(r.team).upper(), name_key(r.player)): r.player_id
+             for r in aliases.itertuples()}
+
+    def resolve(row):
+        given = str(row.player_id).strip()
+        if given and given.lower() != 'nan':
+            return given
+        team_key = (row.league, row.season, row.team, row.name_key)
+        found = (alias.get(team_key) or by_team.get(team_key)
+                 or by_season.get((row.league, row.season, row.name_key)))
+        if found:
+            return found
+        earlier = by_league.get((row.league, row.name_key))
+        if earlier and birth_year(earlier) >= u21_cutoff(row.season):
+            return earlier
+        return ''
+
+    return export.apply(resolve, axis=1)
+
+
+def build_u21(export, lineups, goals, cautions, team_matches, aliases):
+    """The U21 matchday table, plus the discrepancies worth a human look."""
+    reports = report_totals(lineups, goals, cautions)
+    reports['birth_year'] = reports['player_id'].map(birth_year)
+
+    export = export.copy()
+    export['player_id'] = link_export_ids(export, lineups, aliases)
+    export['birth_year'] = export['player_id'].map(birth_year)
+    stated = pd.to_datetime(export['date_of_birth'], errors='coerce', dayfirst=True).dt.year
+    export['birth_year'] = stated.fillna(export['birth_year'])
+    # an unknown birth year compares False, so only a known over-age row goes
+    over_age = export['birth_year'] < export['season'].map(u21_cutoff)
+    export, too_old = export[~over_age].copy(), export[over_age]
+    export['source'] = 'xlsx'
+    export = export.merge(
+        reports[U21_KEYS + ['player_id', 'minutes']].rename(
+            columns={'minutes': 'report_minutes'}),
+        on=U21_KEYS + ['player_id'], how='left')
+
+    # the reports stand in for a matchday only when it has no export
+    covered = set(zip(export['league'], export['season'], export['md']))
+    u21_by_id = reports[reports['birth_year'] >= reports['season'].map(u21_cutoff)]
+    is_covered = pd.Series(
+        [key in covered for key in zip(u21_by_id['league'], u21_by_id['season'],
+                                        u21_by_id['md'])],
+        index=u21_by_id.index, dtype=bool)
+    not_listed = u21_by_id[is_covered & (u21_by_id['apps'] > 0)
+                           & ~u21_by_id['player_id'].isin(export['player_id'])]
+    from_reports = u21_by_id[~is_covered].assign(
+        source='reports', report_minutes=lambda d: d['minutes'],
+        name_key=lambda d: d['player'].map(name_key))
+
+    rows = pd.concat([export, from_reports], ignore_index=True)
+    rows['player_id'] = rows['player_id'].fillna('').astype(str)
+    rows['player_key'] = np.where(rows['player_id'] != '', rows['player_id'],
+                                  'name:' + rows['name_key'].astype(str))
+
+    points = team_matches.assign(team=team_matches['team'].astype(str).str.upper())
+    points = points.groupby(U21_KEYS + ['team']).agg(
+        team_points=('points', 'sum'), team_matches=('game', 'nunique')).reset_index()
+    rows = rows.merge(points, on=U21_KEYS + ['team'], how='left')
+
+    rows['u21_born_from'] = rows['season'].map(lambda s: u21_born_from(s).isoformat())
+    disagree = export[export['report_minutes'].notna()
+                      & ((export['minutes'] - export['report_minutes']).abs() > 1)]
+    rows = rows[U21_OUTPUT_COLUMNS].sort_values(U21_KEYS + ['team', 'player'])
+    return rows.reset_index(drop=True), disagree, not_listed, too_old
+
+
+print(f"\n{'='*60}")
+print("U21 tracker")
+print(f"{'='*60}")
+
+u21Export = read_optional(dataDIR / "u21New.csv", U21_EXPORT_COLUMNS,
+                          dtype={'player_id': str, 'jersey': str, 'date_of_birth': str})
+for column in ('player_id', 'jersey', 'position', 'date_of_birth'):
+    u21Export[column] = u21Export[column].fillna('')
+u21DF, u21Disagree, u21NotListed, u21OverAge = build_u21(
+    u21Export,
+    read_optional(outputDIR / "transformed_lineups.csv", LINEUP_FIELDS),
+    frames.get('goals', pd.DataFrame(columns=['league', 'season', 'game', 'md', 'player'])),
+    frames.get('cautions', pd.DataFrame(columns=['league', 'season', 'game', 'md',
+                                                 'player', 'caution'])),
+    teamMatchesDF,
+    read_optional(PROJECT_ROOT / "csvs/u21_aliases.csv",
+                  ['league', 'season', 'team', 'player', 'player_id']),
+)
+u21DF.to_csv(outputDIR / "transformed_u21_matchday.csv", index=False)
+print(f"✓ Saved to: {outputDIR / 'transformed_u21_matchday.csv'}  ({len(u21DF)} rows)")
+
+for (league, season), part in u21DF.groupby(KEY_COLUMNS):
+    listed = part[part['source'] == 'xlsx']
+    export_mds = ", ".join(str(int(m)) for m in sorted(listed['md'].unique())) or "-"
+    report_mds = ", ".join(
+        str(int(m)) for m in sorted(part.loc[part['source'] == 'reports', 'md'].unique())) or "-"
+    born_from = u21_born_from(season)
+    print(f"  {league} {season} (born on or after {born_from.day} {born_from:%B %Y}): "
+          f"{part['player_key'].nunique()} players; "
+          f"export md {export_mds}; reports md {report_mds}")
+    if not listed.empty:
+        linked = listed.drop_duplicates('player_key')
+        print(f"    linked to a registration id: "
+              f"{int((linked['player_id'] != '').sum())} of {len(linked)} listed players")
+
+if not u21Disagree.empty:
+    print(f"\n  ! {len(u21Disagree)} U21 export row(s) disagree with the match reports "
+          f"on minutes by more than 1:")
+    for row in u21Disagree.head(10).itertuples():
+        print(f"      md{row.md} {row.player} ({row.team}): export {row.minutes}, "
+              f"reports {int(row.report_minutes)}")
+if not u21NotListed.empty:
+    print(f"\n  ! {len(u21NotListed)} player(s) U21 by birth year played on a matchday "
+          f"with an export but are not on it, e.g. "
+          f"{u21NotListed['player'].head(5).tolist()}")
+if not u21OverAge.empty:
+    print(f"\n  ! {len(u21OverAge)} U21 export row(s) left out, born before the "
+          f"season's cutoff:")
+    for row in u21OverAge.head(10).itertuples():
+        print(f"      {row.season} md{row.md} {row.player} ({row.team}): born "
+              f"{int(row.birth_year)}, cutoff {u21_cutoff(row.season)}")
 
 print(f"\n{'='*60}")
 print("All transformations complete!")

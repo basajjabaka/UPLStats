@@ -11,6 +11,9 @@ folium
 PyPDF2
 pdfplumber
 
+# U21 xlsx exports (pandas.read_excel)
+openpyxl
+
 # web app framework
 shiny
 shinywidgets

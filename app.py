@@ -388,6 +388,24 @@ ALL_STAFF = pd.read_csv(inputDIR / "transformed_staff.csv")
 ALL_STAFF['team'] = ALL_STAFF['team'].astype(str).str.upper()
 ALL_MATCH_INFO = pd.read_csv(inputDIR / "transformed_match_info.csv")
 
+# U21 players, one row per player per matchday: from the weekly U21 export, or
+# from the team sheets (by the birth year in the registration id) for a
+# matchday without one.  Built by wrangle.py.
+U21_SUM_COLUMNS = ['apps', 'minutes', 'starts', 'sub_in', 'sub_out', 'goals',
+                   'own_goals', 'assists', 'penalties', 'yellows', 'reds_direct',
+                   'reds_second_yellow']
+U21_EXPORT_ONLY = ['own_goals', 'assists', 'penalties']   # not in the reports
+_U21_PATH = inputDIR / "transformed_u21_matchday.csv"
+ALL_U21 = (pd.read_csv(_U21_PATH, dtype={'player_id': str, 'jersey': str})
+           if _U21_PATH.exists() else
+           pd.DataFrame(columns=['league', 'season', 'md', 'source', 'player_key',
+                                 'player_id', 'player', 'team', 'position', 'jersey',
+                                 'birth_year', 'u21_born_from'] + U21_SUM_COLUMNS
+                                + ['report_minutes', 'team_points', 'team_matches']))
+ALL_U21['team'] = ALL_U21['team'].astype(str).str.upper()
+for _column in ('player_id', 'jersey', 'position'):
+    ALL_U21[_column] = ALL_U21[_column].fillna('')
+
 #: a player needs this many minutes before a per-90 rate says anything
 MIN_MINUTES_FOR_RATE = 270
 
@@ -408,7 +426,12 @@ TEAM_COLORS = {
     "BUHIMBA": "#90EE90",     # Light Green
     "CALVARY": "#000000",     # Black
     "LUGAZI": "#90EE90",      # Light Green
-    "MBARARA": "#1E90FF"      # Dodger Blue
+    "MBARARA": "#1E90FF",     # Dodger Blue
+    # clubs new in 2026/27
+    "NTUGASAZE": "#DC143C",   # Red
+    "BLACKS": "#F08080",      # Light Red
+    "KIGEZI": "#4CAF50",      # Leafy Green
+    "KATAKA": "#FFF176",      # Light Yellow
 }
 
 # -----------------------------------------------------------------------------
@@ -416,27 +439,39 @@ TEAM_COLORS = {
 # -----------------------------------------------------------------------------
 # Only league/season pairs that actually carry rows are listed, so a season
 # folder that has been created but not yet filled never reaches the picker.
+# A season with nothing but U21 exports is listed as well, for the U21 page,
+# but is never the one preselected: every other page would open empty.
 
-def _competitions():
+def _competitions(frames):
     pairs = set()
-    for df in (ALL_GOALS, ALL_CAUTIONS, ALL_SUBS):
+    for df in frames:
         pairs.update(zip(df['league'].astype(str), df['season'].astype(str)))
     return pairs
 
 
+MATCH_SEASONS = _competitions((ALL_GOALS, ALL_CAUTIONS, ALL_SUBS))
+
 LEAGUE_SEASONS = {}
-for _league, _season in sorted(_competitions()):
+for _league, _season in sorted(MATCH_SEASONS | _competitions((ALL_U21,))):
     LEAGUE_SEASONS.setdefault(_league, []).append(_season)
 for _league in LEAGUE_SEASONS:                      # newest season first
     LEAGUE_SEASONS[_league] = sorted(LEAGUE_SEASONS[_league], reverse=True)
 
-ALL_LEAGUES = sorted(LEAGUE_SEASONS)
-DEFAULT_LEAGUE = ALL_LEAGUES[0] if ALL_LEAGUES else ""
-DEFAULT_SEASON = LEAGUE_SEASONS[DEFAULT_LEAGUE][0] if DEFAULT_LEAGUE else ""
-
 
 def seasons_for(league):
     return LEAGUE_SEASONS.get(league, [])
+
+
+def default_season(league):
+    """The newest season with match reports, else the newest of any kind."""
+    options = seasons_for(league)
+    return next((s for s in options if (league, s) in MATCH_SEASONS),
+                options[0] if options else None)
+
+
+ALL_LEAGUES = sorted(LEAGUE_SEASONS)
+DEFAULT_LEAGUE = ALL_LEAGUES[0] if ALL_LEAGUES else ""
+DEFAULT_SEASON = (default_season(DEFAULT_LEAGUE) or "") if DEFAULT_LEAGUE else ""
 
 
 # -----------------------------------------------------------------------------
@@ -569,6 +604,58 @@ def player_profiles():
 def player_label(row):
     """'Name (TEAM)' -- team included because names repeat across squads."""
     return f"{row['player']} ({row['team']})"
+
+
+@reactive.calc
+def u21_df():
+    return _slice(ALL_U21)
+
+
+U21_TOTAL_COLUMNS = (['player_key', 'player', 'team', 'position', 'birth_year',
+                      'debut_md'] + U21_SUM_COLUMNS
+                     + ['ga', 'ga_per_90', 'cards', 'team_ppg'])
+
+
+def u21_totals(rows):
+    """Totals per U21 player over whatever matchday rows are passed in.
+
+    Rates are rebuilt from the summed counts -- never averaged -- and per-90
+    only once a player reaches MIN_MINUTES_FOR_RATE, which also keeps a 0-minute
+    stoppage-time cameo out of any division.  Assists stay blank for a player
+    whose matchdays all came from the match reports, which do not record them.
+    """
+    if rows.empty:
+        return pd.DataFrame(columns=U21_TOTAL_COLUMNS)
+    rows = rows.sort_values('md')
+    grouped = rows.groupby('player_key')
+    totals = grouped[U21_SUM_COLUMNS].sum(min_count=1)
+    known = [c for c in U21_SUM_COLUMNS if c not in U21_EXPORT_ONLY]
+    totals[known] = totals[known].fillna(0).astype(int)
+    totals['player'] = grouped['player'].last()
+    totals['team'] = grouped['team'].last()
+    totals['position'] = (rows.assign(position=rows['position'].replace('', np.nan))
+                              .groupby('player_key')['position'].last())
+    totals['birth_year'] = grouped['birth_year'].max()
+
+    played = rows[rows['apps'] > 0]
+    totals['debut_md'] = played.groupby('player_key')['md'].min()
+    points = played.groupby('player_key')[['team_points', 'team_matches']].sum(min_count=1)
+    totals['team_ppg'] = (points['team_points'] / points['team_matches']).round(2)
+
+    totals['ga'] = totals['goals'] + totals['assists'].fillna(0)
+    totals['ga_per_90'] = np.where(totals['minutes'] >= MIN_MINUTES_FOR_RATE,
+                                   (totals['ga'] / totals['minutes'] * 90).round(2),
+                                   np.nan)
+    totals['cards'] = (totals['yellows'] + totals['reds_direct']
+                       + totals['reds_second_yellow'])
+    totals = totals.reset_index()
+    totals['position'] = totals['position'].fillna('')
+    return totals.sort_values(['minutes', 'ga'], ascending=False)[U21_TOTAL_COLUMNS]
+
+
+@reactive.calc
+def u21_season():
+    return u21_totals(u21_df())
 
 
 @reactive.calc
@@ -876,7 +963,7 @@ def landing_overlay():
                 ui.input_select(
                     "landing_season", "Season",
                     choices={s: s for s in seasons_for(league)},
-                    selected=(seasons_for(league)[0] if seasons_for(league) else None),
+                    selected=default_season(league),
                 ),
             ),
             ui.input_action_button("enter_dashboard", "View dashboard",
@@ -892,7 +979,7 @@ def _landing_seasons():
     options = seasons_for(input.landing_league())
     ui.update_select("landing_season",
                      choices={s: s for s in options},
-                     selected=options[0] if options else None)
+                     selected=default_season(input.landing_league()))
 
 
 @reactive.effect
@@ -904,7 +991,7 @@ def _enter_dashboard():
     reads input.league()/input.season(), never the landing inputs.
     """
     league = input.landing_league() or DEFAULT_LEAGUE
-    season = input.landing_season() or (seasons_for(league)[0] if seasons_for(league) else "")
+    season = input.landing_season() or default_season(league) or ""
     ui.update_select("league", choices={c: c for c in ALL_LEAGUES}, selected=league)
     ui.update_select("season", choices={s: s for s in seasons_for(league)}, selected=season)
     entered.set(True)
@@ -921,7 +1008,7 @@ def _navbar_seasons():
         current = _chosen("season", None)
     ui.update_select("season",
                      choices={s: s for s in options},
-                     selected=current if current in options else options[0])
+                     selected=current if current in options else default_season(input.league()))
 
 
 with ui.navset_bar(
@@ -1182,7 +1269,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='points_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='points_from_losing',
                                 hover_data=['wins_from_losing', 'draws_from_losing',
                                             'matches_behind'],
                                 title='Points Rescued After Going Behind',
@@ -1205,7 +1291,6 @@ with ui.navset_bar(
                                 data, x='points_dropped_from_winning', y='team',
                                 orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='points_dropped_from_winning',
                                 hover_data=['losses_from_winning', 'draws_from_winning',
                                             'matches_ahead'],
                                 title='Points Thrown Away After Leading',
@@ -1228,7 +1313,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='wins_from_losing', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='wins_from_losing',
                                 hover_data=['matches_behind'],
                                 title='Matches Won After Going Behind',
                                 labels={'wins_from_losing': 'Wins', 'team': ''}
@@ -1249,7 +1333,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='losses_from_winning', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='losses_from_winning',
                                 hover_data=['matches_ahead'],
                                 title='Matches Lost After Leading',
                                 labels={'losses_from_winning': 'Defeats', 'team': ''}
@@ -1665,7 +1748,7 @@ with ui.navset_bar(
                                 .sort_values('gf'))
                         fig = px.bar(
                             data, x='gf', y='team', orientation='h',
-                            color='team', color_discrete_map=TEAM_COLORS, text='gf',
+                            color='team', color_discrete_map=TEAM_COLORS,
                             title='Home Goals by Team',
                             labels={'gf': 'Goals', 'team': ''}
                         )
@@ -1696,7 +1779,7 @@ with ui.navset_bar(
                                 .sort_values('gf'))
                         fig = px.bar(
                             data, x='gf', y='team', orientation='h',
-                            color='team', color_discrete_map=TEAM_COLORS, text='gf',
+                            color='team', color_discrete_map=TEAM_COLORS,
                             title='Away Goals by Team',
                             labels={'gf': 'Goals', 'team': ''}
                         )
@@ -2055,7 +2138,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='minutes', y='player', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='minutes',
                                 title='Minutes on the Pitch',
                                 labels={'minutes': 'Minutes', 'player': '', 'team': ''}
                             )
@@ -2078,7 +2160,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='players', y='team', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='players',
                                 title='Different Players Given Minutes',
                                 labels={'players': 'Players used', 'team': ''}
                             )
@@ -2125,7 +2206,6 @@ with ui.navset_bar(
                             fig = px.bar(
                                 data, x='goals_per_90', y='player', orientation='h',
                                 color='team', color_discrete_map=TEAM_COLORS,
-                                text='goals_per_90',
                                 hover_data=['goals', 'minutes'],
                                 title='Scoring Rate',
                                 labels={'goals_per_90': 'Goals per 90',
@@ -2251,7 +2331,7 @@ with ui.navset_bar(
                             })
                             fig = px.bar(
                                 tidy, x="measure", y="value", color="player",
-                                barmode="group", text="value",
+                                barmode="group",
                                 title="Output and Discipline per 90 Minutes",
                                 labels={"measure": "", "value": "Per 90", "player": ""}
                             )
@@ -2276,7 +2356,7 @@ with ui.navset_bar(
                             })
                             fig = px.bar(
                                 tidy, x="player", y="count", color="kind",
-                                barmode="stack", text="count",
+                                barmode="stack",
                                 color_discrete_map={"Starts": "#1a5f7a",
                                                     "As substitute": "#F5901F"},
                                 title="Appearances by Type",
@@ -2360,7 +2440,480 @@ with ui.navset_bar(
                         style="margin: 10px 15px; color: #777; font-size: 13px;")
 
     # =============================================================================
-    # PAGE 6: OFFICIALS
+    # PAGE 6: U21 TRACKER
+    # =============================================================================
+    # One row per U21 player per matchday (built by wrangle.py): the weekly U21
+    # export where one exists, the team sheets otherwise.
+    with ui.nav_panel("U21"):
+
+        U21_SOURCE_NOTE = (
+            "A matchday with a U21 export uses it — the export is the only source of "
+            "assists. A matchday without one falls back to the match reports, where a "
+            "player counts as U21 by the birth year in their registration number, and "
+            "assists show as a dash. G+A per 90 needs at least "
+            f"{MIN_MINUTES_FOR_RATE} minutes; Team PPG is the club's points per game "
+            "in the matches the player appeared in.")
+
+        def u21_number(value):
+            """Whole numbers without '.0'; a blank (not recorded) as a dash."""
+            if pd.isna(value):
+                return "—"
+            return int(value) if float(value).is_integer() else value
+
+        def goals_assists(rows):
+            """'goals / assists', with a dash when no export recorded assists."""
+            assists = rows['assists']
+            shown = "—" if assists.isna().all() else int(assists.sum())
+            return f"{int(rows['goals'].sum())} / {shown}"
+
+        @render.ui
+        def u21_rule():
+            """The season's age rule, as wrangle.py applied it to the data."""
+            rows = u21_df()
+            if rows.empty or 'u21_born_from' not in rows:
+                return None
+            born_from = pd.Timestamp(rows['u21_born_from'].iloc[0])
+            return ui.tags.p(
+                f"U21 in {rows['season'].iloc[0]}: players born on or after "
+                f"{born_from.day} {born_from:%B %Y}.",
+                style="margin: 20px 10px 0 10px; color: #555; font-weight: 600;")
+
+        with ui.navset_pill(id="u21_tab"):
+
+            with ui.nav_panel("Season"):
+                with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 20px 0;"):
+                    with ui.div(class_="stat-card matches"):
+                        @render.text
+                        def u21_players_count():
+                            return str(len(u21_season()))
+                        ui.p("U21 Players")
+                    with ui.div(class_="stat-card goals"):
+                        @render.text
+                        def u21_used_count():
+                            return str(int((u21_season()['apps'] > 0).sum()))
+                        ui.p("Players Used")
+                    with ui.div(class_="stat-card subs"):
+                        @render.text
+                        def u21_minutes_total():
+                            return f"{int(u21_season()['minutes'].sum()):,}"
+                        ui.p("U21 Minutes")
+                    with ui.div(class_="stat-card cards"):
+                        @render.text
+                        def u21_contributions_count():
+                            return goals_assists(u21_season())
+                        ui.p("Goals / Assists")
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Most U21 Minutes", class_="overview-card-header")
+                        @render_plotly
+                        def u21_minutes_leaders():
+                            data = u21_season()
+                            data = data[data['minutes'] > 0].head(15).sort_values('minutes')
+                            if data.empty:
+                                return empty_figure()
+                            fig = px.bar(
+                                data, x='minutes', y='player', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                hover_data=['apps', 'starts'],
+                                title='Minutes on the Pitch',
+                                labels={'minutes': 'Minutes', 'player': '', 'team': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Goal Contributions", class_="overview-card-header")
+                        @render_plotly
+                        def u21_contributions_chart():
+                            data = u21_season()
+                            data = data[data['ga'] > 0]
+                            if data.empty:
+                                return empty_figure("No U21 goals or assists yet")
+                            data = data.sort_values('ga').tail(15)
+                            tidy = pd.DataFrame({
+                                'player': list(data['player']) * 2,
+                                'kind': ['Goals'] * len(data) + ['Assists'] * len(data),
+                                'count': list(data['goals']) + list(data['assists'].fillna(0)),
+                            })
+                            fig = px.bar(
+                                tidy, x='count', y='player', color='kind',
+                                orientation='h', barmode='stack',
+                                color_discrete_map={'Goals': '#2ecc71', 'Assists': '#3498db'},
+                                category_orders={'player': list(data['player'])},
+                                title='Goals and Assists',
+                                labels={'count': '', 'player': '', 'kind': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("U21 Leaderboard", class_="overview-card-header")
+                        @render.table
+                        def u21_leaderboard():
+                            data = u21_season()
+                            if data.empty:
+                                return pd.DataFrame({"": ["No U21 data for this season yet"]})
+                            data = data[['player', 'team', 'position', 'birth_year', 'apps',
+                                         'starts', 'sub_in', 'minutes', 'goals', 'assists',
+                                         'ga_per_90', 'cards', 'team_ppg', 'debut_md']].copy()
+                            for column in ('birth_year', 'assists', 'ga_per_90', 'team_ppg',
+                                           'debut_md'):
+                                data[column] = data[column].map(u21_number)
+                            data.columns = ['Player', 'Club', 'Pos', 'Born', 'Apps', 'Starts',
+                                            'As Sub', 'Minutes', 'G', 'A', 'G+A per 90',
+                                            'Cards', 'Team PPG', 'Debut MD']
+                            return data
+
+                        ui.tags.p(U21_SOURCE_NOTE,
+                                  style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+            with ui.nav_panel("By Matchday"):
+                with ui.div(style="margin: 16px 10px; max-width: 260px;"):
+                    ui.input_select("u21_matchday", "Matchday", choices={})
+
+                @reactive.calc
+                def u21_matchdays():
+                    return sorted(int(m) for m in u21_df()['md'].dropna().unique())
+
+                @reactive.effect
+                def _refresh_u21_matchdays():
+                    """Offer the season's matchdays, the latest preselected.
+
+                    Isolated read for the same reason as the matchday select.
+                    """
+                    available = u21_matchdays()
+                    with reactive.isolate():
+                        current = _chosen("u21_matchday", None)
+                    ui.update_select(
+                        "u21_matchday",
+                        choices={str(md): f"Matchday {md}" for md in available},
+                        selected=(current if current in {str(m) for m in available}
+                                  else (str(available[-1]) if available else None)),
+                    )
+
+                def u21_md():
+                    """The chosen matchday, or the latest before the select is filled."""
+                    raw = _chosen("u21_matchday", None)
+                    available = u21_matchdays()
+                    if raw and int(raw) in available:
+                        return int(raw)
+                    return available[-1] if available else None
+
+                @reactive.calc
+                def u21_md_rows():
+                    rows = u21_df()
+                    md = u21_md()
+                    return rows[rows['md'] == md] if md is not None else rows.iloc[0:0]
+
+                with ui.layout_columns(col_widths=[3, 3, 3, 3], style="margin: 10px 0 20px 0;"):
+                    with ui.div(class_="stat-card matches"):
+                        @render.text
+                        def u21_md_used():
+                            return str(int((u21_md_rows()['apps'] > 0).sum()))
+                        ui.p("U21s Played")
+                    with ui.div(class_="stat-card subs"):
+                        @render.text
+                        def u21_md_minutes():
+                            return f"{int(u21_md_rows()['minutes'].sum()):,}"
+                        ui.p("U21 Minutes")
+                    with ui.div(class_="stat-card goals"):
+                        @render.text
+                        def u21_md_contributions():
+                            return goals_assists(u21_md_rows())
+                        ui.p("Goals / Assists")
+                    with ui.div(class_="stat-card cards"):
+                        @render.text
+                        def u21_md_debuts():
+                            md = u21_md()
+                            return "0" if md is None else str(
+                                int((u21_season()['debut_md'] == md).sum()))
+                        ui.p("Season Debuts")
+
+                with ui.layout_columns(col_widths=[7, 5], style="margin: 0 0 20px 0;"):
+                    with ui.card():
+                        @render.ui
+                        def u21_md_header():
+                            md = u21_md()
+                            title = "U21 Players" if md is None else f"U21 Players - Matchday {md}"
+                            source = u21_md_rows()['source']
+                            if not source.empty:
+                                title += ("  ·  from the U21 export" if (source == 'xlsx').any()
+                                          else "  ·  from the match reports")
+                            return ui.tags.div(title, class_="overview-card-header")
+
+                        @render.table
+                        def u21_md_table():
+                            rows = u21_md_rows()
+                            played = rows[rows['apps'] > 0].sort_values(
+                                ['minutes', 'goals'], ascending=False)
+                            if played.empty:
+                                return pd.DataFrame(
+                                    {"": ["No U21 player appeared on this matchday"]})
+                            return pd.DataFrame({
+                                'Player': played['player'],
+                                'Club': played['team'],
+                                'Role': np.where(played['starts'] > 0, 'Started', 'Sub'),
+                                'Minutes': played['minutes'].astype(int),
+                                'G': played['goals'].astype(int),
+                                'A': played['assists'].map(u21_number),
+                                'Cards': (played['yellows'] + played['reds_direct']
+                                          + played['reds_second_yellow']).astype(int),
+                            })
+
+                    with ui.card():
+                        ui.tags.div("U21 Minutes by Club", class_="overview-card-header")
+                        @render_plotly
+                        def u21_md_clubs():
+                            data = u21_md_rows().groupby('team')['minutes'].sum().reset_index()
+                            data = data[data['minutes'] > 0].sort_values('minutes')
+                            if data.empty:
+                                return empty_figure("No U21 minutes on this matchday")
+                            fig = px.bar(
+                                data, x='minutes', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                title='Minutes Given to U21 Players',
+                                labels={'minutes': 'Minutes', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+            with ui.nav_panel("Clubs"):
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("U21 Minutes by Club", class_="overview-card-header")
+                        @render_plotly
+                        def u21_club_minutes():
+                            data = (u21_season().groupby('team')['minutes'].sum()
+                                    .reset_index().sort_values('minutes'))
+                            if data.empty:
+                                return empty_figure()
+                            fig = px.bar(
+                                data, x='minutes', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                title='Season Minutes Given to U21 Players',
+                                labels={'minutes': 'Minutes', 'team': ''}
+                            )
+                            fig.update_layout(
+                                showlegend=False, height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("U21 Pool vs Players Used", class_="overview-card-header")
+                        @render_plotly
+                        def u21_club_usage():
+                            season = u21_season()
+                            if season.empty:
+                                return empty_figure()
+                            data = season.groupby('team').agg(
+                                pool=('player_key', 'size'),
+                                used=('apps', lambda apps: int((apps > 0).sum())),
+                            ).reset_index()
+                            order = data.sort_values(['used', 'pool'])['team'].tolist()
+                            tidy = data.melt(id_vars='team', value_vars=['pool', 'used'],
+                                             var_name='kind', value_name='players')
+                            tidy['kind'] = tidy['kind'].map({'pool': 'In the U21 pool',
+                                                             'used': 'Appeared'})
+                            fig = px.bar(
+                                tidy, x='players', y='team', color='kind',
+                                orientation='h', barmode='group',
+                                color_discrete_map={'In the U21 pool': '#95a5a6',
+                                                    'Appeared': '#F5901F'},
+                                category_orders={'team': order},
+                                title='U21 Players Available and Used',
+                                labels={'players': 'Players', 'team': '', 'kind': ''}
+                            )
+                            fig.update_layout(
+                                height=520,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("U21 Share of Club Minutes", class_="overview-card-header")
+                        @render_plotly
+                        def u21_club_share():
+                            squad = lineups_df()
+                            if squad.empty:
+                                return empty_figure("Needs the match reports for this season")
+                            club = (squad.assign(team=squad['team'].astype(str).str.upper())
+                                         .groupby(['md', 'team'])['minutes_played'].sum()
+                                         .rename('club'))
+                            u21 = u21_df().groupby(['md', 'team'])['minutes'].sum().rename('u21')
+                            both = pd.concat([club, u21], axis=1).dropna(subset=['club'])
+                            data = both.fillna(0).groupby(level='team').sum()
+                            data['share'] = (100 * data['u21'] / data['club']).round(1)
+                            data = data.reset_index().sort_values('share')
+                            fig = px.bar(
+                                data, x='share', y='team', orientation='h',
+                                color='team', color_discrete_map=TEAM_COLORS,
+                                hover_data=['u21', 'club'],
+                                title='Share of Club Minutes Played by U21 Players',
+                                labels={'share': '% of club minutes', 'team': '',
+                                        'u21': 'U21 minutes', 'club': 'Club minutes'}
+                            )
+                            fig.update_layout(
+                                showlegend=False, height=600,
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                        ui.tags.p(
+                            "Club minutes come from the team sheets, so only matchdays "
+                            "covered by the match reports count here.",
+                            style="margin: 10px 15px; color: #777; font-size: 13px;")
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Club Summary", class_="overview-card-header")
+                        @render.table
+                        def u21_club_table():
+                            season = u21_season()
+                            if season.empty:
+                                return pd.DataFrame({"": ["No U21 data for this season yet"]})
+                            table = season.groupby('team').agg(
+                                pool=('player_key', 'size'),
+                                used=('apps', lambda apps: int((apps > 0).sum())),
+                                minutes=('minutes', 'sum'),
+                                starts=('starts', 'sum'),
+                                goals=('goals', 'sum'),
+                                assists=('assists', lambda a: a.sum(min_count=1)),
+                            ).reset_index().sort_values('minutes', ascending=False)
+                            table['assists'] = table['assists'].map(u21_number)
+                            table.columns = ['Club', 'U21 Pool', 'Appeared', 'Minutes',
+                                             'Starts', 'Goals', 'Assists']
+                            return table
+
+            with ui.nav_panel("Trends"):
+                ui.tags.p(
+                    "Pick up to four U21 players to follow matchday by matchday.",
+                    style="margin: 20px 10px 0 10px; color: #555;"
+                )
+
+                with ui.div(style="margin: 16px 10px;"):
+                    ui.input_selectize(
+                        "u21_compare", "Players",
+                        choices={}, multiple=True,
+                        options={"maxItems": 4, "placeholder": "Choose players…"},
+                    )
+
+                @reactive.effect
+                def _refresh_u21_compare():
+                    """Offer the season's U21 players, busiest first."""
+                    choices = {row['player_key']: player_label(row)
+                               for _index, row in u21_season().iterrows()}
+                    with reactive.isolate():
+                        current = [p for p in (_chosen("u21_compare", None) or [])
+                                   if p in choices]
+                    if not current:
+                        current = list(choices)[:2]
+                    ui.update_selectize("u21_compare", choices=choices, selected=current)
+
+                @reactive.calc
+                def u21_trend():
+                    """Per-matchday and running totals for the chosen players."""
+                    chosen = list(_chosen("u21_compare", None) or [])
+                    rows = u21_df()
+                    if not chosen or rows.empty:
+                        return pd.DataFrame(columns=['md', 'player', 'minutes', 'ga',
+                                                     'cum_minutes', 'cum_ga'])
+                    mds = sorted(int(m) for m in rows['md'].unique())
+                    labels = {row['player_key']: player_label(row)
+                              for _index, row in u21_season().iterrows()}
+                    frames = []
+                    for key in chosen:
+                        mine = rows[rows['player_key'] == key]
+                        per_md = (mine.assign(ga=mine['goals'] + mine['assists'].fillna(0))
+                                      .groupby('md')[['minutes', 'ga']].sum()
+                                      .reindex(mds, fill_value=0))
+                        per_md['cum_minutes'] = per_md['minutes'].cumsum()
+                        per_md['cum_ga'] = per_md['ga'].cumsum()
+                        per_md['player'] = labels.get(key, key)
+                        frames.append(per_md.rename_axis('md').reset_index())
+                    return pd.concat(frames, ignore_index=True)
+
+                with ui.layout_columns(col_widths=[6, 6], style="margin: 12px 0;"):
+                    with ui.card():
+                        ui.tags.div("Running Minutes", class_="overview-card-header")
+                        @render_plotly
+                        def u21_trend_minutes():
+                            data = u21_trend()
+                            if data.empty:
+                                return empty_figure("Choose players to follow")
+                            fig = px.line(
+                                data, x='md', y='cum_minutes', color='player', markers=True,
+                                title='Minutes Played, Season to Date',
+                                labels={'md': 'Matchday', 'cum_minutes': 'Minutes',
+                                        'player': ''}
+                            )
+                            fig.update_xaxes(dtick=1)
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                    with ui.card():
+                        ui.tags.div("Running Goal Contributions",
+                                    class_="overview-card-header")
+                        @render_plotly
+                        def u21_trend_contributions():
+                            data = u21_trend()
+                            if data.empty:
+                                return empty_figure("Choose players to follow")
+                            fig = px.line(
+                                data, x='md', y='cum_ga', color='player', markers=True,
+                                title='Goals + Assists, Season to Date',
+                                labels={'md': 'Matchday', 'cum_ga': 'G+A', 'player': ''}
+                            )
+                            fig.update_xaxes(dtick=1)
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+                with ui.layout_columns(col_widths=[12], style="margin: 20px 0;"):
+                    with ui.card():
+                        ui.tags.div("Minutes per Matchday", class_="overview-card-header")
+                        @render_plotly
+                        def u21_trend_per_md():
+                            data = u21_trend()
+                            if data.empty:
+                                return empty_figure("Choose players to follow")
+                            fig = px.bar(
+                                data, x='md', y='minutes', color='player', barmode='group',
+                                title='Minutes on Each Matchday',
+                                labels={'md': 'Matchday', 'minutes': 'Minutes', 'player': ''}
+                            )
+                            fig.update_xaxes(dtick=1)
+                            fig.update_layout(
+                                plot_bgcolor='rgba(0,0,0,0)',
+                                paper_bgcolor='rgba(0,0,0,0)'
+                            )
+                            return fig
+
+    # =============================================================================
+    # PAGE 7: OFFICIALS
     # =============================================================================
     with ui.nav_panel("Officials"):
         with ui.navset_pill(id="official_tab"):
@@ -2377,7 +2930,7 @@ with ui.navset_bar(
                             data = data.sort_values('matches')
                             fig = px.bar(
                                 data, x='matches', y='referee', orientation='h',
-                                text='matches', color_discrete_sequence=['#1a5f7a'],
+                                color_discrete_sequence=['#1a5f7a'],
                                 title='Matches Refereed',
                                 labels={'matches': 'Matches', 'referee': ''}
                             )
@@ -2398,7 +2951,7 @@ with ui.navset_bar(
                             data = data.sort_values('cards_per_match')
                             fig = px.bar(
                                 data, x='cards_per_match', y='referee',
-                                orientation='h', text='cards_per_match',
+                                orientation='h',
                                 hover_data=['matches', 'cards'],
                                 color_discrete_sequence=['#e74c3c'],
                                 title='Cards Shown per Match',

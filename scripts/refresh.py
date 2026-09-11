@@ -7,7 +7,9 @@ Designed to be run on a timer and to be cheap when there is nothing to do.
 A full extract costs roughly six seconds per PDF, so re-parsing an entire
 season on every tick would take ~25 minutes.  Instead each report's extracted
 rows are cached against a fingerprint of the file (size + mtime); a run only
-pays for the reports that are genuinely new or have changed on disk.
+pays for the reports that are genuinely new or have changed on disk.  The U21
+exports (``md<N>/*U21*.xlsx``) are cheap to read, so they are simply re-read
+whenever any of them is added, changed or removed.
 
     python scripts/refresh.py                # the scheduled entry point
     python scripts/refresh.py --force        # ignore the cache, re-parse all
@@ -35,6 +37,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extract_match_data as extractor
+import extract_u21 as u21
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_DIR = Path(__file__).resolve().parent
@@ -42,6 +45,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 STATE_DIR = PROJECT_ROOT / "csvs" / ".refresh"
 CACHE_DIR = STATE_DIR / "reports"
 LOCK_FILE = STATE_DIR / "refresh.lock"
+U21_STATE = STATE_DIR / "u21.json"
 LOG_FILE = PROJECT_ROOT / "logs" / "refresh.log"
 
 #: a report whose mtime is newer than this is assumed to still be copying, and
@@ -253,14 +257,61 @@ def extract_all(force=False, quiet=False):
 
 
 # --------------------------------------------------------------------------
+# U21 exports
+# --------------------------------------------------------------------------
+
+def read_u21_state():
+    """Fingerprints of the U21 files as last read, keyed on relative path."""
+    try:
+        return json.loads(U21_STATE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def extract_u21_exports(force=False, quiet=False):
+    """Re-read the U21 exports when any has been added, changed or removed.
+
+    A workbook reads in well under a second, so there is no per-file cache:
+    the set of fingerprints alone decides whether anything changed.  While any
+    file still looks mid-copy the whole set waits for the next run.
+
+    Returns (changed, warnings).
+    """
+    files = u21.find_u21_files(extractor.DEFAULT_REPORTS_DIR)
+    waiting = [path for *_where, path in files if not settled(path)]
+    for path in waiting:
+        log(f"    deferring {path.name} (still being written)", quiet)
+    if waiting:
+        return False, []
+
+    marks = {str(path.relative_to(PROJECT_ROOT)): fingerprint(path)
+             for *_where, path in files}
+    output = extractor.DEFAULT_OUTPUT_DIR / u21.OUTPUT_NAME
+    if not force and output.exists() and read_u21_state() == marks:
+        return False, []
+
+    rows, warnings = u21.extract_files(files)
+    extractor.write_csv(output, u21.U21_COLUMNS, rows)
+    U21_STATE.parent.mkdir(parents=True, exist_ok=True)
+    U21_STATE.write_text(json.dumps(marks), encoding="utf-8")
+    log(f"  wrote csvs/new/{u21.OUTPUT_NAME}: {len(rows)} row(s) from "
+        f"{len(files)} U21 file(s)", quiet)
+    return True, warnings
+
+
+# --------------------------------------------------------------------------
 # downstream steps
 # --------------------------------------------------------------------------
 
 def run_step(name, command):
     """Run a child script, folding its output into the log."""
     log(f"running {name}...")
+    # The child's stdout is a pipe, which Windows Python encodes as cp1252 by
+    # default; wrangle.py prints check marks, so make the pipe UTF-8 to match
+    # how it is read back here.
+    env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
     result = subprocess.run(command, cwd=PROJECT_ROOT, capture_output=True,
-                            text=True, encoding="utf-8", errors="replace")
+                            text=True, encoding="utf-8", errors="replace", env=env)
     if result.returncode != 0:
         log(f"!! {name} failed (exit {result.returncode})")
         for line in (result.stderr or result.stdout or "").strip().splitlines()[-15:]:
@@ -314,7 +365,12 @@ def main(argv=None):
                 if read_cache(relative, fingerprint(pdf)) is None:
                     pending.append(f"{league} {season}  {pdf.name}"
                                    f"{'' if settled(pdf) else '  (still writing)'}")
-        print(f"{len(pending)} report(s) would be parsed")
+        saved = read_u21_state()
+        for league, season, md, path in u21.find_u21_files(extractor.DEFAULT_REPORTS_DIR):
+            if saved.get(str(path.relative_to(PROJECT_ROOT))) != fingerprint(path):
+                pending.append(f"{league} {season}  md{md} {path.name}  (U21 export)"
+                               f"{'' if settled(path) else '  (still writing)'}")
+        print(f"{len(pending)} file(s) would be read")
         for item in pending:
             print("  " + item)
         return 0
@@ -330,6 +386,13 @@ def main(argv=None):
         changed, parsed, cached, deferred, warnings = extract_all(args.force, args.quiet)
         log(f"extract: {parsed} parsed, {cached} from cache, {deferred} deferred",
             args.quiet)
+
+        u21_changed, u21_warnings = extract_u21_exports(args.force, args.quiet)
+        changed = changed or u21_changed
+        # data-quality notes on an export are logged, but unlike a score-line
+        # mismatch they are never a reason to hold back a deploy
+        for warning in u21_warnings:
+            log(f"   U21: {warning}", args.quiet)
 
         if not changed:
             log(f"nothing new; finished in {time.time() - started:.1f}s", args.quiet)
