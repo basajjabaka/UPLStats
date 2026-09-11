@@ -59,7 +59,7 @@ STALE_LOCK_HOURS = 6
 #: from an older version are re-parsed even though the PDF itself has not
 #: changed -- without this, adding an output would leave every report "up to
 #: date" and the new file permanently empty.
-CACHE_VERSION = 2
+CACHE_VERSION = 3
 
 OUTPUT_FILES = (
     ("goalsNew.csv", extractor.GOAL_COLUMNS, "goals"),

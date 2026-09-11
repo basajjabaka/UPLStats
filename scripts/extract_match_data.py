@@ -569,22 +569,59 @@ def _read_squad_block(page, top, bottom, x_min, x_max, legend):
     return players
 
 
+#: the two team-sheet tables, each headed with its own printed count
+SQUAD_HEADINGS = ("STARTING", "SUBSTITUTES")
+SQUAD_COUNT_RE = re.compile(r"^\((\d+)\)$")
+
+
+def _squad_headings(page):
+    """(word, printed count) for every team-sheet heading on a page.
+
+    Each table is headed with its own count -- STARTING (11), SUBSTITUTES (9) --
+    once over each side's block.  A heading word only counts with that "(n)"
+    beside it, which keeps a stray STARTING elsewhere on the page from opening a
+    table; a page that prints no counts at all falls back to the bare words.
+    """
+    found = []
+    for word in page["words"]:
+        if word["text"] not in SQUAD_HEADINGS:
+            continue
+        following = sorted((w for w in page["words"]
+                            if abs(w["top"] - word["top"]) < 2
+                            and 0 < w["x0"] - word["x1"] < 20),
+                           key=lambda w: w["x0"])
+        count = next((int(m.group(1)) for m in (SQUAD_COUNT_RE.match(w["text"])
+                                                for w in following) if m), None)
+        if count is not None:
+            found.append((word, count))
+    if found:
+        return found
+    return [(word, None) for word in page["words"] if word["text"] in SQUAD_HEADINGS]
+
+
 def _block_bounds(page, heading):
     """Vertical extent of a titled block such as STARTING or SUBSTITUTES.
 
-    SUBSTITUTES shares its page with MATCH EVENTS, whose table spans both squad
-    columns; without stopping at that heading the two tables merge into one run
-    and the block splitter finds no gutter.
+    A block runs from its heading down to whichever comes first:
+
+    * the next team-sheet heading below it -- some reports print SUBSTITUTES (n)
+      on the same page as STARTING (11), and without this stop the starting
+      block swallows the substitutes table and reads every substitute twice;
+    * MATCH EVENTS, whose table spans both squad columns and would otherwise
+      merge with the block into one run the block splitter cannot divide;
+    * the foot of the page, when the next table is printed overleaf.
     """
-    tops = [w["top"] for w in page["words"] if w["text"] == heading]
+    headings = _squad_headings(page)
+    tops = [word["top"] for word, _count in headings if word["text"] == heading]
     if not tops:
         return None
     top = min(tops)
-    bottom = page["height"]
+    # strictly lower: the other side's heading sits on the same line
+    stops = [word["top"] for word, _count in headings if word["top"] > top + 2]
     events = _heading_word(page, "MATCH", "EVENTS")
     if events is not None and events["top"] > top:
-        bottom = events["top"]
-    return top, bottom
+        stops.append(events["top"])
+    return top, min([page["height"]] + stops)
 
 
 def read_squads(pages, meta):
@@ -637,18 +674,9 @@ def _declared_count(page, heading, side):
     so this is what the extracted rows get validated against.
     """
     split = page["width"] / 2.0
-    for word in page["words"]:
-        if word["text"] != heading:
-            continue
-        on_left = word["x0"] < split
-        if (side == "home") != on_left:
-            continue
-        following = [w for w in page["words"]
-                     if abs(w["top"] - word["top"]) < 2 and 0 < w["x0"] - word["x1"] < 20]
-        for candidate in sorted(following, key=lambda w: w["x0"]):
-            found = re.match(r"^\((\d+)\)$", candidate["text"])
-            if found:
-                return int(found.group(1))
+    for word, count in _squad_headings(page):
+        if word["text"] == heading and (word["x0"] < split) == (side == "home"):
+            return count
     return None
 
 
