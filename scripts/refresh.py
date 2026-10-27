@@ -8,7 +8,7 @@ A full extract costs roughly six seconds per PDF, so re-parsing an entire
 season on every tick would take ~25 minutes.  Instead each report's extracted
 rows are cached against a fingerprint of the file (size + mtime); a run only
 pays for the reports that are genuinely new or have changed on disk.  The U21
-exports (``md<N>/*U21*.xlsx``) are cheap to read, so they are simply re-read
+exports (``md<N>/*U21*.xlsx`` or ``.csv``) are cheap to read, so they are simply re-read
 whenever any of them is added, changed or removed.
 
     python scripts/refresh.py                # the scheduled entry point

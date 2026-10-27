@@ -1,73 +1,401 @@
 league,season,md,source_file,player,name_key,team,club,position,jersey,nationality,player_id,date_of_birth,apps,minutes,starts,sub_in,sub_out,goals,own_goals,assists,penalties,yellows,reds_direct,reds_second_yellow
-UPL,2026/27,1,U21_stats_sample.xlsx,Ashraf Lukyamuzi,ASHRAF LUKYAMUZI,KCCA,KCCA FC,,45,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,2,175,2,0,1,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,2,124,2,0,2,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,2,79,0,2,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Kennedy Muserero,KENNEDY MUSERERO,KCCA,KCCA FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Ukasha Abudshafie Jemba,ABUDSHAFIE JEMBA UKASHA,KCCA,KCCA FC,,49,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,1,38,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,2,122,1,1,0,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Martin Mamer Mabior,MABIOR MAMER MARTIN,VILLA,SC Villa,,52,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,2,148,2,0,2,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,1,5,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,2,42,0,2,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Jonathan Sausa,JONATHAN SAUSA,VILLA,SC Villa,,77,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,,38,Uganda,,,1,21,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Hakim Wandera,HAKIM WANDERA,NEC,NEC FC,,40,Uganda,,,2,180,2,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,,42,Uganda,,,2,140,2,0,2,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Lwenda Sowedi,LWENDA SOWEDI,BUL,BUL FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,2,140,2,0,2,1,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Innocent Odong Rwothomiyo,INNOCENT ODONG RWOTHOMIYO,BUL,BUL FC,Midfield,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Denis Ssewagudde,DENIS SSEWAGUDDE,BUL,BUL FC,Midfield,43,Uganda,,,2,180,2,0,0,0,0,1,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,2,180,2,0,0,1,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,2,94,1,1,0,0,0,1,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,David Mugalu,DAVID MUGALU,BUL,BUL FC,Forward,32,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Godfrey Sekibengo,GODFREY SEKIBENGO,URA,URA FC,,30,Uganda,,,2,134,1,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,64,0,1,0,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Abdu Magada,ABDU MAGADA,URA,URA FC,,29,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Elvis Ssekajjugo,ELVIS SSEKAJJUGO,URA,URA FC,,14,Uganda,,,1,8,0,1,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Martin Parcel Kayiwa,KAYIWA MARTIN PARCEL,URA,URA FC,,62,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Emanuel Oula,EMANUEL OULA,URA,URA FC,,55,Uganda,,,1,26,1,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Jackson Ssembatya,JACKSON SSEMBATYA,KITARA,Kitara FC,,21,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Travor Charles Bbosa,BBOSA CHARLES TRAVOR,KITARA,Kitara FC,,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,29,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,77,Uganda,,,1,55,1,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,,,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,47,Uganda,,,1,31,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Mugisha Jonah,JONAH MUGISHA,EXPRESS,Express FC,Forward,44,Uganda,,,1,31,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,2,40,0,2,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,2,173,2,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Henry Kayemba,HENRY KAYEMBA,POLICE,POLICE FOOTBALL CLUB,Midfield,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Simon Olele,OLELE SIMON,POLICE,POLICE FOOTBALL CLUB,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,2,180,2,0,0,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Ashiraf Kavuma,ASHIRAF KAVUMA,MAROONS,Maroons FC,,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Lameka Tamale,LAMEKA TAMALE,MAROONS,Maroons FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,2,150,2,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Isaac Arinda,ARINDA ISAAC,MBARARA,Mbarara City FC,,40,Uganda,,,1,21,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Stuart Hussein Kafuluma,HUSSEIN KAFULUMA STUART,MBARARA,Mbarara City FC,,36,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Iran Musinguzi,IRAN MUSINGUZI,MBARARA,Mbarara City FC,,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,2,180,2,0,0,0,0,0,0,1,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Allan Batali Igama,ALLAN BATALI IGAMA,LUGAZI,Lugazi FC,Goalkeeper,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Muhammad Kakooza,KAKOOZA MUHAMMAD,LUGAZI,Lugazi FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,2,24,0,2,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Arode Ayesiga,ARODE AYESIGA,UPDF,UPDF FC,Forward,37,Uganda,,,1,53,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Joel Ineah,INEAH JOEL,UPDF,UPDF FC,Forward,40,Uganda,,,1,79,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Yusuf Bogere,BOGERE YUSUF,ENTEBBE,ENTEBBE UPPC FC,Midfield,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,2,153,2,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Dan Daris Kazibwe,DAN DARIS KAZIBWE,ENTEBBE,ENTEBBE UPPC FC,Forward,28,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,1,0,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Jonathan Tahinduka,JONATHAN TAHINDUKA,KIGEZI,Kigezi Home Boyz FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Julius Barasa,BARASA JULIUS,KIGEZI,Kigezi Home Boyz FC,,36,Uganda,,,1,82,1,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,30,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Richard Lempani,LEMPANI RICHARD,KATAKA,Kataka FC,Midfield,35,Uganda,,,1,18,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,2,180,2,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,,32,Uganda,,,2,136,2,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Charles Okello Batiibwe,BATIIBWE CHARLES OKELLO,NTUGASAZE,NTUGASAZE FC,Defender,35,Uganda,,,1,73,1,0,1,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Amisi Muba,AMISI MUBA,NTUGASAZE,NTUGASAZE FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Hamza Bukenya,BUKENYA HAMZA,NTUGASAZE,NTUGASAZE FC,Defender,40,Uganda,,,1,17,0,1,0,0,0,0,0,0,0,0
-UPL,2026/27,1,U21_stats_sample.xlsx,Simon Mukisa,MUKISA SIMON,NTUGASAZE,NTUGASAZE FC,Defender,39,Uganda,,,2,180,2,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,1,44,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,52,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Kennedy Muserero,KENNEDY MUSERERO,KCCA,KCCA FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ukasha Abudshafie Jemba,ABUDSHAFIE JEMBA UKASHA,KCCA,KCCA FC,,49,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ashraf Lukyamuzi,ASHRAF LUKYAMUZI,KCCA,KCCA FC,,45,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,1,38,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,28,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,1,90,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Martin Mamer Mabior,MABIOR MAMER MARTIN,VILLA,SC Villa,,52,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Jonathan Sausa,JONATHAN SAUSA,VILLA,SC Villa,,77,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,Midfield,38,Uganda,,,1,21,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,Midfield,42,Uganda,,,1,69,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Hakim Wandera,HAKIM WANDERA,NEC,NEC FC,Defender,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,1,90,1,0,0,1,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,1,90,1,0,0,0,0,1,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,1,54,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Innocent Odong Rwothomiyo,INNOCENT ODONG RWOTHOMIYO,BUL,BUL FC,Midfield,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Lwenda Sowedi,LWENDA SOWEDI,BUL,BUL FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Denis Ssewagudde,DENIS SSEWAGUDDE,BUL,BUL FC,Midfield,43,Uganda,,,1,90,1,0,0,0,0,1,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,David Mugalu,DAVID MUGALU,BUL,BUL FC,Forward,32,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,64,0,1,0,0,0,0,0,1,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Godfrey Sekibengo,GODFREY SEKIBENGO,URA,URA FC,,30,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Elvis Ssekajjugo,ELVIS SSEKAJJUGO,URA,URA FC,,14,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Martin Parcel Kayiwa,KAYIWA MARTIN PARCEL,URA,URA FC,,62,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Emanuel Oula,EMANUEL OULA,URA,URA FC,,36,Uganda,,,1,26,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Mugisha Jonah,JONAH MUGISHA,EXPRESS,Express FC,Forward,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,55,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,1,30,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,1,83,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ashiraf Kavuma,ASHIRAF KAVUMA,MAROONS,Maroons FC,,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Lameka Tamale,LAMEKA TAMALE,MAROONS,Maroons FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Muhammad Kakooza,KAKOOZA MUHAMMAD,LUGAZI,Lugazi FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,1,7,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Joel Ineah,INEAH JOEL,UPDF,UPDF FC,Forward,40,Uganda,,,1,79,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Arode Ayesiga,ARODE AYESIGA,UPDF,UPDF FC,Forward,37,Uganda,,,1,53,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,Forward,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Yusuf Bogere,BOGERE YUSUF,ENTEBBE,ENTEBBE UPPC FC,Midfield,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Dan Daris Kazibwe,DAN DARIS KAZIBWE,ENTEBBE,ENTEBBE UPPC FC,Forward,28,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,63,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Mitrail-ndza Sam Rutherford Yannick,MITRAIL-NDZA RUTHERFORD SAM YANNICK,ENTEBBE,ENTEBBE UPPC FC,Defender,29,Republic of the Congo,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,Midfield,37,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Richard Lempani,LEMPANI RICHARD,KATAKA,Kataka FC,Midfield,38,Uganda,,,1,18,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Hamza Bukenya,BUKENYA HAMZA,NTUGASAZE,NTUGASAZE FC,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Ronald Kaye,KAYE RONALD,NTUGASAZE,NTUGASAZE FC,Forward,30,Uganda,,,1,74,1,0,1,1,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Amisi Muba,AMISI MUBA,NTUGASAZE,NTUGASAZE FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,2,U21_stats_md2.csv,Simon Mukisa,MUKISA SIMON,NTUGASAZE,NTUGASAZE FC,Defender,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,1,72,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,1,72,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,18,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Kennedy Muserero,KENNEDY MUSERERO,KCCA,KCCA FC,,39,Uganda,,,1,31,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ukasha Abudshafie Jemba,ABUDSHAFIE JEMBA UKASHA,KCCA,KCCA FC,,49,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ashraf Lukyamuzi,ASHRAF LUKYAMUZI,KCCA,KCCA FC,,45,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,1,18,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Thomas Ogema,OGEMA THOMAS,KCCA,KCCA FC,Midfield,63,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,47,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Martin Mamer Mabior,MABIOR MAMER MARTIN,VILLA,SC Villa,,52,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Jonathan Sausa,JONATHAN SAUSA,VILLA,SC Villa,,77,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,Midfield,38,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,Midfield,42,Uganda,,,1,78,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,1,90,1,0,0,1,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,1,70,1,0,1,0,0,0,0,1,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,1,46,1,0,1,1,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Lwenda Sowedi,LWENDA SOWEDI,BUL,BUL FC,Midfield,41,Uganda,,,1,20,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Denis Ssewagudde,DENIS SSEWAGUDDE,BUL,BUL FC,Midfield,43,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,David Mugalu,DAVID MUGALU,BUL,BUL FC,Forward,32,Uganda,,,1,39,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Mugisha Jonah,JONAH MUGISHA,EXPRESS,Express FC,Forward,44,Uganda,,,1,8,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,69,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Marvin Ssali Sebirago,MARVIN SEBIRAGO SSALI,EXPRESS,Express FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,1,90,1,0,0,1,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ashiraf Kavuma,ASHIRAF KAVUMA,MAROONS,Maroons FC,,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Habibu Kintu,HABIBU KINTU,MAROONS,Maroons FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,1,88,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Lameka Tamale,LAMEKA TAMALE,MAROONS,Maroons FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ambrose Arinda,AMBROSE ARINDA,MBARARA,Mbarara City FC,Defender,6,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Isaac Arinda,ARINDA ISAAC,MBARARA,Mbarara City FC,Midfield,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Stuart Hussein Kafuluma,HUSSEIN KAFULUMA STUART,MBARARA,Mbarara City FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Iran Musinguzi,IRAN MUSINGUZI,MBARARA,Mbarara City FC,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Patrick Abaho,ABAHO PATRICK,MBARARA,Mbarara City FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Hassan Akoragye,AKORAGYE HASSAN,MBARARA,Mbarara City FC,Defender,50,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Muhammad Kakooza,KAKOOZA MUHAMMAD,LUGAZI,Lugazi FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Birungi Alvin Twiine,ALVIN BIRUNGI TWIINE,LUGAZI,Lugazi FC,Midfield,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Joel Ineah,INEAH JOEL,UPDF,UPDF FC,Forward,40,Uganda,,,1,8,0,1,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Arode Ayesiga,ARODE AYESIGA,UPDF,UPDF FC,Forward,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,Forward,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Jonathan Poro,JONATHAN PORO,UPDF,UPDF FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Stephen Edema Kandaruku,EDEMA KANDARUKU STEPHEN,UPDF,UPDF FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Yusuf Bogere,BOGERE YUSUF,ENTEBBE,ENTEBBE UPPC FC,Midfield,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Dan Daris Kazibwe,DAN DARIS KAZIBWE,ENTEBBE,ENTEBBE UPPC FC,Forward,28,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,65,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Mitrail-ndza Sam Rutherford Yannick,MITRAIL-NDZA RUTHERFORD SAM YANNICK,ENTEBBE,ENTEBBE UPPC FC,Defender,29,Republic of the Congo,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,1,50,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Julius Barasa,BARASA JULIUS,KIGEZI,Kigezi Home Boyz FC,,36,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Jonathan Tahinduka,JONATHAN TAHINDUKA,KIGEZI,Kigezi Home Boyz FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Darius Arinaitwe,ARINAITWE DARIUS,KIGEZI,Kigezi Home Boyz FC,,42,Uganda,,,1,40,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Charles Okello Batiibwe,BATIIBWE CHARLES OKELLO,NTUGASAZE,NTUGASAZE FC,Defender,35,Uganda,,,1,26,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Hamza Bukenya,BUKENYA HAMZA,NTUGASAZE,NTUGASAZE FC,Defender,40,Uganda,,,1,9,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Ronald Kaye,KAYE RONALD,NTUGASAZE,NTUGASAZE FC,Forward,30,Uganda,,,1,81,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Simon Mukisa,MUKISA SIMON,NTUGASAZE,NTUGASAZE FC,Defender,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,3,U21_stats_md3.csv,Mido Haikhan Karutha,HAIKHAN KARUTHA MIDO,NTUGASAZE,NTUGASAZE FC,Midfield,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Ashraf Lukyamuzi,ASHRAF LUKYAMUZI,KCCA,KCCA FC,,45,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,1,60,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,1,30,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Kennedy Muserero,KENNEDY MUSERERO,KCCA,KCCA FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Thomas Ogema,OGEMA THOMAS,KCCA,KCCA FC,Midfield,63,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Martin Mamer Mabior,MABIOR MAMER MARTIN,VILLA,SC Villa,,52,Uganda,,,1,44,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,1,46,1,0,1,0,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,,42,Uganda,,,1,90,1,0,0,1,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Gilbert Mazige,GILBERT MAZIGE,NEC,NEC FC,,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Lwenda Sowedi,LWENDA SOWEDI,BUL,BUL FC,Midfield,41,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,1,5,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Denis Ssewagudde,DENIS SSEWAGUDDE,BUL,BUL FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,1,90,1,0,0,1,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Godfrey Sekibengo,GODFREY SEKIBENGO,URA,URA FC,,30,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,69,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Elvis Ssekajjugo,ELVIS SSEKAJJUGO,URA,URA FC,,14,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Martin Parcel Kayiwa,KAYIWA MARTIN PARCEL,URA,URA FC,,62,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Emanuel Oula,EMANUEL OULA,URA,URA FC,,36,Uganda,,,1,21,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Travor Charles Bbosa,BBOSA CHARLES TRAVOR,KITARA,Kitara FC,,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,85,1,0,1,0,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,Midfield,43,Uganda,,,1,0,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Marvin Ssali Sebirago,MARVIN SEBIRAGO SSALI,EXPRESS,Express FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,1,3,0,1,0,1,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Henry Kayemba,HENRY KAYEMBA,POLICE,POLICE FOOTBALL CLUB,Midfield,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Ashiraf Kavuma,ASHIRAF KAVUMA,MAROONS,Maroons FC,,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Lameka Tamale,LAMEKA TAMALE,MAROONS,Maroons FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Habibu Kintu,HABIBU KINTU,MAROONS,Maroons FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,1,64,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Iran Musinguzi,IRAN MUSINGUZI,MBARARA,Mbarara City FC,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Hassan Akoragye,AKORAGYE HASSAN,MBARARA,Mbarara City FC,Defender,50,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Birungi Alvin Twiine,ALVIN BIRUNGI TWIINE,LUGAZI,Lugazi FC,Midfield,40,Uganda,,,1,18,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Muhammad Kakooza,KAKOOZA MUHAMMAD,LUGAZI,Lugazi FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,1,47,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Oscar Otim,OSCAR OTIM,BLACKS,Blacks Power FC,,37,Uganda,,,1,52,1,0,1,1,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,Forward,42,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Jonathan Poro,JONATHAN PORO,UPDF,UPDF FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Stephen Edema Kandaruku,EDEMA KANDARUKU STEPHEN,UPDF,UPDF FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Jonathan Tahinduka,JONATHAN TAHINDUKA,KIGEZI,Kigezi Home Boyz FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Julius Barasa,BARASA JULIUS,KIGEZI,Kigezi Home Boyz FC,,36,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,4,U21_stats_md4.csv,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Osman Mayanja,MAYANJA OSMAN,KIGEZI,Kigezi Home Boyz FC,,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Richard Lempani,LEMPANI RICHARD,KATAKA,Kataka FC,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,Midfield,37,Uganda,,,1,70,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Bwanika Ivan,BWANIKA IVAN,KATAKA,Kataka FC,Defender,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Abduwahab Tumwine,ABDUWAHAB TUMWINE,KATAKA,Kataka FC,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Charles Okello Batiibwe,BATIIBWE CHARLES OKELLO,NTUGASAZE,NTUGASAZE FC,Defender,35,Uganda,,,1,78,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Amisi Muba,AMISI MUBA,NTUGASAZE,NTUGASAZE FC,Goalkeeper,36,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Simon Mukisa,MUKISA SIMON,NTUGASAZE,NTUGASAZE FC,Defender,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,4,U21_stats_md4.csv,Mido Haikhan Karutha,HAIKHAN KARUTHA MIDO,NTUGASAZE,NTUGASAZE FC,Midfield,37,Uganda,,,1,12,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Amour Munogera,AMOUR MUNOGERA,VIPERS,Vipers SC,Midfield,34,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Abubakali Walusimbi,ABUBAKALI WALUSIMBI,VIPERS,Vipers SC,,77,Uganda,,,1,29,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,1,44,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Thomas Ogema,OGEMA THOMAS,KCCA,KCCA FC,Midfield,63,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Shafique Kasujja,KASUJJA SHAFIQUE,KCCA,KCCA FC,Midfield,70,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Edrisah Waibi,EDRISAH WAIBI,KCCA,KCCA FC,Goalkeeper,18,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ukasha Kato,KATO UKASHA,VILLA,SC Villa,Midfield,55,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ibrahim Mubiru,IBRAHIM MUBIRU,VILLA,SC Villa,Forward,53,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Musa Ibrahim,IBRAHIM MUSA,NEC,NEC FC,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,Midfield,42,Uganda,,,1,66,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Gilbert Mazige,GILBERT MAZIGE,NEC,NEC FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Denis Luzige Kisiriko,DENIS KISIRIKO LUZIGE,URA,URA FC,,28,Uganda,,,1,25,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,13,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Godfrey Sekibengo,GODFREY SEKIBENGO,URA,URA FC,,30,Uganda,,,1,77,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Emanuel Oula,EMANUEL OULA,URA,URA FC,,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Alex Yiga,ALEX YIGA,URA,URA FC,Forward,44,Uganda,,,1,65,1,0,1,0,0,0,0,1,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Edward Namaasa,EDWARD NAMAASA,KITARA,Kitara FC,,26,Uganda,,,1,90,1,0,0,1,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,58,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Marvin Ssali Sebirago,MARVIN SEBIRAGO SSALI,EXPRESS,Express FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,1,44,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Henry Kayemba,HENRY KAYEMBA,POLICE,POLICE FOOTBALL CLUB,Midfield,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,1,58,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ashiraf Kavuma,ASHIRAF KAVUMA,MAROONS,Maroons FC,,41,Uganda,,,1,3,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Kakande Davis Ssekitto,DAVIS KAKANDE SSEKITTO,MAROONS,Maroons FC,,35,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Ambrose Arinda,AMBROSE ARINDA,MBARARA,Mbarara City FC,Defender,6,Uganda,,,1,78,1,0,0,0,0,0,0,0,1,0
+UPL,2026/27,5,U21_stats_md5.csv,Iran Musinguzi,IRAN MUSINGUZI,MBARARA,Mbarara City FC,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Hassan Akoragye,AKORAGYE HASSAN,MBARARA,Mbarara City FC,Defender,50,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Allan Batali Igama,ALLAN BATALI IGAMA,LUGAZI,Lugazi FC,Goalkeeper,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Birungi Alvin Twiine,ALVIN BIRUNGI TWIINE,LUGAZI,Lugazi FC,Midfield,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Alex Akankwasa,AKANKWASA ALEX,LUGAZI,Lugazi FC,Defender,25,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Oscar Otim,OSCAR OTIM,BLACKS,Blacks Power FC,,37,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Dan Daris Kazibwe,DAN DARIS KAZIBWE,ENTEBBE,ENTEBBE UPPC FC,Forward,28,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,24,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Mitrail-ndza Sam Rutherford Yannick,MITRAIL-NDZA RUTHERFORD SAM YANNICK,ENTEBBE,ENTEBBE UPPC FC,Defender,29,Republic of the Congo,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,1,38,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Jonathan Tahinduka,JONATHAN TAHINDUKA,KIGEZI,Kigezi Home Boyz FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Joseph Jjemba,JJEMBA JOSEPH,KIGEZI,Kigezi Home Boyz FC,,43,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,Midfield,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Richard Lempani,LEMPANI RICHARD,KATAKA,Kataka FC,Midfield,38,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Bwanika Ivan,BWANIKA IVAN,KATAKA,Kataka FC,Defender,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Abduwahab Tumwine,ABDUWAHAB TUMWINE,KATAKA,Kataka FC,Defender,40,Uganda,,,1,86,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Hamza Bukenya,BUKENYA HAMZA,NTUGASAZE,NTUGASAZE FC,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Mido Haikhan Karutha,HAIKHAN KARUTHA MIDO,NTUGASAZE,NTUGASAZE FC,Midfield,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,5,U21_stats_md5.csv,Mahadi Mugerwa,MAHADI MUGERWA,NTUGASAZE,NTUGASAZE FC,Defender,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Amour Munogera,AMOUR MUNOGERA,VIPERS,Vipers SC,Midfield,34,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Abubakali Walusimbi,ABUBAKALI WALUSIMBI,VIPERS,Vipers SC,,77,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,1,65,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Thomas Ogema,OGEMA THOMAS,KCCA,KCCA FC,Midfield,63,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Travor Mubiru,MUBIRU TRAVOR,KCCA,KCCA FC,Defender,62,Uganda,,,1,25,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Shafique Kasujja,KASUJJA SHAFIQUE,KCCA,KCCA FC,Midfield,70,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Edrisah Waibi,EDRISAH WAIBI,KCCA,KCCA FC,Goalkeeper,18,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,80,1,0,1,1,0,1,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,1,17,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Jonathan Sausa,JONATHAN SAUSA,VILLA,SC Villa,,77,Uganda,,,1,10,0,1,0,1,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Ibrahim Mubiru,IBRAHIM MUBIRU,VILLA,SC Villa,Forward,53,Uganda,,,1,10,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Musa Ibrahim,IBRAHIM MUSA,NEC,NEC FC,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,Midfield,42,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Gilbert Mazige,GILBERT MAZIGE,NEC,NEC FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,1,15,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Yabil Busingye Amis,AMIS BUSINGYE YABIL,BUL,BUL FC,Midfield,54,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Richard Okello,OKELLO RICHARD,BUL,BUL FC,,37,Uganda,,,1,64,1,1,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Eric Kibirango,ERIC KIBIRANGO,BUL,BUL FC,Midfield,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Denis Luzige Kisiriko,DENIS KISIRIKO LUZIGE,URA,URA FC,,28,Uganda,,,1,83,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,7,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Godfrey Sekibengo,GODFREY SEKIBENGO,URA,URA FC,,30,Uganda,,,1,30,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Emanuel Oula,EMANUEL OULA,URA,URA FC,,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Alex Yiga,ALEX YIGA,URA,URA FC,Forward,44,Uganda,,,1,60,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Edward Namaasa,EDWARD NAMAASA,KITARA,Kitara FC,,26,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,70,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Keiden King Lubowa,KEIDEN KING LUBOWA,EXPRESS,Express FC,Midfield,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Marvin Ssali Sebirago,MARVIN SEBIRAGO SSALI,EXPRESS,Express FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,1,54,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,1,36,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Simon Olele,OLELE SIMON,POLICE,POLICE FOOTBALL CLUB,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Alli Ismael,ALLI ISMAEL,MAROONS,Maroons FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Jamal Ssemwogerere,JAMAL SSEMWOGERERE,MAROONS,Maroons FC,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Kakande Davis Ssekitto,DAVIS KAKANDE SSEKITTO,MAROONS,Maroons FC,,35,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Iran Musinguzi,IRAN MUSINGUZI,MBARARA,Mbarara City FC,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Hassan Akoragye,AKORAGYE HASSAN,MBARARA,Mbarara City FC,Defender,50,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Allan Batali Igama,ALLAN BATALI IGAMA,LUGAZI,Lugazi FC,Goalkeeper,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Muhammad Kakooza,KAKOOZA MUHAMMAD,LUGAZI,Lugazi FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Birungi Alvin Twiine,ALVIN BIRUNGI TWIINE,LUGAZI,Lugazi FC,Midfield,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Alex Akankwasa,AKANKWASA ALEX,LUGAZI,Lugazi FC,Defender,25,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,1,8,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Oscar Otim,OSCAR OTIM,BLACKS,Blacks Power FC,,37,Uganda,,,1,46,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Arode Ayesiga,ARODE AYESIGA,UPDF,UPDF FC,Forward,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,Forward,42,Uganda,,,1,55,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Jonathan Poro,JONATHAN PORO,UPDF,UPDF FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Dan Daris Kazibwe,DAN DARIS KAZIBWE,ENTEBBE,ENTEBBE UPPC FC,Forward,28,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,66,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Mitrail-ndza Sam Rutherford Yannick,MITRAIL-NDZA RUTHERFORD SAM YANNICK,ENTEBBE,ENTEBBE UPPC FC,Defender,29,Republic of the Congo,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,39,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Osman Mayanja,MAYANJA OSMAN,KIGEZI,Kigezi Home Boyz FC,,40,Uganda,,,1,38,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Joseph Jjemba,JJEMBA JOSEPH,KIGEZI,Kigezi Home Boyz FC,,43,Uganda,,,1,34,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,Midfield,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Richard Lempani,LEMPANI RICHARD,KATAKA,Kataka FC,Midfield,38,Uganda,,,2,115,2,0,2,0,0,0,0,1,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,1,58,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Bwanika Ivan,BWANIKA IVAN,KATAKA,Kataka FC,Defender,39,Uganda,,,1,20,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Abduwahab Tumwine,ABDUWAHAB TUMWINE,KATAKA,Kataka FC,Defender,40,Uganda,,,2,180,2,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Paul Marko Teny,MARKO PAUL TENY,KATAKA,Kataka FC,Forward,41,Uganda,,,1,40,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Hamza Bukenya,BUKENYA HAMZA,NTUGASAZE,NTUGASAZE FC,Defender,40,Uganda,,,1,2,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Simon Mukisa,MUKISA SIMON,NTUGASAZE,NTUGASAZE FC,Defender,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,6,U21_stats_md6.csv,Mido Haikhan Karutha,HAIKHAN KARUTHA MIDO,NTUGASAZE,NTUGASAZE FC,Midfield,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Amour Munogera,AMOUR MUNOGERA,VIPERS,Vipers SC,Midfield,34,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Abubakali Walusimbi,ABUBAKALI WALUSIMBI,VIPERS,Vipers SC,,77,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Ismail Fahad,FAHAD ISMAIL,KCCA,KCCA FC,,47,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Brian Jjara,BRIAN JJARA,KCCA,KCCA FC,,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Lazaro Muhindo,LAZARO MUHINDO,KCCA,KCCA FC,,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Joseph Junior Jude Kakooza,JOSEPH JUDE JUNIOR KAKOOZA,KCCA,KCCA FC,,57,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Thomas Ogema,OGEMA THOMAS,KCCA,KCCA FC,Midfield,63,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Travor Mubiru,MUBIRU TRAVOR,KCCA,KCCA FC,Defender,62,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Edrisah Waibi,EDRISAH WAIBI,KCCA,KCCA FC,Goalkeeper,18,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,John Asiimwe,ASIIMWE JOHN,VILLA,SC Villa,Midfield,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Ogenrwot Jimmy Gilbert,GILBERT JIMMY OGENRWOT,VILLA,SC Villa,Midfield,38,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Raymon Barasa Mangoli,BARASA MANGOLI RAYMON,VILLA,SC Villa,Defender,37,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Steven Mugisha,MUGISHA STEVEN,VILLA,SC Villa,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Tonny Ssendi Kiyaga,KIYAGA SSENDI TONNY,VILLA,SC Villa,Defender,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Joel Arthur Kirabo Sembatya,ARTHUR JOEL KIRABO SEMBATYA,VILLA,SC Villa,Defender,25,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Ibrahim Mubiru,IBRAHIM MUBIRU,VILLA,SC Villa,Forward,53,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Musa Ibrahim,IBRAHIM MUSA,NEC,NEC FC,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Emmanuel Kulanga,EMMANUEL KULANGA,NEC,NEC FC,Midfield,38,Uganda,,,1,6,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Enrique Lubwama,ENRIQUE LUBWAMA,NEC,NEC FC,Midfield,42,Uganda,,,1,33,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Hakim Wandera,HAKIM WANDERA,NEC,NEC FC,Defender,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Gilbert Mazige,GILBERT MAZIGE,NEC,NEC FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Hakim Kawuki,HAKIM KAWUKI,NEC,NEC FC,Defender,43,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Simon Achidi,ACHIDI SIMON,BUL,BUL FC,Midfield,39,Uganda,,,2,73,1,1,1,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Frank Katongole,FRANK KATONGOLE,BUL,BUL FC,Midfield,8,Uganda,,,2,169,2,0,1,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Swabir Mpasa,MPASA SWABIR,BUL,BUL FC,Midfield,38,Uganda,,,2,38,0,2,0,1,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Innocent Odong Rwothomiyo,INNOCENT ODONG RWOTHOMIYO,BUL,BUL FC,Midfield,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Lwenda Sowedi,LWENDA SOWEDI,BUL,BUL FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Yabil Busingye Amis,AMIS BUSINGYE YABIL,BUL,BUL FC,Midfield,54,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Richard Okello,OKELLO RICHARD,BUL,BUL FC,,37,Uganda,,,2,127,2,0,2,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,David Mugalu,DAVID MUGALU,BUL,BUL FC,Forward,32,Uganda,,,1,26,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Eric Kibirango,ERIC KIBIRANGO,BUL,BUL FC,Midfield,40,Uganda,,,1,44,0,1,0,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,John Innocent Kisolo,INNOCENT JOHN KISOLO,URA,URA FC,,26,Uganda,,,1,46,1,0,1,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Martin Parcel Kayiwa,KAYIWA MARTIN PARCEL,URA,URA FC,,62,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Emanuel Oula,EMANUEL OULA,URA,URA FC,,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Fred Junior Muhanguzi,FRED JUNIOR MUHANGUZI,URA,URA FC,Midfield,53,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Elvis Odongo Kato,ELVIS KATO ODONGO,URA,URA FC,Forward,65,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Abdul Rahuman Katumba,ABDUL KATUMBA RAHUMAN,EXPRESS,Express FC,Defender,42,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Isa Glory Kisuule,GLORY ISA KISUULE,EXPRESS,Express FC,Midfield,40,Uganda,,,1,25,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Yiga Steven,STEVEN YIGA,EXPRESS,Express FC,Midfield,37,Uganda,,,1,65,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Marvin Ssali Sebirago,MARVIN SEBIRAGO SSALI,EXPRESS,Express FC,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Abudshakur Ramsey Jemba,ABUDSHAKUR JEMBA RAMSEY,POLICE,POLICE FOOTBALL CLUB,Midfield,38,Uganda,,,1,14,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Patrick Kagulire,KAGULIRE PATRICK,POLICE,POLICE FOOTBALL CLUB,Defender,40,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Stephen Namaisi,NAMAISI STEPHEN,POLICE,POLICE FOOTBALL CLUB,Defender,41,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Simon Olele,OLELE SIMON,POLICE,POLICE FOOTBALL CLUB,Goalkeeper,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Habibu Kintu,HABIBU KINTU,MAROONS,Maroons FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Hassan Akoragye,AKORAGYE HASSAN,MBARARA,Mbarara City FC,Defender,50,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Amagu Louis Anguti,AMAGU ANGUTI LOUIS,LUGAZI,Lugazi FC,Defender,44,Uganda,,,1,90,1,0,0,0,0,0,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Allan Batali Igama,ALLAN BATALI IGAMA,LUGAZI,Lugazi FC,Goalkeeper,38,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Juma Ssajjabi,JUMA SSAJJABI,LUGAZI,Lugazi FC,Defender,42,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Birungi Alvin Twiine,ALVIN BIRUNGI TWIINE,LUGAZI,Lugazi FC,Midfield,40,Uganda,,,1,0,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Alex Akankwasa,AKANKWASA ALEX,LUGAZI,Lugazi FC,Defender,25,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Joshua Omara,JOSHUA OMARA,BLACKS,Blacks Power FC,Midfield,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Oscar Otim,OSCAR OTIM,BLACKS,Blacks Power FC,,37,Uganda,,,1,57,1,0,1,1,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Arode Ayesiga,ARODE AYESIGA,UPDF,UPDF FC,Forward,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Joel Kigenyi,JOEL KIGENYI,UPDF,UPDF FC,Forward,42,Uganda,,,2,136,2,0,1,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Jonathan Poro,JONATHAN PORO,UPDF,UPDF FC,Midfield,41,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Reagan Isabirye,ISABIRYE REAGAN,ENTEBBE,ENTEBBE UPPC FC,Defender,27,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Sharifu Ssengendo,SHARIFU SSENGENDO,ENTEBBE,ENTEBBE UPPC FC,Midfield,38,Uganda,,,1,62,1,0,1,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Mitrail-ndza Sam Rutherford Yannick,MITRAIL-NDZA RUTHERFORD SAM YANNICK,ENTEBBE,ENTEBBE UPPC FC,Defender,29,Republic of the Congo,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Marvin Ainamaani,AINAMAANI MARVIN,KIGEZI,Kigezi Home Boyz FC,,37,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Julius Barasa,BARASA JULIUS,KIGEZI,Kigezi Home Boyz FC,,36,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,James Tukei,JAMES TUKEI,KIGEZI,Kigezi Home Boyz FC,,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Osman Mayanja,MAYANJA OSMAN,KIGEZI,Kigezi Home Boyz FC,,40,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Joseph Jjemba,JJEMBA JOSEPH,KIGEZI,Kigezi Home Boyz FC,,43,Uganda,,,1,90,1,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,George Okwakol Isiagi,GEORGE ISIAGI OKWAKOL,KATAKA,Kataka FC,Midfield,37,Uganda,,,1,12,0,1,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Chris Ronald Nsubuga,CHRIS NSUBUGA RONALD,KATAKA,Kataka FC,Goalkeeper,1,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Bwanika Ivan,BWANIKA IVAN,KATAKA,Kataka FC,Defender,39,Uganda,,,0,0,0,0,0,0,0,0,0,0,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Abduwahab Tumwine,ABDUWAHAB TUMWINE,KATAKA,Kataka FC,Defender,40,Uganda,,,1,90,1,0,0,0,0,1,0,1,0,0
+UPL,2026/27,7,U21_stats_md7.csv,Paul Marko Teny,MARKO PAUL TENY,KATAKA,Kataka FC,Forward,41,Uganda,,,1,78,1,0,1,0,0,0,0,0,0,0

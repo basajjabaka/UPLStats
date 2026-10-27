@@ -3,8 +3,8 @@
 U21 stats extractor.
 
 Reads the U21 player export dropped into ``reports/<league>/<season>/md<N>/``
-(any ``*U21*.xlsx``) and writes one tidy CSV, ``csvs/new/u21New.csv``, with one
-row per player per matchday file.
+(any ``*U21*.xlsx`` or ``*U21*.csv``) and writes one tidy CSV,
+``csvs/new/u21New.csv``, with one row per player per matchday file.
 
 Each file is expected to hold that matchday's games only, so season figures are
 the sum of the files.  Only raw counts are kept: the export's ratio columns
@@ -34,6 +34,9 @@ from extract_match_data import (DEFAULT_OUTPUT_DIR, DEFAULT_REPORTS_DIR,  # noqa
                                 season_label, write_csv)
 
 OUTPUT_NAME = "u21New.csv"
+
+#: the export comes as either a workbook or a CSV with the same headers
+EXPORT_SUFFIXES = (".xlsx", ".csv")
 
 #: A player is U21 for a season when born on or after 1 January of the year
 #: U21_AGE years before the season starts: 2026/27 -> born 1 January 2005 or
@@ -102,10 +105,12 @@ def _optional_header(header):
 
 
 def find_u21_files(reports_dir=DEFAULT_REPORTS_DIR):
-    """Every ``md<N>/*U21*.xlsx`` as (league, season, md, path), in matchday order.
+    """Every ``md<N>/*U21*.xlsx`` or ``*U21*.csv`` as (league, season, md, path),
+    in matchday order.
 
     Excel's ``~$`` lock files, left beside a workbook while it is open, are
-    skipped.
+    skipped, and so is anything with "sample" in its name: a sample export is
+    not one matchday's games, and reading it would add its counts to the season.
     """
     reports_dir = Path(reports_dir)
     found = []
@@ -117,8 +122,10 @@ def find_u21_files(reports_dir=DEFAULT_REPORTS_DIR):
                 match = MATCHDAY_RE.match(md_dir.name)
                 if not (md_dir.is_dir() and match):
                     continue
-                for path in sorted(md_dir.glob("*.xlsx")):
-                    if "U21" in path.name.upper() and not path.name.startswith("~$"):
+                for path in sorted(md_dir.iterdir()):
+                    name = path.name.upper()
+                    if (path.suffix.lower() in EXPORT_SUFFIXES and "U21" in name
+                            and "SAMPLE" not in name and not name.startswith("~$")):
                         found.append((league_dir.name.upper(),
                                       season_label(season_dir.name),
                                       int(match.group(1)), path))
@@ -135,8 +142,12 @@ def read_u21_file(path, league, season, md):
     """One export -> (rows, warnings)."""
     where = f"{league} {season} md{md} {path.name}"
     try:
-        raw = pd.read_excel(path, sheet_name=0, dtype=object)
-    except Exception as error:                              # noqa: BLE001
+        if path.suffix.lower() == ".csv":
+            # the CSV export starts with a byte-order mark
+            raw = pd.read_csv(path, dtype=object, encoding="utf-8-sig")
+        else:
+            raw = pd.read_excel(path, sheet_name=0, dtype=object)
+    except Exception as error:                            # noqa: BLE001
         return [], [f"{where}: could not read ({error})"]
 
     raw.columns = [str(c).strip() for c in raw.columns]
