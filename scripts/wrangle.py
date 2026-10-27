@@ -409,7 +409,7 @@ for (league, season), table in comebacksDF.groupby(KEY_COLUMNS):
 # =============================================================================
 # One row per U21 player per matchday, from two sources:
 #   * the U21 export (csvs/new/u21New.csv) -- the official list, and the only
-#     source of assists, penalties and own goals;
+#     source of assists and penalties;
 #   * the match reports' team sheets, for any matchday without an export, with
 #     the birth year read from the last two digits of the registration id
 #     (036912M08 -> 2008).
@@ -420,7 +420,7 @@ for (league, season), table in comebacksDF.groupby(KEY_COLUMNS):
 # reports give the same player are kept alongside it as a cross-check.
 
 U21_KEYS = KEY_COLUMNS + ['md']
-U21_EXPORT_ONLY = ['own_goals', 'assists', 'penalties']
+U21_EXPORT_ONLY = ['assists', 'penalties']
 U21_OUTPUT_COLUMNS = (U21_KEYS + ['source', 'player_key', 'player_id', 'player', 'team',
                                   'position', 'jersey', 'birth_year', 'u21_born_from']
                       + U21_COUNT_COLUMNS + ['report_minutes', 'team_points',
@@ -456,11 +456,24 @@ def read_optional(path, columns, **kwargs):
     return pd.read_csv(path, **kwargs) if path.exists() else pd.DataFrame(columns=columns)
 
 
+def is_own_goal(goals):
+    """True for each goal the extractor flagged as an own goal.
+
+    An extract from before the flag existed has no own_goal column; every goal
+    in it is taken as scored by the player named.
+    """
+    if 'own_goal' not in goals.columns:
+        return pd.Series(False, index=goals.index)
+    return goals['own_goal'].astype(str).str.strip().str.lower() == 'yes'
+
+
 def report_totals(lineups, goals, cautions):
     """Per player per matchday for everyone on a team sheet, keyed on the id.
 
     Goals and cautions carry only a printed name, so each is matched back to
-    that match's team sheet for the registration id.
+    that match's team sheet for the registration id.  An own goal is matched
+    the same way -- by game and name, not team, since it is credited to the
+    other side -- and counted under own_goals, never goals.
     """
     group = U21_KEYS + ['player_id']
     if lineups.empty:
@@ -489,7 +502,9 @@ def report_totals(lineups, goals, cautions):
         sub_in=('came_on', 'sum'), sub_out=('went_off', 'sum'))
 
     caution = cautions['caution'].astype(str).str.lower()
-    for label, events in (('goals', goals),
+    own_goal = is_own_goal(goals)
+    for label, events in (('goals', goals[~own_goal]),
+                          ('own_goals', goals[own_goal]),
                           ('yellows', cautions[caution == 'yellow']),
                           ('reds_direct', cautions[caution == 'red']),
                           ('reds_second_yellow', cautions[caution == 'second yellow'])):

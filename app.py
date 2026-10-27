@@ -382,6 +382,10 @@ def load_events(name):
 
 
 ALL_GOALS = load_events("goals")
+# An own goal is credited to the side it went in for, so it counts towards that
+# team's score -- but never towards the named player's goals.
+ALL_GOALS['own_goal'] = (ALL_GOALS['own_goal'].astype(str).str.lower() == 'yes'
+                         if 'own_goal' in ALL_GOALS else False)
 ALL_CAUTIONS = load_events("cautions")
 ALL_SUBS = load_events("subs")
 
@@ -403,7 +407,7 @@ ALL_MATCH_INFO = pd.read_csv(inputDIR / "transformed_match_info.csv")
 U21_SUM_COLUMNS = ['apps', 'minutes', 'starts', 'sub_in', 'sub_out', 'goals',
                    'own_goals', 'assists', 'penalties', 'yellows', 'reds_direct',
                    'reds_second_yellow']
-U21_EXPORT_ONLY = ['own_goals', 'assists', 'penalties']   # not in the reports
+U21_EXPORT_ONLY = ['assists', 'penalties']   # not in the reports
 _U21_PATH = inputDIR / "transformed_u21_matchday.csv"
 ALL_U21 = (pd.read_csv(_U21_PATH, dtype={'player_id': str, 'jersey': str})
            if _U21_PATH.exists() else
@@ -653,6 +657,18 @@ def goals_df():
 
 
 @reactive.calc
+def scorer_goals_df():
+    """Goals that belong to the player named: every goal but an own goal."""
+    goals = goals_df()
+    return goals[~goals['own_goal']]
+
+
+def scorer_names(goals):
+    """Who scored, with own goals marked '(OG)'."""
+    return goals['player'].where(~goals['own_goal'], goals['player'] + " (OG)")
+
+
+@reactive.calc
 def cautions_df():
     return _slice(ALL_CAUTIONS)
 
@@ -742,7 +758,7 @@ def player_profiles():
     bookings = cautions[cautions['caution'] == 'yellow'] \
         if not cautions.empty else cautions
 
-    for column, counts in (('goals', tally(goals_df())),
+    for column, counts in (('goals', tally(scorer_goals_df())),
                            ('yellows', tally(bookings)),
                            ('reds', tally(dismissals))):
         profile[column] = profile['player_id'].map(counts).fillna(0).astype(int)
@@ -1394,7 +1410,7 @@ with ui.navset_bar(
                         ui.tags.div("Top 15 Goal Scorers", class_="overview-card-header")
                         @render.table(escape=False)
                         def top_scorers():
-                            scorer_goals = goals_df().groupby(['player', 'team']).size().reset_index(name='goals')
+                            scorer_goals = scorer_goals_df().groupby(['player', 'team']).size().reset_index(name='goals')
                             scorer_goals = scorer_goals.sort_values('goals', ascending=False).head(15)
                             scorer_goals.columns = ['Player', 'Team', 'Goals']
                             return logo_table(scorer_goals, clubs=['Team'])
@@ -1724,6 +1740,7 @@ with ui.navset_bar(
                                 md_data = goals_df()[goals_df()['md'] == selected_md()].copy()
                                 if md_data.empty:
                                     return empty_figure("No goals recorded on this matchday")
+                                md_data['player'] = scorer_names(md_data)
                                 # period is 1/2, and a discrete colour map only
                                 # applies to a categorical column
                                 md_data['half'] = md_data['period'].map(
@@ -1774,7 +1791,9 @@ with ui.navset_bar(
                             ui.tags.div("Matchday Goalscorers", class_="overview-card-header")
                             @render.table(escape=False)
                             def md_scorers_table():
-                                md_data = goals_df()[goals_df()['md'] == selected_md()][['game', 'player', 'team', 'minute', 'period']]
+                                md_data = goals_df()[goals_df()['md'] == selected_md()]
+                                md_data = md_data.assign(player=scorer_names(md_data))[
+                                    ['game', 'player', 'team', 'minute', 'period']]
                                 md_data = md_data.sort_values('minute')
                                 md_data.columns = ['Match', 'Player', 'Team', 'Minute', 'Half']
                                 return logo_table(md_data, clubs=['Team'], matches=['Match'])
@@ -2215,8 +2234,16 @@ with ui.navset_bar(
                             @render.table
                             def team_top_scorers():
                                 team_data = goals_df()[goals_df()['team'] == selected_team()]
-                                scorers = team_data.groupby('player').size().reset_index(name='goals')
+                                scored = team_data[~team_data['own_goal']]
+                                scorers = scored.groupby('player').size().reset_index(name='goals')
                                 scorers = scorers.sort_values('goals', ascending=False)
+                                # opponents' own goals: on the scoreboard, but no one's tally
+                                own_goals = int(team_data['own_goal'].sum())
+                                if own_goals:
+                                    scorers = pd.concat(
+                                        [scorers, pd.DataFrame({'player': ['Own goals'],
+                                                                'goals': [own_goals]})],
+                                        ignore_index=True)
                                 scorers.columns = ['Player', 'Goals']
                                 return scorers
 
@@ -2692,7 +2719,7 @@ with ui.navset_bar(
                             frames = []
                             for _index, player in data.iterrows():
                                 wanted = _norm_name(player["player"])
-                                scored = goals_df()
+                                scored = scorer_goals_df()
                                 scored = scored[
                                     scored["player"].map(_norm_name) == wanted]
                                 counts = bucket_counts(scored)

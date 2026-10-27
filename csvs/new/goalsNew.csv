@@ -1,117 +1,137 @@
-league,season,game,player,team,min,added_time,md
-UPL,2025/26,ENTEBBE-vs-BUHIMBA,John Wesley kisaakye,BUHIMBA,13,no,1
-UPL,2025/26,KITARA-vs-KCCA,Emmanuel Alex Wasswa,KITARA,4,no,1
-UPL,2025/26,KITARA-vs-KCCA,Sharifu Ssengendo,KCCA,83,no,1
-UPL,2025/26,LUGAZI-vs-CALVARY,Simon Peter Odeke,CALVARY,11,no,1
-UPL,2025/26,LUGAZI-vs-CALVARY,Paul Wasswa,LUGAZI,19,no,1
-UPL,2025/26,LUGAZI-vs-CALVARY,Sharif Saaka,LUGAZI,29,no,1
-UPL,2025/26,LUGAZI-vs-CALVARY,Ashiraf Mulindi,LUGAZI,79,no,1
-UPL,2025/26,POLICE-vs-MBARARA,Abudshakur Ramsey Jemba,POLICE,26,no,1
-UPL,2025/26,POLICE-vs-MBARARA,Reagan Matege,MBARARA,76,no,1
-UPL,2025/26,EXPRESS-vs-UPDF,Habert Asiimwe,EXPRESS,14,no,1
-UPL,2025/26,BUL-vs-MAROONS,Ibrahim Mugulusi,BUL,37,no,2
-UPL,2025/26,POLICE-vs-EXPRESS,Umaru Kasumba,POLICE,28,no,2
-UPL,2025/26,POLICE-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,45(+1),yes,2
-UPL,2025/26,POLICE-vs-EXPRESS,Bedia Djuma Ikamba,POLICE,77,no,2
-UPL,2025/26,URA-vs-NEC,Ronald Media Innocent,NEC,10,no,2
-UPL,2025/26,URA-vs-NEC,Moses Okabo Aliro,URA,49,no,2
-UPL,2025/26,BUHIMBA-vs-CALVARY,Anwaru Mustafa Ntege,BUHIMBA,26,no,2
-UPL,2025/26,BUHIMBA-vs-CALVARY,Swadik Moro,BUHIMBA,44,no,2
-UPL,2025/26,MBARARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,68,no,2
-UPL,2025/26,KCCA-vs-VILLA,Ivan Ahimbisibwe,KCCA,30,no,2
-UPL,2025/26,KCCA-vs-VILLA,Najib Yiga,Villa,60,no,2
-UPL,2025/26,KCCA-vs-VILLA,Umar Lutalo,KCCA,88,no,2
-UPL,2025/26,MBARARA-vs-BUL,Seiri Arigumaho,BUL,35,no,3
-UPL,2025/26,MBARARA-vs-BUL,Ian Amanya,MBARARA,39,no,3
-UPL,2025/26,URA-vs-EXPRESS,Nelson Senkatuka,URA,12,no,3
-UPL,2025/26,URA-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,62,no,3
-UPL,2025/26,UPDF-vs-MAROONS,Dickson Niwamanya,MAROONS,14,no,3
-UPL,2025/26,UPDF-vs-MAROONS,Ivan Mayanja,MAROONS,25,no,3
-UPL,2025/26,UPDF-vs-MAROONS,Rashid Faridi,UPDF,53,no,3
-UPL,2025/26,VILLA-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,28,no,3
-UPL,2025/26,VILLA-vs-ENTEBBE,Andrew Otim,Villa,83,no,3
-UPL,2025/26,NEC-vs-POLICE,Mustafa Kizza,NEC,3,no,3
-UPL,2025/26,NEC-vs-POLICE,Dhata Joseph Stephen Lujang,NEC,60,no,3
-UPL,2025/26,NEC-vs-POLICE,Charles Bbaale,POLICE,85,no,3
-UPL,2025/26,NEC-vs-POLICE,Umaru Kasumba,POLICE,90(+2),yes,3
-UPL,2025/26,BUL-vs-BUHIMBA,Ibrahim Mugulusi,BUL,17,no,4
-UPL,2025/26,BUL-vs-BUHIMBA,Seiri Arigumaho,BUL,32,no,4
-UPL,2025/26,BUL-vs-BUHIMBA,Jeromy Kirya,BUL,39,no,4
-UPL,2025/26,EXPRESS-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,71,no,4
-UPL,2025/26,KITARA-vs-MBARARA,Isaac Amutuhaire,KITARA,13,no,4
-UPL,2025/26,KITARA-vs-MBARARA,Jimmy Kalema,KITARA,16,no,4
-UPL,2025/26,KITARA-vs-MBARARA,Innocent Wafula Esimu,MBARARA,23,no,4
-UPL,2025/26,KITARA-vs-MBARARA,Henry Kitegenyi,MBARARA,76,no,4
-UPL,2025/26,KITARA-vs-MBARARA,Wahab Gadafi,KITARA,90(+1),yes,4
-UPL,2025/26,VILLA-vs-POLICE,Bedia Djuma Ikamba,POLICE,22,no,4
-UPL,2025/26,VILLA-vs-POLICE,Geofrey Gagganga,Villa,70,no,4
-UPL,2025/26,VILLA-vs-POLICE,Charles Lwanga,Villa,90(+3),yes,4
-UPL,2025/26,ENTEBBE-vs-NEC,Junior Samuel Kawawa,ENTEBBE,60,no,4
-UPL,2025/26,POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,18,no,5
-UPL,2025/26,POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,28,no,5
-UPL,2025/26,POLICE-vs-MAROONS,Rogers Kiwanuka,MAROONS,42,no,5
-UPL,2025/26,URA-vs-UPDF,Moses Okabo Aliro,URA,25,no,5
-UPL,2025/26,URA-vs-UPDF,Samson Andrew Kigozi,UPDF,27,no,5
-UPL,2025/26,URA-vs-UPDF,George Masembe,URA,45,no,5
-UPL,2025/26,URA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,54,no,5
-UPL,2025/26,URA-vs-UPDF,Moses Okabo Aliro,URA,77,no,5
-UPL,2025/26,KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,10,no,5
-UPL,2025/26,KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,45(+3),yes,5
-UPL,2025/26,KITARA-vs-LUGAZI,Yunusu Sibira,KITARA,51,no,5
-UPL,2025/26,KITARA-vs-LUGAZI,Wahab Gadafi,KITARA,87,no,5
-UPL,2025/26,BUHIMBA-vs-VILLA,Reagan Mpande,Villa,2,no,5
-UPL,2025/26,BUHIMBA-vs-VILLA,Aslam Ssemakula,Villa,14,no,5
-UPL,2025/26,BUHIMBA-vs-VILLA,Reagan Mpande,Villa,65,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Ivan Ahimbisibwe,KCCA,10,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Umar Lutalo,KCCA,13,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Shafik Nana Kwikiriza,KCCA,43,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Lawrence Olaboro,CALVARY,47,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Herbert Achayi,KCCA,63,no,5
-UPL,2025/26,KCCA-vs-CALVARY,Stephen Oriokot,CALVARY,71,no,5
-UPL,2025/26,ENTEBBE-vs-VIPERS,Abdulkarim Watambala,VIPERS,62,no,5
-UPL,2025/26,MBARARA-vs-NEC,Allan Mugalu,NEC,54,no,5
-UPL,2026/27,VIPERS-vs-ENTEBBE,KEVIN DASYLVA BADY,ENTEBBE,0,no,1
-UPL,2026/27,BLACKS-vs-NTUGASAZE,Andrea Noll Ogwal,BLACKS,47,no,1
-UPL,2026/27,KCCA-vs-NEC,Richard Basangwa,NEC,5,no,1
-UPL,2026/27,KCCA-vs-NEC,Obuya Pius,NEC,90,no,1
-UPL,2026/27,LUGAZI-vs-KIGEZI,Cromwel Rwothomio,LUGAZI,66,no,1
-UPL,2026/27,LUGAZI-vs-KIGEZI,Mike Walaga,KIGEZI,79,no,1
-UPL,2026/27,LUGAZI-vs-KIGEZI,Livingstone Mulondo,LUGAZI,90(+2),yes,1
-UPL,2026/27,POLICE-vs-MBARARA,Ivan Mayanja,POLICE,73,no,1
-UPL,2026/27,VILLA-vs-KITARA,Andrew Okumu,Villa,7,no,1
-UPL,2026/27,VILLA-vs-KITARA,Crispus Asiki,KITARA,90(+4),yes,1
-UPL,2026/27,BUL-vs-EXPRESS,SWABIR MPASA,BUL,12,no,1
-UPL,2026/27,MAROONS-vs-URA,Dariuos Ojok,MAROONS,33,no,1
-UPL,2026/27,MAROONS-vs-URA,Dissan Galiwango,URA,80,no,1
-UPL,2026/27,MAROONS-vs-URA,Abraham Kakensa Tusubira,URA,90(+4),yes,1
-UPL,2026/27,ENTEBBE-vs-UPDF,Derrick TAREMWA,UPDF,25,no,2
-UPL,2026/27,ENTEBBE-vs-UPDF,Thomas Ochungo,ENTEBBE,39,no,2
-UPL,2026/27,ENTEBBE-vs-UPDF,Ambrose Kigozi,ENTEBBE,71,no,2
-UPL,2026/27,NEC-vs-LUGAZI,Richard Basangwa,NEC,52,no,2
-UPL,2026/27,NEC-vs-LUGAZI,Ronald Media Innocent,NEC,57,no,2
-UPL,2026/27,NEC-vs-LUGAZI,Ronald Media Innocent,NEC,81,no,2
-UPL,2026/27,NEC-vs-LUGAZI,Ayiko Richard,LUGAZI,84,no,2
-UPL,2026/27,BLACKS-vs-POLICE,Emmanuel Janan Okech,BLACKS,50,no,2
-UPL,2026/27,NTUGASAZE-vs-MAROONS,Jackson Nunda,MAROONS,18,no,2
-UPL,2026/27,NTUGASAZE-vs-MAROONS,Jackson Nunda,MAROONS,37,no,2
-UPL,2026/27,NTUGASAZE-vs-MAROONS,Marvin Oshaba,MAROONS,48,no,2
-UPL,2026/27,NTUGASAZE-vs-MAROONS,Ronald Kaye,NTUGASAZE,53,no,2
-UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,2,no,2
-UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,20,no,2
-UPL,2026/27,KATAKA-vs-BUL,Ali Sentamu,KATAKA,45(+4),yes,2
-UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,65,no,2
-UPL,2026/27,KATAKA-vs-BUL,Simon Achidi,BUL,72,no,2
-UPL,2026/27,URA-vs-VILLA,Reagan Mpande,Villa,23,no,2
-UPL,2026/27,EXPRESS-vs-KCCA,Isaac Wagoina,EXPRESS,51,no,2
-UPL,2026/27,EXPRESS-vs-KCCA,Derrick Ddungu,EXPRESS,90(+2),yes,2
-UPL,2026/27,MAROONS-vs-BLACKS,Alli Ismael,MAROONS,38,no,3
-UPL,2026/27,MAROONS-vs-BLACKS,Andrea Noll Ogwal,BLACKS,49,no,3
-UPL,2026/27,MAROONS-vs-BLACKS,Richard Oscar Otim,BLACKS,66,no,3
-UPL,2026/27,BUL-vs-NTUGASAZE,SWABIR MPASA,BUL,10,no,3
-UPL,2026/27,BUL-vs-NTUGASAZE,Fahad Nsamba,NTUGASAZE,29,no,3
-UPL,2026/27,BUL-vs-NTUGASAZE,Martin Aprem,BUL,43,no,3
-UPL,2026/27,BUL-vs-NTUGASAZE,Reagan Kalyowa,BUL,75,no,3
-UPL,2026/27,BUL-vs-NTUGASAZE,Simon Achidi,BUL,85,no,3
-UPL,2026/27,VILLA-vs-EXPRESS,Patrick Jonah Kakande,Villa,4,no,3
-UPL,2026/27,VILLA-vs-EXPRESS,Andrew Otim,Villa,90(+2),yes,3
-UPL,2026/27,ENTEBBE-vs-LUGAZI,Cromwel Rwothomio,LUGAZI,80,no,3
+league,season,game,player,team,min,added_time,own_goal,md
+UPL,2025/26,ENTEBBE-vs-BUHIMBA,John Wesley kisaakye,BUHIMBA,13,no,no,1
+UPL,2025/26,KITARA-vs-KCCA,Emmanuel Alex Wasswa,KITARA,4,no,no,1
+UPL,2025/26,KITARA-vs-KCCA,Sharifu Ssengendo,KCCA,83,no,no,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Simon Peter Odeke,CALVARY,11,no,no,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Paul Wasswa,LUGAZI,19,no,no,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Sharif Saaka,LUGAZI,29,no,no,1
+UPL,2025/26,LUGAZI-vs-CALVARY,Ashiraf Mulindi,LUGAZI,79,no,no,1
+UPL,2025/26,POLICE-vs-MBARARA,Abudshakur Ramsey Jemba,POLICE,26,no,no,1
+UPL,2025/26,POLICE-vs-MBARARA,Reagan Matege,MBARARA,76,no,no,1
+UPL,2025/26,EXPRESS-vs-UPDF,Habert Asiimwe,EXPRESS,14,no,no,1
+UPL,2025/26,BUL-vs-MAROONS,Ibrahim Mugulusi,BUL,37,no,no,2
+UPL,2025/26,POLICE-vs-EXPRESS,Umaru Kasumba,POLICE,28,no,no,2
+UPL,2025/26,POLICE-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,45(+1),yes,no,2
+UPL,2025/26,POLICE-vs-EXPRESS,Bedia Djuma Ikamba,POLICE,77,no,no,2
+UPL,2025/26,URA-vs-NEC,Ronald Media Innocent,NEC,10,no,no,2
+UPL,2025/26,URA-vs-NEC,Moses Okabo Aliro,URA,49,no,no,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Anwaru Mustafa Ntege,BUHIMBA,26,no,no,2
+UPL,2025/26,BUHIMBA-vs-CALVARY,Swadik Moro,BUHIMBA,44,no,no,2
+UPL,2025/26,MBARARA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,68,no,no,2
+UPL,2025/26,KCCA-vs-VILLA,Ivan Ahimbisibwe,KCCA,30,no,no,2
+UPL,2025/26,KCCA-vs-VILLA,Najib Yiga,Villa,60,no,no,2
+UPL,2025/26,KCCA-vs-VILLA,Umar Lutalo,KCCA,88,no,no,2
+UPL,2025/26,MBARARA-vs-BUL,Seiri Arigumaho,BUL,35,no,no,3
+UPL,2025/26,MBARARA-vs-BUL,Ian Amanya,MBARARA,39,no,no,3
+UPL,2025/26,URA-vs-EXPRESS,Nelson Senkatuka,URA,12,no,no,3
+UPL,2025/26,URA-vs-EXPRESS,Muhamed Kagawa Ssenoga,EXPRESS,62,no,no,3
+UPL,2025/26,UPDF-vs-MAROONS,Dickson Niwamanya,MAROONS,14,no,no,3
+UPL,2025/26,UPDF-vs-MAROONS,Ivan Mayanja,MAROONS,25,no,no,3
+UPL,2025/26,UPDF-vs-MAROONS,Rashid Faridi,UPDF,53,no,no,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Fazil Tumwine,ENTEBBE,28,no,no,3
+UPL,2025/26,VILLA-vs-ENTEBBE,Andrew Otim,Villa,83,no,no,3
+UPL,2025/26,NEC-vs-POLICE,Mustafa Kizza,NEC,3,no,no,3
+UPL,2025/26,NEC-vs-POLICE,Dhata Joseph Stephen Lujang,NEC,60,no,no,3
+UPL,2025/26,NEC-vs-POLICE,Charles Bbaale,POLICE,85,no,no,3
+UPL,2025/26,NEC-vs-POLICE,Umaru Kasumba,POLICE,90(+2),yes,no,3
+UPL,2025/26,BUL-vs-BUHIMBA,Ibrahim Mugulusi,BUL,17,no,no,4
+UPL,2025/26,BUL-vs-BUHIMBA,Seiri Arigumaho,BUL,32,no,no,4
+UPL,2025/26,BUL-vs-BUHIMBA,Jeromy Kirya,BUL,39,no,no,4
+UPL,2025/26,EXPRESS-vs-KCCA,Sammy Raynald Ssebaduka,KCCA,71,no,no,4
+UPL,2025/26,KITARA-vs-MBARARA,Isaac Amutuhaire,KITARA,13,no,no,4
+UPL,2025/26,KITARA-vs-MBARARA,Jimmy Kalema,KITARA,16,no,no,4
+UPL,2025/26,KITARA-vs-MBARARA,Innocent Wafula Esimu,MBARARA,23,no,no,4
+UPL,2025/26,KITARA-vs-MBARARA,Henry Kitegenyi,MBARARA,76,no,no,4
+UPL,2025/26,KITARA-vs-MBARARA,Wahab Gadafi,KITARA,90(+1),yes,no,4
+UPL,2025/26,VILLA-vs-POLICE,Bedia Djuma Ikamba,POLICE,22,no,no,4
+UPL,2025/26,VILLA-vs-POLICE,Geofrey Gagganga,Villa,70,no,no,4
+UPL,2025/26,VILLA-vs-POLICE,Charles Lwanga,Villa,90(+3),yes,no,4
+UPL,2025/26,ENTEBBE-vs-NEC,Junior Samuel Kawawa,ENTEBBE,60,no,no,4
+UPL,2025/26,POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,18,no,no,5
+UPL,2025/26,POLICE-vs-MAROONS,Bedia Djuma Ikamba,POLICE,28,no,no,5
+UPL,2025/26,POLICE-vs-MAROONS,Rogers Kiwanuka,MAROONS,42,no,no,5
+UPL,2025/26,URA-vs-UPDF,Moses Okabo Aliro,URA,25,no,no,5
+UPL,2025/26,URA-vs-UPDF,Samson Andrew Kigozi,UPDF,27,no,no,5
+UPL,2025/26,URA-vs-UPDF,George Masembe,URA,45,no,no,5
+UPL,2025/26,URA-vs-UPDF,Samuel Kayongo Ssekamatte,UPDF,54,no,no,5
+UPL,2025/26,URA-vs-UPDF,Moses Okabo Aliro,URA,77,no,no,5
+UPL,2025/26,KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,10,no,no,5
+UPL,2025/26,KITARA-vs-LUGAZI,Patrick Henry Kaddu,KITARA,45(+3),yes,no,5
+UPL,2025/26,KITARA-vs-LUGAZI,Yunusu Sibira,KITARA,51,no,no,5
+UPL,2025/26,KITARA-vs-LUGAZI,Wahab Gadafi,KITARA,87,no,no,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Reagan Mpande,Villa,2,no,no,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Aslam Ssemakula,Villa,14,no,no,5
+UPL,2025/26,BUHIMBA-vs-VILLA,Reagan Mpande,Villa,65,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Ivan Ahimbisibwe,KCCA,10,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Umar Lutalo,KCCA,13,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Shafik Nana Kwikiriza,KCCA,43,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Lawrence Olaboro,CALVARY,47,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Herbert Achayi,KCCA,63,no,no,5
+UPL,2025/26,KCCA-vs-CALVARY,Stephen Oriokot,CALVARY,71,no,no,5
+UPL,2025/26,ENTEBBE-vs-VIPERS,Abdulkarim Watambala,VIPERS,62,no,no,5
+UPL,2025/26,MBARARA-vs-NEC,Allan Mugalu,NEC,54,no,no,5
+UPL,2026/27,VIPERS-vs-ENTEBBE,KEVIN DASYLVA BADY,ENTEBBE,0,no,yes,1
+UPL,2026/27,BLACKS-vs-NTUGASAZE,Andrea Noll Ogwal,BLACKS,47,no,no,1
+UPL,2026/27,KCCA-vs-NEC,Richard Basangwa,NEC,5,no,no,1
+UPL,2026/27,KCCA-vs-NEC,Obuya Pius,NEC,90,no,no,1
+UPL,2026/27,LUGAZI-vs-KIGEZI,Cromwel Rwothomio,LUGAZI,66,no,no,1
+UPL,2026/27,LUGAZI-vs-KIGEZI,Mike Walaga,KIGEZI,79,no,no,1
+UPL,2026/27,LUGAZI-vs-KIGEZI,Livingstone Mulondo,LUGAZI,90(+2),yes,no,1
+UPL,2026/27,POLICE-vs-MBARARA,Ivan Mayanja,POLICE,73,no,no,1
+UPL,2026/27,VILLA-vs-KITARA,Andrew Okumu,Villa,7,no,no,1
+UPL,2026/27,VILLA-vs-KITARA,Crispus Asiki,KITARA,90(+4),yes,no,1
+UPL,2026/27,BUL-vs-EXPRESS,SWABIR MPASA,BUL,12,no,no,1
+UPL,2026/27,MAROONS-vs-URA,Dariuos Ojok,MAROONS,33,no,no,1
+UPL,2026/27,MAROONS-vs-URA,Dissan Galiwango,URA,80,no,no,1
+UPL,2026/27,MAROONS-vs-URA,Abraham Kakensa Tusubira,URA,90(+4),yes,no,1
+UPL,2026/27,ENTEBBE-vs-UPDF,Derrick TAREMWA,UPDF,25,no,no,2
+UPL,2026/27,ENTEBBE-vs-UPDF,Thomas Ochungo,ENTEBBE,39,no,no,2
+UPL,2026/27,ENTEBBE-vs-UPDF,Ambrose Kigozi,ENTEBBE,71,no,no,2
+UPL,2026/27,NEC-vs-LUGAZI,Richard Basangwa,NEC,52,no,no,2
+UPL,2026/27,NEC-vs-LUGAZI,Ronald Media Innocent,NEC,57,no,no,2
+UPL,2026/27,NEC-vs-LUGAZI,Ronald Media Innocent,NEC,81,no,no,2
+UPL,2026/27,NEC-vs-LUGAZI,Ayiko Richard,LUGAZI,84,no,no,2
+UPL,2026/27,BLACKS-vs-POLICE,Emmanuel Janan Okech,BLACKS,50,no,no,2
+UPL,2026/27,NTUGASAZE-vs-MAROONS,Jackson Nunda,MAROONS,18,no,no,2
+UPL,2026/27,NTUGASAZE-vs-MAROONS,Jackson Nunda,MAROONS,37,no,no,2
+UPL,2026/27,NTUGASAZE-vs-MAROONS,Marvin Oshaba,MAROONS,48,no,no,2
+UPL,2026/27,NTUGASAZE-vs-MAROONS,Ronald Kaye,NTUGASAZE,53,no,no,2
+UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,2,no,no,2
+UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,20,no,no,2
+UPL,2026/27,KATAKA-vs-BUL,Ali Sentamu,KATAKA,45(+4),yes,no,2
+UPL,2026/27,KATAKA-vs-BUL,Derick Byabacwezi,BUL,65,no,no,2
+UPL,2026/27,KATAKA-vs-BUL,Simon Achidi,BUL,72,no,no,2
+UPL,2026/27,URA-vs-VILLA,Reagan Mpande,Villa,23,no,no,2
+UPL,2026/27,EXPRESS-vs-KCCA,Isaac Wagoina,EXPRESS,51,no,no,2
+UPL,2026/27,EXPRESS-vs-KCCA,Derrick Ddungu,EXPRESS,90(+2),yes,no,2
+UPL,2026/27,MAROONS-vs-BLACKS,Alli Ismael,MAROONS,38,no,no,3
+UPL,2026/27,MAROONS-vs-BLACKS,Andrea Noll Ogwal,BLACKS,49,no,no,3
+UPL,2026/27,MAROONS-vs-BLACKS,Richard Oscar Otim,BLACKS,66,no,no,3
+UPL,2026/27,BUL-vs-NTUGASAZE,SWABIR MPASA,BUL,10,no,no,3
+UPL,2026/27,BUL-vs-NTUGASAZE,Fahad Nsamba,NTUGASAZE,29,no,no,3
+UPL,2026/27,BUL-vs-NTUGASAZE,Martin Aprem,BUL,43,no,no,3
+UPL,2026/27,BUL-vs-NTUGASAZE,Reagan Kalyowa,BUL,75,no,no,3
+UPL,2026/27,BUL-vs-NTUGASAZE,Simon Achidi,BUL,85,no,no,3
+UPL,2026/27,VILLA-vs-EXPRESS,Patrick Jonah Kakande,Villa,4,no,no,3
+UPL,2026/27,VILLA-vs-EXPRESS,Andrew Otim,Villa,90(+2),yes,no,3
+UPL,2026/27,ENTEBBE-vs-LUGAZI,Cromwel Rwothomio,LUGAZI,80,no,no,3
+UPL,2026/27,NEC-vs-URA,Isma Mugulusi,URA,1,no,no,4
+UPL,2026/27,NEC-vs-URA,James Jarieko,NEC,14,no,no,4
+UPL,2026/27,NEC-vs-URA,Richard Basangwa,NEC,42,no,no,4
+UPL,2026/27,NEC-vs-URA,Enrique Lubwama,NEC,44,no,no,4
+UPL,2026/27,NEC-vs-URA,Richard Basangwa,NEC,50,no,no,4
+UPL,2026/27,BUL-vs-BLACKS,Oscar Otim,BLACKS,19,no,no,4
+UPL,2026/27,BUL-vs-BLACKS,Lawrence Olaboro,BUL,37,no,no,4
+UPL,2026/27,BUL-vs-BLACKS,Simon Achidi,BUL,55,no,no,4
+UPL,2026/27,LUGAZI-vs-POLICE,Richard Matovu,POLICE,69,no,no,4
+UPL,2026/27,LUGAZI-vs-POLICE,Abudshakur Ramsey Jemba,POLICE,89,no,no,4
+UPL,2026/27,VILLA-vs-KIGEZI,Patrick Jonah Kakande,Villa,14,no,no,4
+UPL,2026/27,VILLA-vs-KIGEZI,Aslam Ssemakula,Villa,17,no,no,4
+UPL,2026/27,VILLA-vs-KIGEZI,Andrew Otim,Villa,80,no,no,4
+UPL,2026/27,KCCA-vs-KATAKA,Emmanuel Anyama,KCCA,57,no,no,4
+UPL,2026/27,UPDF-vs-MAROONS,Hussein Hassan Zzinda,UPDF,43,no,no,4
+UPL,2026/27,EXPRESS-vs-KITARA,Frank Tumwesigye,KITARA,23,no,no,4
+UPL,2026/27,EXPRESS-vs-KITARA,Nicholas Jjonga,EXPRESS,45(+1),yes,no,4
+UPL,2026/27,VIPERS-vs-NTUGASAZE,Gusto Wa Ilungo Mulongo,VIPERS,21,no,no,4
+UPL,2026/27,VIPERS-vs-NTUGASAZE,CHUKWUMA ODILI,VIPERS,60,no,no,4
+UPL,2026/27,VIPERS-vs-NTUGASAZE,Cesar Lobi Manzoki,VIPERS,63,no,no,4

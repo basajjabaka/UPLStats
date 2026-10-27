@@ -5,7 +5,7 @@ Match-report data extractor.
 Walks every ``MATCH_REPORT-*.pdf`` under ``reports/<league>/<season>/md<N>/`` and
 writes three tidy CSV files into ``csvs/new``:
 
-    goalsNew.csv     league,season,game,player,team,min,added_time,md
+    goalsNew.csv     league,season,game,player,team,min,added_time,own_goal,md
     cautionsNew.csv  league,season,game,player,team,caution,min,added_time,double-caution,md
     subsNew.csv      league,season,game,in,out,min,added_time,team,md
 
@@ -94,14 +94,19 @@ LEGEND_SUBSTITUTION_LABELS = {"Substitution"}
 #: so the team that actually scored is the opponent.  Crediting it that way is
 #: what keeps each team's goal count equal to the score line -- which is how
 #: app.py reads the `team` column.  Flip this to False to credit the scorer's
-#: own club instead.  No own goal appears in md1-md5; every one that turns up is
-#: reported on stderr so it can be checked by hand.
+#: own club instead.  Either way the row is flagged own_goal=yes, so it counts
+#: towards the score but never towards the player's own goal tally.  Every one
+#: that turns up is reported on stderr so it can be checked by hand.
 OWN_GOAL_CREDITED_TO_OPPONENT = True
+OWN_GOAL_LABEL = "Own goal"
 
 #: used only when the LEGEND block itself cannot be read.
 FALLBACK_LEGEND = {
     ((0.2157, 0.2157, 0.2157),) * 3
     + ((0.8902, 0.898, 0.898), (0.9686, 0.9725, 0.9725), (1.0, 1.0, 1.0)): "Goal",
+    ((0.0, 0.0, 0.0),) * 3 + ((0.8706, 0.3176, 0.2353),) * 3
+    + ((0.8902, 0.898, 0.898), (0.9686, 0.9725, 0.9725), (0.9686, 0.9725, 0.9725),
+       (1.0, 1.0, 1.0), (1.0, 1.0, 1.0)): "Own goal",
     ((0.0, 0.0, 0.0), (0.8902, 0.898, 0.898), (0.949, 0.6902, 0.0353),
      (0.9686, 0.9725, 0.9725), (0.9686, 0.9725, 0.9725)): "Yellow card",
     ((0.0, 0.0, 0.0), (0.0, 0.0, 0.0), (0.8902, 0.898, 0.898), (0.949, 0.6902, 0.0353),
@@ -934,7 +939,8 @@ def extract_match(pages, meta):
                 })
             elif caption in LEGEND_GOAL_LABELS:
                 scoring_team = team
-                if caption == "Own goal":
+                own_goal = caption == OWN_GOAL_LABEL
+                if own_goal:
                     if OWN_GOAL_CREDITED_TO_OPPONENT:
                         scoring_team = meta["away"] if side == "home" else meta["home"]
                     print(f"  i own goal by {text} ({meta['game']} {min_text}') "
@@ -947,6 +953,7 @@ def extract_match(pages, meta):
                     "team": scoring_team,
                     "min": min_text,
                     "added_time": added_time,
+                    "own_goal": "yes" if own_goal else "no",
                     "md": meta["md"],
                     "_sort": sort_key,
                 })
@@ -1028,7 +1035,8 @@ def parse_report(pdf_path, league="", season=""):
 # driver
 # --------------------------------------------------------------------------
 
-GOAL_COLUMNS = ["league", "season", "game", "player", "team", "min", "added_time", "md"]
+GOAL_COLUMNS = ["league", "season", "game", "player", "team", "min", "added_time",
+                "own_goal", "md"]
 CAUTION_COLUMNS = ["league", "season", "game", "player", "team", "caution", "min",
                    "added_time", "double-caution", "md"]
 SUB_COLUMNS = ["league", "season", "game", "in", "out", "min", "added_time", "team", "md"]
